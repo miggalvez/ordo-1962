@@ -4,7 +4,9 @@ export type { MovableDates, PlacementOptions, TemporalYear } from './temporal.js
 export { resolveDay, resolveYear } from './resolver.js';
 export type { Celebration, ResolvedDay } from './resolver.js';
 export { tableItem } from './precedence.js';
-export { CATALOGUE, LAYERS } from './generated/data.js';
+export { CATALOGUE, LAYERS, NAMES } from './generated/data.js';
 export { DEDICATION_KEY } from './church.js';
 export type { Church, ChurchFeast } from './church.js';
-export type { CatalogueEntry, Color, DateRule, Layer, LayerObservance, LayerOperation, ObservanceKind, Ymd } from './types.js';
+export { nameOf } from './names.js';
+export type { NameOptions } from './names.js';
+export type { CatalogueEntry, Color, DateRule, Language, Layer, LayerObservance, LayerOperation, ObservanceKind, Ymd } from './types.js';

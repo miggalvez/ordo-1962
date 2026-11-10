@@ -12,6 +12,9 @@ export type ObservanceKind =
 
 export type Color = 'white' | 'red' | 'green' | 'violet' | 'black' | 'rose';
 
+/** Languages the titles are kept in. Latin, English and Spanish cover every observance; Polish, Missale Meum's. */
+export type Language = 'la' | 'en' | 'es' | 'pl';
+
 export type DateRule =
   /** `leapYear` is the month-day used instead in a leap year. */
   | { readonly fixed: string; readonly leapYear?: string }

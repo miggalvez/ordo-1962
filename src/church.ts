@@ -1,4 +1,4 @@
-import type { Color } from './types.js';
+import type { Color, Language } from './types.js';
 
 // A church's own 1st class feasts (General Rubrics nos. 44-45; no. 91 item 12):
 // the principal patron of the place, the anniversary of its dedication, and its
@@ -18,6 +18,8 @@ export interface ChurchFeast {
   readonly colors?: readonly Color[];
   readonly ofTheLord?: boolean;
   readonly ofOurLady?: boolean;
+  /** Titles by language for a new feast, used by `nameOf`. A catalogue key keeps its own. */
+  readonly names?: Readonly<Partial<Record<Language, string>>>;
 }
 
 export interface Church {

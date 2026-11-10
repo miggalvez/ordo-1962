@@ -6,8 +6,56 @@ institute and church, computed in process with no network calls.
 Status: early. The engine decides each day's principal celebration, class,
 colour and commemorations, including transfers, for the universal calendar with
 a nation's proper (the United States, Poland), an institute's (the FSSP) and a
-church's own feasts. Names in Spanish and the Masses an ordo offers beside the
-day's own are not done yet. Nothing is published.
+church's own feasts, and gives every observance's title in Latin, English and
+Spanish. The Masses an ordo offers beside the day's own are not done yet.
+Nothing is published.
+
+## Names
+
+```js
+import { nameOf, resolveDay } from 'ordo-1962';
+
+const day = resolveDay('2026-03-27');
+nameOf(day.celebration.key, 'es');                  // 'Viernes en la semana de Pasión'
+day.commemorations.map((key) => nameOf(key, 'es')); // ['San Juan Damasceno, confesor y doctor de la Iglesia', 'Conmemoración de los Siete Dolores…']
+nameOf('st-blaise', 'la');                          // 'S. Blasii Episcopi et Martyris'
+```
+
+Every observance, in the universal calendar and in every layer, has a title in
+Latin (`la`), English (`en`) and Spanish (`es`); the build fails if one is
+missing. Polish (`pl`) is Missale Meum's and covers its calendar; where it has
+none, `nameOf` gives the Latin. A church's new feast takes the `names` given
+with it (`{ key, date, colors, names: { es: '…' } }`, passed as
+`nameOf(key, language, { church })`); the dedication has its own.
+
+Where the titles come from:
+
+| Language | Source |
+|---|---|
+| Latin, English, Polish | Missale Meum (`data/names/{la,en,pl}.json`, written by the conversion script) |
+| Spanish | Divinum Officium's Spanish missal (`data/names/es.json`, written by `scripts/import-divinum-officium-es.mjs`; 688 titles, 11 of them corrected by hand) |
+| Any | `data/reviewed/names.json`, by hand, each with its reason (57 Spanish titles, the English of the 25 Polish feasts) |
+| Any | A layer's own observances (`data/layers/*.json`) |
+
+The importer follows each observance's Missale Meum id to the Divinum Officium
+file of the same name, takes the variant of its title for the 1960 rubrics, and
+writes it in the style of the Spanish missal: San, Santa and Santos in full and
+the category in lower case ("San Blas, obispo y mártir", not "S. Blas, Obispo y
+Mártir"). The hand-written titles cover what that cannot: Missale Meum's own
+commemorations, titles Divinum Officium gives in Latin or English, two ids that
+name a different Divinum Officium file (St. John Vianney, St. Telesphorus), and
+titles of the calendar before 1960 (1 January is the Octave of the Nativity, not
+the Circumcision).
+
+The Spanish was checked at development time against two printed Spanish ordos of
+the 1962 rite (Toledo, 2012-2013 and 2014-2015), which are not in this
+repository: `scripts/compare-names-es.mjs <ordo as text>` lists the days whose
+printed heading shares few words with the engine's title. What remains there is
+style (the ordos print "Feria de Cuaresma" for "Lunes en la semana II de
+Cuaresma", "Nuestra Señora" for "la Bienaventurada Virgen María") and Spain's
+own feasts. The Spanish still needs a read-through by someone who knows the 1962
+calendar; `node scripts/names-sheet.mjs > names.tsv` writes every title with its
+source for that.
 
 ## Propers
 
@@ -140,7 +188,10 @@ time zone. `npm run build` writes `dist/`; `npm test` builds first.
 |---|---|
 | `data/catalogue.json` | Every observance with a stable key, its date rule, kind, class, colours and whether it is a feast of the Lord |
 | `data/temporal-blocks.json` | The movable cycle as ordered blocks of keys |
-| `data/names/{la,en,pl}.json` | Titles by key |
+| `data/names/{la,en,pl}.json` | Titles by key, from Missale Meum |
+| `data/names/es.json` | Spanish titles by key, from Divinum Officium's Spanish missal |
+| `data/divinum-officium/source.json` | Provenance of the Spanish: the Divinum Officium commit and the SHA-256 of every file read |
+| `data/reviewed/names.json` | Titles written by hand where the generated files have none or a wrong one, each with its reason |
 | `data/keys.json` | Missale Meum id → key. Keys never change once assigned |
 | `data/missalemeum/` | Provenance: source commit, file hashes, all source ids, and Missale Meum's reference lists |
 | `data/layers/us.json` | The United States proper, written by hand: each observance with its date, class, colours, Latin, English and Spanish names and where it was found |
@@ -192,6 +243,19 @@ committed data is what a fresh import produces.
 
 The script reads Missale Meum's Python files with `ast.parse`. It never imports
 or runs them.
+
+## Regenerating the Spanish titles
+
+```bash
+git clone https://github.com/DivinumOfficium/divinum-officium.git /path/to/divinum-officium
+git -C /path/to/divinum-officium checkout d52ccd8ad669a205da689bedf58e3d2ae68bc0dc
+node scripts/import-divinum-officium-es.mjs /path/to/divinum-officium
+DO_DIR=/path/to/divinum-officium npm test
+```
+
+With `DO_DIR` set, `npm test` checks that `data/names/es.json` and
+`data/divinum-officium/source.json` are what a fresh import produces. Only
+`web/www/missa/Espanol` is read; a sparse checkout of that folder is enough.
 
 ## Regenerating the oracle
 

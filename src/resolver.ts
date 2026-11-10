@@ -2,7 +2,7 @@ import { dayNumber, easterSunday, fromYmd, toYmd, weekday } from './dates.js';
 import { CATALOGUE } from './generated/data.js';
 import { commemorationsOf, sameDivinePerson } from './commemorations.js';
 import { compareRanked, tableItem, type Ranked } from './precedence.js';
-import { fixedFeasts, temporalYear, type PlacementOptions } from './temporal.js';
+import { entriesFor, fixedFeasts, temporalYear, type PlacementOptions } from './temporal.js';
 import type { CatalogueEntry, Color, Ymd } from './types.js';
 
 const BY_KEY = new Map(CATALOGUE.map((entry) => [entry.key, entry]));
@@ -153,6 +153,7 @@ function resolvePass(
 ): Pass {
   const { tempora, computedFeasts } = temporalYear(year);
   const fixed = fixedFeasts(year, options);
+  const lookup = entriesFor(options);
   const easter = easterSunday(year);
   const palmSunday = easter - 7;
   const lowSunday = easter + 7;
@@ -180,7 +181,8 @@ function resolvePass(
     const candidates: Candidate[] = [
       ...dayTempora.map((key) => rank(key, day, true)),
       ...(computedFeasts.get(date) ?? []).map((key) => rank(key, day, true)),
-      ...fixedHere.filter((key) => !entryOf(key).formularyOf).map((key) => rank(key, day, false)),
+      ...fixedHere.map((key) => lookup.get(key) ?? entryOf(key)).filter((entry) => !entry.formularyOf)
+        .map((entry) => rankEntry(entry, day, false)),
       ...(extras.get(date.slice(5)) ?? []).map((entry) => rankEntry(entry, day, false)),
       ...(rightfulPlace.get(day) ?? []),
     ];

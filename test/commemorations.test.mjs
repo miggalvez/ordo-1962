@@ -118,8 +118,10 @@ test('an office of Our Lady excludes another commemoration of her (no. 112d)', (
   assert.ok(saturday.displaced.includes('our-lady-of-mt-carmel'), 'the proper Mass stays available to the ordo layer');
   // On any other weekday she is commemorated as before.
   assert.deepEqual(on('2026-07-16').commemorations, ['our-lady-of-mt-carmel']);
-  // A mistyped key in the list would lower this count.
-  assert.equal(CATALOGUE.filter(isOfOurLady).length, 26);
+  // A mistyped key in the list would lower this count. Layer entries say so themselves (`ofOurLady`).
+  assert.equal(CATALOGUE.filter((entry) => !entry.ofOurLady).filter(isOfOurLady).length, 26);
+  assert.deepEqual(CATALOGUE.filter((entry) => entry.ofOurLady).map((entry) => entry.key).sort(),
+    ['fssp-our-lady-mediatrix-of-all-graces', 'us-our-lady-of-guadalupe']);
 });
 
 test('a 1st class day admits one privileged commemoration only (no. 111a)', () => {

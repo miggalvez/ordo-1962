@@ -72,14 +72,14 @@ const ALIASES = {
 };
 const nameOf = (key) => NAMES[key] ?? key;
 const isFeriaKey = (key) => /^(adv|quad|quadp|epi|pent|pasc|sep-ember)\d*-[1-6]$|^sep-ember-\d$|^feria$/.test(key);
-function score(key, name) {
+export function score(key, name) {
   // The Ordo calls a feria or its commemoration "Of the feria", "Feria" or by its date.
   if (isFeriaKey(key) && /^(of the feria|feria|(january|december) \d+)$/i.test(name)) return 1;
   return Math.max(sim(nameOf(key), name), ALIASES[key] ? sim(ALIASES[key], name) : 0);
 }
 
 /** Match two ordered lists of names; returns the unmatched on each side and whether the order agrees. */
-function matchLists(ours, theirs) {
+export function matchLists(ours, theirs) {
   const used = new Set();
   const pairs = [];
   for (const [i, key] of ours.entries()) {

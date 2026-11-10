@@ -32,17 +32,22 @@ test('Missale Meum misses commemorations the FSSP prints, so these days test mor
 });
 
 for (const day of fixture.days) {
-  if (day.layer) {
-    test(`engine matches the FSSP on ${day.date}: ${day.tests}`, { todo: `the ${day.layer} layer is M5` });
-    continue;
-  }
+  const options = day.layer ? { nations: [day.layer] } : {};
   test(`engine celebration matches the FSSP on ${day.date}`, () => {
-    const { celebration } = resolveDay(day.date);
+    const { celebration } = resolveDay(day.date, options);
     assert.equal(celebration.key, day.celebration);
   });
   test(`engine commemorations match the FSSP on ${day.date}: ${day.tests}`, () => {
-    const { commemorations } = resolveDay(day.date);
+    const { commemorations } = resolveDay(day.date, options);
     if (day.orderNote) assert.deepEqual([...commemorations].sort(), [...day.commemorations].sort());
     else assert.deepEqual(commemorations, day.commemorations);
   });
 }
+
+test('against the whole FSSP 2026 page, first row, only the reviewed days differ', { skip: !process.env.FSSP_PAGE && 'set FSSP_PAGE to run' }, async () => {
+  const { compareWithFssp } = await import('../scripts/compare-fssp.mjs');
+  const reviewed = read('./fixtures/fssp-2026-differences.json').groups.flatMap((g) => g.dates).sort();
+  const found = compareWithFssp(readFileSync(process.env.FSSP_PAGE, 'utf8'), 2026, { nations: ['us'], institutes: ['fssp'] })
+    .map((d) => d.date).sort();
+  assert.deepEqual(found, reviewed);
+});

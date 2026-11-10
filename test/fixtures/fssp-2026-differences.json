@@ -1,0 +1,21 @@
+{
+ "about": "Every day of 2026 on which the engine, with the United States and FSSP layers, differs from the first row the FSSP seminary prints (fsspolgs.org/liturgical-calendar, read 2026-11-09), on celebration, class or commemorations. The page is not in this repository; set FSSP_PAGE to a saved copy to re-check.",
+ "groups": [
+  {
+   "group": "another Mass printed first",
+   "why": "The page prints first a Mass the ordo permits beside the day's own: First Friday and First Saturday votives, the Requiem of November, the Rogation Mass, a Mass granted for some places, or a commemorated saint taken as the Mass of a 4th class day. The day's own celebration is printed below it. These belong to the Masses an ordo offers (M7), not to the calendar.",
+   "dates": ["2026-01-02", "2026-01-03", "2026-02-14", "2026-04-17", "2026-05-11", "2026-06-27", "2026-07-04", "2026-08-01", "2026-09-04", "2026-09-24", "2026-10-01", "2026-11-03", "2026-11-05", "2026-11-06", "2026-11-07", "2026-11-27", "2026-12-05"],
+   "note": "On 4 July the page also commemorates All Holy Popes, which data/layers/fssp.json lists to confirm."
+  },
+  {
+   "group": "order of commemorations",
+   "why": "The same commemorations in another order. The engine follows no. 113: the season first, then the table of precedence, then the calendar's own order. The SSPX Ordo agrees with the engine on 27 March.",
+   "dates": ["2026-03-27", "2026-09-01", "2026-10-21", "2026-12-04"]
+  },
+  {
+   "group": "the page differs from the rubrics",
+   "why": "1 January: the Octave of Christmas is printed as 2nd class; it is 1st (no. 91 item 5). 11 January: the Holy Family is printed as 1st class with the Sunday commemorated; it is 2nd class and the Sunday is not commemorated (no. 17b). 28 June: the Vigil of Sts. Peter and Paul is commemorated on a Sunday; a vigil of the 2nd class is omitted on a Sunday (no. 33). 8 September: St. Hadrian is not commemorated; a 2nd class feast admits one commemoration (no. 111c), and the SSPX Ordo prints him. 16 and 17 December: the 'Feria of Advent' is commemorated on Advent days that are themselves of the season (no. 112c).",
+   "dates": ["2026-01-01", "2026-01-11", "2026-06-28", "2026-09-08", "2026-12-16", "2026-12-17"]
+  }
+ ]
+}

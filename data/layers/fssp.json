@@ -1,0 +1,57 @@
+{
+ "institute": "fssp",
+ "source": "The FSSP seminary's 2026 calendar (fsspolgs.org/liturgical-calendar), commemorations it prints that the universal calendar does not have, read 2026-11-09. To be confirmed against the printed Liturgical Ordo & FSSP Directory, including whether they are kept throughout the Fraternity or only in North America.",
+ "toConfirm": [
+  "Whether the Fraternity has proper feasts of its own that the 2026 page does not show.",
+  "The Commemoration of All Holy Popes, printed on Saturday 4 July 2026 as a Mass and a commemoration; its proper date is not clear from one year.",
+  "Our Lady of Perpetual Help (27 June) and Our Lady of the Miraculous Medal (27 November) are printed as Masses but not as commemorations; they belong to the Masses an ordo offers, not to this layer."
+ ],
+ "observances": [
+  {
+   "key": "fssp-apparition-of-st-michael",
+   "date": { "fixed": "05-08" },
+   "kind": "commemoration",
+   "class": 4,
+   "colors": ["white"],
+   "names": {
+    "la": "In Apparitione S. Michaelis Archangeli",
+    "en": "Apparition of St. Michael the Archangel",
+    "es": "Aparición de San Miguel Arcángel"
+   },
+   "source": "Commemorated on 8 May 2026, and printed as a 4th class Mass"
+  },
+  {
+   "key": "fssp-our-lady-mediatrix-of-all-graces",
+   "date": { "fixed": "05-08" },
+   "kind": "commemoration",
+   "class": 4,
+   "colors": ["white"],
+   "ofOurLady": true,
+   "names": {
+    "la": "Beatae Mariae Virginis Mediatricis omnium gratiarum",
+    "en": "Our Lady, Mediatrix of All Graces",
+    "es": "Nuestra Señora, Medianera de todas las gracias"
+   },
+   "source": "Commemorated on 8 May 2026, after the Apparition of St. Michael, and printed as a 4th class Mass"
+  },
+  {
+   "key": "fssp-st-maria-goretti",
+   "date": { "fixed": "07-06" },
+   "kind": "commemoration",
+   "class": 4,
+   "colors": ["red"],
+   "names": {
+    "la": "S. Mariae Goretti Virginis et Martyris",
+    "en": "St. Maria Goretti, Virgin and Martyr",
+    "es": "Santa María Goretti, Virgen y Mártir"
+   },
+   "source": "Commemorated on 6 July 2026, and printed as a 4th class Mass in red"
+  }
+ ],
+ "operations": [
+  { "op": "add", "key": "fssp-apparition-of-st-michael" },
+  { "op": "add", "key": "fssp-our-lady-mediatrix-of-all-graces" },
+  { "op": "add", "key": "fssp-st-maria-goretti" },
+  { "op": "order", "date": "05-08", "keys": ["fssp-apparition-of-st-michael", "fssp-our-lady-mediatrix-of-all-graces"] }
+ ]
+}

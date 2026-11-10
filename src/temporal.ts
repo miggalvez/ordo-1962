@@ -1,4 +1,5 @@
 import { dayNumber, easterSunday, isLeapYear, monthDay, toYmd, weekday } from './dates.js';
+import { churchProper, type Church } from './church.js';
 import { CATALOGUE, LAYERS, TEMPORAL_BLOCKS } from './generated/data.js';
 import type { CatalogueEntry, Layer, TemporalBlockName, Ymd } from './types.js';
 
@@ -137,16 +138,28 @@ export function temporalYear(year: number): TemporalYear {
 }
 
 export interface PlacementOptions {
-  /** National layers to apply, by nation code (for example `['pl']`). */
+  /** National propers to apply, by code (for example `['us']`). */
   readonly nations?: readonly string[];
+  /** Propers of institutes or orders to apply, by code (for example `['fssp']`). Applied after the nations. */
+  readonly institutes?: readonly string[];
+  /** The church's own 1st class feasts. Applied last. */
+  readonly church?: Church;
 }
 
-function resolveLayers(nations: readonly string[] = []): Layer[] {
-  return nations.map((nation) => {
-    const layer = LAYERS[nation];
-    if (!layer) throw new RangeError(`no layer for nation ${nation}`);
+function resolveLayers(options: PlacementOptions): Layer[] {
+  const pick = (codes: readonly string[] = [], field: 'nation' | 'institute') => codes.map((code) => {
+    const layer = Object.values(LAYERS).find((candidate) => candidate[field] === code);
+    if (!layer) throw new RangeError(`no layer for ${field} ${code}`);
     return layer;
   });
+  return [...pick(options.nations, 'nation'), ...pick(options.institutes, 'institute')];
+}
+
+/** The calendar's entries plus the church's own, for looking an observance up by key. */
+export function entriesFor(options: PlacementOptions): ReadonlyMap<string, CatalogueEntry> {
+  const map = new Map(CATALOGUE.map((entry) => [entry.key, entry]));
+  for (const entry of churchProper(options.church).entries) map.set(entry.key, entry);
+  return map;
 }
 
 /**
@@ -155,8 +168,9 @@ function resolveLayers(nations: readonly string[] = []): Layer[] {
  * them. Leap-year dates are applied here; transfers are the resolver's job.
  */
 export function fixedFeasts(year: number, options: PlacementOptions = {}): ReadonlyMap<Ymd, readonly string[]> {
-  const layers = resolveLayers(options.nations);
-  const removed = new Set<string>();
+  const layers = resolveLayers(options);
+  const church = churchProper(options.church);
+  const removed = new Set<string>(church.replaces);
   const added = new Set<string>();
   const order = new Map<string, readonly string[]>();
   for (const layer of layers) {
@@ -171,9 +185,10 @@ export function fixedFeasts(year: number, options: PlacementOptions = {}): Reado
   }
 
   const byNominalDate = new Map<string, CatalogueEntry[]>();
-  for (const entry of CATALOGUE) {
+  for (const entry of [...CATALOGUE, ...church.entries]) {
     if (!('fixed' in entry.date)) continue;
-    const included = entry.scope === 'universal' ? !removed.has(entry.key) : added.has(entry.key);
+    const included = entry.scope === 'church'
+      || (entry.scope === 'universal' ? !removed.has(entry.key) : added.has(entry.key) && !removed.has(entry.key));
     if (!included) continue;
     const list = byNominalDate.get(entry.date.fixed) ?? [];
     list.push(entry);

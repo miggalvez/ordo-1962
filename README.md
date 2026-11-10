@@ -4,9 +4,36 @@ The Roman calendar of 1962 (1960 Code of Rubrics) for any year, nation,
 institute and church, computed in process with no network calls.
 
 Status: early. The engine decides each day's principal celebration, class,
-colour and commemorations, including transfers, for the universal calendar. The
-United States and institute propers, church feasts and the Masses an ordo offers
-beside the day's own are not done yet. Nothing is published.
+colour and commemorations, including transfers, for the universal calendar with
+a nation's proper (the United States, Poland), an institute's (the FSSP) and a
+church's own feasts. Names in Spanish and the Masses an ordo offers beside the
+day's own are not done yet. Nothing is published.
+
+## Propers
+
+```js
+const parish = {
+  nations: ['us'],
+  institutes: ['fssp'],
+  church: {
+    titular: { key: 'st-anne-mother-of-the-blessed-virgin' }, // raised to the 1st class
+    dedication: '10-03',                                     // anniversary of the dedication
+    patrons: [{ key: 'st-local-patron', date: '06-12', colors: ['red'] }], // a feast the calendar lacks
+  },
+};
+resolveDay('2026-11-13', parish).celebration.key;  // 'us-st-frances-xavier-cabrini'
+resolveDay('2026-07-26', parish).celebration.key;  // the titular, with the Sunday commemorated
+```
+
+Layers apply in order: nations, then institutes, then the church. Every proper
+feast takes the place the table of precedence gives proper feasts (no. 91 items
+12, 19, 23). A church's feasts are of the 1st class; when impeded they are
+transferred (no. 96), into January if need be. `scripts/check-titulars.mjs`
+places a titular on every date of 2026-2055 and checks it is kept once each year.
+
+The United States and FSSP layers come from the FSSP seminary's 2026 calendar and
+list what that one year cannot show (`toConfirm`), to be checked against the
+printed *Liturgical Ordo & FSSP Directory*.
 
 ## Use
 
@@ -75,6 +102,8 @@ time zone. `npm run build` writes `dist/`; `npm test` builds first.
 | `data/names/{la,en,pl}.json` | Titles by key |
 | `data/keys.json` | Missale Meum id → key. Keys never change once assigned |
 | `data/missalemeum/` | Provenance: source commit, file hashes, all source ids, and Missale Meum's reference lists |
+| `data/layers/us.json`, `data/layers/fssp.json` | The United States and FSSP propers, written by hand: each observance with its date, class, colours, Latin, English and Spanish names and where it was found |
+| `test/fixtures/fssp-2026-differences.json` | Every 2026 day on which the engine, with both layers, differs from the first row the FSSP seminary prints, in three reviewed groups. Set `FSSP_PAGE` to a saved copy of the page to re-check in `npm test` |
 | `data/layers/pl.json` | Missale Meum's Polish proper as operations on the universal calendar: feasts added, removed, or added in place of another (St. Stanislaus moves from 7 to 8 May), and the order of a day's entries where Poland lists them differently |
 | `data/reviewed/feasts-of-the-lord.json` | Hand-reviewed list behind `ofTheLord`, with the rubric or source for each entry. The rubrics give no complete list |
 | `data/reviewed/additions.json` | Observances of the universal calendar that Missale Meum lacks (St. Barbara on 4 December), with where each was confirmed |

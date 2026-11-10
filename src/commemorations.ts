@@ -58,7 +58,7 @@ const OF_OUR_LADY: ReadonlySet<string> = new Set([
 
 /** An office, Mass or commemoration of the Blessed Virgin (no. 112d). */
 export function isOfOurLady(entry: CatalogueEntry): boolean {
-  return entry.kind === 'our-lady-on-saturday' || OF_OUR_LADY.has(entry.key);
+  return entry.kind === 'our-lady-on-saturday' || entry.ofOurLady === true || OF_OUR_LADY.has(entry.key);
 }
 
 /** Privileged commemorations, no. 109. */

@@ -34,8 +34,28 @@ export interface CatalogueEntry {
   readonly class: 1 | 2 | 3 | 4;
   readonly colors: readonly Color[];
   readonly ofTheLord: boolean;
-  readonly scope: 'universal' | 'national';
+  /** An office, Mass or commemoration of the Blessed Virgin (no. 112d), for entries outside the reviewed list. */
+  readonly ofOurLady?: boolean;
+  /**
+   * Who keeps it: the universal Church, a nation, an institute, or one church.
+   * Anything but `universal` is a proper feast in the table of precedence (no. 91 items 12, 19, 23).
+   */
+  readonly scope: 'universal' | 'national' | 'institute' | 'church';
   readonly nation?: string;
+  readonly institute?: string;
+}
+
+/** An observance a hand-written layer defines. Its names stay in the layer file. */
+export interface LayerObservance {
+  readonly key: string;
+  readonly date: { readonly fixed: string };
+  readonly kind: 'feast' | 'commemoration';
+  readonly class: 1 | 2 | 3 | 4;
+  readonly colors: readonly Color[];
+  readonly ofTheLord?: boolean;
+  readonly ofOurLady?: boolean;
+  readonly names: Readonly<Record<string, string>>;
+  readonly source: string;
 }
 
 export type LayerOperation =
@@ -44,9 +64,12 @@ export type LayerOperation =
   /** The layer lists this fixed date's entries in this order. */
   | { readonly op: 'order'; readonly date: string; readonly keys: readonly string[] };
 
+/** A nation's or an institute's proper, as operations on the universal calendar. */
 export interface Layer {
-  readonly nation: string;
+  readonly nation?: string;
+  readonly institute?: string;
   readonly source: string;
+  readonly observances?: readonly LayerObservance[];
   readonly operations: readonly LayerOperation[];
 }
 

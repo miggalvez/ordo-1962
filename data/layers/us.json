@@ -1,0 +1,84 @@
+{
+ "nation": "us",
+ "source": "The FSSP seminary's 2026 calendar (fsspolgs.org/liturgical-calendar), rows marked (USA), read 2026-11-09. To be confirmed against the printed Liturgical Ordo & FSSP Directory.",
+ "toConfirm": [
+  "St. Elizabeth Ann Seton (4 January): the 2026 page cannot show her, since 4 January 2026 is the Holy Name on a Sunday, which admits no 3rd class commemoration (no. 111b).",
+  "St. Damien of Molokai (10 May) and St. Junipero Serra (1 July): both days are taken in 2026 (a Sunday; the Precious Blood).",
+  "Whether the printed ordo lists any further United States feast."
+ ],
+ "observances": [
+  {
+   "key": "us-st-john-neumann",
+   "date": { "fixed": "01-05" },
+   "kind": "feast",
+   "class": 3,
+   "colors": ["white"],
+   "names": {
+    "la": "S. Joannis Nepomuceni Neumann Episcopi et Confessoris",
+    "en": "St. John Neumann, Bishop and Confessor",
+    "es": "San Juan Nepomuceno Neumann, Obispo y Confesor"
+   },
+   "source": "(USA) St. John Neumann, Bishop & Confessor, III class, white, 5 January 2026"
+  },
+  {
+   "key": "us-st-peter-claver",
+   "date": { "fixed": "09-09" },
+   "kind": "feast",
+   "class": 3,
+   "colors": ["white"],
+   "names": {
+    "la": "S. Petri Claver Confessoris",
+    "en": "St. Peter Claver, Confessor",
+    "es": "San Pedro Claver, Confesor"
+   },
+   "source": "(USA) St. Peter Claver, Confessor, III class, white, 9 September 2026"
+  },
+  {
+   "key": "us-north-american-martyrs",
+   "date": { "fixed": "09-26" },
+   "kind": "feast",
+   "class": 3,
+   "colors": ["red"],
+   "names": {
+    "la": "Ss. Joannis de Brebeuf, Isaac Jogues et Sociorum Martyrum",
+    "en": "Sts. John de Brebeuf, Isaac Jogues and Companions, Martyrs",
+    "es": "Santos Juan de Brébeuf, Isaac Jogues y Compañeros, Mártires"
+   },
+   "source": "(USA) Ss. Jean de Brebeuf, Isaac Jogues & Companions, Martyrs, commemorated on Ember Saturday, 26 September 2026; class and colour to confirm"
+  },
+  {
+   "key": "us-st-frances-xavier-cabrini",
+   "date": { "fixed": "11-13" },
+   "kind": "feast",
+   "class": 3,
+   "colors": ["white"],
+   "names": {
+    "la": "S. Franciscae Xaveriae Cabrini Virginis",
+    "en": "St. Frances Xavier Cabrini, Virgin",
+    "es": "Santa Francisca Javier Cabrini, Virgen"
+   },
+   "source": "(USA) St. Frances Xavier Cabrini, Virgin, III class, white, 13 November 2026"
+  },
+  {
+   "key": "us-our-lady-of-guadalupe",
+   "date": { "fixed": "12-12" },
+   "kind": "feast",
+   "class": 3,
+   "colors": ["white"],
+   "ofOurLady": true,
+   "names": {
+    "la": "Beatae Mariae Virginis de Guadalupe",
+    "en": "Our Lady of Guadalupe",
+    "es": "Nuestra Señora de Guadalupe"
+   },
+   "source": "(USA) Our Lady of Guadalupe, III class, white, 12 December 2026"
+  }
+ ],
+ "operations": [
+  { "op": "add", "key": "us-st-john-neumann" },
+  { "op": "add", "key": "us-st-peter-claver" },
+  { "op": "add", "key": "us-north-american-martyrs" },
+  { "op": "add", "key": "us-st-frances-xavier-cabrini" },
+  { "op": "add", "key": "us-our-lady-of-guadalupe" }
+ ]
+}

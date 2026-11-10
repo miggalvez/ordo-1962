@@ -61,9 +61,16 @@ export interface Celebration {
 export interface ResolvedDay {
   readonly date: Ymd;
   readonly celebration: Celebration;
-  /** Commemorations at Mass and in the office, in order (nos. 106-114). */
+  /**
+   * Commemorations at a low or conventual Mass of the day, in order (nos. 106-114).
+   * The office can differ (the greater litanies have nothing in it, no. 81), and a
+   * sung Mass that is not conventual admits only a privileged one (no. 111a).
+   */
   readonly commemorations: readonly string[];
-  /** Inseparable prayers (St. Peter with St. Paul, no. 110); they join a collect and are not counted. */
+  /**
+   * Inseparable prayers (no. 110): St. Peter's in a Mass or commemoration of St. Paul
+   * alone, and the reverse. They join that collect and are not counted.
+   */
   readonly inseparable: readonly string[];
   /** Movable days of the cycle on this date. */
   readonly tempora: readonly string[];
@@ -75,8 +82,20 @@ interface Candidate extends Ranked {
   readonly transferredFrom?: number;
 }
 
+/**
+ * Observances outside the catalogue, by the month-day they are kept on. Not part
+ * of the public API: it is the seam a church's own feasts will use, and it lets a
+ * test place a feast on any date.
+ */
+export type Extras = ReadonlyMap<string, readonly CatalogueEntry[]>;
+
+const NO_EXTRAS: Extras = new Map();
+
 function rank(key: string, day: number, movable: boolean, transferredFrom?: number): Candidate {
-  const entry = entryOf(key);
+  return rankEntry(entryOf(key), day, movable, transferredFrom);
+}
+
+function rankEntry(entry: CatalogueEntry, day: number, movable: boolean, transferredFrom?: number): Candidate {
   let cls = entry.class;
   // Advent ferias from 17 to 23 December are of the 2nd class (no. 24a).
   const month = toYmd(day).slice(5, 7);
@@ -120,9 +139,18 @@ interface Pass {
   readonly days: ResolvedDay[];
   /** Feasts that did not keep their own date: transferred, or reduced to a commemoration. */
   readonly lostTheirDate: Set<string>;
+  /** 1st class feasts still awaiting a free day when the year ended (no. 96). */
+  readonly carriedOut: Candidate[];
 }
 
-function resolvePass(year: number, options: PlacementOptions, omittedVigils: ReadonlySet<string>): Pass {
+function resolvePass(
+  year: number,
+  options: PlacementOptions,
+  omittedVigils: ReadonlySet<string>,
+  extras: Extras,
+  carriedIn: readonly Candidate[],
+  firstDay?: number,
+): Pass {
   const { tempora, computedFeasts } = temporalYear(year);
   const fixed = fixedFeasts(year, options);
   const easter = easterSunday(year);
@@ -135,11 +163,11 @@ function resolvePass(year: number, options: PlacementOptions, omittedVigils: Rea
 
   // Feasts given a rightful place on another date when impeded (no. 96a, 96b).
   const rightfulPlace = new Map<number, Candidate[]>();
-  const pending: Candidate[] = [];
+  const pending: Candidate[] = [...carriedIn];
   const lostTheirDate = new Set<string>();
   const days: ResolvedDay[] = [];
 
-  for (let day = first; day <= last; day += 1) {
+  for (let day = firstDay ?? first; day <= last; day += 1) {
     const date = toYmd(day);
     const dayTempora = tempora.get(date) ?? [];
     const sunday = weekday(day) === 0;
@@ -153,6 +181,7 @@ function resolvePass(year: number, options: PlacementOptions, omittedVigils: Rea
       ...dayTempora.map((key) => rank(key, day, true)),
       ...(computedFeasts.get(date) ?? []).map((key) => rank(key, day, true)),
       ...fixedHere.filter((key) => !entryOf(key).formularyOf).map((key) => rank(key, day, false)),
+      ...(extras.get(date.slice(5)) ?? []).map((entry) => rankEntry(entry, day, false)),
       ...(rightfulPlace.get(day) ?? []),
     ];
 
@@ -190,7 +219,7 @@ function resolvePass(year: number, options: PlacementOptions, omittedVigils: Rea
         const monday = lowSunday + 1;
         rightfulPlace.set(monday, [...(rightfulPlace.get(monday) ?? []), rank(ANNUNCIATION, monday, false, from)]);
       } else {
-        pending.push(rank(loser.entry.key, day, false, from));
+        pending.push(rankEntry(loser.entry, day, false, from));
       }
     }
 
@@ -199,7 +228,7 @@ function resolvePass(year: number, options: PlacementOptions, omittedVigils: Rea
     if (pending.length > 0 && (!winner || winner.class >= 3)) {
       pending.sort((a, b) => (tableItem(a) ?? 0) - (tableItem(b) ?? 0) || (a.transferredFrom ?? 0) - (b.transferredFrom ?? 0));
       const transferred = pending.shift() as Candidate;
-      winner = rank(transferred.entry.key, day, false, transferred.transferredFrom);
+      winner = rankEntry(transferred.entry, day, false, transferred.transferredFrom);
     }
 
     // A 4th class feria, or no observance at all; on Saturday, the Saturday office of Our Lady (no. 78).
@@ -224,24 +253,35 @@ function resolvePass(year: number, options: PlacementOptions, omittedVigils: Rea
       displaced: candidates.map((c) => c.entry.key).filter((key) => key !== celebration.key),
     });
   }
-  return { days, lostTheirDate };
+  return { days, lostTheirDate, carriedOut: pending };
 }
 
 /**
- * Decide the celebration of every day of the year.
+ * Decide the celebration and commemorations of every day of the year.
  *
  * Vigils depend on what happens to their feast the next day (no. 33), so the
  * year is resolved again until the set of omitted vigils stops changing.
+ *
+ * A 1st class feast impeded at the end of December takes its free day in January
+ * (no. 96), so the year starts with whatever the previous one left waiting. From
+ * 17 December to 1 January every day is of the 1st or 2nd class; before that a
+ * free day comes within the week, so resolving the previous year from November is
+ * enough to know what it carries over. No vigil of no. 33 falls in those months.
  */
-export function resolveYear(year: number, options: PlacementOptions = {}): ResolvedDay[] {
+export function resolveYearWith(year: number, options: PlacementOptions = {}, extras: Extras = NO_EXTRAS): ResolvedDay[] {
+  const carried = resolvePass(year - 1, options, new Set(), extras, [], dayNumber(year - 1, 11, 1)).carriedOut;
   let omitted = new Set<string>();
   for (let attempt = 0; attempt < 5; attempt += 1) {
-    const pass = resolvePass(year, options, omitted);
+    const pass = resolvePass(year, options, omitted, extras, carried);
     const next = new Set([...pass.lostTheirDate].filter((key) => Object.values(VIGIL_OF).includes(key)));
     if ([...next].every((key) => omitted.has(key)) && next.size === omitted.size) return pass.days;
     omitted = next;
   }
   throw new Error(`vigils did not settle for ${year}`);
+}
+
+export function resolveYear(year: number, options: PlacementOptions = {}): ResolvedDay[] {
+  return resolveYearWith(year, options);
 }
 
 export function resolveDay(date: Ymd, options: PlacementOptions = {}): ResolvedDay {

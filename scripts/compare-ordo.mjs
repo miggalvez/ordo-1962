@@ -30,7 +30,20 @@ function tokens(s) {
 }
 const lev = (a, b) => { const d = Array.from({ length: a.length + 1 }, (_, i) => [i]); for (let j = 1; j <= b.length; j += 1) d[0][j] = j; for (let i = 1; i <= a.length; i += 1) for (let j = 1; j <= b.length; j += 1) d[i][j] = Math.min(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1)); return d[a.length][b.length]; };
 const tm = (a, b) => a === b || (!/\d/.test(a + b) && a.length >= 5 && b.length >= 5 && (a.slice(0, 4) === b.slice(0, 4) || lev(a, b) <= 2));
-function sim(a, b) { const x = tokens(a); const y = tokens(b); if (!x.length || !y.length) return x.length === y.length ? 1 : 0; return x.filter((t) => y.some((u) => tm(t, u))).length / Math.min(x.length, y.length); }
+const numbers = (list) => list.filter((t) => /^\d+$/.test(t));
+function sim(a, b) {
+  const x = tokens(a);
+  const y = tokens(b);
+  if (!x.length || !y.length) return x.length === y.length ? 1 : 0;
+  // Numbers must not contradict: the 7th Sunday after Pentecost is not the 9th.
+  const [fewer, more] = numbers(x).length <= numbers(y).length ? [numbers(x), numbers(y)] : [numbers(y), numbers(x)];
+  if (fewer.length && !fewer.every((t) => more.includes(t))) return 0;
+  return x.filter((t) => y.some((u) => tm(t, u))).length / Math.min(x.length, y.length);
+}
+
+// Two names are the same observance when more than half the words of the shorter one are
+// found in the other. Exactly half is not enough: St. John Damascene is not St. John Chrysostom.
+const MATCH = 0.51;
 
 // Names the Ordo uses that share no words with ours.
 const ALIASES = {
@@ -39,6 +52,23 @@ const ALIASES = {
   'st-vivian': 'St. Bibiana',
   'st-dionysius-and-companions': 'Sts. Denis Rusticus Eleutherius',
   'for-the-rogations': 'Greater Litanies',
+  'our-lady-on-saturday-advent': 'Saturday of Our Lady',
+  'our-lady-on-saturday-christmastide': 'Saturday of Our Lady',
+  'our-lady-on-saturday-after-purification': 'Saturday of Our Lady',
+  'our-lady-on-saturday-paschaltide': 'Saturday of Our Lady',
+  'our-lady-on-saturday-after-pentecost': 'Saturday of Our Lady',
+  'st-joseph-the-workman': 'Patronage of St. Joseph',
+  'dedication-of-the-archbasilica-of-our-holy-savior': 'Dedication of the Lateran Basilica of Our Savior',
+  'dedication-of-the-basilica-of-st-mary-major': 'Our Lady of the Snows',
+  'st-thomas-becket': 'St. Thomas of Canterbury',
+  'st-theresa-of-the-infant-jesus': 'St. Thérèse of the Child Jesus',
+  'holy-machabees': 'The Holy Maccabean Martyrs',
+  'vigil-of-christmas': 'Christmas Eve',
+  'pasc6-1': 'Monday after the Sunday after the Ascension',
+  'pasc6-2': 'Tuesday after the Sunday after the Ascension',
+  'pasc6-3': 'Wednesday after the Sunday after the Ascension',
+  'pasc6-4': 'Thursday after the Sunday after the Ascension',
+  'pasc6-5': 'Friday after the Sunday after the Ascension',
 };
 const nameOf = (key) => NAMES[key] ?? key;
 const isFeriaKey = (key) => /^(adv|quad|quadp|epi|pent|pasc|sep-ember)\d*-[1-6]$|^sep-ember-\d$|^feria$/.test(key);
@@ -54,7 +84,7 @@ function matchLists(ours, theirs) {
   const pairs = [];
   for (const [i, key] of ours.entries()) {
     let best = -1;
-    let bestScore = 0.5;
+    let bestScore = MATCH;
     for (const [j, name] of theirs.entries()) {
       if (used.has(j)) continue;
       const s = score(key, name);
@@ -76,9 +106,13 @@ export function compareWithOrdo(dir, year) {
   const differences = [];
   for (const day of resolveYear(year)) {
     const theirs = ordo.get(day.date);
-    if (!theirs) continue;
+    if (!theirs) {
+      // A day the Ordo data lacks is a difference, not a pass.
+      differences.push({ date: day.date, missing: true, oursOnly: [], ordoOnly: [], sameOrder: true, ours: day.commemorations, ordo: [], celebrated: day.celebration.key });
+      continue;
+    }
     const celebration = decode(theirs.celebration.name).replace(/\s+/g, ' ').trim();
-    const sameCelebration = score(day.celebration.key, celebration) >= 0.5;
+    const sameCelebration = score(day.celebration.key, celebration) >= MATCH;
     const commemorations = (theirs.commemorations ?? []).map((c) => decode(c.name).replace(/\s+/g, ' ').trim());
     const { oursOnly, theirsOnly, sameOrder } = matchLists(day.commemorations, commemorations);
     if (!sameCelebration || oursOnly.length || theirsOnly.length || !sameOrder) {
@@ -94,6 +128,17 @@ export function compareWithOrdo(dir, year) {
   return differences;
 }
 
+/** What differs on a day, in a form that can be reviewed and frozen. */
+export function whatDiffers(d) {
+  if (d.missing) return 'missing from the Ordo data';
+  const parts = [];
+  if (d.celebration) parts.push(`celebration: ${d.celebration.ours} / ${d.celebration.ordo.replace(/\d+/g, 'N')}`);
+  if (d.oursOnly.length) parts.push(`ours only: ${d.oursOnly.map((key) => key.replace(/-12-2\dc$/, '')).join(', ')}`);
+  if (d.ordoOnly.length) parts.push(`ordo only: ${d.ordoOnly.join(', ')}`);
+  if (!d.sameOrder) parts.push('order');
+  return parts.join(' | ');
+}
+
 if (import.meta.url === `file://${process.argv[1]}`) {
   const [dir, ...rest] = process.argv.slice(2);
   const [from = 2026, to = 2040] = rest.filter((a) => /^\d{4}$/.test(a)).map(Number);
@@ -102,7 +147,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   if (process.argv.includes('--json')) console.log(JSON.stringify(all, null, 1));
   else {
     for (const d of all) {
-      const parts = [];
+      const parts = d.missing ? ['MISSING from the Ordo data'] : [];
       if (d.celebration) parts.push(`CELEBRATION ours ${d.celebration.ours} / ordo ${d.celebration.ordo}`);
       if (d.oursOnly.length) parts.push(`ours only: ${d.oursOnly.join(', ')}`);
       if (d.ordoOnly.length) parts.push(`ordo only: ${d.ordoOnly.join(', ')}`);

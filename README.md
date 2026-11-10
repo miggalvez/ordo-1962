@@ -29,18 +29,34 @@ agrees on all 50,769 days of 1962-2100 except 97, listed with their rubric in
 `test/fixtures/oracle-deviations.json`; on those the SSPX Ordo agrees with this
 engine. `node scripts/compare-oracle.mjs` prints the comparison.
 
-Commemorations follow nos. 106-114 (privileged and ordinary commemorations, the
-number each class admits, the exclusions of no. 112 and the order of no. 113),
-with no. 80 for the greater litanies and no. 110 for the inseparable prayer of
-St. Peter with St. Paul, which is returned in `inseparable`, not counted as a
-commemoration. Missale Meum differs in 13 patterns, all its own gaps (the Sunday
-or Advent feria on a feast, a second commemoration on 3rd and 4th class days),
-listed with their rubric in `test/fixtures/commemoration-differences.json`.
+Commemorations follow nos. 106-114 of the Latin text (privileged commemorations,
+no. 109; the number each class admits, no. 111; the exclusions of no. 112; the
+order of no. 113), with no. 80 for the greater litanies and no. 110 for the
+inseparable prayer of St. Peter with St. Paul, which is returned in
+`inseparable`, not counted as a commemoration.
+
+`commemorations` is the list for a low or conventual Mass of the day. It is not
+the list for every liturgy: the greater litanies have nothing in the office
+(no. 81), so at Lauds on Sunday 25 April St. Mark is commemorated in their
+place; ordinary commemorations are not made at Vespers (no. 108); and a sung
+Mass that is not conventual admits only a privileged one (no. 111a).
+
+Missale Meum differs in 14 patterns (594 days), all its own gaps (the Sunday or
+Advent feria on a feast, a second commemoration on 3rd and 4th class days, Our
+Lady of Mount Carmel on a Saturday), listed with their rubric in
+`test/fixtures/commemoration-differences.json`.
 `node scripts/compare-commemorations.mjs` prints them. Against the SSPX Ordo for
-2026-2040 (development-time check, `scripts/compare-ordo.mjs`), 73 days differ, in
-four groups where the rubrics and the FSSP's 2026 calendar side with the engine
-(`test/fixtures/ordo-differences-2026-2040.json`). Set `ORDO_DIR` to a folder of
-Ordo responses to re-run that check in `npm test`.
+2026-2040 (development-time check, `scripts/compare-ordo.mjs`), 77 days differ, in
+five groups where the rubrics side with the engine, and the FSSP's 2026 calendar
+does too where it covers them (`test/fixtures/ordo-differences-2026-2040.json`,
+which also says what differs on each group's days). Set `ORDO_DIR` to a folder of
+Ordo responses to re-run that check in `npm test`; a day missing from those
+files counts as a difference.
+
+One order is unresolved. On the Friday of Passion Week the FSSP prints the Seven
+Sorrows before an impeded 3rd class feast; the engine and the SSPX Ordo put the
+feast first (no. 113). The FSSP test accepts either order on that day until a
+printed ordo settles it.
 
 ```js
 resolveDay('2026-11-30').commemorations;  // ['adv1-1']  (St. Andrew, with the Advent feria)
@@ -84,7 +100,9 @@ the Rogations are ordinary white ferias of Paschaltide (nos. 88, 130a).
 `transferredFrom` is the feast's own date whenever a 1st class feast is kept on
 another day. That includes the two rightful places of no. 96: the Annunciation
 on the Monday after Low Sunday and All Souls on Monday 3 November. An ordo may
-not call those transfers; the date is given all the same.
+not call those transfers; the date is given all the same. A feast impeded at the
+end of December is kept in January, so the date can be in the previous year. No
+feast of the universal calendar does this; a church's own feast can.
 
 ## Regenerating the catalogue
 

@@ -1,13 +1,15 @@
 {
- "about": "Every day of 2026-2040 on which the engine differs from the SSPX Ordo (ordo.fsspx.org, congregation empty), on celebration or commemorations, as reviewed 2026-11-09. Development-time cross-check only; the Ordo data is not in this repository. Run with ORDO_DIR set to a folder of ordo-en-<year>.json files to re-check.",
+ "about": "Every day of 2026-2040 on which the engine differs from the SSPX Ordo (ordo.fsspx.org, congregation empty), on celebration or commemorations, as reviewed 2026-11-09. Each group says what differs on its days, and the test checks that too. Development-time cross-check only; the Ordo data is not in this repository. Run with ORDO_DIR set to a folder of ordo-en-<year>.json files to re-check.",
  "groups": [
   {
    "group": "saturday-christmastide",
    "rubric": "no. 78",
+   "differs": "celebration: our-lady-on-saturday-christmastide / January N",
    "why": "The Ordo keeps a bare feria on early-January Saturdays. The FSSP 2026 calendar has Our Lady on Saturday (3 and 10 January).",
    "dates": [
     "2026-01-03",
     "2026-01-10",
+    "2027-01-02",
     "2027-01-09",
     "2028-01-08",
     "2030-01-05",
@@ -22,6 +24,7 @@
     "2036-01-12",
     "2037-01-03",
     "2037-01-10",
+    "2038-01-02",
     "2038-01-09",
     "2039-01-08",
     "2040-01-07"
@@ -30,6 +33,7 @@
   {
    "group": "christmas-vigil",
    "rubric": "no. 30",
+   "differs": "ordo only: Of the feria",
    "why": "The Ordo commemorates the Advent feria on the Vigil of Christmas, which admits no commemoration. The FSSP 2026 calendar prints none.",
    "dates": [
     "2026-12-24",
@@ -47,7 +51,8 @@
   },
   {
    "group": "christmas-octave",
-   "rubric": "nos. 108c, 111c",
+   "rubric": "nos. 109c, 111c",
+   "differs": "ours only: for-octave-of-the-nativity",
    "why": "The Ordo omits the commemoration of the Christmas octave on 26-28 December. The FSSP 2026 calendar prints it.",
    "dates": [
     "2026-12-26",
@@ -93,6 +98,7 @@
   {
    "group": "saturday-after-ascension",
    "rubric": "no. 78",
+   "differs": "celebration: our-lady-on-saturday-paschaltide / Saturday after the Ascension",
    "why": "The Ordo keeps the Saturday after the Ascension as a feria; it is a 4th class feria, so Our Lady on Saturday applies. Missale Meum agrees with the engine.",
    "dates": [
     "2027-05-08",
@@ -100,6 +106,16 @@
     "2032-05-08",
     "2036-05-24",
     "2039-05-21"
+   ]
+  },
+  {
+   "group": "mount-carmel-on-saturday",
+   "rubric": "no. 112d",
+   "differs": "ordo only: Our Lady of Mt. Carmel",
+   "why": "On Saturday 16 July the Ordo commemorates Our Lady of Mount Carmel in the Saturday office of Our Lady. An office of the Blessed Virgin excludes another commemoration invoking her, and the Missal's rubric for the day lets the Mass be either the Saturday Mass or the proper one, with no commemoration of the other.",
+   "dates": [
+    "2033-07-16",
+    "2039-07-16"
    ]
   }
  ]

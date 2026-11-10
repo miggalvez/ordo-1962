@@ -1,0 +1,8 @@
+{
+ "about": "Hand-written sample in the shape of an SSPX Ordo year response, for testing scripts/compare-ordo.mjs. It is not Ordo data: 26 March agrees with the engine, 27 March names a different St. John, 12 July has the wrong Sunday number, and every other day is absent.",
+ "days": [
+  { "date": "2026-03-26", "celebration": { "name": "Feria" }, "commemorations": [] },
+  { "date": "2026-03-27", "celebration": { "name": "Feria" }, "commemorations": [{ "name": "St. John Chrysostom, Bishop, Confessor and Doctor" }, { "name": "Our Lady of the Seven Sorrows" }] },
+  { "date": "2026-07-12", "celebration": { "name": "IX Sunday after Pentecost" }, "commemorations": [] }
+ ]
+}

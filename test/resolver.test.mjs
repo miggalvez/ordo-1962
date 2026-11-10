@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 
 import { CATALOGUE, resolveDay, resolveYear, tableItem } from '../dist/esm/index.js';
+import { resolveYearWith } from '../dist/esm/resolver.js';
 import { compare } from '../scripts/compare-oracle.mjs';
 
 const YEARS = Array.from({ length: 139 }, (_, i) => 1962 + i);
@@ -97,6 +98,23 @@ test('a 4th class feria takes the colour of its season', () => {
   for (const key of ['pasc5-1', 'pasc5-2']) assert.equal(CATALOGUE.find((entry) => entry.key === key).kind, 'feria');
   // The weeks after Epiphany resumed in November keep their green.
   assert.deepEqual(colours('2027-11-05'), ['epi4-5', ['green']]);
+});
+
+test('a 1st class feast impeded at the end of December is kept in January (no. 96)', () => {
+  // A feast the catalogue does not have, on Christmas day: it yields to Christmas, and every day
+  // to 1 January is of the 1st or 2nd class.
+  const feast = { key: 'test-titular', date: { fixed: '12-25' }, kind: 'feast', class: 1, colors: ['white'], ofTheLord: false, scope: 'national' };
+  const extras = new Map([['12-25', [feast]]]);
+  const january = resolveYearWith(2027, {}, extras).find((day) => day.date === '2027-01-02');
+  assert.deepEqual([january.celebration.key, january.celebration.transferredFrom], ['test-titular', '2026-12-25']);
+  for (let year = 2020; year <= 2050; year += 1) {
+    const kept = resolveYearWith(year, {}, extras).filter((day) => day.celebration.key === 'test-titular');
+    assert.equal(kept.length, 1, `${year}: kept ${kept.length} times`);
+    assert.equal(kept[0].celebration.transferredFrom, `${year - 1}-12-25`);
+    assert.ok(kept[0].date <= `${year}-01-04`, kept[0].date);
+  }
+  // Without such a feast nothing is carried, so the universal calendar is unchanged.
+  assert.equal(resolveDay('2027-01-02').celebration.key, 'our-lady-on-saturday-christmastide');
 });
 
 test('Christmas has its three Masses', () => {

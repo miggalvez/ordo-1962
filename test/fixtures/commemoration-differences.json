@@ -11,21 +11,21 @@
   {
    "pattern": "c1 feast: ours+[feria c3] mm+[]",
    "count": 119,
-   "rubric": "nos. 108e, 111a",
+   "rubric": "nos. 109e, 111a",
    "why": "On a 1st class day the privileged commemoration of an Advent feria is made. Missale Meum omits it.",
    "example": "1962-12-08"
   },
   {
    "pattern": "c1 feast: ours+[Sunday] mm+[]",
    "count": 78,
-   "rubric": "nos. 108a, 111a",
+   "rubric": "nos. 109a, 111a",
    "why": "A 1st class feast that is not of the Lord keeps the Sunday as a privileged commemoration. Missale Meum omits it.",
    "example": "1962-06-24"
   },
   {
    "pattern": "c2 feast: ours+[feria c3] mm+[]",
    "count": 60,
-   "rubric": "nos. 108e, 111c",
+   "rubric": "nos. 109e, 111c",
    "why": "On a 2nd class feast the one commemoration admitted is the privileged one of the Advent feria. Missale Meum omits it.",
    "example": "1964-11-30"
   },
@@ -46,7 +46,7 @@
   {
    "pattern": "c1 within-octave: ours+[commemoration c4] mm+[]",
    "count": 25,
-   "rubric": "nos. 80, 108f, 111a",
+   "rubric": "nos. 80, 109f, 111a",
    "why": "The greater litanies are a privileged commemoration in the Mass, also within the Easter octave from Tuesday. Missale Meum omits them.",
    "example": "1962-04-25"
   },
@@ -60,7 +60,7 @@
   {
    "pattern": "c2 sunday: ours+[commemoration c4] mm+[feast c2]",
    "count": 15,
-   "rubric": "nos. 108f, 111b",
+   "rubric": "nos. 109f, 111b",
    "why": "On a 2nd class Sunday the 2nd class feast of St. Mark is omitted because the privileged commemoration of the greater litanies is made.",
    "example": "1971-04-25"
   },
@@ -81,7 +81,7 @@
   {
    "pattern": "c1 sunday: ours+[commemoration c4] mm+[]",
    "count": 5,
-   "rubric": "nos. 80, 108f, 111a",
+   "rubric": "nos. 80, 109f, 111a",
    "why": "On Low Sunday, 25 April, the greater litanies stay on their day and are a privileged commemoration in the Mass.",
    "example": "1965-04-25"
   },
@@ -91,6 +91,13 @@
    "rubric": "nos. 91, 111c",
    "why": "The Queenship is celebrated with the Vigil of the Ascension as its one commemoration (see oracle-deviations.json).",
    "example": "2000-05-31"
+  },
+  {
+   "pattern": "c4 our-lady-on-saturday: ours+[] mm+[commemoration c4]",
+   "count": 19,
+   "rubric": "no. 112d",
+   "why": "On Saturday 16 July the Saturday office of Our Lady excludes the commemoration of Our Lady of Mount Carmel; the Missal lets the Mass be either one. Missale Meum commemorates her.",
+   "example": "1966-07-16"
   }
  ]
 }

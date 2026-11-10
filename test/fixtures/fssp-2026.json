@@ -10,7 +10,7 @@
     "st-john-damascene"
    ],
    "tests": "a second commemoration on a III class feria",
-   "orderNote": "The FSSP prints the Seven Sorrows first. The table of precedence (no. 113) and the SSPX Ordo put St. John Damascene, a 3rd class feast, before it, and so does the engine."
+   "orderNote": "Unresolved. The FSSP prints the Seven Sorrows first. The table of precedence (no. 113) and the SSPX Ordo put St. John Damascene, a 3rd class feast, before it, and so does the engine. The test accepts either order until a printed ordo settles it."
   },
   {
    "date": "2026-10-25",
@@ -26,7 +26,7 @@
    "commemorations": [
     "pent23-0"
    ],
-   "tests": "a I class feast that is not of the Lord keeps the Sunday as a privileged commemoration (no. 108(a))"
+   "tests": "a I class feast that is not of the Lord keeps the Sunday as a privileged commemoration (no. 109(a))"
   },
   {
    "date": "2026-11-13",

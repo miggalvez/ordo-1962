@@ -1,0 +1,106 @@
+{
+ "about": "Every day of 2026-2040 on which the engine differs from the SSPX Ordo (ordo.fsspx.org, congregation empty), on celebration or commemorations, as reviewed 2026-11-09. Development-time cross-check only; the Ordo data is not in this repository. Run with ORDO_DIR set to a folder of ordo-en-<year>.json files to re-check.",
+ "groups": [
+  {
+   "group": "saturday-christmastide",
+   "rubric": "no. 78",
+   "why": "The Ordo keeps a bare feria on early-January Saturdays. The FSSP 2026 calendar has Our Lady on Saturday (3 and 10 January).",
+   "dates": [
+    "2026-01-03",
+    "2026-01-10",
+    "2027-01-09",
+    "2028-01-08",
+    "2030-01-05",
+    "2030-01-12",
+    "2031-01-04",
+    "2031-01-11",
+    "2032-01-03",
+    "2032-01-10",
+    "2033-01-08",
+    "2034-01-07",
+    "2036-01-05",
+    "2036-01-12",
+    "2037-01-03",
+    "2037-01-10",
+    "2038-01-09",
+    "2039-01-08",
+    "2040-01-07"
+   ]
+  },
+  {
+   "group": "christmas-vigil",
+   "rubric": "no. 30",
+   "why": "The Ordo commemorates the Advent feria on the Vigil of Christmas, which admits no commemoration. The FSSP 2026 calendar prints none.",
+   "dates": [
+    "2026-12-24",
+    "2027-12-24",
+    "2029-12-24",
+    "2030-12-24",
+    "2031-12-24",
+    "2032-12-24",
+    "2035-12-24",
+    "2036-12-24",
+    "2037-12-24",
+    "2038-12-24",
+    "2040-12-24"
+   ]
+  },
+  {
+   "group": "christmas-octave",
+   "rubric": "nos. 108c, 111c",
+   "why": "The Ordo omits the commemoration of the Christmas octave on 26-28 December. The FSSP 2026 calendar prints it.",
+   "dates": [
+    "2026-12-26",
+    "2026-12-28",
+    "2027-12-27",
+    "2027-12-28",
+    "2028-12-26",
+    "2028-12-27",
+    "2028-12-28",
+    "2029-12-26",
+    "2029-12-27",
+    "2029-12-28",
+    "2030-12-26",
+    "2030-12-27",
+    "2030-12-28",
+    "2031-12-26",
+    "2031-12-27",
+    "2032-12-27",
+    "2032-12-28",
+    "2033-12-26",
+    "2033-12-27",
+    "2033-12-28",
+    "2034-12-26",
+    "2034-12-27",
+    "2034-12-28",
+    "2035-12-26",
+    "2035-12-27",
+    "2035-12-28",
+    "2036-12-26",
+    "2036-12-27",
+    "2037-12-26",
+    "2037-12-28",
+    "2038-12-27",
+    "2038-12-28",
+    "2039-12-26",
+    "2039-12-27",
+    "2039-12-28",
+    "2040-12-26",
+    "2040-12-27",
+    "2040-12-28"
+   ]
+  },
+  {
+   "group": "saturday-after-ascension",
+   "rubric": "no. 78",
+   "why": "The Ordo keeps the Saturday after the Ascension as a feria; it is a 4th class feria, so Our Lady on Saturday applies. Missale Meum agrees with the engine.",
+   "dates": [
+    "2027-05-08",
+    "2031-05-24",
+    "2032-05-08",
+    "2036-05-24",
+    "2039-05-21"
+   ]
+  }
+ ]
+}

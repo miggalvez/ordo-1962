@@ -3,10 +3,10 @@
 The Roman calendar of 1962 (1960 Code of Rubrics) for any year, nation,
 institute and church, computed in process with no network calls.
 
-Status: early. The engine decides each day's principal celebration, class and
-colour, including transfers, for the universal calendar. Commemorations, the
-United States and institute propers, and church feasts are not done yet.
-Nothing is published.
+Status: early. The engine decides each day's principal celebration, class,
+colour and commemorations, including transfers, for the universal calendar. The
+United States and institute propers, church feasts and the Masses an ordo offers
+beside the day's own are not done yet. Nothing is published.
 
 ## Use
 
@@ -29,6 +29,24 @@ agrees on all 50,769 days of 1962-2100 except 97, listed with their rubric in
 `test/fixtures/oracle-deviations.json`; on those the SSPX Ordo agrees with this
 engine. `node scripts/compare-oracle.mjs` prints the comparison.
 
+Commemorations follow nos. 106-114 (privileged and ordinary commemorations, the
+number each class admits, the exclusions of no. 112 and the order of no. 113),
+with no. 80 for the greater litanies and no. 110 for the inseparable prayer of
+St. Peter with St. Paul, which is returned in `inseparable`, not counted as a
+commemoration. Missale Meum differs in 13 patterns, all its own gaps (the Sunday
+or Advent feria on a feast, a second commemoration on 3rd and 4th class days),
+listed with their rubric in `test/fixtures/commemoration-differences.json`.
+`node scripts/compare-commemorations.mjs` prints them. Against the SSPX Ordo for
+2026-2040 (development-time check, `scripts/compare-ordo.mjs`), 73 days differ, in
+four groups where the rubrics and the FSSP's 2026 calendar side with the engine
+(`test/fixtures/ordo-differences-2026-2040.json`). Set `ORDO_DIR` to a folder of
+Ordo responses to re-run that check in `npm test`.
+
+```js
+resolveDay('2026-11-30').commemorations;  // ['adv1-1']  (St. Andrew, with the Advent feria)
+resolveDay('2027-01-25').inseparable;     // ['st-peter']
+```
+
 Both `import` and `require` work. Dates are `YYYY-MM-DD` calendar labels with no
 time zone. `npm run build` writes `dist/`; `npm test` builds first.
 
@@ -43,9 +61,10 @@ time zone. `npm run build` writes `dist/`; `npm test` builds first.
 | `data/missalemeum/` | Provenance: source commit, file hashes, all source ids, and Missale Meum's reference lists |
 | `data/layers/pl.json` | Missale Meum's Polish proper as operations on the universal calendar: feasts added, removed, or added in place of another (St. Stanislaus moves from 7 to 8 May), and the order of a day's entries where Poland lists them differently |
 | `data/reviewed/feasts-of-the-lord.json` | Hand-reviewed list behind `ofTheLord`, with the rubric or source for each entry. The rubrics give no complete list |
+| `data/reviewed/additions.json` | Observances of the universal calendar that Missale Meum lacks (St. Barbara on 4 December), with where each was confirmed |
 | `data/oracle/missalemeum-pl/<year>.json` | Missale Meum's Polish calendar for 2026–2028, used to check the Polish layer |
 | `test/fixtures/multiple-celebrations.json` | The 32 days on which Missale Meum lists two celebrations that are not Masses of one feast, with the expected result checked against the SSPX Ordo at development time |
-| `test/fixtures/fssp-2026.json` | Days from the FSSP's published 2026 calendar that Missale Meum gets wrong or cannot express. Their engine tests are marked todo until the engine exists |
+| `test/fixtures/fssp-2026.json` | Days from the FSSP's published 2026 calendar that Missale Meum gets wrong or cannot express. The United States day waits for that layer |
 | `data/oracle/missalemeum/<year>.json` | Missale Meum's own result for every day of 1962–2100, in ordo-1962 keys. The engine's tests compare against it |
 | `scripts/convert_missalemeum.py` | Regenerates the catalogue from a Missale Meum checkout |
 | `scripts/missalemeum_oracle.py` | Regenerates the oracle by running Missale Meum's calendar code |

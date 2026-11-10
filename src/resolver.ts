@@ -1,5 +1,6 @@
 import { dayNumber, easterSunday, fromYmd, toYmd, weekday } from './dates.js';
 import { CATALOGUE } from './generated/data.js';
+import { commemorationsOf, sameDivinePerson } from './commemorations.js';
 import { compareRanked, tableItem, type Ranked } from './precedence.js';
 import { fixedFeasts, temporalYear, type PlacementOptions } from './temporal.js';
 import type { CatalogueEntry, Color, Ymd } from './types.js';
@@ -25,18 +26,9 @@ const VIGIL_OF: Readonly<Record<string, string>> = {
 
 const ALL_SOULS = 'commemoration-of-all-souls';
 const ANNUNCIATION = 'annunciation-of-the-blessed-virgin-mary';
-const TRINITY = 'pent01-0';
+const GREATER_LITANIES = 'for-the-rogations';
 
-/**
- * Whether two feasts honour the same divine Person (no. 95): both are feasts of
- * the Lord. The Trinity is counted among them for precedence but is not a feast
- * of one Person. Two feasts of the same saint need an attribute the catalogue
- * does not carry yet.
- */
-function sameDivinePerson(a: CatalogueEntry, b: CatalogueEntry): boolean {
-  return a.kind === 'feast' && b.kind === 'feast' && a.ofTheLord && b.ofTheLord
-    && a.key !== TRINITY && b.key !== TRINITY;
-}
+// Two feasts of the same saint (also no. 95) need an attribute the catalogue does not carry yet.
 
 /**
  * The colour of the day. A 4th class feria of the weeks after Epiphany takes
@@ -69,6 +61,10 @@ export interface Celebration {
 export interface ResolvedDay {
   readonly date: Ymd;
   readonly celebration: Celebration;
+  /** Commemorations at Mass and in the office, in order (nos. 106-114). */
+  readonly commemorations: readonly string[];
+  /** Inseparable prayers (St. Peter with St. Paul, no. 110); they join a collect and are not counted. */
+  readonly inseparable: readonly string[];
   /** Movable days of the cycle on this date. */
   readonly tempora: readonly string[];
   /** Observances that had a claim on this date and lost it, before commemorations are decided. */
@@ -134,6 +130,8 @@ function resolvePass(year: number, options: PlacementOptions, omittedVigils: Rea
   const lowSunday = easter + 7;
   const first = dayNumber(year, 1, 1);
   const last = dayNumber(year, 12, 31);
+  const april25 = dayNumber(year, 4, 25);
+  const litaniesDay = april25 === easter || april25 === easter + 1 ? easter + 2 : april25;
 
   // Feasts given a rightful place on another date when impeded (no. 96a, 96b).
   const rightfulPlace = new Map<number, Candidate[]>();
@@ -146,10 +144,15 @@ function resolvePass(year: number, options: PlacementOptions, omittedVigils: Rea
     const dayTempora = tempora.get(date) ?? [];
     const sunday = weekday(day) === 0;
 
+    // The greater litanies are on 25 April, or on the Tuesday after Easter when Easter
+    // Sunday or Monday falls on that date (no. 80).
+    const fixedHere = (fixed.get(date) ?? []).filter((key) => key !== GREATER_LITANIES || day === litaniesDay);
+    if (day === litaniesDay && !fixedHere.includes(GREATER_LITANIES)) fixedHere.push(GREATER_LITANIES);
+
     const candidates: Candidate[] = [
       ...dayTempora.map((key) => rank(key, day, true)),
       ...(computedFeasts.get(date) ?? []).map((key) => rank(key, day, true)),
-      ...(fixed.get(date) ?? []).filter((key) => !entryOf(key).formularyOf).map((key) => rank(key, day, false)),
+      ...fixedHere.filter((key) => !entryOf(key).formularyOf).map((key) => rank(key, day, false)),
       ...(rightfulPlace.get(day) ?? []),
     ];
 
@@ -199,32 +202,29 @@ function resolvePass(year: number, options: PlacementOptions, omittedVigils: Rea
       winner = rank(transferred.entry.key, day, false, transferred.transferredFrom);
     }
 
-    let celebration: Celebration;
-    if (!winner) {
-      celebration = feria(day, dayTempora, year);
-    } else if (tableItem(winner) === 28) {
-      // A 4th class feria; on Saturday, the Saturday office of Our Lady (no. 78).
-      celebration = weekday(day) === 6
-        ? celebrationFrom(rank(ourLadyOnSaturday(day, dayTempora, year), day, false), day)
-        : celebrationFrom(winner, day);
+    // A 4th class feria, or no observance at all; on Saturday, the Saturday office of Our Lady (no. 78).
+    let celebrated: Candidate;
+    if (!winner || tableItem(winner) === 28) {
+      celebrated = weekday(day) === 6
+        ? rank(ourLadyOnSaturday(day, dayTempora, year), day, false)
+        : winner ?? rank('feria', day, false);
     } else {
-      celebration = celebrationFrom(winner, day);
+      celebrated = winner;
     }
+    const celebration = celebrationFrom(celebrated, day);
 
+    const omitted = new Set(candidates.filter((c) => VIGIL_OF[c.entry.key] && !contenders.includes(c)).map((c) => c.entry.key));
+    const { commemorations, inseparable } = commemorationsOf(celebrated, candidates, omitted, sunday);
     days.push({
       date,
       celebration,
+      commemorations,
+      inseparable,
       tempora: [...dayTempora],
       displaced: candidates.map((c) => c.entry.key).filter((key) => key !== celebration.key),
     });
   }
   return { days, lostTheirDate };
-}
-
-/** A day with no movable day and no feast: a 4th class feria, or Our Lady on Saturday. */
-function feria(day: number, tempora: readonly string[], year: number): Celebration {
-  if (weekday(day) === 6) return celebrationFrom(rank(ourLadyOnSaturday(day, tempora, year), day, false), day);
-  return celebrationFrom(rank('feria', day, false), day);
 }
 
 /**

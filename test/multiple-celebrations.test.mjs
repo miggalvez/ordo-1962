@@ -40,5 +40,7 @@ for (const rule of [...new Set(fixture.days.map((day) => day.rule))]) {
   test(`engine celebration: ${rule} (${days.length} days)`, () => {
     for (const day of days) assert.equal(resolveDay(day.date).celebration.key, day.expected.celebration, day.date);
   });
-  test(`engine commemorations: ${rule} (${days.length} days)`, { todo: 'commemorations are M4' });
+  test(`engine commemorations: ${rule} (${days.length} days)`, () => {
+    for (const day of days) assert.deepEqual(resolveDay(day.date).commemorations, day.expected.commemorations, day.date);
+  });
 }

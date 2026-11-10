@@ -293,7 +293,7 @@ def assign_keys(source, saved):
     return keys
 
 
-def build(backend, saved_keys, lord_keys):
+def build(backend, saved_keys, lord_keys, additions=None):
     source = read_source(backend)
     ids = source["ids"]
     titles_ = source["titles"]
@@ -397,6 +397,27 @@ def build(backend, saved_keys, lord_keys):
             **({"nation": "pl"} if id_ in polish_added else {}),
         })
 
+    # Observances Missale Meum lacks, added by hand (data/reviewed/additions.json).
+    added_by_hand = additions if additions is not None else load_additions()
+    known_keys = {e["key"] for e in catalogue}
+    for addition in added_by_hand:
+        if addition["key"] in known_keys or addition["key"] in keys.values():
+            problems.append(f"addition {addition['key']} collides with an existing key")
+            continue
+        same_day = [e for e in catalogue if e["date"].get("fixed") == addition["date"]["fixed"] and e["scope"] == "universal"]
+        catalogue.append({
+            "key": addition["key"],
+            "origin": "reviewed",
+            "date": addition["date"],
+            "dayOrder": max((e["dayOrder"] for e in same_day), default=-1) + 1,
+            "kind": addition["kind"],
+            "class": addition["class"],
+            "colors": addition["colors"],
+            "ofTheLord": addition["key"] in lord_keys,
+            "scope": "universal",
+        })
+    catalogue.sort(key=lambda e: e["key"])
+
     replacements = {ids[a]: ids[r] for a, r in NATIONAL_REPLACEMENTS["pl"].items()}
     for added, removed in replacements.items():
         if added not in polish_added or removed not in polish_removed:
@@ -412,6 +433,15 @@ def build(backend, saved_keys, lord_keys):
             + polish_order
         ),
     }
+    for addition in added_by_hand:
+        national = addition.get("replacedIn", {}).get("pl")
+        if not national:
+            continue
+        op = next((o for o in layer_pl["operations"] if o["op"] == "add" and o["key"] == national), None)
+        if op is None or "replaces" in op:
+            problems.append(f"{addition['key']}: cannot be replaced by {national} in the Polish layer")
+        else:
+            op["replaces"] = addition["key"]
 
     reference_out = {
         "TEMPORA_RANK_MAP": "Advent ferias from 17 to 23 December are II class (common.py TEMPORA_RANK_MAP)",
@@ -422,6 +452,10 @@ def build(backend, saved_keys, lord_keys):
 
     names = {lang: {keys[i]: table[i] for i in sorted(reachable, key=lambda i: keys[i]) if i in table}
              for lang, table in titles_.items()}
+    for addition in added_by_hand:
+        for lang, title in addition["names"].items():
+            names.setdefault(lang, {})[addition["key"]] = title
+    names = {lang: dict(sorted(table.items())) for lang, table in names.items()}
     key_at = {e["date"]["temporal"]: e["key"] for e in catalogue if "temporal" in e["date"]}
     for position in REVIEWED_COLORS:
         if position.lower() not in key_at:
@@ -466,6 +500,10 @@ def build(backend, saved_keys, lord_keys):
         "problems": problems,
     }
     return outputs, summary
+
+
+def load_additions():
+    return json.loads((DATA / "reviewed" / "additions.json").read_text())["observances"]
 
 
 def load_lord_keys():

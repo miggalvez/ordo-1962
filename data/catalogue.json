@@ -6651,6 +6651,21 @@
   "scope": "universal"
  },
  {
+  "key": "st-barbara",
+  "origin": "reviewed",
+  "date": {
+   "fixed": "12-04"
+  },
+  "dayOrder": 1,
+  "kind": "commemoration",
+  "class": 4,
+  "colors": [
+   "red"
+  ],
+  "ofTheLord": false,
+  "scope": "universal"
+ },
+ {
   "key": "st-barnabas",
   "sourceId": "sancti:06-11:3:r",
   "date": {

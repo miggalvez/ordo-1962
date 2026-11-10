@@ -80,7 +80,8 @@
   },
   {
    "op": "add",
-   "key": "pl-st-barbarae-virginis-et-martyris"
+   "key": "pl-st-barbarae-virginis-et-martyris",
+   "replaces": "st-barbara"
   },
   {
    "op": "add",

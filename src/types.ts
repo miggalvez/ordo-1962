@@ -21,7 +21,9 @@ export type DateRule =
 
 export interface CatalogueEntry {
   readonly key: string;
-  readonly sourceId: string;
+  /** Missale Meum's id. Absent on an observance added by hand (`origin: 'reviewed'`). */
+  readonly sourceId?: string;
+  readonly origin?: 'reviewed';
   readonly sourceAliases?: readonly string[];
   readonly date: DateRule;
   /** Position among the universal entries of the same fixed date, as the calendar lists them. */

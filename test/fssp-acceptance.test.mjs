@@ -40,5 +40,9 @@ for (const day of fixture.days) {
     const { celebration } = resolveDay(day.date);
     assert.equal(celebration.key, day.celebration);
   });
-  test(`engine commemorations match the FSSP on ${day.date}: ${day.tests}`, { todo: 'commemorations are M4' });
+  test(`engine commemorations match the FSSP on ${day.date}: ${day.tests}`, () => {
+    const { commemorations } = resolveDay(day.date);
+    if (day.orderNote) assert.deepEqual([...commemorations].sort(), [...day.commemorations].sort());
+    else assert.deepEqual(commemorations, day.commemorations);
+  });
 }

@@ -37,7 +37,13 @@ test('a key is shared only by ids for the same movable day', () => {
 
 test('catalogue entries are unique and agree with the key map', () => {
   assert.equal(byKey.size, catalogue.length);
+  const additions = new Set(read('reviewed/additions.json').observances.map((o) => o.key));
   for (const entry of catalogue) {
+    if (entry.origin === 'reviewed') {
+      assert.ok(additions.has(entry.key) && !entry.sourceId, entry.key);
+      assert.ok(!Object.values(keys).includes(entry.key), `${entry.key} is also a Missale Meum key`);
+      continue;
+    }
     assert.equal(keys[entry.sourceId], entry.key, entry.sourceId);
     for (const alias of entry.sourceAliases || []) assert.equal(keys[alias], entry.key, alias);
   }

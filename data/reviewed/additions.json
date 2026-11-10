@@ -1,0 +1,15 @@
+{
+ "about": "Observances of the 1962 universal calendar that Missale Meum does not carry, added by hand. Each names where it was confirmed.",
+ "observances": [
+  {
+   "key": "st-barbara",
+   "date": { "fixed": "12-04" },
+   "kind": "commemoration",
+   "class": 4,
+   "colors": ["red"],
+   "names": { "la": "S. Barbarae Virginis et Martyris", "en": "St. Barbara, Virgin and Martyr" },
+   "replacedIn": { "pl": "pl-st-barbarae-virginis-et-martyris" },
+   "source": "Commemorated on 4 December in the FSSP seminary's 2026 calendar and in the SSPX Ordo for 2026-2040; Missale Meum has her only in its Polish proper."
+  }
+ ]
+}

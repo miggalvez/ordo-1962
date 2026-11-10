@@ -1,0 +1,46 @@
+{
+ "about": "Every day of 2026 on which the FSSP ordo of the engine (src/ordo.ts with data/ordos/fssp.json, and the United States and FSSP layers) differs from the FSSP seminary's page (fsspolgs.org/liturgical-calendar, read 2026-11-09): the first printed row against the ordo's first Mass, its class and commemorations, and every other row against the Masses the ordo lists. The page is not in this repository; set FSSP_PAGE to a saved copy to re-check. On the other 342 days the first row is the ordo's first Mass and every row is one the ordo lists.",
+ "groups": [
+  {
+   "group": "the page prints first another Mass the ordo offers",
+   "why": "The page puts first a Mass the engine also lists for the day, but no rule of data/ordos/fssp.json does so: on other days of the same kind the page prints the Mass of the day first. The Mass of a commemorated saint first on 14 February, 17 April and 24 September, but second on every other 4th class day with a commemoration (19 January, 3 February, 20 June and others); the Rogation Mass first on Monday 11 May, second on 25 April, 12 and 13 May; a Mass for certain places first on 27 June and 27 November, second on 8 May, 6 July, 1 and 3 August, 5 November. On 17 April and 24 September the page prints no other row.",
+   "days": {
+    "2026-02-14": "page first: st-valentine, ours 2 of 2; ours first: our-lady-on-saturday-after-purification",
+    "2026-04-17": "page first: st-anicetus, ours 2 of 2; ours first: pasc1-5",
+    "2026-05-11": "page first: rogation-mass, ours 2 of 2; ours first: sts-philip-and-james",
+    "2026-06-27": "page first: our-lady-of-perpetual-help, ours 2 of 2; ours first: our-lady-on-saturday-after-pentecost",
+    "2026-09-24": "page first: our-lady-of-ransom, ours 2 of 2; ours first: pent17-4",
+    "2026-11-27": "page first: our-lady-of-the-miraculous-medal, ours 2 of 2; ours first: pent24-5"
+   }
+  },
+  {
+   "group": "the page offers a Mass the rubrics do not permit that day",
+   "why": "On a day the United States keeps a 3rd class feast, the page also prints the Masses of the universal calendar's day. The Mass of a commemoration is permitted only on a 4th class day (no. 303b): St. Telesphorus on 5 January and St. Gorgonius on 9 September are commemorated on a 3rd class feast. A feria's Mass is not a festive Mass in the broad sense (no. 302): the feria of 9 September and the Advent feria of 12 December are impeded by a 3rd class feast.",
+   "days": {
+    "2026-01-05": "not ours: St. Telesphorus Pope & Martyr",
+    "2026-09-09": "not ours: St. Gorgonius, Martyr; Feria",
+    "2026-12-12": "not ours: Feria of Advent"
+   }
+  },
+  {
+   "group": "the calendar differs from the page",
+   "why": "The first Mass is the day's own and the difference is in the calendar, reviewed in test/fixtures/fssp-2026-differences.json: the page differs from the rubrics (1 and 11 January, 28 June, 8 September, 16 and 17 December), the Fraternity's own feast is not on the page (23 February), commemorations in another order (27 March, 1 September, 21 October, 4 December), and a Mass for certain places commemorated in the row of the day (8 May, 4 July, 6 July). On 4 July the first row is the votive Mass of the Immaculate Heart, as the engine has it, with the Mass for certain places commemorated.",
+   "days": {
+    "2026-01-01": "class 1 / 2",
+    "2026-01-11": "class 2 / 1 | page only: First Sunday after Epiphany",
+    "2026-02-23": "page first: Feria of Lent, not ours; ours first: chair-of-st-peter",
+    "2026-03-27": "order",
+    "2026-05-08": "page only: Apparition of St. Michael the Archangel; Our Lady, Mediatrix of all Graces",
+    "2026-06-28": "page only: Vigil of Ss. Peter and Paul, Apostles",
+    "2026-07-04": "page only: Commemoration of All Holy Popes",
+    "2026-07-06": "page only: St. Maria Goretti, Virgin & Martyr",
+    "2026-09-01": "order",
+    "2026-09-08": "ours only: st-hadrian",
+    "2026-10-21": "order",
+    "2026-12-04": "order",
+    "2026-12-16": "page only: Feria of Advent",
+    "2026-12-17": "page only: Feria of Advent"
+   }
+  }
+ ]
+}

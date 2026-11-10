@@ -1,0 +1,365 @@
+2027-01-01 octave-day-of-christmas day 1
+2027-01-02 votive-immaculate-heart-of-mary votive 3 / our-lady-on-saturday-christmastide day 4
+2027-01-03 nat2-0 day 2
+2027-01-04 feria day 4
+2027-01-05 us-st-john-neumann day 3 (st-telesphorus-pope-and-martyr)
+2027-01-06 epiphany-of-the-lord day 1
+2027-01-07 votive-jesus-christ-the-eternal-high-priest votive 3 / feria day 4
+2027-01-08 feria day 4
+2027-01-09 our-lady-on-saturday-christmastide day 4
+2027-01-10 epi1-0 day 2
+2027-01-11 epi1-1 day 4 (st-hyginus-pope-and-martyr) / st-hyginus-pope-and-martyr commemoration 4
+2027-01-12 epi1-2 day 4
+2027-01-13 commemoration-of-the-baptism-of-the-lord day 2
+2027-01-14 st-hilary day 3 (st-felix)
+2027-01-15 st-paul-the-first-hermit day 3 (st-maur-abbot)
+2027-01-16 st-marcellus-i day 3
+2027-01-17 epi2-0 day 2
+2027-01-18 epi2-1 day 4 (st-prisca) / st-prisca commemoration 4
+2027-01-19 epi2-2 day 4 (sts-marius-martha-audifax-and-abachum, st-canute-martyr) / sts-marius-martha-audifax-and-abachum commemoration 4 (st-canute-martyr) / st-canute-martyr commemoration 4 (sts-marius-martha-audifax-and-abachum)
+2027-01-20 sts-fabian-and-sebastian day 3
+2027-01-21 st-agnes day 3
+2027-01-22 sts-vincent-and-anastasius day 3
+2027-01-23 st-raymond-of-penafort day 3 (st-emerentiana)
+2027-01-24 quadp1-0 day 2
+2027-01-25 conversion-of-st-paul day 3
+2027-01-26 st-polycarp day 3
+2027-01-27 st-john-chrysostom day 3
+2027-01-28 st-peter-nolasco day 3 (st-agnes-01-28t)
+2027-01-29 st-francis-de-sales day 3
+2027-01-30 st-martina day 3
+2027-01-31 quadp2-0 day 2
+2027-02-01 st-ignatius-of-antioch day 3
+2027-02-02 purification-of-the-blessed-virgin-mary day 2
+2027-02-03 quadp2-3 day 4 (st-blaise) / st-blaise commemoration 4
+2027-02-04 st-andrew-corsini day 3 / votive-jesus-christ-the-eternal-high-priest votive 3 (st-andrew-corsini)
+2027-02-05 st-agatha day 3 / votive-sacred-heart-of-jesus votive 3 (st-agatha)
+2027-02-06 st-titus day 3 (st-dorothy) / votive-immaculate-heart-of-mary votive 3 (st-titus, st-dorothy)
+2027-02-07 quadp3-0 day 2
+2027-02-08 st-john-of-matha day 3
+2027-02-09 st-cyril-of-alexandria day 3 (st-apollonia)
+2027-02-10 quadp3-3 day 1
+2027-02-11 quadp3-4 day 3 (our-lady-of-lourdes)
+2027-02-12 quadp3-5 day 3 (seven-holy-servite-founders)
+2027-02-13 quadp3-6 day 3
+2027-02-14 quad1-0 day 1
+2027-02-15 quad1-1 day 3 (sts-faustinus-and-jovita)
+2027-02-16 quad1-2 day 3
+2027-02-17 quad1-3 day 2
+2027-02-18 quad1-4 day 3 (st-simeon)
+2027-02-19 quad1-5 day 2
+2027-02-20 quad1-6 day 2
+2027-02-21 quad2-0 day 1
+2027-02-22 chair-of-st-peter day 1 (quad2-1)
+2027-02-23 quad2-2 day 3 (st-peter-damian)
+2027-02-24 st-matthias day 2 (quad2-3)
+2027-02-25 quad2-4 day 3
+2027-02-26 quad2-5 day 3
+2027-02-27 quad2-6 day 3 (st-gabriel-of-our-lady-of-sorrows)
+2027-02-28 quad3-0 day 1
+2027-03-01 quad3-1 day 3
+2027-03-02 quad3-2 day 3
+2027-03-03 quad3-3 day 3
+2027-03-04 quad3-4 day 3 (st-casimir, st-lucius)
+2027-03-05 quad3-5 day 3
+2027-03-06 quad3-6 day 3 (sts-felicitas-and-perpetua)
+2027-03-07 quad4-0 day 1
+2027-03-08 quad4-1 day 3 (st-john-of-god)
+2027-03-09 quad4-2 day 3 (st-frances-of-rome)
+2027-03-10 quad4-3 day 3 (forty-holy-martyrs-of-sebaste)
+2027-03-11 quad4-4 day 3
+2027-03-12 quad4-5 day 3 (st-gregory-the-great)
+2027-03-13 quad4-6 day 3
+2027-03-14 quad5-0 day 1
+2027-03-15 quad5-1 day 3
+2027-03-16 quad5-2 day 3
+2027-03-17 quad5-3 day 3 (st-patrick)
+2027-03-18 quad5-4 day 3 (st-cyril-of-jerusalem)
+2027-03-19 st-joseph-spouse-of-the-bl-virgin-mary day 1 (quad5-5)
+2027-03-20 quad5-6 day 3
+2027-03-21 quad6-0 day 1
+2027-03-22 quad6-1 day 1
+2027-03-23 quad6-2 day 1
+2027-03-24 quad6-3 day 1
+2027-03-25 quad6-4 day 1
+2027-03-26 quad6-5 day 1
+2027-03-27 quad6-6 day 1
+2027-03-28 pasc0-0 day 1
+2027-03-29 pasc0-1 day 1
+2027-03-30 pasc0-2 day 1
+2027-03-31 pasc0-3 day 1
+2027-04-01 pasc0-4 day 1
+2027-04-02 pasc0-5 day 1
+2027-04-03 pasc0-6 day 1
+2027-04-04 pasc1-0 day 1
+2027-04-05 annunciation-of-the-blessed-virgin-mary day 1
+2027-04-06 pasc1-2 day 4
+2027-04-07 pasc1-3 day 4
+2027-04-08 pasc1-4 day 4
+2027-04-09 pasc1-5 day 4
+2027-04-10 our-lady-on-saturday-paschaltide day 4
+2027-04-11 pasc2-0 day 2
+2027-04-12 pasc2-1 day 4
+2027-04-13 st-hermenegild day 3
+2027-04-14 st-justin day 3 (sts-tiburtius-valerian-and-maximus-martyrs)
+2027-04-15 pasc2-4 day 4
+2027-04-16 pasc2-5 day 4
+2027-04-17 our-lady-on-saturday-paschaltide day 4 (st-anicetus) / st-anicetus commemoration 4
+2027-04-18 pasc3-0 day 2
+2027-04-19 pasc3-1 day 4
+2027-04-20 pasc3-2 day 4
+2027-04-21 st-anselm day 3
+2027-04-22 sts-soter-and-caius day 3
+2027-04-23 pasc3-5 day 4 (st-george) / st-george commemoration 4
+2027-04-24 st-fidelis-of-sigmaringen day 3
+2027-04-25 pasc4-0 day 2 (for-the-rogations) / rogation-mass rogation 2 (pasc4-0)
+2027-04-26 sts-cletus-and-marcellinus day 3
+2027-04-27 st-peter-canisius day 3
+2027-04-28 st-paul-of-the-cross day 3
+2027-04-29 st-peter-of-verona day 3
+2027-04-30 st-catherine-of-siena day 3
+2027-05-01 st-joseph-the-workman day 1
+2027-05-02 pasc5-0 day 2
+2027-05-03 pasc5-1 day 4 (sts-alexander-and-companions) / sts-alexander-and-companions commemoration 4 / rogation-mass rogation 2 (sts-alexander-and-companions)
+2027-05-04 st-monica day 3 / rogation-mass rogation 2 (st-monica)
+2027-05-05 pasc5-3 day 2 (st-pius-v) / rogation-mass rogation 2 (pasc5-3)
+2027-05-06 pasc5-4 day 1
+2027-05-07 st-stanislaus day 3 / votive-sacred-heart-of-jesus votive 3 (st-stanislaus)
+2027-05-08 our-lady-on-saturday-paschaltide day 4 / apparition-of-st-michael for-certain-places 4 / our-lady-mediatrix-of-all-graces for-certain-places 4
+2027-05-09 pasc6-0 day 2
+2027-05-10 st-antoninus day 3 (sts-gordian-and-epimachus)
+2027-05-11 sts-philip-and-james day 2
+2027-05-12 sts-nereus-achilleus-domitilla-and-pancras day 3
+2027-05-13 st-robert-bellarmine day 3
+2027-05-14 pasc6-5 day 4 (st-boniface) / st-boniface commemoration 4
+2027-05-15 pasc6-6 day 1
+2027-05-16 pasc7-0 day 1
+2027-05-17 pasc7-1 day 1
+2027-05-18 pasc7-2 day 1
+2027-05-19 pasc7-3 day 1
+2027-05-20 pasc7-4 day 1
+2027-05-21 pasc7-5 day 1
+2027-05-22 pasc7-6 day 1
+2027-05-23 pent01-0 day 1
+2027-05-24 pent01-1 day 4
+2027-05-25 st-gregory-vii day 3 (st-urban-pope-and-martyr)
+2027-05-26 st-philip-neri day 3 (st-eleutherius)
+2027-05-27 pent01-4 day 1
+2027-05-28 st-augustine-of-canterbury day 3
+2027-05-29 st-mary-magdalene-de-pazzi day 3
+2027-05-30 pent02-0 day 2 / pent01-4 external-solemnity 2
+2027-05-31 queenship-of-the-blessed-virgin-mary day 2 (st-petronilla)
+2027-06-01 st-angela-merici day 3
+2027-06-02 pent02-3 day 4 (sts-marcellinus-peter-and-erasmus) / sts-marcellinus-peter-and-erasmus commemoration 4
+2027-06-03 votive-jesus-christ-the-eternal-high-priest votive 3 / pent02-4 day 4
+2027-06-04 pent02-5 day 1
+2027-06-05 st-boniface-06-05 day 3 / votive-immaculate-heart-of-mary votive 3 (st-boniface-06-05)
+2027-06-06 pent03-0 day 2 / pent02-5 external-solemnity 2
+2027-06-07 pent03-1 day 4
+2027-06-08 pent03-2 day 4
+2027-06-09 pent03-3 day 4 (sts-primus-and-felicianus) / sts-primus-and-felicianus commemoration 4
+2027-06-10 st-margaret-of-scotland day 3
+2027-06-11 st-barnabas day 3
+2027-06-12 st-john-of-san-facundo day 3 (st-basilides)
+2027-06-13 pent04-0 day 2
+2027-06-14 st-basil-the-great day 3
+2027-06-15 pent04-2 day 4 (st-vitus) / st-vitus commemoration 4
+2027-06-16 pent04-3 day 4
+2027-06-17 st-gregory-barbarigo day 3
+2027-06-18 st-ephrem-of-syria day 3 (sts-marcus-and-marcellianus)
+2027-06-19 st-juliana-falconieri day 3 (sts-gervasius-and-protasius)
+2027-06-20 pent05-0 day 2
+2027-06-21 st-aloysius-gonzaga day 3
+2027-06-22 st-paulinus-of-nola day 3
+2027-06-23 vigil-of-the-nativity-of-st-john-the-baptist day 2
+2027-06-24 nativity-of-st-john-the-baptist day 1
+2027-06-25 st-william day 3
+2027-06-26 sts-john-and-paul day 3
+2027-06-27 pent06-0 day 2
+2027-06-28 vigil-of-sts-peter-and-paul day 2
+2027-06-29 sts-peter-and-paul day 1
+2027-06-30 commemoration-of-st-paul-the-apostle day 3
+2027-07-01 the-precious-blood-of-our-lord-jesus-christ day 1
+2027-07-02 visitation-of-the-blessed-virgin-mary day 2 (sts-processus-and-martinian)
+2027-07-03 st-irenaeus day 3 / votive-immaculate-heart-of-mary votive 3 (st-irenaeus)
+2027-07-04 pent07-0 day 2 / sts-peter-and-paul external-solemnity 2 (pent07-0)
+2027-07-05 st-anthony-mary-zaccaria day 3
+2027-07-06 pent07-2 day 4 / st-maria-goretti for-certain-places 4
+2027-07-07 sts-cyril-and-methodius day 3
+2027-07-08 st-elizabeth-of-portugal day 3
+2027-07-09 pent07-5 day 4
+2027-07-10 seven-holy-brothers-and-sts-rufina-and-secunda day 3
+2027-07-11 pent08-0 day 2
+2027-07-12 st-john-gualbert day 3 (sts-nabor-and-felix)
+2027-07-13 pent08-2 day 4
+2027-07-14 st-bonaventure day 3
+2027-07-15 st-henry-the-emperor day 3
+2027-07-16 pent08-5 day 4 (our-lady-of-mt-carmel) / our-lady-of-mt-carmel commemoration 4
+2027-07-17 our-lady-on-saturday-after-pentecost day 4 (st-alexis) / st-alexis commemoration 4
+2027-07-18 pent09-0 day 2
+2027-07-19 st-vincent-de-paul day 3
+2027-07-20 st-jerome-emiliani day 3 (st-margaret)
+2027-07-21 st-laurence-of-brindisi day 3 (st-praxedes-virgin)
+2027-07-22 st-mary-magdalene day 3
+2027-07-23 st-apollinaris day 3 (st-liborius)
+2027-07-24 our-lady-on-saturday-after-pentecost day 4 (st-christina) / st-christina commemoration 4
+2027-07-25 pent10-0 day 2 (st-james-the-greater)
+2027-07-26 st-anne-mother-of-the-blessed-virgin day 2
+2027-07-27 pent10-2 day 4 (st-pantaleon) / st-pantaleon commemoration 4
+2027-07-28 sts-nazarius-and-celsus-st-victor-i-and-st-innocent-i day 3
+2027-07-29 st-martha day 3 (sts-felix-simplicius-faustinus-and-beatrice)
+2027-07-30 pent10-5 day 4 (sts-abdon-and-sennen) / sts-abdon-and-sennen commemoration 4
+2027-07-31 st-ignatius-loyola day 3
+2027-08-01 pent11-0 day 2
+2027-08-02 st-alphonsus-liguori day 3 (st-stephen-i-pope-and-martyr)
+2027-08-03 pent11-2 day 4 / finding-of-st-stephen for-certain-places 4
+2027-08-04 st-dominic day 3
+2027-08-05 dedication-of-the-basilica-of-st-mary-major day 3 / votive-jesus-christ-the-eternal-high-priest votive 3 (dedication-of-the-basilica-of-st-mary-major)
+2027-08-06 transfiguration-of-our-lord day 2 (pope-sixtus-ii-felicissimus-and-agapitus-martyrs)
+2027-08-07 st-cajetan day 3 (st-donatus) / votive-immaculate-heart-of-mary votive 3 (st-cajetan, st-donatus)
+2027-08-08 pent12-0 day 2
+2027-08-09 vigil-of-st-lawrence day 3 (st-romanus)
+2027-08-10 st-lawrence day 2
+2027-08-11 pent12-3 day 4 (sts-tiburtius-and-susanna) / sts-tiburtius-and-susanna commemoration 4
+2027-08-12 st-clare day 3
+2027-08-13 pent12-5 day 4 (sts-hippolytus-and-cassian) / sts-hippolytus-and-cassian commemoration 4
+2027-08-14 vigil-of-the-assumption day 2 (st-eusebius)
+2027-08-15 assumption-of-the-blessed-virgin-mary day 1 (pent13-0)
+2027-08-16 st-joachim-father-of-the-blessed-virgin day 2
+2027-08-17 st-hyacinth day 3
+2027-08-18 pent13-3 day 4 (st-agapitus) / st-agapitus commemoration 4
+2027-08-19 st-john-eudes day 3
+2027-08-20 st-bernard-of-clairvaux day 3
+2027-08-21 st-jane-frances-de-chantal day 3
+2027-08-22 pent14-0 day 2 (immaculate-heart-of-mary)
+2027-08-23 st-philip-benizi day 3
+2027-08-24 st-bartholomew day 2
+2027-08-25 st-louis-ix day 3
+2027-08-26 pent14-4 day 4 (st-zephyrinus) / st-zephyrinus commemoration 4
+2027-08-27 st-joseph-calasance day 3
+2027-08-28 st-augustine day 3 (st-hermes)
+2027-08-29 pent15-0 day 2
+2027-08-30 st-rose-of-lima day 3 (sts-felix-and-adauctus)
+2027-08-31 st-raymond-nonnatus day 3
+2027-09-01 pent15-3 day 4 (st-giles, twelve-holy-brothers-martyrs) / st-giles commemoration 4 (twelve-holy-brothers-martyrs) / twelve-holy-brothers-martyrs commemoration 4 (st-giles)
+2027-09-02 st-stephen-of-hungary day 3 / votive-jesus-christ-the-eternal-high-priest votive 3 (st-stephen-of-hungary)
+2027-09-03 st-pius-x day 3 / votive-sacred-heart-of-jesus votive 3 (st-pius-x)
+2027-09-04 votive-immaculate-heart-of-mary votive 3 / our-lady-on-saturday-after-pentecost day 4
+2027-09-05 pent16-0 day 2
+2027-09-06 pent16-1 day 4
+2027-09-07 pent16-2 day 4
+2027-09-08 nativity-of-the-blessed-virgin-mary day 2 (st-hadrian)
+2027-09-09 us-st-peter-claver day 3 (st-gorgonius)
+2027-09-10 st-nicholas-of-tolentino day 3
+2027-09-11 our-lady-on-saturday-after-pentecost day 4 (sts-protus-and-hyacinth) / sts-protus-and-hyacinth commemoration 4
+2027-09-12 pent17-0 day 2
+2027-09-13 pent17-1 day 4
+2027-09-14 exaltation-of-the-holy-cross day 2
+2027-09-15 seven-sorrows-of-the-blessed-virgin-mary day 2 (st-nicomedes)
+2027-09-16 sts-cornelius-and-cyprian day 3 (sts-euphemia-lucy-and-geminianus)
+2027-09-17 pent17-5 day 4 (stigmata-of-st-francis) / stigmata-of-st-francis commemoration 4
+2027-09-18 st-joseph-of-cupertino day 3
+2027-09-19 pent18-0 day 2
+2027-09-20 pent18-1 day 4 (sts-eustace-and-companions) / sts-eustace-and-companions commemoration 4
+2027-09-21 st-matthew day 2
+2027-09-22 sep-ember-3 day 2 (st-thomas-of-villanova)
+2027-09-23 st-linus day 3 (st-thecla)
+2027-09-24 sep-ember-5 day 2 (our-lady-of-ransom)
+2027-09-25 sep-ember-6 day 2
+2027-09-26 pent19-0 day 2
+2027-09-27 sts-cosmas-and-damian day 3
+2027-09-28 st-wenceslaus day 3
+2027-09-29 dedication-of-st-michael-the-archangel day 1
+2027-09-30 st-jerome day 3
+2027-10-01 votive-sacred-heart-of-jesus votive 3 (st-remigius) / pent19-5 day 4 (st-remigius) / st-remigius commemoration 4
+2027-10-02 holy-guardian-angels day 3 / votive-immaculate-heart-of-mary votive 3 (holy-guardian-angels)
+2027-10-03 pent20-0 day 2 / our-lady-of-the-rosary external-solemnity 2 (pent20-0)
+2027-10-04 st-francis-of-assisi day 3
+2027-10-05 pent20-2 day 4 (st-placid-and-companions) / st-placid-and-companions commemoration 4
+2027-10-06 st-bruno day 3
+2027-10-07 our-lady-of-the-rosary day 2 (st-mark-i)
+2027-10-08 st-bridget-of-sweden day 3 (sts-sergius-bacchus-marcellus-and-apuleius-martyrs)
+2027-10-09 st-john-leonardi day 3 (st-dionysius-and-companions)
+2027-10-10 pent21-0 day 2
+2027-10-11 maternity-of-the-blessed-virgin-mary day 2
+2027-10-12 pent21-2 day 4
+2027-10-13 st-edward day 3
+2027-10-14 st-callistus-i day 3
+2027-10-15 st-teresa-of-avila day 3
+2027-10-16 st-hedwig day 3
+2027-10-17 pent22-0 day 2
+2027-10-18 st-luke-the-evangelist day 2
+2027-10-19 st-peter-of-alcantara day 3
+2027-10-20 st-john-cantius day 3
+2027-10-21 pent22-4 day 4 (st-hilarion, st-ursula-and-companions) / st-hilarion commemoration 4 (st-ursula-and-companions) / st-ursula-and-companions commemoration 4 (st-hilarion)
+2027-10-22 pent22-5 day 4
+2027-10-23 st-anthony-mary-claret day 3
+2027-10-24 pent23-0 day 2
+2027-10-25 pent23-1 day 4 (sts-chrysanthus-and-daria) / sts-chrysanthus-and-daria commemoration 4
+2027-10-26 pent23-2 day 4 (st-evaristus) / st-evaristus commemoration 4
+2027-10-27 pent23-3 day 4
+2027-10-28 sts-simon-and-jude day 2
+2027-10-29 pent23-5 day 4
+2027-10-30 our-lady-on-saturday-after-pentecost day 4
+2027-10-31 christ-the-king day 1
+2027-11-01 all-saints day 1
+2027-11-02 commemoration-of-all-souls day 1 / commemoration-of-all-souls-second-mass day 1 / commemoration-of-all-souls-third-mass day 1
+2027-11-03 requiem-daily requiem 3 / epi4-3 day 4
+2027-11-04 st-charles-borromeo day 3 (sts-vitalis-and-agricola-martyrs) / votive-jesus-christ-the-eternal-high-priest votive 3 (st-charles-borromeo, sts-vitalis-and-agricola-martyrs) / requiem-daily requiem 3
+2027-11-05 requiem-daily requiem 3 / epi4-5 day 4 / votive-sacred-heart-of-jesus votive 3 / holy-relics for-certain-places 4
+2027-11-06 requiem-daily requiem 3 / our-lady-on-saturday-after-pentecost day 4 / votive-immaculate-heart-of-mary votive 3
+2027-11-07 epi5-0 day 2
+2027-11-08 requiem-daily requiem 3 / epi5-1 day 4 (four-holy-crowned-martyrs) / four-holy-crowned-martyrs commemoration 4
+2027-11-09 dedication-of-the-archbasilica-of-our-holy-savior day 2 (st-theodore)
+2027-11-10 st-andrew-avellino day 3 (sts-tryphon-respicius-and-nympha)
+2027-11-11 st-martin-of-tours day 3 (st-menas)
+2027-11-12 st-martin-i day 3
+2027-11-13 us-st-frances-xavier-cabrini day 3 (st-didacus) / st-didacus impeded-feast 3 (us-st-frances-xavier-cabrini)
+2027-11-14 epi6-0 day 2
+2027-11-15 st-albert-the-great day 3
+2027-11-16 st-gertrude-the-great day 3
+2027-11-17 st-gregory-the-wonderworker day 3
+2027-11-18 dedication-of-the-basilicas-of-sts-peter-and-paul day 3
+2027-11-19 st-elizabeth-of-hungary day 3 (st-pontian)
+2027-11-20 st-felix-of-valois day 3
+2027-11-21 pent24-0 day 2
+2027-11-22 st-cecilia day 3
+2027-11-23 st-clement-i day 3 (st-felicity)
+2027-11-24 st-john-of-the-cross day 3 (st-chrysogonus)
+2027-11-25 st-catherine-of-alexandria day 3
+2027-11-26 st-sylvester-gozzolini day 3 (st-peter-of-alexandria)
+2027-11-27 our-lady-on-saturday-after-pentecost day 4 / our-lady-of-the-miraculous-medal for-certain-places 4
+2027-11-28 adv1-0 day 1
+2027-11-29 adv1-1 day 3 (st-saturninus)
+2027-11-30 st-andrew day 2 (adv1-2)
+2027-12-01 adv1-3 day 3
+2027-12-02 st-vivian day 3 (adv1-4) / votive-jesus-christ-the-eternal-high-priest votive 3 (adv1-4, st-vivian)
+2027-12-03 st-francis-xavier day 3 (adv1-5) / votive-sacred-heart-of-jesus votive 3 (adv1-5, st-francis-xavier)
+2027-12-04 st-peter-chrysologus day 3 (adv1-6, st-barbara) / votive-immaculate-heart-of-mary votive 3 (adv1-6, st-peter-chrysologus)
+2027-12-05 adv2-0 day 1
+2027-12-06 st-nicholas day 3 (adv2-1)
+2027-12-07 st-ambrose day 3 (adv2-2)
+2027-12-08 immaculate-conception-of-the-blessed-virgin-mary day 1 (adv2-3)
+2027-12-09 adv2-4 day 3
+2027-12-10 adv2-5 day 3 (st-melchiades)
+2027-12-11 st-damasus-i day 3 (adv2-6)
+2027-12-12 adv3-0 day 1
+2027-12-13 st-lucy day 3 (adv3-1)
+2027-12-14 adv3-2 day 3
+2027-12-15 adv3-3 day 2
+2027-12-16 st-eusebius-12-16 day 3 (adv3-4)
+2027-12-17 adv3-5 day 2
+2027-12-18 adv3-6 day 2
+2027-12-19 adv4-0 day 1
+2027-12-20 adv4-1 day 2
+2027-12-21 st-thomas-the-apostle day 2 (adv4-2)
+2027-12-22 adv4-3 day 2
+2027-12-23 adv4-4 day 2
+2027-12-24 vigil-of-christmas day 1
+2027-12-25 the-nativity-of-our-lord day 1 / the-nativity-of-our-lord-morning-mass day 1 / the-nativity-of-our-lord-day-mass day 1
+2027-12-26 nat1-0 day 2 (st-stephen)
+2027-12-27 st-john-the-evangelist day 2 (for-octave-of-the-nativity-12-27c)
+2027-12-28 holy-innocents day 2 (for-octave-of-the-nativity-12-28c)
+2027-12-29 nat1-1 day 2 (st-thomas-becket)
+2027-12-30 nat1-1 day 2
+2027-12-31 nat1-1 day 2 (st-sylvester-i-pope)

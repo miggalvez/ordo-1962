@@ -5,15 +5,17 @@
 // Usage: node scripts/snapshot.mjs [--check]
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 
-import { resolveYear } from '../dist/esm/index.js';
+import { ordoYear, resolveYear } from '../dist/esm/index.js';
 
 export const SNAPSHOTS = [
   { name: 'us-fssp', options: { nations: ['us'], institutes: ['fssp'] }, years: [2026, 2027, 2028, 2029, 2030] },
+  { name: 'us-fssp-masses', options: { nations: ['us'], institutes: ['fssp'], ordo: 'fssp' }, years: [2026, 2027] },
 ];
 const DIR = new URL('../test/fixtures/snapshots/', import.meta.url);
 
 /** One line a day: date, celebration, class, colours, then commemorations, inseparable prayers and a transfer if any. */
 export function snapshotOf(year, options) {
+  if (options.ordo) return massesSnapshotOf(year, options);
   return `${resolveYear(year, options).map((day) => {
     const c = day.celebration;
     const parts = [`${day.date} ${c.key} ${c.class} ${c.colors.join('/')}`];
@@ -22,6 +24,14 @@ export function snapshotOf(year, options) {
     if (c.transferredFrom) parts.push(`from ${c.transferredFrom}`);
     return parts.join(' | ');
   }).join('\n')}\n`;
+}
+
+/** With an ordo: one line a day with the Masses it offers, its first first, each as key, kind, class and commemorations. */
+function massesSnapshotOf(year, options) {
+  return `${ordoYear(year, options).map((day) => `${day.date} ${day.masses.map((mass) => {
+    const comm = mass.commemorations.length ? ` (${mass.commemorations.join(', ')})` : '';
+    return `${mass.key} ${mass.kind} ${mass.class}${comm}`;
+  }).join(' / ')}`).join('\n')}\n`;
 }
 
 export const snapshotFile = (name, year) => new URL(`${name}-${year}.txt`, DIR);

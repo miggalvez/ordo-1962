@@ -7,8 +7,9 @@ Status: early. The engine decides each day's principal celebration, class,
 colour and commemorations, including transfers, for the universal calendar with
 a nation's proper (the United States, Poland), an institute's (the FSSP) and a
 church's own feasts, and gives every observance's title in Latin, English and
-Spanish. The Masses an ordo offers beside the day's own are not done yet.
-Nothing is published.
+Spanish, and lists the Masses an ordo offers beside the day's own: votive
+Masses, Masses for the dead, the Rogation Mass, external solemnities and the
+Mass of a commemorated saint. Nothing is published.
 
 ## Names
 
@@ -157,8 +158,73 @@ layer raises the Chair of St. Peter to the 1st class, on the Fraternity's own
 statements; in 2026 it is kept on Monday 23 February, the 22nd being the 1st
 Sunday of Lent. Both list what is still to be checked against the printed
 *Liturgical Ordo & FSSP Directory* (`toConfirm`). The Masses for certain places
-that the seminary's page prints on some ferias are not in the calendar; they are
-listed in `data/layers/fssp.json` for the Masses an ordo offers.
+that the seminary's page prints on some ferias are not in the calendar; the
+FSSP ordo offers them as Masses of the day (below).
+
+## Masses
+
+`ordoDay` and `ordoYear` return the resolved day with `masses`: every Mass the
+rubrics permit that day, of the kinds an ordo prints, first the one the ordo
+prints first. Without an ordo that is the Mass of the day; with
+`ordo: 'fssp'` it is what the Fraternity's ordo puts first.
+
+```js
+import { ordoDay, nameOf } from 'ordo-1962';
+
+const options = { nations: ['us'], institutes: ['fssp'], ordo: 'fssp' };
+ordoDay('2026-09-04', options).masses.map((m) => [m.key, m.kind, m.class]);
+// [['votive-sacred-heart-of-jesus', 'votive', 3], ['pent14-5', 'day', 4]]
+ordoDay('2026-11-06', options).masses[0];
+// { key: 'requiem-daily', kind: 'requiem', class: 3, colors: ['black'], commemorations: [], rubric: 'nos. 415d, 416, 422' }
+nameOf('votive-sacred-heart-of-jesus', 'es');  // 'Misa votiva del Sagrado Corazón de Jesús'
+```
+
+Each Mass has its key (titled by `nameOf`), kind, class, colours,
+commemorations, the rubric that permits it, and a `condition` where the rubric
+asks for one (the first Friday's devotions, the Rogation procession). Numbers
+are those of the Rubricae generales Missalis in the Code of Rubrics:
+
+| Kind | When | Rubric |
+|---|---|---|
+| `day` | Every Mass of the celebration (three at Christmas and on All Souls) | no. 301 |
+| `impeded-feast` | A 3rd class feast impeded by another 3rd class feast, on its own day | nos. 302a, 303a |
+| `commemoration` | On a 4th class day, the Mass of a saint commemorated that day | nos. 302b, 303b |
+| `external-solemnity` | On a Sunday of the 2nd class: the Sacred Heart on the 3rd Sunday after Pentecost, the Rosary on the 1st Sunday of October, a nation's by indult (`externalSolemnities` in its layer), and a church's titular, dedication and principal patron on the Sunday after the feast (`church.externalSolemnity` to change that) | nos. 341, 356-361 |
+| `rogation` | On the greater and lesser litanies, but not on a 1st class day | nos. 86, 89, 341, 346 |
+| `votive` | Christ the High Priest on the first Thursday, the Sacred Heart on the first Friday, the Immaculate Heart on the first Saturday, on days of the 3rd and 4th class | nos. 384-386 |
+| `requiem` | The daily Mass for the dead: of the 3rd class within the octave of All Souls, on days of the 3rd and 4th class; of the 4th class on 4th class ferias outside Christmastide | nos. 391, 415d, 416, 422, 423 |
+| `for-certain-places` | An ordo's own Masses for certain places, on a 4th class day | nos. 302c, 303b, 388 |
+
+A Mass said instead of the Mass of the day commemorates the office of the day
+(not a 4th class feria or the Saturday of Our Lady) and the day's
+commemorations, the season first (no. 113), without those it excludes (no.
+112): a Mass of the Lord does not commemorate the Sunday, nor one of Our Lady a
+feast of Our Lady. A 2nd class votive Mass admits one commemoration (no. 343b),
+a 3rd class one two (no. 386b), a Mass for the dead none (no. 391). Votive Masses
+of the 4th class (any votive Mass, for a just cause, no. 388) and the Mass of any
+saint in the Martyrology are open-ended and not listed, except an ordo's own.
+
+An ordo is a file in `data/ordos/`. The FSSP's, read from the seminary's 2026
+page, prints the Requiem first on 4th class days of the octave of All Souls and
+the first Thursday, Friday and Saturday votive Masses first on a feria or a
+Saturday of Our Lady; it leaves out the daily Requiem outside that octave and
+those votive Masses in Lent, where no. 384 permits them; and it offers nine
+Masses for certain places on their days. Against the page, the ordo's first Mass
+is the first row on 342 of the 365 days of 2026, and every row the page prints
+is a Mass the ordo lists except four. The 23 days are reviewed in
+`test/fixtures/fssp-2026-masses.json`: six where the page puts another listed
+Mass first without a rule (the Mass of St. Valentine on 14 February, the Rogation
+Mass on 11 May but not on the 12th), three where it also prints the universal
+calendar's Masses on a day the United States keeps a 3rd class feast, which the
+rubrics do not permit, and fourteen where the difference is in the calendar and
+already reviewed. `node scripts/compare-fssp.mjs <page> 2026 --layers us,fssp
+--masses` prints them; set `FSSP_PAGE` to re-check in `npm test`.
+
+Two points follow the rubrics rather than the page. The page commemorates the
+Sunday in the external solemnities of Corpus Christi and the Sacred Heart; a
+feast of the Lord excludes the Sunday (no. 112b), so the engine does not. And it
+lists all the day's commemorations in a votive Mass, three on 4 December; the
+engine stops at two (no. 386b).
 
 ## Use
 
@@ -231,9 +297,12 @@ time zone. `npm run build` writes `dist/`; `npm test` builds first.
 | `data/keys.json` | Missale Meum id → key. Keys never change once assigned |
 | `data/missalemeum/` | Provenance: source commit, file hashes, all source ids, and Missale Meum's reference lists |
 | `data/layers/us.json` | The United States proper, written by hand: each observance with its date, class, colours, Latin, English and Spanish names and where it was found |
-| `data/layers/fssp.json` | The FSSP's proper: the Chair of St. Peter raised to the 1st class, with its sources, and the Masses for certain places that are left out of the calendar |
+| `data/layers/fssp.json` | The FSSP's proper: the Chair of St. Peter raised to the 1st class, with its sources |
+| `data/masses.json` | Masses that are not observances: the first Thursday, Friday and Saturday votive Masses, the Rogation Mass and the daily Mass for the dead, with their titles, and the external solemnities every church has by right |
+| `data/ordos/fssp.json` | The FSSP's ordo: which Mass it prints first, what it leaves out, and its Masses for certain places with their titles |
+| `test/fixtures/fssp-2026-masses.json` | Every 2026 day on which the FSSP ordo's Masses differ from the seminary's page: 23 days in three reviewed groups. Runs with `FSSP_PAGE` |
 | `test/fixtures/fssp-2026-differences.json` | Every 2026 day on which the engine, with both layers, differs from the FSSP seminary's page, and how: 30 days in five reviewed groups. Set `FSSP_PAGE` to a saved copy of the page to re-check in `npm test` |
-| `test/fixtures/snapshots/` | Whole years with the United States and FSSP propers, 2026-2030, one line a day. `npm run snapshot` rewrites them; the diff shows which days a change moves |
+| `test/fixtures/snapshots/` | Whole years with the United States and FSSP propers, 2026-2030, one line a day, and the FSSP ordo's Masses for 2026 and 2027. `npm run snapshot` rewrites them; the diff shows which days a change moves |
 | `data/layers/pl.json` | Missale Meum's Polish proper as operations on the universal calendar: feasts added, removed, or added in place of another (St. Stanislaus moves from 7 to 8 May), and the order of a day's entries where Poland lists them differently |
 | `data/reviewed/feasts-of-the-lord.json` | Hand-reviewed list behind `ofTheLord`, with the rubric or source for each entry. The rubrics give no complete list |
 | `data/reviewed/additions.json` | Observances of the universal calendar that Missale Meum lacks (St. Barbara on 4 December), with where each was confirmed |

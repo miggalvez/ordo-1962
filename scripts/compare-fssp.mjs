@@ -2,10 +2,11 @@
 // (fsspolgs.org/liturgical-calendar), scoring the first row printed for each day.
 // The page is not part of this repository; keep a copy under .cache/fssp/.
 //
-// Usage: node scripts/compare-fssp.mjs <saved page.html> <year> [--layers us,fssp] [--json]
+// Usage: node scripts/compare-fssp.mjs <saved page.html> <year> [--layers us,fssp] [--masses] [--json]
+// With --masses, the FSSP ordo's first Mass (src/ordo.ts, data/ordos/fssp.json) is scored instead of the celebration.
 import { readFileSync } from 'node:fs';
 
-import { LAYERS, resolveYear } from '../dist/esm/index.js';
+import { LAYERS, NAMES, ordoYear, resolveYear } from '../dist/esm/index.js';
 import { nameOf, overlap } from './compare-ordo.mjs';
 
 // English names of observances the layers define (they are not in data/names/en.json).
@@ -168,6 +169,60 @@ export function whatDiffers(d) {
   return parts.join(' | ');
 }
 
+// The page's names for the Masses of data/masses.json.
+const MASS_NAMES = {
+  'votive-jesus-christ-the-eternal-high-priest': ['Jesus Christ the High Priest'],
+  'votive-sacred-heart-of-jesus': ['Sacred Heart of Jesus'],
+  'votive-immaculate-heart-of-mary': ['Immaculate Heart of Mary'],
+  'requiem-daily': ['Daily Mass for the Dead'],
+  'rogation-mass': ['Rogation Mass', 'The Greater Litanies'],
+};
+
+/** Whether a row of the page is this Mass. */
+export function isSameMass(mass, name) {
+  const plain = name.replace(/^\(USA\)\s*/, '').trim();
+  const solemnity = /^External Solemnity of (?:The )?(.*)$/i.exec(plain);
+  if (mass.kind === 'external-solemnity') return Boolean(solemnity) && isSame(mass.key, solemnity[1]);
+  if (solemnity) return false;
+  if (MASS_NAMES[mass.key]) return MASS_NAMES[mass.key].includes(plain);
+  if (mass.kind === 'for-certain-places') {
+    const [ofShorter, ofLonger] = overlap(NAMES.en[mass.key], plain);
+    return ofShorter >= 0.51 && ofLonger >= 0.51;
+  }
+  return isSame(mass.key, plain);
+}
+
+/**
+ * The Masses of the FSSP ordo (data/ordos/fssp.json) against the page, on every
+ * day: whether the page's first row is the ordo's first Mass, with its class and
+ * commemorations; if not, where the page's first Mass is in the ordo's list; and
+ * any row of the page that is none of the Masses the ordo lists.
+ */
+export function compareMassesWithFssp(html, year, options = {}) {
+  const fssp = readFsspPage(html, year);
+  const differences = [];
+  for (const day of ordoYear(year, { ...options, ordo: 'fssp' })) {
+    const rows = fssp.get(day.date);
+    if (!rows) { differences.push({ date: day.date, line: 'not on the page' }); continue; }
+    const parts = [];
+    const [first] = day.masses;
+    if (isSameMass(first, rows[0].name)) {
+      if (rows[0].class !== first.class) parts.push(`class ${first.class} / ${rows[0].class}`);
+      const { oursOnly, theirsOnly, sameOrder } = matchFssp(first.commemorations, rows[0].commemorations);
+      if (oursOnly.length) parts.push(`ours only: ${oursOnly.join(', ')}`);
+      if (theirsOnly.length) parts.push(`page only: ${theirsOnly.join('; ')}`);
+      if (!sameOrder) parts.push('order');
+    } else {
+      const at = day.masses.findIndex((mass) => isSameMass(mass, rows[0].name));
+      parts.push(at > 0 ? `page first: ${day.masses[at].key}, ours ${at + 1} of ${day.masses.length}; ours first: ${first.key}` : `page first: ${rows[0].name}, not ours; ours first: ${first.key}`);
+    }
+    const unlisted = rows.slice(1).filter((row) => !day.masses.some((mass) => isSameMass(mass, row.name)));
+    if (unlisted.length) parts.push(`not ours: ${unlisted.map((row) => row.name).join('; ')}`);
+    if (parts.length) differences.push({ date: day.date, line: parts.join(' | ') });
+  }
+  return differences;
+}
+
 if (import.meta.url === `file://${process.argv[1]}`) {
   const [file, yearText] = process.argv.slice(2);
   const layersAt = process.argv.indexOf('--layers');
@@ -176,6 +231,13 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     nations: codes.filter((code) => Object.values(LAYERS).some((layer) => layer.nation === code)),
     institutes: codes.filter((code) => Object.values(LAYERS).some((layer) => layer.institute === code)),
   };
+  if (process.argv.includes('--masses')) {
+    const masses = compareMassesWithFssp(readFileSync(file, 'utf8'), Number(yearText), options);
+    if (process.argv.includes('--json')) console.log(JSON.stringify(Object.fromEntries(masses.map((d) => [d.date, d.line])), null, 1));
+    else for (const d of masses) console.log(`${d.date} ${d.line}`);
+    if (!process.argv.includes('--json')) console.log(`${masses.length} differing days`);
+    process.exit(0);
+  }
   const differences = compareWithFssp(readFileSync(file, 'utf8'), Number(yearText), options);
   if (process.argv.includes('--json')) console.log(JSON.stringify(Object.fromEntries(differences.map((d) => [d.date, whatDiffers(d)])), null, 1));
   else {

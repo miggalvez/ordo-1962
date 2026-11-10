@@ -29,6 +29,12 @@ export interface Church {
   readonly dedication?: string;
   /** Principal patrons of the place, town or city (item 12.3). */
   readonly patrons?: readonly ChurchFeast[];
+  /**
+   * Where the external solemnity of these feasts is offered when one falls on a
+   * weekday (Rubricae generales Missalis nos. 358d-f, 359): the Sunday following
+   * the day the feast is kept (the default), the Sunday before it, or none.
+   */
+  readonly externalSolemnity?: 'following-sunday' | 'preceding-sunday' | 'none';
 }
 
 export const DEDICATION_KEY = 'anniversary-of-the-dedication-of-the-church';

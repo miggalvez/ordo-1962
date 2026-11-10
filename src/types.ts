@@ -79,6 +79,20 @@ export type LayerOperation =
   /** The layer lists this fixed date's entries in this order. */
   | { readonly op: 'order'; readonly date: string; readonly keys: readonly string[] };
 
+/**
+ * An external solemnity (Rubricae generales Missalis nos. 356-361): a Mass of the
+ * feast, as a votive Mass of the 2nd class, on a Sunday it does not fall on. `on`
+ * is the Sunday: a key of the cycle (`pent03-0`), the first Sunday of a month
+ * (`first-sunday:10`), or the Sunday following or preceding the feast.
+ */
+export interface ExternalSolemnity {
+  readonly key: string;
+  readonly on: string;
+  /** The rubric it is offered by. */
+  readonly rubric?: string;
+  readonly source?: string;
+}
+
 /** A nation's or an institute's proper, as operations on the universal calendar. */
 export interface Layer {
   readonly nation?: string;
@@ -86,6 +100,37 @@ export interface Layer {
   readonly source: string;
   readonly observances?: readonly LayerObservance[];
   readonly operations: readonly LayerOperation[];
+  /** External solemnities the nation keeps by indult. */
+  readonly externalSolemnities?: readonly ExternalSolemnity[];
+}
+
+/** A Mass that is not an observance of the calendar: a votive Mass, the Rogation Mass, a Requiem. */
+export interface MassFormulary {
+  readonly key: string;
+  readonly kind: 'votive' | 'rogation' | 'requiem';
+  readonly colors: readonly Color[];
+  readonly ofTheLord?: boolean;
+  readonly ofOurLady?: boolean;
+  readonly source: string;
+}
+
+/** What an ordo offers beside the Mass of the day, and what it prints first (data/ordos/). */
+export interface OrdoProfile {
+  readonly ordo: string;
+  readonly first: readonly {
+    readonly kind: string;
+    readonly within?: 'all-souls-octave';
+    readonly onDaysOfClass?: readonly number[];
+    readonly onCelebrations?: readonly ObservanceKind[];
+  }[];
+  readonly omit: readonly { readonly kind: string; readonly class?: number; readonly season?: 'lent' }[];
+  readonly highPriest: 'thursday' | 'saturday';
+  readonly massesForCertainPlaces: readonly {
+    readonly key: string;
+    readonly date: string;
+    readonly colors: readonly Color[];
+    readonly ofOurLady?: boolean;
+  }[];
 }
 
 export type TemporalBlockName =

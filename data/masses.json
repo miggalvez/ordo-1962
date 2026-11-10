@@ -1,0 +1,70 @@
+{
+ "about": "Masses an ordo offers beside the Mass of the day that are not observances of the calendar: the votive Masses the rubrics provide for (Rubricae generales Missalis, 1960, nos. 306-389), the Rogation Mass (no. 346) and the daily Mass for the dead (nos. 397, 422-423). The rules for when each is permitted are in src/ordo.ts; this file gives their keys, colours and titles. Numbers are those of the Code of Rubrics.",
+ "masses": [
+  {
+   "key": "votive-jesus-christ-the-eternal-high-priest",
+   "kind": "votive",
+   "colors": ["white"],
+   "ofTheLord": true,
+   "names": {
+    "la": "Missa votiva de D. N. Iesu Christo summo et æterno Sacerdote",
+    "en": "Votive Mass of Our Lord Jesus Christ, the Eternal High Priest",
+    "es": "Misa votiva de Nuestro Señor Jesucristo, sumo y eterno Sacerdote"
+   },
+   "source": "No. 385a: one Mass on the first Thursday or the first Saturday of the month, where exercises of piety for the sanctification of the clergy are held that day."
+  },
+  {
+   "key": "votive-sacred-heart-of-jesus",
+   "kind": "votive",
+   "colors": ["white"],
+   "ofTheLord": true,
+   "names": {
+    "la": "Missa votiva de Sacratissimo Corde Iesu",
+    "en": "Votive Mass of the Sacred Heart of Jesus",
+    "es": "Misa votiva del Sagrado Corazón de Jesús"
+   },
+   "source": "No. 385b: two Masses on the first Friday of the month, where special exercises of piety in honour of the Sacred Heart are held that day."
+  },
+  {
+   "key": "votive-immaculate-heart-of-mary",
+   "kind": "votive",
+   "colors": ["white"],
+   "ofOurLady": true,
+   "names": {
+    "la": "Missa votiva de Immaculato Corde Beatæ Mariæ Virginis",
+    "en": "Votive Mass of the Immaculate Heart of Mary",
+    "es": "Misa votiva del Inmaculado Corazón de María"
+   },
+   "source": "No. 385c: one Mass on the first Saturday of the month, where special exercises in honour of the Immaculate Heart of Mary are held that day."
+  },
+  {
+   "key": "rogation-mass",
+   "kind": "rogation",
+   "colors": ["violet"],
+   "names": {
+    "la": "Missa in Litaniis",
+    "en": "Rogation Mass",
+    "es": "Misa de Rogativas"
+   },
+   "source": "Nos. 86, 89, 346: on the greater and lesser litanies, in churches where the procession or the special prayers are held, as a votive Mass of the 2nd class."
+  },
+  {
+   "key": "requiem-daily",
+   "kind": "requiem",
+   "colors": ["black"],
+   "names": {
+    "la": "Missa quotidiana defunctorum",
+    "en": "Daily Mass for the Dead",
+    "es": "Misa cotidiana de difuntos"
+   },
+   "source": "No. 397. Of the 3rd class within the octave of All Souls (nos. 415d, 422); of the 4th class on 4th class ferias outside Christmastide (no. 423)."
+  }
+ ],
+ "externalSolemnities": {
+  "about": "External solemnities that belong to a feast by right in every church (no. 358a, b). A nation's, by indult, are in its layer; a church's own (no. 358d-f) follow from the church given.",
+  "solemnities": [
+   { "key": "pent02-5", "on": "pent03-0", "rubric": "nos. 358a, 360", "source": "No. 358a: the Sacred Heart, on the 3rd Sunday after Pentecost." },
+   { "key": "our-lady-of-the-rosary", "on": "first-sunday:10", "rubric": "nos. 358b, 360", "source": "No. 358b: Our Lady of the Rosary, on the 1st Sunday of October." }
+  ]
+ }
+}

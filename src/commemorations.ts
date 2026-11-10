@@ -102,7 +102,7 @@ function mayBeCommemorated({ entry, class: cls }: Ranked): boolean {
 }
 
 /** Whether the celebration, or a commemoration already admitted, excludes this one (no. 112). */
-function excludes(a: CatalogueEntry, b: CatalogueEntry): boolean {
+export function excludes(a: CatalogueEntry, b: CatalogueEntry): boolean {
   if (sameDivinePerson(a, b)) return true; // a
   if ((a.kind === 'sunday' && b.ofTheLord) || (b.kind === 'sunday' && a.ofTheLord)) return true; // b
   if (isOfTheSeason(a) && isOfTheSeason(b)) return true; // c

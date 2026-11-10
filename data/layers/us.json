@@ -73,6 +73,10 @@
    "source": "(USA) Our Lady of Guadalupe, III class, white, 12 December 2026"
   }
  ],
+ "externalSolemnities": [
+  { "key": "pent01-4", "on": "following-sunday", "rubric": "nos. 358c, 360", "source": "(USA)External Solemnity of Corpus Christi, 7 June 2026, beside the 2nd Sunday after Pentecost. The procession transferred to the Sunday by indult (no. 358c)." },
+  { "key": "sts-peter-and-paul", "on": "following-sunday", "rubric": "nos. 360, 361", "source": "(USA)External Solemnity of Ss. Peter and Paul, 5 July 2026, beside the 6th Sunday after Pentecost. By indult (no. 361); to confirm in the printed ordo." }
+ ],
  "operations": [
   { "op": "add", "key": "us-st-john-neumann" },
   { "op": "add", "key": "us-st-peter-claver" },

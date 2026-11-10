@@ -3,7 +3,7 @@
  "groups": [
   {
    "group": "another Mass printed first",
-   "why": "The page prints first a Mass the ordo permits beside the day's own: First Friday and First Saturday votives, the Requiem of November, the Rogation Mass, a Mass for certain places, or a commemorated saint taken as the Mass of a 4th class day. Where the page also prints the day's own celebration lower down, that row is compared too ('own row'). These belong to the Masses an ordo offers (M7), not to the calendar.",
+   "why": "The page prints first a Mass the ordo permits beside the day's own: First Friday and First Saturday votives, the Requiem of November, the Rogation Mass, a Mass for certain places, or a commemorated saint taken as the Mass of a 4th class day. Where the page also prints the day's own celebration lower down, that row is compared too ('own row'). These belong to the Masses an ordo offers, not to the calendar: src/ordo.ts gives each of them, and test/fixtures/fssp-2026-masses.json scores the page's first row against the FSSP ordo's first Mass.",
    "note": "On 27 June, 4 July and 5 November the day's own row commemorates a Mass for certain places (Our Lady of Perpetual Help, All Holy Popes, Holy Relics); see the next group. On 5 December the first row commemorates the Advent feria because the Mass is a votive one.",
    "days": {
     "2026-01-02": "feria / Sacred Heart of Jesus | class 4 / 3 | no own row",
@@ -27,7 +27,7 @@
   },
   {
    "group": "a Mass for certain places commemorated on the feria",
-   "why": "The page adds to the feria's row a commemoration of a Mass for certain places that it also offers as the Mass of the day. These are not in the universal calendar, the United States proper or the Fraternity's (data/layers/fssp.json, notInTheCalendar): the French district's ordo prints a plain feria on both dates, and the SSPX Ordo has no commemoration. They belong to the Masses an ordo offers (M7).",
+   "why": "The page adds to the feria's row a commemoration of a Mass for certain places that it also offers as the Mass of the day. These are not in the universal calendar, the United States proper or the Fraternity's (data/ordos/fssp.json lists them as Masses the ordo offers): the French district's ordo prints a plain feria on both dates, and the SSPX Ordo has no commemoration. src/ordo.ts offers them as Masses of the day; it does not commemorate them.",
    "days": {
     "2026-05-08": "page only: Apparition of St. Michael the Archangel; Our Lady, Mediatrix of all Graces",
     "2026-07-06": "page only: St. Maria Goretti, Virgin & Martyr"

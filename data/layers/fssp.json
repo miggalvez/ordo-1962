@@ -6,56 +6,7 @@
   "Whether the Fraternity has further proper feasts (a founder's, a secondary patron's) in the printed ordo.",
   "The transfer in 2026: 22 February was the 1st Sunday of Lent, so no. 96 moves the feast to Monday 23 February. Neither the seminary's page nor the French district's page shows it; a parish bulletin from Omaha is reported to."
  ],
- "notInTheCalendar": {
-  "about": "Masses the FSSP seminary's 2026 page (fsspolgs.org/liturgical-calendar) prints beside the day's own, most of them also as a commemoration in the feria's row. They are Masses for certain places, offered as alternatives on a 4th class day, and are not entered here. The French district's monthly ordo (fssp.fr/ordo-du-mois) prints a plain feria on 8 May (2020, 2023, 2025), 6 July (2020, 2023), 27 June (2023) and 4 July (2023, 2024), and the Institute of Christ the King lists the 8 May Masses as alternatives to the feria. They belong to the Masses an ordo offers (M7).",
-  "masses": [
-   {
-    "date": "05-08",
-    "name": "Apparition of St. Michael the Archangel",
-    "commemoratedOnThePage": true
-   },
-   {
-    "date": "05-08",
-    "name": "Our Lady, Mediatrix of All Graces",
-    "commemoratedOnThePage": true
-   },
-   {
-    "date": "06-27",
-    "name": "Our Lady of Perpetual Help",
-    "commemoratedOnThePage": true
-   },
-   {
-    "date": "07-04",
-    "name": "Commemoration of All Holy Popes",
-    "commemoratedOnThePage": true
-   },
-   {
-    "date": "07-06",
-    "name": "St. Maria Goretti, Virgin and Martyr",
-    "commemoratedOnThePage": true
-   },
-   {
-    "date": "08-01",
-    "name": "St. Peter in Chains",
-    "commemoratedOnThePage": false
-   },
-   {
-    "date": "08-03",
-    "name": "Finding of the Body of St. Stephen, Protomartyr",
-    "commemoratedOnThePage": false
-   },
-   {
-    "date": "11-05",
-    "name": "Holy Relics",
-    "commemoratedOnThePage": true
-   },
-   {
-    "date": "11-27",
-    "name": "Our Lady of the Miraculous Medal",
-    "commemoratedOnThePage": false
-   }
-  ]
- },
+ "massesOffered": "data/ordos/fssp.json: the Masses the Fraternity's ordo offers beside the day's own, among them Masses for certain places that are not in this calendar.",
  "operations": [
   {
    "op": "raise",

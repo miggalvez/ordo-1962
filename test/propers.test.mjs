@@ -73,10 +73,10 @@ test('the Fraternity keeps the Chair of St. Peter as of the 1st class (no. 46)',
 });
 
 test('Masses for certain places on the seminary page are not commemorations of the calendar', () => {
-  // data/layers/fssp.json, notInTheCalendar: they are for the Masses an ordo offers (M7).
+  // data/ordos/fssp.json offers them as Masses of a 4th class day (test/ordo.test.mjs).
   assert.deepEqual(both('2026-05-08'), ['pasc4-5', []]);
   assert.deepEqual(both('2026-07-06'), ['pent06-1', []]);
-  assert.equal(read('fssp').notInTheCalendar.masses.length, 9);
+  assert.equal(read('fssp').notInTheCalendar, undefined);
   assert.ok(!CATALOGUE.some((e) => /^fssp-/.test(e.key)));
 });
 

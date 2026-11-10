@@ -15,6 +15,10 @@ engine itself does not yet. Nothing is published.
 | `data/names/{la,en,pl}.json` | Titles by key |
 | `data/keys.json` | Missale Meum id → key. Keys never change once assigned |
 | `data/missalemeum/` | Provenance: source commit, file hashes, all source ids, and Missale Meum's reference lists |
+| `data/layers/pl.json` | Missale Meum's Polish proper as operations on the universal calendar: feasts added, removed, or added in place of another (St. Stanislaus moves from 7 to 8 May) |
+| `data/reviewed/feasts-of-the-lord.json` | Hand-reviewed list behind `ofTheLord`, with the rubric or source for each entry. The rubrics give no complete list |
+| `data/oracle/missalemeum-pl/<year>.json` | Missale Meum's Polish calendar for 2026–2028, used to check the Polish layer |
+| `test/fixtures/fssp-2026.json` | Days from the FSSP's published 2026 calendar that Missale Meum gets wrong or cannot express. Their engine tests are marked todo until the engine exists |
 | `data/oracle/missalemeum/<year>.json` | Missale Meum's own result for every day of 1962–2100, in ordo-1962 keys. The engine's tests compare against it |
 | `scripts/convert_missalemeum.py` | Regenerates the catalogue from a Missale Meum checkout |
 | `scripts/missalemeum_oracle.py` | Regenerates the oracle by running Missale Meum's calendar code |
@@ -28,8 +32,13 @@ reviewed against the General Rubrics when the resolver is written.
 git clone https://github.com/mmolenda/missalemeum.git /path/to/missalemeum
 git -C /path/to/missalemeum checkout eb723e5dd0bef3951b7706da97af4b673c579e40
 npm run convert -- /path/to/missalemeum/backend
+npm run test:convert -- /path/to/missalemeum/backend
 npm test
 ```
+
+`test:convert` checks that a fresh import is deterministic, that importing on
+top of the saved keys gives the same result as a fresh import, and that the
+committed data is what a fresh import produces.
 
 The script reads Missale Meum's Python files with `ast.parse`. It never imports
 or runs them.
@@ -45,8 +54,11 @@ python3 -m venv /path/to/venv
 /path/to/venv/bin/python -I scripts/missalemeum_oracle.py /path/to/missalemeum/backend
 ```
 
-It refuses to run against a different commit from the one the catalogue came
-from. On 2026-11-09 the local run (Python 3.11) was identical to the hosted
+Add `--lang pl --from 2026 --to 2028` for the Polish check. It refuses a
+checkout at a different commit from the one the catalogue came from, a checkout
+with local changes or untracked files, and converted files whose hashes differ
+from `data/missalemeum/source.json`. It compiles into a fresh bytecode cache, so
+no `.pyc` left in the checkout is used. On 2026-11-09 the local run (Python 3.11) was identical to the hosted
 `/en/api/v5/calendar/{year}` responses on all 1,096 days of 2026–2028.
 
 ## Licence

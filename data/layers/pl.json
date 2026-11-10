@@ -1,0 +1,119 @@
+{
+ "nation": "pl",
+ "source": "Missale Meum api/constants/pl/blocks.py compared with la/blocks.py",
+ "operations": [
+  {
+   "op": "remove",
+   "key": "st-george"
+  },
+  {
+   "op": "remove",
+   "key": "st-zephyrinus"
+  },
+  {
+   "op": "remove",
+   "key": "sts-alexander-and-companions"
+  },
+  {
+   "op": "add",
+   "key": "pl-b-bogumilai-episcopi-et-confessoris"
+  },
+  {
+   "op": "add",
+   "key": "pl-b-bronislauae-virginins"
+  },
+  {
+   "op": "add",
+   "key": "pl-b-ceslai-confessoris"
+  },
+  {
+   "op": "add",
+   "key": "pl-b-jacobi-episcopi-et-confessoris"
+  },
+  {
+   "op": "add",
+   "key": "pl-b-joannis-de-dukla"
+  },
+  {
+   "op": "add",
+   "key": "pl-b-jolantae-viduae"
+  },
+  {
+   "op": "add",
+   "key": "pl-b-ladislai-confessoris"
+  },
+  {
+   "op": "add",
+   "key": "pl-b-melchiori-martyrum"
+  },
+  {
+   "op": "add",
+   "key": "pl-b-salomea-virginis"
+  },
+  {
+   "op": "add",
+   "key": "pl-b-simonis-confessoris"
+  },
+  {
+   "op": "add",
+   "key": "pl-b-vincenti-episcopi-et-confessoris"
+  },
+  {
+   "op": "add",
+   "key": "pl-beatae-mariae-virginis-confessoris-auxiliatrix"
+  },
+  {
+   "op": "add",
+   "key": "pl-beatae-mariae-virginis-reginae-poloniae"
+  },
+  {
+   "op": "add",
+   "key": "pl-beate-mariae-virginis-claromontane-czestochoviensis"
+  },
+  {
+   "op": "add",
+   "key": "pl-st-adalberti-episcopi-et-martyris"
+  },
+  {
+   "op": "add",
+   "key": "pl-st-andreae-bobolae-martyrum"
+  },
+  {
+   "op": "add",
+   "key": "pl-st-barbarae-virginis-et-martyris"
+  },
+  {
+   "op": "add",
+   "key": "pl-st-clementis-hofbauer"
+  },
+  {
+   "op": "add",
+   "key": "pl-st-floriani-martyris"
+  },
+  {
+   "op": "add",
+   "key": "pl-st-joannis-sarkander-martyris"
+  },
+  {
+   "op": "add",
+   "key": "pl-st-kingae-virginis"
+  },
+  {
+   "op": "add",
+   "key": "pl-st-stanislai-confessoris"
+  },
+  {
+   "op": "add",
+   "key": "pl-st-stanislai-episcopi-et-martyris",
+   "replaces": "st-stanislaus"
+  },
+  {
+   "op": "add",
+   "key": "pl-sts-protomartyrum-poloniae"
+  },
+  {
+   "op": "add",
+   "key": "pl-victoriae-chocimensis"
+  }
+ ]
+}

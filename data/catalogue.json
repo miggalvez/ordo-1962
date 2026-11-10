@@ -497,7 +497,7 @@
   "colors": [
    "white"
   ],
-  "ofTheLord": false,
+  "ofTheLord": true,
   "scope": "universal"
  },
  {
@@ -651,7 +651,7 @@
   "colors": [
    "white"
   ],
-  "ofTheLord": false,
+  "ofTheLord": true,
   "scope": "universal"
  },
  {
@@ -1491,7 +1491,7 @@
   "colors": [
    "white"
   ],
-  "ofTheLord": false,
+  "ofTheLord": true,
   "scope": "universal"
  },
  {
@@ -1533,7 +1533,7 @@
   "colors": [
    "white"
   ],
-  "ofTheLord": false,
+  "ofTheLord": true,
   "scope": "universal"
  },
  {
@@ -1901,10 +1901,10 @@
   "scope": "universal"
  },
  {
-  "key": "pasc2-3feria",
+  "key": "pasc2-3",
   "sourceId": "tempora:Pasc2-3Feria:4:w",
   "date": {
-   "temporal": "pasc2-3feria"
+   "temporal": "pasc2-3"
   },
   "kind": "feria",
   "class": 4,
@@ -1915,10 +1915,10 @@
   "scope": "universal"
  },
  {
-  "key": "pasc2-4feria",
+  "key": "pasc2-4",
   "sourceId": "tempora:Pasc2-4Feria:4:w",
   "date": {
-   "temporal": "pasc2-4feria"
+   "temporal": "pasc2-4"
   },
   "kind": "feria",
   "class": 4,
@@ -1929,10 +1929,10 @@
   "scope": "universal"
  },
  {
-  "key": "pasc2-5feria",
+  "key": "pasc2-5",
   "sourceId": "tempora:Pasc2-5Feria:4:w",
   "date": {
-   "temporal": "pasc2-5feria"
+   "temporal": "pasc2-5"
   },
   "kind": "feria",
   "class": 4,
@@ -1943,10 +1943,10 @@
   "scope": "universal"
  },
  {
-  "key": "pasc2-6feria",
+  "key": "pasc2-6",
   "sourceId": "tempora:Pasc2-6Feria:4:w",
   "date": {
-   "temporal": "pasc2-6feria"
+   "temporal": "pasc2-6"
   },
   "kind": "feria",
   "class": 4,
@@ -1971,10 +1971,10 @@
   "scope": "universal"
  },
  {
-  "key": "pasc3-1feria",
+  "key": "pasc3-1",
   "sourceId": "tempora:Pasc3-1Feria:4:w",
   "date": {
-   "temporal": "pasc3-1feria"
+   "temporal": "pasc3-1"
   },
   "kind": "feria",
   "class": 4,
@@ -1985,10 +1985,10 @@
   "scope": "universal"
  },
  {
-  "key": "pasc3-2feria",
+  "key": "pasc3-2",
   "sourceId": "tempora:Pasc3-2Feria:4:w",
   "date": {
-   "temporal": "pasc3-2feria"
+   "temporal": "pasc3-2"
   },
   "kind": "feria",
   "class": 4,
@@ -1999,10 +1999,10 @@
   "scope": "universal"
  },
  {
-  "key": "pasc3-3feria",
+  "key": "pasc3-3",
   "sourceId": "tempora:Pasc3-3Feria:4:w",
   "date": {
-   "temporal": "pasc3-3feria"
+   "temporal": "pasc3-3"
   },
   "kind": "feria",
   "class": 4,
@@ -2219,7 +2219,7 @@
   "colors": [
    "white"
   ],
-  "ofTheLord": false,
+  "ofTheLord": true,
   "scope": "universal"
  },
  {
@@ -2457,7 +2457,7 @@
   "colors": [
    "white"
   ],
-  "ofTheLord": false,
+  "ofTheLord": true,
   "scope": "universal"
  },
  {
@@ -2513,7 +2513,7 @@
   "colors": [
    "white"
   ],
-  "ofTheLord": false,
+  "ofTheLord": true,
   "scope": "universal"
  },
  {
@@ -2625,14 +2625,14 @@
   "colors": [
    "white"
   ],
-  "ofTheLord": false,
+  "ofTheLord": true,
   "scope": "universal"
  },
  {
-  "key": "pent02-6feria",
+  "key": "pent02-6",
   "sourceId": "tempora:Pent02-6Feria:4:g",
   "date": {
-   "temporal": "pent02-6feria"
+   "temporal": "pent02-6"
   },
   "kind": "feria",
   "class": 4,
@@ -2657,10 +2657,10 @@
   "scope": "universal"
  },
  {
-  "key": "pent03-1feria",
+  "key": "pent03-1",
   "sourceId": "tempora:Pent03-1Feria:4:g",
   "date": {
-   "temporal": "pent03-1feria"
+   "temporal": "pent03-1"
   },
   "kind": "feria",
   "class": 4,
@@ -2671,10 +2671,10 @@
   "scope": "universal"
  },
  {
-  "key": "pent03-2feria",
+  "key": "pent03-2",
   "sourceId": "tempora:Pent03-2Feria:4:g",
   "date": {
-   "temporal": "pent03-2feria"
+   "temporal": "pent03-2"
   },
   "kind": "feria",
   "class": 4,
@@ -2685,10 +2685,10 @@
   "scope": "universal"
  },
  {
-  "key": "pent03-3feria",
+  "key": "pent03-3",
   "sourceId": "tempora:Pent03-3Feria:4:g",
   "date": {
-   "temporal": "pent03-3feria"
+   "temporal": "pent03-3"
   },
   "kind": "feria",
   "class": 4,
@@ -2699,10 +2699,10 @@
   "scope": "universal"
  },
  {
-  "key": "pent03-4feria",
+  "key": "pent03-4",
   "sourceId": "tempora:Pent03-4Feria:4:g",
   "date": {
-   "temporal": "pent03-4feria"
+   "temporal": "pent03-4"
   },
   "kind": "feria",
   "class": 4,
@@ -2713,10 +2713,10 @@
   "scope": "universal"
  },
  {
-  "key": "pent03-5feria",
+  "key": "pent03-5",
   "sourceId": "tempora:Pent03-5Feria:4:g",
   "date": {
-   "temporal": "pent03-5feria"
+   "temporal": "pent03-5"
   },
   "kind": "feria",
   "class": 4,
@@ -5679,29 +5679,15 @@
   "scope": "universal"
  },
  {
-  "key": "quad5-5feria",
+  "key": "quad5-5",
   "sourceId": "tempora:Quad5-5Feria:3:v",
   "date": {
-   "temporal": "quad5-5feria"
+   "temporal": "quad5-5"
   },
   "kind": "feria",
   "class": 3,
   "colors": [
    "violet"
-  ],
-  "ofTheLord": false,
-  "scope": "universal"
- },
- {
-  "key": "quad5-5feriac",
-  "sourceId": "tempora:Quad5-5Feriac:4:w",
-  "date": {
-   "temporal": "quad5-5feriac"
-  },
-  "kind": "feria",
-  "class": 4,
-  "colors": [
-   "white"
   ],
   "ofTheLord": false,
   "scope": "universal"
@@ -6193,6 +6179,20 @@
   },
   "kind": "feast",
   "class": 3,
+  "colors": [
+   "white"
+  ],
+  "ofTheLord": false,
+  "scope": "universal"
+ },
+ {
+  "key": "seven-sorrows-in-passiontide",
+  "sourceId": "tempora:Quad5-5Feriac:4:w",
+  "date": {
+   "temporal": "quad5-5feriac"
+  },
+  "kind": "commemoration",
+  "class": 4,
   "colors": [
    "white"
   ],
@@ -10158,7 +10158,7 @@
   "colors": [
    "white"
   ],
-  "ofTheLord": false,
+  "ofTheLord": true,
   "scope": "universal"
  },
  {
@@ -10172,7 +10172,7 @@
   "colors": [
    "white"
   ],
-  "ofTheLord": false,
+  "ofTheLord": true,
   "scope": "universal"
  },
  {
@@ -10186,7 +10186,7 @@
   "colors": [
    "white"
   ],
-  "ofTheLord": false,
+  "ofTheLord": true,
   "scope": "universal"
  },
  {
@@ -10200,7 +10200,7 @@
   "colors": [
    "red"
   ],
-  "ofTheLord": false,
+  "ofTheLord": true,
   "scope": "universal"
  },
  {

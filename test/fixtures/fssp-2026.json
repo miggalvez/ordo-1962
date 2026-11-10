@@ -1,0 +1,41 @@
+{
+ "about": "Days from the FSSP seminary's published 2026 calendar (fsspolgs.org/liturgical-calendar, read 2026-11-09) chosen because comparing with Missale Meum alone cannot catch them. 'printed' is the seminary's own wording.",
+ "days": [
+  {
+   "date": "2026-03-27",
+   "printed": "Feria of Lent, III class; commemorations: Seven Dolours of Our Lady, St. John Damascene",
+   "celebration": "quad5-5",
+   "commemorations": ["seven-sorrows-in-passiontide", "st-john-damascene"],
+   "tests": "a second commemoration on a III class feria"
+  },
+  {
+   "date": "2026-10-25",
+   "printed": "Christ the King, I class; no commemoration",
+   "celebration": "christ-the-king",
+   "commemorations": [],
+   "tests": "a feast of the Lord takes the Sunday with no commemoration (no. 17(d))"
+  },
+  {
+   "date": "2026-11-01",
+   "printed": "All Saints, I class; commemoration: Twenty third Sunday after Pentecost",
+   "celebration": "all-saints",
+   "commemorations": ["pent23-0"],
+   "tests": "a I class feast that is not of the Lord keeps the Sunday as a privileged commemoration (no. 108(a))"
+  },
+  {
+   "date": "2026-11-13",
+   "printed": "(USA) St. Frances Xavier Cabrini, Virgin, III class; commemoration: St. Didacus, Confessor",
+   "layer": "us",
+   "celebration": "us-st-frances-xavier-cabrini",
+   "commemorations": ["st-didacus"],
+   "tests": "a national III class feast displaces a universal III class feast, which is commemorated"
+  },
+  {
+   "date": "2026-11-30",
+   "printed": "St. Andrew, Apostle, II class; commemoration: Feria of Advent",
+   "celebration": "st-andrew",
+   "commemorations": ["adv1-1"],
+   "tests": "an Advent feria is commemorated on a II class feast"
+  }
+ ]
+}

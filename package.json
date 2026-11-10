@@ -11,6 +11,7 @@
   },
   "scripts": {
     "convert": "python3 -I scripts/convert_missalemeum.py",
-    "test": "node --test \"test/**/*.test.mjs\""
+    "test": "node --test \"test/**/*.test.mjs\"",
+    "test:convert": "python3 -I scripts/test_convert_missalemeum.py"
   }
 }

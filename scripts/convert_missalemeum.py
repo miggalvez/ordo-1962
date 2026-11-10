@@ -70,6 +70,18 @@ TEMPORA_FEASTS = {
     "Pent02-5", # Sacred Heart
 }
 
+# Movable observances that are not a day of the cycle, keyed by Missale Meum name.
+TEMPORA_SPECIAL = {
+    "Quad5-5Feriac": ("seven-sorrows-in-passiontide", "commemoration"),
+}
+
+# A national feast that takes the place of a universal one on another date.
+# Missale Meum expresses this as a removal and an addition; these pairings were
+# checked by hand (same saint, different date or class).
+NATIONAL_REPLACEMENTS = {
+    "pl": {"SANCTI_05_08PL": "SANCTI_05_07"},  # St. Stanislaus: 7 May, III class -> 8 May, I class
+}
+
 COLOR_NAMES = {"w": "white", "r": "red", "g": "green", "v": "violet", "b": "black", "p": "rose"}
 
 ID_PATTERN = re.compile(r"^(tempora|sancti|commune|):[^:]+:\d:[a-z]+$")
@@ -146,10 +158,7 @@ def titles(tree, consts, inherited=None):
             continue
         name = constant_name(key)
         text = string_value(value)
-        if name not in consts:
-            skipped.append(name)
-            continue
-        if text is None:
+        if name not in consts or text is None:
             skipped.append(name)
             continue
         result[consts[name]] = text
@@ -157,8 +166,9 @@ def titles(tree, consts, inherited=None):
 
 
 def temporal_name(name):
-    """Missale Meum's cycle position without its 'r' (reformed text) suffix."""
+    """Missale Meum's cycle position, without its 'r' (reformed text) and 'Feria' suffixes."""
     name = re.sub(r"(\d)r$", r"\1", name)
+    name = re.sub(r"(\d)Feria$", r"\1", name)
     september = re.match(r"^093-(\d)$", name)
     return f"Sep-ember-{september.group(1)}" if september else name
 
@@ -172,103 +182,130 @@ def slug(text):
     return text[:80].rstrip("-")
 
 
-def main():
-    if len(sys.argv) != 2:
-        sys.exit(__doc__)
-    backend = Path(sys.argv[1]).resolve()
+def read_source(backend):
     paths = {name: backend / rel for name, rel in FILES.items()}
     for path in paths.values():
         if not path.is_file():
-            sys.exit(f"missing {path}")
-
+            raise FileNotFoundError(path)
     trees = {name: parse(path) for name, path in paths.items()}
     consts = module_constants(trees["common"])
     ids = {name: value for name, value in consts.items()
            if (name.startswith(("TEMPORA_", "SANCTI_")) or name == "FERIA") and ID_PATTERN.match(value)}
-
-    blocks_la = {name: block(assignment(trees["blocks_la"], name)) for name in BLOCK_NAMES}
-    sancti_la = tuple_of_names(assignment(trees["blocks_la"], "SANCTI"))
-    sancti_pl = tuple_of_names(assignment(trees["blocks_pl"], "SANCTI"))
-    reference = {
-        name: [f"literal:{elt.value}" if isinstance(elt, ast.Constant) else constant_name(elt)
-               for elt in assignment(trees["common"], name).elts]
-        for name in REFERENCE_LISTS
-    }
-
     titles_la, skipped_la = titles(trees["titles_la"], consts)
     titles_en, skipped_en = titles(trees["titles_en"], consts, inherited=titles_la)
     titles_pl, skipped_pl = titles(trees["titles_pl"], consts)
+    return {
+        "paths": paths,
+        "ids": ids,
+        "blocks_la": {name: block(assignment(trees["blocks_la"], name)) for name in BLOCK_NAMES},
+        "sancti": {
+            "universal": tuple_of_names(assignment(trees["blocks_la"], "SANCTI")),
+            "pl": tuple_of_names(assignment(trees["blocks_pl"], "SANCTI")),
+        },
+        "reference": {
+            name: [f"literal:{elt.value}" if isinstance(elt, ast.Constant) else constant_name(elt)
+                   for elt in assignment(trees["common"], name).elts]
+            for name in REFERENCE_LISTS
+        },
+        "titles": {"la": titles_la, "en": titles_en, "pl": titles_pl},
+        "skipped": {"la": skipped_la, "en": skipped_en, "pl": skipped_pl},
+    }
 
-    problems = []
-    for name in [n for days in blocks_la.values() for day in days for n in day] + sancti_la + sancti_pl:
-        if name not in ids:
-            problems.append(f"block refers to {name}, which is not an observance id")
 
-    # One key per distinct id string. Several constant names can share one id.
-    keys_path = DATA / "keys.json"
-    keys = json.loads(keys_path.read_text()) if keys_path.exists() else {}
+def assign_keys(source, saved):
+    """Return {id: key}, keeping every key in `saved` and sharing a key between
+    ids that Missale Meum uses for the same movable day."""
+    ids = source["ids"]
+    titles_ = source["titles"]
+    keys = dict(saved)
     used = set(keys.values())
-    tempora_key = {}
+    by_position = {}
+    for id_, key in keys.items():
+        flexibility, name, _, _ = id_.split(":")
+        if flexibility == "tempora" and name not in TEMPORA_SPECIAL:
+            by_position.setdefault(temporal_name(name), key)
 
-    def assign(id_, proposal, alias_of=None):
-        if id_ in keys:
-            return keys[id_]
-        if alias_of is not None and alias_of in tempora_key:
-            keys[id_] = tempora_key[alias_of]
-            return keys[id_]
+    universal = {ids[n] for n in source["sancti"]["universal"]}
+    national = {v for n, v in ids.items()
+                if v not in universal and (n.endswith("PL") or n in source["sancti"]["pl"])}
+    generated = {ids[name]: spec for name, spec in GENERATED_IDS.items()}
+
+    def take(id_, proposal):
         candidate = proposal or slug(id_)
         if candidate in used:
-            flexibility, name, _, _ = id_.split(":")
-            candidate = f"{candidate}-{slug(name)}"
-        n = 2
-        base = candidate
+            candidate = f"{candidate}-{slug(id_.split(':')[1])}"
+        base, n = candidate, 2
         while candidate in used:
-            candidate = f"{base}-{n}"
-            n += 1
+            candidate, n = f"{base}-{n}", n + 1
         keys[id_] = candidate
         used.add(candidate)
-        if alias_of is not None:
-            tempora_key[alias_of] = candidate
         return candidate
 
-    generated = {ids[name]: spec for name, spec in GENERATED_IDS.items()}
-    universal_sancti = {ids[n] for n in sancti_la}
-    polish_sancti = {ids[n] for n in sancti_pl} - universal_sancti
-    polish_ids = polish_sancti | {v for n, v in ids.items() if n.endswith("PL") and v not in universal_sancti}
     for id_ in sorted(set(ids.values())):
+        if id_ in keys:
+            continue
         flexibility, name, _, _ = id_.split(":")
         if id_ in generated:
-            assign(id_, generated[id_][0])
+            take(id_, generated[id_][0])
+        elif flexibility == "tempora" and name in TEMPORA_SPECIAL:
+            take(id_, TEMPORA_SPECIAL[name][0])
         elif flexibility == "tempora":
             # Missale Meum gives an Advent feria a second id when its class rises on
             # 17-23 December; both ids are the same observance, so they share a key.
-            assign(id_, slug(temporal_name(name)), alias_of=temporal_name(name))
+            position = temporal_name(name)
+            if position in by_position:
+                keys[id_] = by_position[position]
+            else:
+                by_position[position] = take(id_, slug(position))
         else:
-            title = titles_en.get(id_) or titles_la.get(id_) or titles_pl.get(id_)
+            title = titles_["en"].get(id_) or titles_["la"].get(id_) or titles_["pl"].get(id_)
             proposal = slug(title) if title else None
-            if proposal and id_ in polish_ids:
+            if proposal and id_ in national:
                 proposal = f"pl-{proposal}"
-            assign(id_, proposal)
+            take(id_, proposal)
+    return keys
 
-    placed_tempora = {ids[n] for days in blocks_la.values() for day in days for n in day}
-    reachable = placed_tempora | universal_sancti | polish_sancti | set(generated)
 
-    lord = {ids[n] for n in reference["FEASTS_OF_JESUS_CLASS_1_AND_2"]}
-    # Named by Missale Meum's rules as taking a Sunday without commemoration.
-    lord |= {ids["SANCTI_09_14"], ids["SANCTI_11_09"]}
-    ember = {ids[n] for n in reference["EMBER_DAYS"]}
+def build(backend, saved_keys, lord_keys):
+    source = read_source(backend)
+    ids = source["ids"]
+    titles_ = source["titles"]
+    problems = []
+
+    sancti = source["sancti"]
+    for name in [n for days in source["blocks_la"].values() for day in days for n in day] \
+            + sancti["universal"] + sancti["pl"]:
+        if name not in ids:
+            problems.append(f"block refers to {name}, which is not an observance id")
+
+    keys = assign_keys(source, saved_keys)
+
+    generated = {ids[name]: spec for name, spec in GENERATED_IDS.items()}
+    placed_tempora = {ids[n] for days in source["blocks_la"].values() for day in days for n in day}
+    universal_sancti = {ids[n] for n in sancti["universal"]}
+    polish_set = {ids[n] for n in sancti["pl"]}
+    polish_added = polish_set - universal_sancti
+    polish_removed = universal_sancti - polish_set
+    reachable = placed_tempora | universal_sancti | polish_added | set(generated)
+
+    unknown_lord = sorted(set(lord_keys) - {keys[i] for i in reachable})
+    if unknown_lord:
+        problems.append(f"feasts-of-the-lord.json names keys not in the catalogue: {unknown_lord}")
+    ember = {ids[n] for n in source["reference"]["EMBER_DAYS"]}
 
     catalogue = []
     for id_ in sorted(reachable, key=lambda i: keys[i]):
         flexibility, name, rank, color = id_.split(":")
-        title_en = titles_en.get(id_, "")
+        title_en = titles_["en"].get(id_, "")
         if id_ in generated:
             kind = generated[id_][1]
             date = {"generated": kind}
         elif flexibility == "tempora":
             position = temporal_name(name)
             date = {"temporal": position.lower()}
-            if position in TEMPORA_FEASTS:
+            if name in TEMPORA_SPECIAL:
+                kind = TEMPORA_SPECIAL[name][1]
+            elif position in TEMPORA_FEASTS:
                 kind = "feast"
             elif re.match(r"^(Nat1-1|Pasc0-[1-6]|Pasc7-[1-6])$", position):
                 kind = "within-octave"
@@ -303,65 +340,89 @@ def main():
             "kind": kind,
             "class": int(rank),
             "colors": [COLOR_NAMES.get(c, c) for c in color],
-            "ofTheLord": id_ in lord,
-            "scope": "national" if id_ in polish_sancti else "universal",
-            **({"nation": "pl"} if id_ in polish_sancti else {}),
+            "ofTheLord": keys[id_] in lord_keys,
+            "scope": "national" if id_ in polish_added else "universal",
+            **({"nation": "pl"} if id_ in polish_added else {}),
         })
 
-    def keyed(names):
-        return [keys[ids[n]] for n in names]
+    replacements = {ids[a]: ids[r] for a, r in NATIONAL_REPLACEMENTS["pl"].items()}
+    for added, removed in replacements.items():
+        if added not in polish_added or removed not in polish_removed:
+            problems.append(f"replacement {added} -> {removed} no longer matches Missale Meum's Polish blocks")
+    replaced = set(replacements.values())
+    layer_pl = {
+        "nation": "pl",
+        "source": "Missale Meum api/constants/pl/blocks.py compared with la/blocks.py",
+        "operations": (
+            [{"op": "remove", "key": keys[i]} for i in sorted(polish_removed - replaced, key=lambda i: keys[i])]
+            + [{"op": "add", "key": keys[i], **({"replaces": keys[replacements[i]]} if i in replacements else {})}
+               for i in sorted(polish_added, key=lambda i: keys[i])]
+        ),
+    }
 
-    temporal_blocks = {name: [keyed(day) for day in days] for name, days in blocks_la.items()}
     reference_out = {
         "TEMPORA_RANK_MAP": "Advent ferias from 17 to 23 December are II class (common.py TEMPORA_RANK_MAP)",
     }
-    for name, members in reference.items():
+    for name, members in source["reference"].items():
         reference_out[name] = [keys[ids[n]] if n in ids else n if n.startswith("literal:") else f"pattern:{n}"
                                for n in members]
 
-    names = {}
-    for lang, table in (("la", titles_la), ("en", titles_en), ("pl", titles_pl)):
-        names[lang] = {keys[i]: table[i] for i in sorted(reachable, key=lambda i: keys[i]) if i in table}
+    names = {lang: {keys[i]: table[i] for i in sorted(reachable, key=lambda i: keys[i]) if i in table}
+             for lang, table in titles_.items()}
 
     commit = subprocess.run(["git", "-C", str(backend), "rev-parse", "HEAD"],
                             capture_output=True, text=True, check=True).stdout.strip()
-    source = {
+    provenance = {
         "repository": "https://github.com/mmolenda/missalemeum",
         "commit": commit,
         "license": "MIT, Copyright (c) 2022 Marcin Molenda",
-        "files": {FILES[name]: sha256(path) for name, path in paths.items()},
-        "skippedTitles": {"la": skipped_la, "en": skipped_en, "pl": skipped_pl},
+        "files": {FILES[name]: sha256(path) for name, path in source["paths"].items()},
+        "skippedTitles": source["skipped"],
     }
 
-    DATA.mkdir(exist_ok=True)
-    (DATA / "names").mkdir(exist_ok=True)
-    (DATA / "missalemeum").mkdir(exist_ok=True)
-
-    def write(path, value):
-        path.write_text(json.dumps(value, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
-
-    write(keys_path, dict(sorted(keys.items())))
-    write(DATA / "catalogue.json", catalogue)
-    write(DATA / "temporal-blocks.json", temporal_blocks)
-    for lang, table in names.items():
-        write(DATA / "names" / f"{lang}.json", table)
-    write(DATA / "missalemeum" / "source.json", source)
-    write(DATA / "missalemeum" / "ids.json", dict(sorted(ids.items())))
-    write(DATA / "missalemeum" / "reference-lists.json", reference_out)
-
-    print(json.dumps({
-        "idConstants": len(ids),
+    outputs = {
+        "keys.json": dict(sorted(keys.items())),
+        "catalogue.json": catalogue,
+        "temporal-blocks.json": {name: [[keys[ids[n]] for n in day] for day in days]
+                                 for name, days in source["blocks_la"].items()},
+        "layers/pl.json": layer_pl,
+        "missalemeum/source.json": provenance,
+        "missalemeum/ids.json": dict(sorted(ids.items())),
+        "missalemeum/reference-lists.json": reference_out,
+        **{f"names/{lang}.json": table for lang, table in names.items()},
+    }
+    summary = {
         "distinctIds": len(set(ids.values())),
         "catalogue": len(catalogue),
         "universalSancti": len(universal_sancti),
-        "polishOnlySancti": len(polish_sancti),
+        "polish": {"added": len(polish_added), "removed": len(polish_removed), "replacements": len(replacements)},
         "placedTempora": len(placed_tempora),
+        "feastsOfTheLord": sum(1 for e in catalogue if e["ofTheLord"]),
         "names": {lang: len(t) for lang, t in names.items()},
-        "skippedTitles": {k: len(v) for k, v in source["skippedTitles"].items()},
         "problems": problems,
-    }, indent=1))
-    if problems:
+    }
+    return outputs, summary
+
+
+def load_lord_keys():
+    reviewed = json.loads((DATA / "reviewed" / "feasts-of-the-lord.json").read_text())
+    return {entry["key"] for entry in reviewed["feasts"]}
+
+
+def main():
+    if len(sys.argv) != 2:
+        sys.exit(__doc__)
+    backend = Path(sys.argv[1]).resolve()
+    keys_path = DATA / "keys.json"
+    saved = json.loads(keys_path.read_text()) if keys_path.exists() else {}
+    outputs, summary = build(backend, saved, load_lord_keys())
+    print(json.dumps(summary, indent=1))
+    if summary["problems"]:
         sys.exit(1)
+    for rel, value in outputs.items():
+        path = DATA / rel
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(json.dumps(value, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
 
 
 if __name__ == "__main__":

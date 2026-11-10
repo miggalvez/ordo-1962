@@ -9,7 +9,10 @@ so run it from an isolated environment (a venv with python-dateutil, PyYAML,
 mistune and trans) against a checkout of the commit named in
 data/missalemeum/source.json.
 
-Writes data/oracle/missalemeum/<year>.json: one row per day,
+It refuses a checkout at another commit, with local changes or untracked files,
+or whose converted files differ from the hashes in data/missalemeum/source.json.
+
+Writes data/oracle/missalemeum/<year>.json (or missalemeum-pl/ with --lang pl): one row per day,
   [date, celebration keys, class, colours, commemoration keys, displaced keys, tempora keys]
 using ordo-1962 keys, so the tests never depend on Missale Meum's id format.
 
@@ -18,10 +21,11 @@ using ordo-1962 keys, so the tests never depend on Missale Meum's id format.
 """
 
 import argparse
-import datetime
+import hashlib
 import json
 import subprocess
 import sys
+import tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -35,17 +39,41 @@ def main():
     parser.add_argument("--to", dest="end", type=int, default=2100)
     parser.add_argument("--api-shape")
     parser.add_argument("--api-years", default="")
+    parser.add_argument("--lang", choices=["en", "pl"], default="en",
+                        help="en gives the universal calendar; pl adds Missale Meum's Polish proper")
     args = parser.parse_args()
 
     backend = Path(args.backend).resolve()
     source = json.loads((DATA / "missalemeum" / "source.json").read_text())
-    commit = subprocess.run(["git", "-C", str(backend), "rev-parse", "HEAD"],
-                            capture_output=True, text=True, check=True).stdout.strip()
+
+    def git(*command):
+        return subprocess.run(["git", "-C", str(backend), *command],
+                              capture_output=True, text=True, check=True).stdout
+
+    commit = git("rev-parse", "HEAD").strip()
     if commit != source["commit"]:
         sys.exit(f"checkout is at {commit}, but the catalogue was converted from {source['commit']}")
+    # The commit alone says nothing about the files on disk, so refuse local edits
+    # and untracked files, and check the converted files against their recorded hashes.
+    dirty = git("status", "--porcelain", "--untracked-files=all", "--", ".").strip()
+    if dirty:
+        sys.exit(f"the Missale Meum checkout has local changes:\n{dirty}")
+    for rel, digest in source["files"].items():
+        if hashlib.sha256((backend / rel).read_bytes()).hexdigest() != digest:
+            sys.exit(f"{rel} does not match the hash in data/missalemeum/source.json")
+    tracked = set(git("ls-files", "--", "api").split())
 
+    # Compile into a fresh cache so no bytecode left in the checkout is used.
+    sys.pycache_prefix = tempfile.mkdtemp(prefix="ordo-1962-pycache-")
     sys.path.insert(0, str(backend))
     from api.kalendar.factory import MissalFactory  # noqa: E402
+
+    loaded = sorted(str(Path(m.__file__).resolve().relative_to(backend))
+                    for name, m in list(sys.modules.items())
+                    if (name == "api" or name.startswith("api.")) and getattr(m, "__file__", None))
+    untracked = [path for path in loaded if path not in tracked]
+    if untracked:
+        sys.exit(f"Missale Meum modules not tracked by git were loaded: {untracked}")
 
     keys = json.loads((DATA / "keys.json").read_text())
     by_position = {}
@@ -66,13 +94,13 @@ def main():
         unmapped.add(observance.id)
         return f"?{observance.id}"
 
-    out_dir = DATA / "oracle" / "missalemeum"
+    out_dir = DATA / "oracle" / ("missalemeum" if args.lang == "en" else f"missalemeum-{args.lang}")
     out_dir.mkdir(parents=True, exist_ok=True)
     api_years = {int(y) for y in args.api_years.split(",") if y}
     days_written = 0
 
     for year in range(args.start, args.end + 1):
-        calendar = MissalFactory().create(year, "en")
+        calendar = MissalFactory().create(year, args.lang)
         rows = []
         api_items = []
         for date_, day in calendar.items():
@@ -108,7 +136,9 @@ def main():
                 json.dumps(api_items, ensure_ascii=False, indent=1), encoding="utf-8")
 
     (out_dir / "README.md").write_text(
-        f"Missale Meum's calendar, commit `{commit}`, run locally for {args.start}–{args.end} in English.\n"
+        f"Missale Meum's calendar, commit `{commit}`, run locally for {args.start}–{args.end}"
+        f" with language `{args.lang}`, from a clean checkout whose converted files matched\n"
+        "the hashes in `data/missalemeum/source.json`.\n"
         "Regenerate with `scripts/missalemeum_oracle.py`. Each row is\n"
         "`[date, celebration keys, class, colours, commemoration keys, displaced keys, tempora keys]`.\n",
         encoding="utf-8")

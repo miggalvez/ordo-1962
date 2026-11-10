@@ -1,0 +1,26 @@
+{
+ "about": "Observances treated as feasts of the Lord, for General Rubrics no. 16(a), 17 and 112(b). The rubrics give no complete list, so each entry names its source. Reviewed 2026-11-09; confirm the entries marked 'confirm' against a printed ordo.",
+ "feasts": [
+  { "key": "the-nativity-of-our-lord", "source": "no. 91 item 1 (Christmas day)" },
+  { "key": "the-nativity-of-our-lord-morning-mass", "source": "no. 91 item 1 (Christmas day)" },
+  { "key": "the-nativity-of-our-lord-day-mass", "source": "no. 91 item 1 (Christmas day)" },
+  { "key": "octave-day-of-christmas", "source": "no. 35 (a mystery of the Lord); confirm" },
+  { "key": "epiphany-of-the-lord", "source": "no. 91 item 3" },
+  { "key": "pasc5-4", "source": "no. 91 item 3 (Ascension)" },
+  { "key": "pent01-0", "source": "no. 91 item 3; no. 17(c) (Trinity)" },
+  { "key": "pent01-4", "source": "no. 91 item 3 (Corpus Christi)" },
+  { "key": "pent02-5", "source": "no. 91 item 3 (Sacred Heart)" },
+  { "key": "christ-the-king", "source": "no. 91 item 3; no. 17(d)" },
+  { "key": "nat2-0", "source": "no. 17(a) (Holy Name)" },
+  { "key": "epi1-0", "source": "no. 17(b) (Holy Family)" },
+  { "key": "the-precious-blood-of-our-lord-jesus-christ", "source": "no. 35 (a mystery of the Lord); confirm" },
+  { "key": "commemoration-of-the-baptism-of-the-lord", "source": "Missale Meum FEASTS_OF_JESUS_CLASS_1_AND_2; no. 91 item 14" },
+  { "key": "purification-of-the-blessed-virgin-mary", "source": "Missale Meum FEASTS_OF_JESUS_CLASS_1_AND_2; no. 91 item 14" },
+  { "key": "transfiguration-of-our-lord", "source": "Missale Meum FEASTS_OF_JESUS_CLASS_1_AND_2; no. 91 item 14" },
+  { "key": "exaltation-of-the-holy-cross", "source": "Missale Meum rule second_class_feast_no_sunday_commemoration; no. 91 item 14" },
+  { "key": "dedication-of-the-archbasilica-of-our-holy-savior", "source": "Missale Meum rule second_class_feast_no_sunday_commemoration; no. 91 item 14" }
+ ],
+ "unresolved": [
+  { "key": "annunciation-of-the-blessed-virgin-mary", "note": "Titled as a feast of Our Lady in the 1962 calendar; not marked until a source settles it." }
+ ]
+}

@@ -72,6 +72,32 @@ test('every universal observance has a Latin and an English name', () => {
   assert.deepEqual(missing, []);
 });
 
+test('movable days are keyed by their place in the cycle', () => {
+  const special = new Set(['seven-sorrows-in-passiontide']);
+  const odd = Object.entries(keys)
+    .filter(([id]) => id.startsWith('tempora:'))
+    .map(([, key]) => key)
+    .filter((key) => !special.has(key) && !/^([a-z]+\d*-\d[a-z]?|sep-ember-\d)$/.test(key));
+  assert.deepEqual(odd, []);
+});
+
+test('the Seven Sorrows in Passiontide is a commemoration, not a second feria', () => {
+  assert.equal(byKey.get('quad5-5').kind, 'feria');
+  assert.equal(byKey.get('seven-sorrows-in-passiontide').kind, 'commemoration');
+});
+
+test('feasts of the Lord are exactly the reviewed list', () => {
+  const reviewed = read('reviewed/feasts-of-the-lord.json');
+  const listed = reviewed.feasts.map((entry) => entry.key).sort();
+  for (const entry of reviewed.feasts) assert.ok(entry.source, `${entry.key} has no source`);
+  const marked = catalogue.filter((entry) => entry.ofTheLord).map((entry) => entry.key).sort();
+  assert.deepEqual(marked, listed);
+  // General Rubrics no. 17(a)-(d) and no. 91 item 3 name these.
+  for (const key of ['christ-the-king', 'nat2-0', 'epi1-0', 'pent01-0', 'pasc5-4', 'pent01-4', 'pent02-5']) {
+    assert.equal(byKey.get(key).ofTheLord, true, key);
+  }
+});
+
 test('the notice names the commit the data came from', () => {
   const notice = readFileSync(new URL('../NOTICE.md', import.meta.url), 'utf8');
   assert.match(source.commit, /^[0-9a-f]{40}$/);

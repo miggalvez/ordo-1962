@@ -14,7 +14,8 @@ export type ObservanceKind =
 export type Color = 'white' | 'red' | 'green' | 'violet' | 'black' | 'rose';
 
 export type DateRule =
-  | { readonly fixed: string }
+  /** `leapYear` is the month-day used instead in a leap year. */
+  | { readonly fixed: string; readonly leapYear?: string }
   | { readonly temporal: string }
   | { readonly rule: string }
   | { readonly generated: string };
@@ -24,6 +25,10 @@ export interface CatalogueEntry {
   readonly sourceId: string;
   readonly sourceAliases?: readonly string[];
   readonly date: DateRule;
+  /** Position among the universal entries of the same fixed date, as the calendar lists them. */
+  readonly dayOrder?: number;
+  /** Set on a further Mass of one celebration (Christmas, All Souls): the key of its principal entry. */
+  readonly formularyOf?: string;
   readonly kind: ObservanceKind;
   readonly class: 1 | 2 | 3 | 4;
   readonly colors: readonly Color[];
@@ -34,7 +39,9 @@ export interface CatalogueEntry {
 
 export type LayerOperation =
   | { readonly op: 'add'; readonly key: string; readonly replaces?: string }
-  | { readonly op: 'remove'; readonly key: string };
+  | { readonly op: 'remove'; readonly key: string }
+  /** The layer lists this fixed date's entries in this order. */
+  | { readonly op: 'order'; readonly date: string; readonly keys: readonly string[] };
 
 export interface Layer {
   readonly nation: string;

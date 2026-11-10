@@ -3,3 +3,4 @@ dist/
 .cache/
 __pycache__/
 src/generated/
+.DS_Store

@@ -1,4 +1,4 @@
-import { dayNumber, easterSunday, monthDay, toYmd, weekday } from './dates.js';
+import { dayNumber, easterSunday, isLeapYear, monthDay, toYmd, weekday } from './dates.js';
 import { CATALOGUE, LAYERS, TEMPORAL_BLOCKS } from './generated/data.js';
 import type { CatalogueEntry, Layer, TemporalBlockName, Ymd } from './types.js';
 
@@ -130,8 +130,9 @@ export function temporalYear(year: number): TemporalYear {
   if (days.sundayWithinChristmasOctave !== null) lay(days.sundayWithinChristmasOctave, 'NATIVITY_OCTAVE_SUNDAY');
   for (const date of [29, 30, 31]) lay(dayNumber(year, 12, date), 'NATIVITY_OCTAVE_FERIA', { overwrite: false });
 
+  // Callers get their own arrays, so sorting one cannot change the shared blocks.
   const byDate = (map: Map<number, readonly string[]>) =>
-    new Map([...map].sort(([a], [b]) => a - b).map(([day, keys]) => [toYmd(day), keys] as const));
+    new Map([...map].sort(([a], [b]) => a - b).map(([day, keys]) => [toYmd(day), [...keys]] as const));
   return { tempora: byDate(tempora), computedFeasts: byDate(computed) };
 }
 
@@ -150,35 +151,57 @@ function resolveLayers(nations: readonly string[] = []): Layer[] {
 
 /**
  * The observances with a fixed date that are candidates on each day of the
- * year, before any rule decides between them. Leap-year moves and transfers
- * are decided later, by the resolver.
+ * year, in the order the calendar lists them, before any rule decides between
+ * them. Leap-year dates are applied here; transfers are the resolver's job.
  */
 export function fixedFeasts(year: number, options: PlacementOptions = {}): ReadonlyMap<Ymd, readonly string[]> {
   const layers = resolveLayers(options.nations);
   const removed = new Set<string>();
   const added = new Set<string>();
+  const order = new Map<string, readonly string[]>();
   for (const layer of layers) {
     for (const op of layer.operations) {
       if (op.op === 'remove') removed.add(op.key);
+      else if (op.op === 'order') order.set(op.date, op.keys);
       else {
         added.add(op.key);
         if (op.replaces) removed.add(op.replaces);
       }
     }
   }
-  const byMonthDay = new Map<string, string[]>();
-  for (const entry of CATALOGUE as readonly CatalogueEntry[]) {
+
+  const byNominalDate = new Map<string, CatalogueEntry[]>();
+  for (const entry of CATALOGUE) {
     if (!('fixed' in entry.date)) continue;
     const included = entry.scope === 'universal' ? !removed.has(entry.key) : added.has(entry.key);
     if (!included) continue;
-    const list = byMonthDay.get(entry.date.fixed) ?? [];
-    list.push(entry.key);
-    byMonthDay.set(entry.date.fixed, list);
+    const list = byNominalDate.get(entry.date.fixed) ?? [];
+    list.push(entry);
+    byNominalDate.set(entry.date.fixed, list);
   }
+
+  const leap = isLeapYear(year);
+  const byPlacedDate = new Map<string, string[]>();
+  for (const nominal of [...byNominalDate.keys()].sort()) {
+    const entries = byNominalDate.get(nominal) ?? [];
+    // Universal entries in the calendar's own order, then national additions.
+    entries.sort((a, b) => (a.dayOrder ?? Infinity) - (b.dayOrder ?? Infinity) || a.key.localeCompare(b.key));
+    let keys = entries.map((entry) => entry.key);
+    const layerOrder = order.get(nominal);
+    if (layerOrder) keys = [...layerOrder.filter((key) => keys.includes(key)), ...keys.filter((key) => !layerOrder.includes(key))];
+    for (const key of keys) {
+      const entry = entries.find((candidate) => candidate.key === key);
+      const date = entry && 'fixed' in entry.date && leap && entry.date.leapYear ? entry.date.leapYear : nominal;
+      const list = byPlacedDate.get(date) ?? [];
+      list.push(key);
+      byPlacedDate.set(date, list);
+    }
+  }
+
   const result = new Map<Ymd, readonly string[]>();
   for (let day = dayNumber(year, 1, 1); day <= dayNumber(year, 12, 31); day += 1) {
-    const keys = byMonthDay.get(monthDay(day));
-    if (keys) result.set(toYmd(day), keys);
+    const keys = byPlacedDate.get(monthDay(day));
+    if (keys) result.set(toYmd(day), [...keys]);
   }
   return result;
 }

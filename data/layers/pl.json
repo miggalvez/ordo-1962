@@ -114,6 +114,48 @@
   {
    "op": "add",
    "key": "pl-victoriae-chocimensis"
+  },
+  {
+   "op": "order",
+   "date": "06-15",
+   "keys": [
+    "pl-b-jolantae-viduae",
+    "st-vitus"
+   ]
+  },
+  {
+   "op": "order",
+   "date": "07-18",
+   "keys": [
+    "pl-b-simonis-confessoris",
+    "camillus-de-lellis",
+    "sts-symphorosa-and-sons"
+   ]
+  },
+  {
+   "op": "order",
+   "date": "07-20",
+   "keys": [
+    "pl-b-ceslai-confessoris",
+    "st-margaret",
+    "st-jerome-emiliani"
+   ]
+  },
+  {
+   "op": "order",
+   "date": "10-21",
+   "keys": [
+    "st-ursula-and-companions",
+    "st-hilarion"
+   ]
+  },
+  {
+   "op": "order",
+   "date": "11-17",
+   "keys": [
+    "pl-b-salomea-virginis",
+    "st-gregory-the-wonderworker"
+   ]
   }
  ]
 }

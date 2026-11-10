@@ -51,10 +51,18 @@ test('catalogue entries have valid attributes', () => {
     assert.ok(entry.colors.length > 0 && entry.colors.every((c) => COLORS.has(c)), `${label}: colors`);
     assert.equal(typeof entry.ofTheLord, 'boolean', label);
     assert.ok(['universal', 'national'].includes(entry.scope), label);
-    const dateKinds = Object.keys(entry.date);
+    const dateKinds = Object.keys(entry.date).filter((k) => k !== 'leapYear');
     assert.equal(dateKinds.length, 1, label);
     assert.ok(['fixed', 'temporal', 'rule', 'generated'].includes(dateKinds[0]), label);
-    if (entry.date.fixed) assert.match(entry.date.fixed, /^(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$/, label);
+    const monthDay = /^(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$/;
+    if (entry.date.fixed) assert.match(entry.date.fixed, monthDay, label);
+    if ('leapYear' in entry.date) assert.match(entry.date.leapYear, monthDay, label);
+    if (entry.date.fixed && entry.scope === 'universal') assert.equal(typeof entry.dayOrder, 'number', label);
+    if (entry.formularyOf) {
+      const principal = byKey.get(entry.formularyOf);
+      assert.ok(principal && !principal.formularyOf, `${label}: formularyOf ${entry.formularyOf}`);
+      assert.deepEqual(principal.date, entry.date, label);
+    }
   }
 });
 

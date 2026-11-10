@@ -1,0 +1,601 @@
+{
+ "about": "Days on which Missale Meum lists two celebrations that are not Masses of one feast. Expected results follow the SSPX Ordo (ordo.fsspx.org, congregation empty), fetched 2026-11-09 as a development-time cross-check, and should be confirmed against the General Rubrics and a printed ordo. Missale Meum also adds a IV class commemoration on each Vigil of the Ascension day that the Ordo does not print; that question belongs to the commemoration rules (M4).",
+ "days": [
+  {
+   "date": "1965-05-26",
+   "missaleMeum": {
+    "celebration": [
+     "pasc5-3",
+     "st-philip-neri"
+    ],
+    "commemorations": [
+     "st-eleutherius"
+    ]
+   },
+   "expected": {
+    "celebration": "pasc5-3",
+    "commemorations": [
+     "st-philip-neri"
+    ]
+   },
+   "rule": "The II class Vigil of the Ascension is celebrated; the III class feast is commemorated"
+  },
+  {
+   "date": "1971-05-19",
+   "missaleMeum": {
+    "celebration": [
+     "pasc5-3",
+     "st-peter-celestine"
+    ],
+    "commemorations": [
+     "st-pudentiana-virgin"
+    ]
+   },
+   "expected": {
+    "celebration": "pasc5-3",
+    "commemorations": [
+     "st-peter-celestine"
+    ]
+   },
+   "rule": "The II class Vigil of the Ascension is celebrated; the III class feast is commemorated"
+  },
+  {
+   "date": "1972-05-10",
+   "missaleMeum": {
+    "celebration": [
+     "pasc5-3",
+     "st-antoninus"
+    ],
+    "commemorations": [
+     "sts-gordian-and-epimachus"
+    ]
+   },
+   "expected": {
+    "celebration": "pasc5-3",
+    "commemorations": [
+     "st-antoninus"
+    ]
+   },
+   "rule": "The II class Vigil of the Ascension is celebrated; the III class feast is commemorated"
+  },
+  {
+   "date": "1976-05-26",
+   "missaleMeum": {
+    "celebration": [
+     "pasc5-3",
+     "st-philip-neri"
+    ],
+    "commemorations": [
+     "st-eleutherius"
+    ]
+   },
+   "expected": {
+    "celebration": "pasc5-3",
+    "commemorations": [
+     "st-philip-neri"
+    ]
+   },
+   "rule": "The II class Vigil of the Ascension is celebrated; the III class feast is commemorated"
+  },
+  {
+   "date": "1981-05-27",
+   "missaleMeum": {
+    "celebration": [
+     "pasc5-3",
+     "st-bede-the-venerable"
+    ],
+    "commemorations": [
+     "st-john-i"
+    ]
+   },
+   "expected": {
+    "celebration": "pasc5-3",
+    "commemorations": [
+     "st-bede-the-venerable"
+    ]
+   },
+   "rule": "The II class Vigil of the Ascension is celebrated; the III class feast is commemorated"
+  },
+  {
+   "date": "1982-05-19",
+   "missaleMeum": {
+    "celebration": [
+     "pasc5-3",
+     "st-peter-celestine"
+    ],
+    "commemorations": [
+     "st-pudentiana-virgin"
+    ]
+   },
+   "expected": {
+    "celebration": "pasc5-3",
+    "commemorations": [
+     "st-peter-celestine"
+    ]
+   },
+   "rule": "The II class Vigil of the Ascension is celebrated; the III class feast is commemorated"
+  },
+  {
+   "date": "1987-05-27",
+   "missaleMeum": {
+    "celebration": [
+     "pasc5-3",
+     "st-bede-the-venerable"
+    ],
+    "commemorations": [
+     "st-john-i"
+    ]
+   },
+   "expected": {
+    "celebration": "pasc5-3",
+    "commemorations": [
+     "st-bede-the-venerable"
+    ]
+   },
+   "rule": "The II class Vigil of the Ascension is celebrated; the III class feast is commemorated"
+  },
+  {
+   "date": "1992-05-27",
+   "missaleMeum": {
+    "celebration": [
+     "pasc5-3",
+     "st-bede-the-venerable"
+    ],
+    "commemorations": [
+     "st-john-i"
+    ]
+   },
+   "expected": {
+    "celebration": "pasc5-3",
+    "commemorations": [
+     "st-bede-the-venerable"
+    ]
+   },
+   "rule": "The II class Vigil of the Ascension is celebrated; the III class feast is commemorated"
+  },
+  {
+   "date": "1993-05-19",
+   "missaleMeum": {
+    "celebration": [
+     "pasc5-3",
+     "st-peter-celestine"
+    ],
+    "commemorations": [
+     "st-pudentiana-virgin"
+    ]
+   },
+   "expected": {
+    "celebration": "pasc5-3",
+    "commemorations": [
+     "st-peter-celestine"
+    ]
+   },
+   "rule": "The II class Vigil of the Ascension is celebrated; the III class feast is commemorated"
+  },
+  {
+   "date": "2000-05-31",
+   "missaleMeum": {
+    "celebration": [
+     "pasc5-3",
+     "queenship-of-the-blessed-virgin-mary"
+    ],
+    "commemorations": [
+     "st-petronilla"
+    ]
+   },
+   "expected": {
+    "celebration": "queenship-of-the-blessed-virgin-mary",
+    "commemorations": [
+     "pasc5-3"
+    ]
+   },
+   "rule": "A II class feast of the universal calendar outranks the II class Vigil of the Ascension, which is commemorated"
+  },
+  {
+   "date": "2004-05-19",
+   "missaleMeum": {
+    "celebration": [
+     "pasc5-3",
+     "st-peter-celestine"
+    ],
+    "commemorations": [
+     "st-pudentiana-virgin"
+    ]
+   },
+   "expected": {
+    "celebration": "pasc5-3",
+    "commemorations": [
+     "st-peter-celestine"
+    ]
+   },
+   "rule": "The II class Vigil of the Ascension is celebrated; the III class feast is commemorated"
+  },
+  {
+   "date": "2019-04-14",
+   "missaleMeum": {
+    "celebration": [
+     "quad6-0",
+     "st-justin"
+    ],
+    "commemorations": [
+     "sts-tiburtius-valerian-and-maximus-martyrs"
+    ]
+   },
+   "expected": {
+    "celebration": "quad6-0",
+    "commemorations": []
+   },
+   "rule": "A I class Sunday of Lent or Passiontide admits no commemoration of a III class feast"
+  },
+  {
+   "date": "2022-05-25",
+   "missaleMeum": {
+    "celebration": [
+     "pasc5-3",
+     "st-gregory-vii"
+    ],
+    "commemorations": [
+     "st-urban-pope-and-martyr"
+    ]
+   },
+   "expected": {
+    "celebration": "pasc5-3",
+    "commemorations": [
+     "st-gregory-vii"
+    ]
+   },
+   "rule": "The II class Vigil of the Ascension is celebrated; the III class feast is commemorated"
+  },
+  {
+   "date": "2030-04-14",
+   "missaleMeum": {
+    "celebration": [
+     "quad6-0",
+     "st-justin"
+    ],
+    "commemorations": [
+     "sts-tiburtius-valerian-and-maximus-martyrs"
+    ]
+   },
+   "expected": {
+    "celebration": "quad6-0",
+    "commemorations": []
+   },
+   "rule": "A I class Sunday of Lent or Passiontide admits no commemoration of a III class feast"
+  },
+  {
+   "date": "2033-05-25",
+   "missaleMeum": {
+    "celebration": [
+     "pasc5-3",
+     "st-gregory-vii"
+    ],
+    "commemorations": [
+     "st-urban-pope-and-martyr"
+    ]
+   },
+   "expected": {
+    "celebration": "pasc5-3",
+    "commemorations": [
+     "st-gregory-vii"
+    ]
+   },
+   "rule": "The II class Vigil of the Ascension is celebrated; the III class feast is commemorated"
+  },
+  {
+   "date": "2035-03-04",
+   "missaleMeum": {
+    "celebration": [
+     "quad4-0",
+     "st-casimir"
+    ],
+    "commemorations": [
+     "st-lucius"
+    ]
+   },
+   "expected": {
+    "celebration": "quad4-0",
+    "commemorations": []
+   },
+   "rule": "A I class Sunday of Lent or Passiontide admits no commemoration of a III class feast"
+  },
+  {
+   "date": "2041-04-14",
+   "missaleMeum": {
+    "celebration": [
+     "quad6-0",
+     "st-justin"
+    ],
+    "commemorations": [
+     "sts-tiburtius-valerian-and-maximus-martyrs"
+    ]
+   },
+   "expected": {
+    "celebration": "quad6-0",
+    "commemorations": []
+   },
+   "rule": "A I class Sunday of Lent or Passiontide admits no commemoration of a III class feast"
+  },
+  {
+   "date": "2044-05-25",
+   "missaleMeum": {
+    "celebration": [
+     "pasc5-3",
+     "st-gregory-vii"
+    ],
+    "commemorations": [
+     "st-urban-pope-and-martyr"
+    ]
+   },
+   "expected": {
+    "celebration": "pasc5-3",
+    "commemorations": [
+     "st-gregory-vii"
+    ]
+   },
+   "rule": "The II class Vigil of the Ascension is celebrated; the III class feast is commemorated"
+  },
+  {
+   "date": "2046-03-04",
+   "missaleMeum": {
+    "celebration": [
+     "quad4-0",
+     "st-casimir"
+    ],
+    "commemorations": [
+     "st-lucius"
+    ]
+   },
+   "expected": {
+    "celebration": "quad4-0",
+    "commemorations": []
+   },
+   "rule": "A I class Sunday of Lent or Passiontide admits no commemoration of a III class feast"
+  },
+  {
+   "date": "2049-05-26",
+   "missaleMeum": {
+    "celebration": [
+     "pasc5-3",
+     "st-philip-neri"
+    ],
+    "commemorations": [
+     "st-eleutherius"
+    ]
+   },
+   "expected": {
+    "celebration": "pasc5-3",
+    "commemorations": [
+     "st-philip-neri"
+    ]
+   },
+   "rule": "The II class Vigil of the Ascension is celebrated; the III class feast is commemorated"
+  },
+  {
+   "date": "2051-05-10",
+   "missaleMeum": {
+    "celebration": [
+     "pasc5-3",
+     "st-antoninus"
+    ],
+    "commemorations": [
+     "sts-gordian-and-epimachus"
+    ]
+   },
+   "expected": {
+    "celebration": "pasc5-3",
+    "commemorations": [
+     "st-antoninus"
+    ]
+   },
+   "rule": "The II class Vigil of the Ascension is celebrated; the III class feast is commemorated"
+  },
+  {
+   "date": "2052-04-14",
+   "missaleMeum": {
+    "celebration": [
+     "quad6-0",
+     "st-justin"
+    ],
+    "commemorations": [
+     "sts-tiburtius-valerian-and-maximus-martyrs"
+    ]
+   },
+   "expected": {
+    "celebration": "quad6-0",
+    "commemorations": []
+   },
+   "rule": "A I class Sunday of Lent or Passiontide admits no commemoration of a III class feast"
+  },
+  {
+   "date": "2055-05-26",
+   "missaleMeum": {
+    "celebration": [
+     "pasc5-3",
+     "st-philip-neri"
+    ],
+    "commemorations": [
+     "st-eleutherius"
+    ]
+   },
+   "expected": {
+    "celebration": "pasc5-3",
+    "commemorations": [
+     "st-philip-neri"
+    ]
+   },
+   "rule": "The II class Vigil of the Ascension is celebrated; the III class feast is commemorated"
+  },
+  {
+   "date": "2056-05-10",
+   "missaleMeum": {
+    "celebration": [
+     "pasc5-3",
+     "st-antoninus"
+    ],
+    "commemorations": [
+     "sts-gordian-and-epimachus"
+    ]
+   },
+   "expected": {
+    "celebration": "pasc5-3",
+    "commemorations": [
+     "st-antoninus"
+    ]
+   },
+   "rule": "The II class Vigil of the Ascension is celebrated; the III class feast is commemorated"
+  },
+  {
+   "date": "2060-05-26",
+   "missaleMeum": {
+    "celebration": [
+     "pasc5-3",
+     "st-philip-neri"
+    ],
+    "commemorations": [
+     "st-eleutherius"
+    ]
+   },
+   "expected": {
+    "celebration": "pasc5-3",
+    "commemorations": [
+     "st-philip-neri"
+    ]
+   },
+   "rule": "The II class Vigil of the Ascension is celebrated; the III class feast is commemorated"
+  },
+  {
+   "date": "2066-05-19",
+   "missaleMeum": {
+    "celebration": [
+     "pasc5-3",
+     "st-peter-celestine"
+    ],
+    "commemorations": [
+     "st-pudentiana-virgin"
+    ]
+   },
+   "expected": {
+    "celebration": "pasc5-3",
+    "commemorations": [
+     "st-peter-celestine"
+    ]
+   },
+   "rule": "The II class Vigil of the Ascension is celebrated; the III class feast is commemorated"
+  },
+  {
+   "date": "2071-05-27",
+   "missaleMeum": {
+    "celebration": [
+     "pasc5-3",
+     "st-bede-the-venerable"
+    ],
+    "commemorations": [
+     "st-john-i"
+    ]
+   },
+   "expected": {
+    "celebration": "pasc5-3",
+    "commemorations": [
+     "st-bede-the-venerable"
+    ]
+   },
+   "rule": "The II class Vigil of the Ascension is celebrated; the III class feast is commemorated"
+  },
+  {
+   "date": "2076-05-27",
+   "missaleMeum": {
+    "celebration": [
+     "pasc5-3",
+     "st-bede-the-venerable"
+    ],
+    "commemorations": [
+     "st-john-i"
+    ]
+   },
+   "expected": {
+    "celebration": "pasc5-3",
+    "commemorations": [
+     "st-bede-the-venerable"
+    ]
+   },
+   "rule": "The II class Vigil of the Ascension is celebrated; the III class feast is commemorated"
+  },
+  {
+   "date": "2077-05-19",
+   "missaleMeum": {
+    "celebration": [
+     "pasc5-3",
+     "st-peter-celestine"
+    ],
+    "commemorations": [
+     "st-pudentiana-virgin"
+    ]
+   },
+   "expected": {
+    "celebration": "pasc5-3",
+    "commemorations": [
+     "st-peter-celestine"
+    ]
+   },
+   "rule": "The II class Vigil of the Ascension is celebrated; the III class feast is commemorated"
+  },
+  {
+   "date": "2079-05-31",
+   "missaleMeum": {
+    "celebration": [
+     "pasc5-3",
+     "queenship-of-the-blessed-virgin-mary"
+    ],
+    "commemorations": [
+     "st-petronilla"
+    ]
+   },
+   "expected": {
+    "celebration": "queenship-of-the-blessed-virgin-mary",
+    "commemorations": [
+     "pasc5-3"
+    ]
+   },
+   "rule": "A II class feast of the universal calendar outranks the II class Vigil of the Ascension, which is commemorated"
+  },
+  {
+   "date": "2082-05-27",
+   "missaleMeum": {
+    "celebration": [
+     "pasc5-3",
+     "st-bede-the-venerable"
+    ],
+    "commemorations": [
+     "st-john-i"
+    ]
+   },
+   "expected": {
+    "celebration": "pasc5-3",
+    "commemorations": [
+     "st-bede-the-venerable"
+    ]
+   },
+   "rule": "The II class Vigil of the Ascension is celebrated; the III class feast is commemorated"
+  },
+  {
+   "date": "2088-05-19",
+   "missaleMeum": {
+    "celebration": [
+     "pasc5-3",
+     "st-peter-celestine"
+    ],
+    "commemorations": [
+     "st-pudentiana-virgin"
+    ]
+   },
+   "expected": {
+    "celebration": "pasc5-3",
+    "commemorations": [
+     "st-peter-celestine"
+    ]
+   },
+   "rule": "The II class Vigil of the Ascension is celebrated; the III class feast is commemorated"
+  }
+ ]
+}

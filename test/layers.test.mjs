@@ -8,7 +8,7 @@ const byKey = new Map(catalogue.map((entry) => [entry.key, entry]));
 const pl = read('layers/pl.json');
 
 const removedBy = (layer) => new Set(layer.operations.flatMap((op) =>
-  op.op === 'remove' ? [op.key] : op.replaces ? [op.replaces] : []));
+  op.op === 'remove' ? [op.key] : op.op === 'add' && op.replaces ? [op.replaces] : []));
 const addedBy = (layer) => new Set(layer.operations.filter((op) => op.op === 'add').map((op) => op.key));
 
 function fixedObservances(monthDay, layer) {
@@ -22,7 +22,12 @@ function fixedObservances(monthDay, layer) {
 
 test('the Polish layer refers only to catalogue entries of the right scope', () => {
   for (const op of pl.operations) {
-    assert.ok(['add', 'remove'].includes(op.op), op.op);
+    assert.ok(['add', 'remove', 'order'].includes(op.op), op.op);
+    if (op.op === 'order') {
+      assert.match(op.date, /^\d{2}-\d{2}$/);
+      for (const key of op.keys) assert.equal(byKey.get(key)?.date.fixed, op.date, `${op.date}: ${key}`);
+      continue;
+    }
     const entry = byKey.get(op.key);
     assert.ok(entry, op.key);
     if (op.op === 'remove') assert.equal(entry.scope, 'universal', op.key);

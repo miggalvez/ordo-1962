@@ -408,6 +408,7 @@
   "date": {
    "fixed": "11-01"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 1,
   "colors": [
@@ -422,6 +423,7 @@
   "date": {
    "fixed": "03-25"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 1,
   "colors": [
@@ -436,6 +438,7 @@
   "date": {
    "fixed": "08-15"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 1,
   "colors": [
@@ -450,6 +453,7 @@
   "date": {
    "fixed": "08-29"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -464,6 +468,7 @@
   "date": {
    "fixed": "07-18"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -478,6 +483,7 @@
   "date": {
    "fixed": "02-22"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 2,
   "colors": [
@@ -506,6 +512,7 @@
   "date": {
    "fixed": "11-02"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 1,
   "colors": [
@@ -520,6 +527,8 @@
   "date": {
    "fixed": "11-02"
   },
+  "dayOrder": 1,
+  "formularyOf": "commemoration-of-all-souls",
   "kind": "feast",
   "class": 1,
   "colors": [
@@ -534,6 +543,8 @@
   "date": {
    "fixed": "11-02"
   },
+  "dayOrder": 2,
+  "formularyOf": "commemoration-of-all-souls",
   "kind": "feast",
   "class": 1,
   "colors": [
@@ -548,6 +559,7 @@
   "date": {
    "fixed": "06-30"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -562,6 +574,7 @@
   "date": {
    "fixed": "01-13"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 2,
   "colors": [
@@ -576,6 +589,7 @@
   "date": {
    "fixed": "01-25"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -590,6 +604,7 @@
   "date": {
    "fixed": "09-29"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 1,
   "colors": [
@@ -604,6 +619,7 @@
   "date": {
    "fixed": "11-09"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 2,
   "colors": [
@@ -618,6 +634,7 @@
   "date": {
    "fixed": "08-05"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -632,6 +649,7 @@
   "date": {
    "fixed": "11-18"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -1234,6 +1252,7 @@
   "date": {
    "fixed": "01-06"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 1,
   "colors": [
@@ -1248,6 +1267,7 @@
   "date": {
    "fixed": "09-14"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 2,
   "colors": [
@@ -1276,6 +1296,7 @@
   "date": {
    "fixed": "12-26"
   },
+  "dayOrder": 1,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -1290,6 +1311,7 @@
   "date": {
    "fixed": "12-27"
   },
+  "dayOrder": 1,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -1304,6 +1326,7 @@
   "date": {
    "fixed": "12-28"
   },
+  "dayOrder": 1,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -1318,6 +1341,7 @@
   "date": {
    "fixed": "04-25"
   },
+  "dayOrder": 1,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -1332,6 +1356,7 @@
   "date": {
    "fixed": "03-10"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -1346,6 +1371,7 @@
   "date": {
    "fixed": "11-08"
   },
+  "dayOrder": 0,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -1360,6 +1386,7 @@
   "date": {
    "fixed": "10-02"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -1374,6 +1401,7 @@
   "date": {
    "fixed": "12-28"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 2,
   "colors": [
@@ -1388,6 +1416,7 @@
   "date": {
    "fixed": "08-01"
   },
+  "dayOrder": 0,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -1402,6 +1431,7 @@
   "date": {
    "fixed": "12-08"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 1,
   "colors": [
@@ -1416,6 +1446,7 @@
   "date": {
    "fixed": "08-22"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 2,
   "colors": [
@@ -1430,6 +1461,7 @@
   "date": {
    "fixed": "10-11"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 2,
   "colors": [
@@ -1444,6 +1476,7 @@
   "date": {
    "fixed": "09-12"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -1500,6 +1533,7 @@
   "date": {
    "fixed": "06-24"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 1,
   "colors": [
@@ -1514,6 +1548,7 @@
   "date": {
    "fixed": "09-08"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 2,
   "colors": [
@@ -1528,6 +1563,7 @@
   "date": {
    "fixed": "01-01"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 1,
   "colors": [
@@ -1542,6 +1578,7 @@
   "date": {
    "fixed": "02-11"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -1556,6 +1593,7 @@
   "date": {
    "fixed": "07-16"
   },
+  "dayOrder": 0,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -1570,6 +1608,7 @@
   "date": {
    "fixed": "09-24"
   },
+  "dayOrder": 0,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -1584,6 +1623,7 @@
   "date": {
    "fixed": "10-07"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 2,
   "colors": [
@@ -5179,6 +5219,7 @@
   "date": {
    "fixed": "08-06"
   },
+  "dayOrder": 1,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -5193,6 +5234,7 @@
   "date": {
    "fixed": "11-21"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -5207,6 +5249,7 @@
   "date": {
    "fixed": "02-02"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 2,
   "colors": [
@@ -6107,6 +6150,7 @@
   "date": {
    "fixed": "05-31"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 2,
   "colors": [
@@ -6163,6 +6207,7 @@
   "date": {
    "fixed": "07-10"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -6177,6 +6222,7 @@
   "date": {
    "fixed": "02-12"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -6205,6 +6251,7 @@
   "date": {
    "fixed": "09-15"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 2,
   "colors": [
@@ -6219,6 +6266,7 @@
   "date": {
    "fixed": "08-18"
   },
+  "dayOrder": 0,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -6233,6 +6281,7 @@
   "date": {
    "fixed": "02-05"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -6247,6 +6296,7 @@
   "date": {
    "fixed": "01-21"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -6261,6 +6311,7 @@
   "date": {
    "fixed": "01-28"
   },
+  "dayOrder": 1,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -6275,6 +6326,7 @@
   "date": {
    "fixed": "11-15"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -6289,6 +6341,7 @@
   "date": {
    "fixed": "07-17"
   },
+  "dayOrder": 0,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -6303,6 +6356,7 @@
   "date": {
    "fixed": "06-21"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -6317,6 +6371,7 @@
   "date": {
    "fixed": "08-02"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -6331,6 +6386,7 @@
   "date": {
    "fixed": "12-07"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -6345,6 +6401,7 @@
   "date": {
    "fixed": "11-30"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 2,
   "colors": [
@@ -6359,6 +6416,7 @@
   "date": {
    "fixed": "11-10"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -6373,6 +6431,7 @@
   "date": {
    "fixed": "02-04"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -6387,6 +6446,7 @@
   "date": {
    "fixed": "06-01"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -6401,6 +6461,7 @@
   "date": {
    "fixed": "04-17"
   },
+  "dayOrder": 0,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -6415,6 +6476,7 @@
   "date": {
    "fixed": "07-26"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 2,
   "colors": [
@@ -6429,6 +6491,7 @@
   "date": {
    "fixed": "04-21"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -6443,6 +6506,7 @@
   "date": {
    "fixed": "10-23"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -6457,6 +6521,7 @@
   "date": {
    "fixed": "07-05"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -6471,6 +6536,7 @@
   "date": {
    "fixed": "06-13"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -6485,6 +6551,7 @@
   "date": {
    "fixed": "01-17"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -6499,6 +6566,7 @@
   "date": {
    "fixed": "05-10"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -6513,6 +6581,7 @@
   "date": {
    "fixed": "07-23"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -6527,6 +6596,7 @@
   "date": {
    "fixed": "02-09"
   },
+  "dayOrder": 1,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -6541,6 +6611,7 @@
   "date": {
    "fixed": "05-02"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -6555,6 +6626,7 @@
   "date": {
    "fixed": "08-28"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -6569,6 +6641,7 @@
   "date": {
    "fixed": "05-28"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -6583,6 +6656,7 @@
   "date": {
    "fixed": "06-11"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -6597,6 +6671,7 @@
   "date": {
    "fixed": "08-24"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 2,
   "colors": [
@@ -6611,6 +6686,7 @@
   "date": {
    "fixed": "06-14"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -6625,6 +6701,7 @@
   "date": {
    "fixed": "06-12"
   },
+  "dayOrder": 1,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -6639,6 +6716,7 @@
   "date": {
    "fixed": "05-27"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -6653,6 +6731,7 @@
   "date": {
    "fixed": "03-21"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -6667,6 +6746,7 @@
   "date": {
    "fixed": "08-20"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -6681,6 +6761,7 @@
   "date": {
    "fixed": "05-20"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -6695,6 +6776,7 @@
   "date": {
    "fixed": "02-03"
   },
+  "dayOrder": 0,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -6709,6 +6791,7 @@
   "date": {
    "fixed": "07-14"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -6723,6 +6806,7 @@
   "date": {
    "fixed": "05-14"
   },
+  "dayOrder": 0,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -6737,6 +6821,7 @@
   "date": {
    "fixed": "06-05"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -6751,6 +6836,7 @@
   "date": {
    "fixed": "10-08"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -6765,6 +6851,7 @@
   "date": {
    "fixed": "10-06"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -6779,6 +6866,7 @@
   "date": {
    "fixed": "08-07"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -6793,6 +6881,7 @@
   "date": {
    "fixed": "10-14"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -6807,6 +6896,7 @@
   "date": {
    "fixed": "01-19"
   },
+  "dayOrder": 1,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -6821,6 +6911,7 @@
   "date": {
    "fixed": "03-04"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -6835,6 +6926,7 @@
   "date": {
    "fixed": "11-25"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -6849,6 +6941,7 @@
   "date": {
    "fixed": "04-30"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -6863,6 +6956,7 @@
   "date": {
    "fixed": "11-22"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -6877,6 +6971,7 @@
   "date": {
    "fixed": "11-04"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -6891,6 +6986,7 @@
   "date": {
    "fixed": "07-24"
   },
+  "dayOrder": 0,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -6905,6 +7001,7 @@
   "date": {
    "fixed": "07-25"
   },
+  "dayOrder": 1,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -6919,6 +7016,7 @@
   "date": {
    "fixed": "11-24"
   },
+  "dayOrder": 1,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -6933,6 +7031,7 @@
   "date": {
    "fixed": "08-12"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -6947,6 +7046,7 @@
   "date": {
    "fixed": "11-23"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -6961,6 +7061,7 @@
   "date": {
    "fixed": "02-09"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -6975,6 +7076,7 @@
   "date": {
    "fixed": "03-18"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -6989,6 +7091,7 @@
   "date": {
    "fixed": "12-11"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -7003,6 +7106,7 @@
   "date": {
    "fixed": "11-13"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -7017,6 +7121,7 @@
   "date": {
    "fixed": "10-09"
   },
+  "dayOrder": 1,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -7031,6 +7136,7 @@
   "date": {
    "fixed": "08-04"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -7045,6 +7151,7 @@
   "date": {
    "fixed": "08-07"
   },
+  "dayOrder": 1,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -7059,6 +7166,7 @@
   "date": {
    "fixed": "02-06"
   },
+  "dayOrder": 1,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -7073,6 +7181,7 @@
   "date": {
    "fixed": "10-13"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -7087,6 +7196,7 @@
   "date": {
    "fixed": "05-26"
   },
+  "dayOrder": 1,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -7101,6 +7211,7 @@
   "date": {
    "fixed": "11-19"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -7115,6 +7226,7 @@
   "date": {
    "fixed": "07-08"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -7129,6 +7241,7 @@
   "date": {
    "fixed": "01-23"
   },
+  "dayOrder": 1,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -7143,6 +7256,7 @@
   "date": {
    "fixed": "06-18"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -7157,6 +7271,7 @@
   "date": {
    "fixed": "08-14"
   },
+  "dayOrder": 1,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -7171,6 +7286,7 @@
   "date": {
    "fixed": "12-16"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -7185,6 +7301,7 @@
   "date": {
    "fixed": "10-26"
   },
+  "dayOrder": 0,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -7199,6 +7316,7 @@
   "date": {
    "fixed": "11-23"
   },
+  "dayOrder": 1,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -7213,6 +7331,7 @@
   "date": {
    "fixed": "01-14"
   },
+  "dayOrder": 1,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -7227,6 +7346,7 @@
   "date": {
    "fixed": "05-30"
   },
+  "dayOrder": 0,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -7241,6 +7361,7 @@
   "date": {
    "fixed": "11-20"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -7255,6 +7376,7 @@
   "date": {
    "fixed": "04-24"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -7269,6 +7391,7 @@
   "date": {
    "fixed": "03-09"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -7283,6 +7406,7 @@
   "date": {
    "fixed": "10-10"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -7297,6 +7421,7 @@
   "date": {
    "fixed": "06-04"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -7311,6 +7436,7 @@
   "date": {
    "fixed": "01-29"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -7325,6 +7451,7 @@
   "date": {
    "fixed": "10-04"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -7339,6 +7466,7 @@
   "date": {
    "fixed": "04-02"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -7353,6 +7481,7 @@
   "date": {
    "fixed": "12-03"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -7365,8 +7494,10 @@
   "key": "st-gabriel-of-our-lady-of-sorrows",
   "sourceId": "sancti:02-27:3:w",
   "date": {
-   "fixed": "02-27"
+   "fixed": "02-27",
+   "leapYear": "02-28"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -7381,6 +7512,7 @@
   "date": {
    "fixed": "03-24"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -7395,6 +7527,7 @@
   "date": {
    "fixed": "04-23"
   },
+  "dayOrder": 0,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -7409,6 +7542,7 @@
   "date": {
    "fixed": "11-16"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -7423,6 +7557,7 @@
   "date": {
    "fixed": "09-01"
   },
+  "dayOrder": 0,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -7437,6 +7572,7 @@
   "date": {
    "fixed": "09-09"
   },
+  "dayOrder": 0,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -7451,6 +7587,7 @@
   "date": {
    "fixed": "06-17"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -7465,6 +7602,7 @@
   "date": {
    "fixed": "05-09"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -7479,6 +7617,7 @@
   "date": {
    "fixed": "03-12"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -7493,6 +7632,7 @@
   "date": {
    "fixed": "11-17"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -7507,6 +7647,7 @@
   "date": {
    "fixed": "05-25"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -7521,6 +7662,7 @@
   "date": {
    "fixed": "09-08"
   },
+  "dayOrder": 1,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -7535,6 +7677,7 @@
   "date": {
    "fixed": "10-16"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -7549,6 +7692,7 @@
   "date": {
    "fixed": "07-15"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -7563,6 +7707,7 @@
   "date": {
    "fixed": "04-13"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -7577,6 +7722,7 @@
   "date": {
    "fixed": "08-28"
   },
+  "dayOrder": 1,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -7591,6 +7737,7 @@
   "date": {
    "fixed": "10-21"
   },
+  "dayOrder": 0,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -7605,6 +7752,7 @@
   "date": {
    "fixed": "01-14"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -7619,6 +7767,7 @@
   "date": {
    "fixed": "08-17"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -7633,6 +7782,7 @@
   "date": {
    "fixed": "01-11"
   },
+  "dayOrder": 0,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -7647,6 +7797,7 @@
   "date": {
    "fixed": "07-31"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -7661,6 +7812,7 @@
   "date": {
    "fixed": "02-01"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -7675,6 +7827,7 @@
   "date": {
    "fixed": "07-03"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -7689,6 +7842,7 @@
   "date": {
    "fixed": "04-04"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -7703,6 +7857,7 @@
   "date": {
    "fixed": "07-25"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 2,
   "colors": [
@@ -7717,6 +7872,7 @@
   "date": {
    "fixed": "08-21"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -7731,6 +7887,7 @@
   "date": {
    "fixed": "09-19"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -7745,6 +7902,7 @@
   "date": {
    "fixed": "09-30"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -7759,6 +7917,7 @@
   "date": {
    "fixed": "07-20"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -7773,6 +7932,7 @@
   "date": {
    "fixed": "08-16"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 2,
   "colors": [
@@ -7787,6 +7947,7 @@
   "date": {
    "fixed": "05-15"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -7801,6 +7962,7 @@
   "date": {
    "fixed": "01-31"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -7815,6 +7977,7 @@
   "date": {
    "fixed": "10-20"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -7829,6 +7992,7 @@
   "date": {
    "fixed": "01-27"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -7843,6 +8007,7 @@
   "date": {
    "fixed": "03-27"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -7857,6 +8022,7 @@
   "date": {
    "fixed": "08-19"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -7871,6 +8037,7 @@
   "date": {
    "fixed": "07-12"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -7885,6 +8052,7 @@
   "date": {
    "fixed": "05-27"
   },
+  "dayOrder": 1,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -7899,6 +8067,7 @@
   "date": {
    "fixed": "10-09"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -7913,6 +8082,7 @@
   "date": {
    "fixed": "08-08"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -7927,6 +8097,7 @@
   "date": {
    "fixed": "03-28"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -7941,6 +8112,7 @@
   "date": {
    "fixed": "03-08"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -7955,6 +8127,7 @@
   "date": {
    "fixed": "02-08"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -7969,6 +8142,7 @@
   "date": {
    "fixed": "06-12"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -7983,6 +8157,7 @@
   "date": {
    "fixed": "11-24"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -7997,6 +8172,7 @@
   "date": {
    "fixed": "12-27"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 2,
   "colors": [
@@ -8011,6 +8187,7 @@
   "date": {
    "fixed": "11-14"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -8025,6 +8202,7 @@
   "date": {
    "fixed": "08-27"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -8039,6 +8217,7 @@
   "date": {
    "fixed": "09-18"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -8053,6 +8232,7 @@
   "date": {
    "fixed": "03-19"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 1,
   "colors": [
@@ -8067,6 +8247,7 @@
   "date": {
    "fixed": "05-01"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 1,
   "colors": [
@@ -8081,6 +8262,7 @@
   "date": {
    "fixed": "06-19"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -8095,6 +8277,7 @@
   "date": {
    "fixed": "04-14"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -8109,6 +8292,7 @@
   "date": {
    "fixed": "07-21"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -8123,6 +8307,7 @@
   "date": {
    "fixed": "08-10"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 2,
   "colors": [
@@ -8137,6 +8322,7 @@
   "date": {
    "fixed": "09-05"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -8151,6 +8337,7 @@
   "date": {
    "fixed": "04-11"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -8165,6 +8352,7 @@
   "date": {
    "fixed": "07-23"
   },
+  "dayOrder": 1,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -8179,6 +8367,7 @@
   "date": {
    "fixed": "09-23"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -8193,6 +8382,7 @@
   "date": {
    "fixed": "08-25"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -8207,6 +8397,7 @@
   "date": {
    "fixed": "03-04"
   },
+  "dayOrder": 1,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -8221,6 +8412,7 @@
   "date": {
    "fixed": "12-13"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -8235,6 +8427,7 @@
   "date": {
    "fixed": "10-18"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 2,
   "colors": [
@@ -8249,6 +8442,7 @@
   "date": {
    "fixed": "01-16"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -8263,6 +8457,7 @@
   "date": {
    "fixed": "07-20"
   },
+  "dayOrder": 1,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -8277,6 +8472,7 @@
   "date": {
    "fixed": "10-17"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -8291,6 +8487,7 @@
   "date": {
    "fixed": "06-10"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -8305,6 +8502,7 @@
   "date": {
    "fixed": "04-25"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 2,
   "colors": [
@@ -8319,6 +8517,7 @@
   "date": {
    "fixed": "10-07"
   },
+  "dayOrder": 1,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -8333,6 +8532,7 @@
   "date": {
    "fixed": "07-29"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -8347,6 +8547,7 @@
   "date": {
    "fixed": "11-12"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -8361,6 +8562,7 @@
   "date": {
    "fixed": "11-11"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -8375,6 +8577,7 @@
   "date": {
    "fixed": "01-30"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -8389,6 +8592,7 @@
   "date": {
    "fixed": "07-22"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -8403,6 +8607,7 @@
   "date": {
    "fixed": "05-29"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -8417,6 +8622,7 @@
   "date": {
    "fixed": "09-21"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 2,
   "colors": [
@@ -8429,8 +8635,10 @@
   "key": "st-matthias",
   "sourceId": "sancti:02-24:2:r",
   "date": {
-   "fixed": "02-24"
+   "fixed": "02-24",
+   "leapYear": "02-25"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 2,
   "colors": [
@@ -8445,6 +8653,7 @@
   "date": {
    "fixed": "01-15"
   },
+  "dayOrder": 1,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -8459,6 +8668,7 @@
   "date": {
    "fixed": "09-22"
   },
+  "dayOrder": 1,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -8473,6 +8683,7 @@
   "date": {
    "fixed": "12-10"
   },
+  "dayOrder": 0,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -8487,6 +8698,7 @@
   "date": {
    "fixed": "11-11"
   },
+  "dayOrder": 1,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -8501,6 +8713,7 @@
   "date": {
    "fixed": "05-04"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -8515,6 +8728,7 @@
   "date": {
    "fixed": "12-06"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -8529,6 +8743,7 @@
   "date": {
    "fixed": "09-10"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -8543,6 +8758,7 @@
   "date": {
    "fixed": "09-15"
   },
+  "dayOrder": 1,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -8557,6 +8773,7 @@
   "date": {
    "fixed": "06-06"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -8571,6 +8788,7 @@
   "date": {
    "fixed": "07-27"
   },
+  "dayOrder": 0,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -8585,6 +8803,7 @@
   "date": {
    "fixed": "05-17"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -8599,6 +8818,7 @@
   "date": {
    "fixed": "03-17"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -8613,6 +8833,7 @@
   "date": {
    "fixed": "02-22"
   },
+  "dayOrder": 1,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -8627,6 +8848,7 @@
   "date": {
    "fixed": "04-28"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -8641,6 +8863,7 @@
   "date": {
    "fixed": "01-15"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -8655,6 +8878,7 @@
   "date": {
    "fixed": "06-22"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -8669,6 +8893,7 @@
   "date": {
    "fixed": "01-25"
   },
+  "dayOrder": 1,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -8683,6 +8908,7 @@
   "date": {
    "fixed": "04-27"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -8697,6 +8923,7 @@
   "date": {
    "fixed": "05-19"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -8711,6 +8938,7 @@
   "date": {
    "fixed": "12-04"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -8725,6 +8953,7 @@
   "date": {
    "fixed": "02-23"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -8739,6 +8968,7 @@
   "date": {
    "fixed": "01-28"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -8753,6 +8983,7 @@
   "date": {
    "fixed": "10-19"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -8767,6 +8998,7 @@
   "date": {
    "fixed": "11-26"
   },
+  "dayOrder": 1,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -8781,6 +9013,7 @@
   "date": {
    "fixed": "04-29"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -8795,6 +9028,7 @@
   "date": {
    "fixed": "05-31"
   },
+  "dayOrder": 1,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -8809,6 +9043,7 @@
   "date": {
    "fixed": "08-23"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -8823,6 +9058,7 @@
   "date": {
    "fixed": "05-26"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -8837,6 +9073,7 @@
   "date": {
    "fixed": "07-11"
   },
+  "dayOrder": 0,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -8851,6 +9088,7 @@
   "date": {
    "fixed": "05-05"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -8865,6 +9103,7 @@
   "date": {
    "fixed": "09-03"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -8879,6 +9118,7 @@
   "date": {
    "fixed": "10-05"
   },
+  "dayOrder": 0,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -8893,6 +9133,7 @@
   "date": {
    "fixed": "01-26"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -8907,6 +9148,7 @@
   "date": {
    "fixed": "11-19"
   },
+  "dayOrder": 1,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -8921,6 +9163,7 @@
   "date": {
    "fixed": "07-21"
   },
+  "dayOrder": 1,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -8935,6 +9178,7 @@
   "date": {
    "fixed": "01-18"
   },
+  "dayOrder": 0,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -8949,6 +9193,7 @@
   "date": {
    "fixed": "05-19"
   },
+  "dayOrder": 1,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -8963,6 +9208,7 @@
   "date": {
    "fixed": "10-24"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -8977,6 +9223,7 @@
   "date": {
    "fixed": "08-31"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -8991,6 +9238,7 @@
   "date": {
    "fixed": "01-23"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -9005,6 +9253,7 @@
   "date": {
    "fixed": "10-01"
   },
+  "dayOrder": 0,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -9019,6 +9268,7 @@
   "date": {
    "fixed": "05-13"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -9033,6 +9283,7 @@
   "date": {
    "fixed": "08-09"
   },
+  "dayOrder": 1,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -9047,6 +9298,7 @@
   "date": {
    "fixed": "02-07"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -9061,6 +9313,7 @@
   "date": {
    "fixed": "08-30"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -9075,6 +9328,7 @@
   "date": {
    "fixed": "12-05"
   },
+  "dayOrder": 0,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -9089,6 +9343,7 @@
   "date": {
    "fixed": "08-29"
   },
+  "dayOrder": 1,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -9103,6 +9358,7 @@
   "date": {
    "fixed": "11-29"
   },
+  "dayOrder": 0,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -9117,6 +9373,7 @@
   "date": {
    "fixed": "02-10"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -9131,6 +9388,7 @@
   "date": {
    "fixed": "06-20"
   },
+  "dayOrder": 0,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -9145,6 +9403,7 @@
   "date": {
    "fixed": "02-18"
   },
+  "dayOrder": 0,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -9159,6 +9418,7 @@
   "date": {
    "fixed": "05-07"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -9173,6 +9433,7 @@
   "date": {
    "fixed": "12-26"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 2,
   "colors": [
@@ -9187,6 +9448,7 @@
   "date": {
    "fixed": "08-02"
   },
+  "dayOrder": 1,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -9201,6 +9463,7 @@
   "date": {
    "fixed": "09-02"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -9215,6 +9478,7 @@
   "date": {
    "fixed": "11-26"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -9229,6 +9493,7 @@
   "date": {
    "fixed": "12-31"
   },
+  "dayOrder": 0,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -9243,6 +9508,7 @@
   "date": {
    "fixed": "01-05"
   },
+  "dayOrder": 0,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -9257,6 +9523,7 @@
   "date": {
    "fixed": "10-15"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -9271,6 +9538,7 @@
   "date": {
    "fixed": "09-23"
   },
+  "dayOrder": 1,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -9285,6 +9553,7 @@
   "date": {
    "fixed": "11-09"
   },
+  "dayOrder": 1,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -9299,6 +9568,7 @@
   "date": {
    "fixed": "10-03"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -9313,6 +9583,7 @@
   "date": {
    "fixed": "03-07"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -9327,6 +9598,7 @@
   "date": {
    "fixed": "12-29"
   },
+  "dayOrder": 0,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -9341,6 +9613,7 @@
   "date": {
    "fixed": "09-22"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -9355,6 +9628,7 @@
   "date": {
    "fixed": "12-21"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 2,
   "colors": [
@@ -9369,6 +9643,7 @@
   "date": {
    "fixed": "01-24"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -9383,6 +9658,7 @@
   "date": {
    "fixed": "02-06"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -9397,6 +9673,7 @@
   "date": {
    "fixed": "05-16"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -9411,6 +9688,7 @@
   "date": {
    "fixed": "05-25"
   },
+  "dayOrder": 1,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -9425,6 +9703,7 @@
   "date": {
    "fixed": "10-21"
   },
+  "dayOrder": 1,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -9439,6 +9718,7 @@
   "date": {
    "fixed": "02-14"
   },
+  "dayOrder": 0,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -9453,6 +9733,7 @@
   "date": {
    "fixed": "05-18"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -9467,6 +9748,7 @@
   "date": {
    "fixed": "07-19"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -9481,6 +9763,7 @@
   "date": {
    "fixed": "04-05"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -9495,6 +9778,7 @@
   "date": {
    "fixed": "06-15"
   },
+  "dayOrder": 0,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -9509,6 +9793,7 @@
   "date": {
    "fixed": "12-02"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -9523,6 +9808,7 @@
   "date": {
    "fixed": "09-28"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -9537,6 +9823,7 @@
   "date": {
    "fixed": "06-25"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -9551,6 +9838,7 @@
   "date": {
    "fixed": "08-26"
   },
+  "dayOrder": 0,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -9565,6 +9853,7 @@
   "date": {
    "fixed": "09-17"
   },
+  "dayOrder": 0,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -9579,6 +9868,7 @@
   "date": {
    "fixed": "07-30"
   },
+  "dayOrder": 0,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -9593,6 +9883,7 @@
   "date": {
    "fixed": "05-03"
   },
+  "dayOrder": 0,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -9607,6 +9898,7 @@
   "date": {
    "fixed": "10-25"
   },
+  "dayOrder": 0,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -9621,6 +9913,7 @@
   "date": {
    "fixed": "04-26"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -9635,6 +9928,7 @@
   "date": {
    "fixed": "09-16"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -9649,6 +9943,7 @@
   "date": {
    "fixed": "09-27"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -9663,6 +9958,7 @@
   "date": {
    "fixed": "09-26"
   },
+  "dayOrder": 0,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -9677,6 +9973,7 @@
   "date": {
    "fixed": "08-08"
   },
+  "dayOrder": 1,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -9691,6 +9988,7 @@
   "date": {
    "fixed": "07-07"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -9705,6 +10003,7 @@
   "date": {
    "fixed": "09-16"
   },
+  "dayOrder": 1,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -9719,6 +10018,7 @@
   "date": {
    "fixed": "09-20"
   },
+  "dayOrder": 0,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -9733,6 +10033,7 @@
   "date": {
    "fixed": "01-20"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -9747,6 +10048,7 @@
   "date": {
    "fixed": "02-15"
   },
+  "dayOrder": 0,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -9761,6 +10063,7 @@
   "date": {
    "fixed": "03-06"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -9775,6 +10078,7 @@
   "date": {
    "fixed": "08-30"
   },
+  "dayOrder": 1,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -9789,6 +10093,7 @@
   "date": {
    "fixed": "07-29"
   },
+  "dayOrder": 1,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -9803,6 +10108,7 @@
   "date": {
    "fixed": "06-19"
   },
+  "dayOrder": 1,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -9817,6 +10123,7 @@
   "date": {
    "fixed": "05-10"
   },
+  "dayOrder": 1,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -9831,6 +10138,7 @@
   "date": {
    "fixed": "08-13"
   },
+  "dayOrder": 0,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -9845,6 +10153,7 @@
   "date": {
    "fixed": "06-26"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -9859,6 +10168,7 @@
   "date": {
    "fixed": "06-02"
   },
+  "dayOrder": 0,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -9873,6 +10183,7 @@
   "date": {
    "fixed": "06-18"
   },
+  "dayOrder": 1,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -9887,6 +10198,7 @@
   "date": {
    "fixed": "01-19"
   },
+  "dayOrder": 0,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -9901,6 +10213,7 @@
   "date": {
    "fixed": "07-12"
   },
+  "dayOrder": 1,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -9915,6 +10228,7 @@
   "date": {
    "fixed": "07-28"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -9929,6 +10243,7 @@
   "date": {
    "fixed": "05-12"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -9943,6 +10258,7 @@
   "date": {
    "fixed": "06-29"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 1,
   "colors": [
@@ -9957,6 +10273,7 @@
   "date": {
    "fixed": "05-11"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 2,
   "colors": [
@@ -9971,6 +10288,7 @@
   "date": {
    "fixed": "06-09"
   },
+  "dayOrder": 0,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -9985,6 +10303,7 @@
   "date": {
    "fixed": "07-02"
   },
+  "dayOrder": 1,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -9999,6 +10318,7 @@
   "date": {
    "fixed": "09-11"
   },
+  "dayOrder": 0,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -10013,6 +10333,7 @@
   "date": {
    "fixed": "10-08"
   },
+  "dayOrder": 1,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -10027,6 +10348,7 @@
   "date": {
    "fixed": "10-28"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 2,
   "colors": [
@@ -10041,6 +10363,7 @@
   "date": {
    "fixed": "04-22"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -10055,6 +10378,7 @@
   "date": {
    "fixed": "07-18"
   },
+  "dayOrder": 1,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -10069,6 +10393,7 @@
   "date": {
    "fixed": "08-11"
   },
+  "dayOrder": 0,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -10083,6 +10408,7 @@
   "date": {
    "fixed": "04-14"
   },
+  "dayOrder": 1,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -10097,6 +10423,7 @@
   "date": {
    "fixed": "08-22"
   },
+  "dayOrder": 1,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -10111,6 +10438,7 @@
   "date": {
    "fixed": "11-10"
   },
+  "dayOrder": 1,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -10125,6 +10453,7 @@
   "date": {
    "fixed": "01-22"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 3,
   "colors": [
@@ -10139,6 +10468,7 @@
   "date": {
    "fixed": "11-04"
   },
+  "dayOrder": 1,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -10153,6 +10483,7 @@
   "date": {
    "fixed": "12-25"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 1,
   "colors": [
@@ -10167,6 +10498,8 @@
   "date": {
    "fixed": "12-25"
   },
+  "dayOrder": 2,
+  "formularyOf": "the-nativity-of-our-lord",
   "kind": "feast",
   "class": 1,
   "colors": [
@@ -10181,6 +10514,8 @@
   "date": {
    "fixed": "12-25"
   },
+  "dayOrder": 1,
+  "formularyOf": "the-nativity-of-our-lord",
   "kind": "feast",
   "class": 1,
   "colors": [
@@ -10195,6 +10530,7 @@
   "date": {
    "fixed": "07-01"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 1,
   "colors": [
@@ -10209,6 +10545,7 @@
   "date": {
    "fixed": "08-06"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 2,
   "colors": [
@@ -10223,6 +10560,7 @@
   "date": {
    "fixed": "09-01"
   },
+  "dayOrder": 1,
   "kind": "commemoration",
   "class": 4,
   "colors": [
@@ -10237,6 +10575,7 @@
   "date": {
    "fixed": "12-24"
   },
+  "dayOrder": 0,
   "kind": "vigil",
   "class": 1,
   "colors": [
@@ -10251,6 +10590,7 @@
   "date": {
    "fixed": "08-09"
   },
+  "dayOrder": 0,
   "kind": "vigil",
   "class": 3,
   "colors": [
@@ -10265,6 +10605,7 @@
   "date": {
    "fixed": "06-28"
   },
+  "dayOrder": 0,
   "kind": "vigil",
   "class": 2,
   "colors": [
@@ -10279,6 +10620,7 @@
   "date": {
    "fixed": "08-14"
   },
+  "dayOrder": 0,
   "kind": "vigil",
   "class": 2,
   "colors": [
@@ -10293,6 +10635,7 @@
   "date": {
    "fixed": "06-23"
   },
+  "dayOrder": 0,
   "kind": "vigil",
   "class": 2,
   "colors": [
@@ -10307,6 +10650,7 @@
   "date": {
    "fixed": "07-02"
   },
+  "dayOrder": 0,
   "kind": "feast",
   "class": 2,
   "colors": [

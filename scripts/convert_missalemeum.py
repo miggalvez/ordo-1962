@@ -82,6 +82,21 @@ NATIONAL_REPLACEMENTS = {
     "pl": {"SANCTI_05_08PL": "SANCTI_05_07"},  # St. Stanislaus: 7 May, III class -> 8 May, I class
 }
 
+# The 1962 Missal's calendar keeps these two feasts one day later in a leap year.
+# Missale Meum does the same in rules.py (rule_st_matthias, rule_feb27).
+LEAP_YEAR_DATES = {
+    "SANCTI_02_24": "02-25",  # St. Matthias
+    "SANCTI_02_27": "02-28",  # St. Gabriel of Our Lady of Sorrows
+}
+
+# Further Masses of one celebration, keyed by Missale Meum constant.
+FORMULARIES = {
+    "SANCTI_12_25_2": "SANCTI_12_25_1",  # Christmas: Mass at dawn
+    "SANCTI_12_25_3": "SANCTI_12_25_1",  # Christmas: Mass during the day
+    "SANCTI_11_02_2": "SANCTI_11_02_1",  # All Souls: second Mass
+    "SANCTI_11_02_3": "SANCTI_11_02_1",  # All Souls: third Mass
+}
+
 COLOR_NAMES = {"w": "white", "r": "red", "g": "green", "v": "violet", "b": "black", "p": "rose"}
 
 ID_PATTERN = re.compile(r"^(tempora|sancti|commune|):[^:]+:\d:[a-z]+$")
@@ -292,6 +307,25 @@ def build(backend, saved_keys, lord_keys):
     if unknown_lord:
         problems.append(f"feasts-of-the-lord.json names keys not in the catalogue: {unknown_lord}")
     ember = {ids[n] for n in source["reference"]["EMBER_DAYS"]}
+    leap_dates = {ids[n]: d for n, d in LEAP_YEAR_DATES.items()}
+    formulary_of = {ids[n]: ids[p] for n, p in FORMULARIES.items()}
+
+    # Order of same-day entries as Missale Meum lists them (la/blocks.py). A
+    # national layer that lists a day differently says so with an "order" operation.
+    def by_date(names):
+        days = {}
+        for n in names:
+            days.setdefault(ids[n].split(":")[1][:5], []).append(ids[n])
+        return days
+
+    universal_days = by_date(sancti["universal"])
+    day_order = {id_: i for day_ids in universal_days.values() for i, id_ in enumerate(day_ids)}
+    polish_order = []
+    for day, day_ids in sorted(by_date(sancti["pl"]).items()):
+        default = [i for i in universal_days.get(day, []) if i in polish_set] + \
+                  [i for i in day_ids if i in polish_added]
+        if day_ids != default:
+            polish_order.append({"op": "order", "date": day, "keys": [keys[i] for i in day_ids]})
 
     catalogue = []
     for id_ in sorted(reachable, key=lambda i: keys[i]):
@@ -321,7 +355,12 @@ def build(backend, saved_keys, lord_keys):
                 kind = "feria"
         else:
             day = name[:5]
-            date = {"rule": "christ-the-king"} if day == "10-DU" else {"fixed": day}
+            if day == "10-DU":
+                date = {"rule": "christ-the-king"}
+            elif id_ in leap_dates:
+                date = {"fixed": day, "leapYear": leap_dates[id_]}
+            else:
+                date = {"fixed": day}
             if re.search(r"\bvigil\b", title_en, re.I):
                 kind = "vigil"
             elif rank == "4":
@@ -337,6 +376,8 @@ def build(backend, saved_keys, lord_keys):
             "sourceId": id_,
             **({"sourceAliases": aliases} if aliases else {}),
             "date": date,
+            **({"dayOrder": day_order[id_]} if id_ in day_order else {}),
+            **({"formularyOf": keys[formulary_of[id_]]} if id_ in formulary_of else {}),
             "kind": kind,
             "class": int(rank),
             "colors": [COLOR_NAMES.get(c, c) for c in color],
@@ -357,6 +398,7 @@ def build(backend, saved_keys, lord_keys):
             [{"op": "remove", "key": keys[i]} for i in sorted(polish_removed - replaced, key=lambda i: keys[i])]
             + [{"op": "add", "key": keys[i], **({"replaces": keys[replacements[i]]} if i in replacements else {})}
                for i in sorted(polish_added, key=lambda i: keys[i])]
+            + polish_order
         ),
     }
 

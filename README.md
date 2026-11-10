@@ -30,13 +30,20 @@ time zone. `npm run build` writes `dist/`; `npm test` builds first.
 | `data/names/{la,en,pl}.json` | Titles by key |
 | `data/keys.json` | Missale Meum id → key. Keys never change once assigned |
 | `data/missalemeum/` | Provenance: source commit, file hashes, all source ids, and Missale Meum's reference lists |
-| `data/layers/pl.json` | Missale Meum's Polish proper as operations on the universal calendar: feasts added, removed, or added in place of another (St. Stanislaus moves from 7 to 8 May) |
+| `data/layers/pl.json` | Missale Meum's Polish proper as operations on the universal calendar: feasts added, removed, or added in place of another (St. Stanislaus moves from 7 to 8 May), and the order of a day's entries where Poland lists them differently |
 | `data/reviewed/feasts-of-the-lord.json` | Hand-reviewed list behind `ofTheLord`, with the rubric or source for each entry. The rubrics give no complete list |
 | `data/oracle/missalemeum-pl/<year>.json` | Missale Meum's Polish calendar for 2026–2028, used to check the Polish layer |
+| `test/fixtures/multiple-celebrations.json` | The 32 days on which Missale Meum lists two celebrations that are not Masses of one feast, with the expected result checked against the SSPX Ordo at development time |
 | `test/fixtures/fssp-2026.json` | Days from the FSSP's published 2026 calendar that Missale Meum gets wrong or cannot express. Their engine tests are marked todo until the engine exists |
 | `data/oracle/missalemeum/<year>.json` | Missale Meum's own result for every day of 1962–2100, in ordo-1962 keys. The engine's tests compare against it |
 | `scripts/convert_missalemeum.py` | Regenerates the catalogue from a Missale Meum checkout |
 | `scripts/missalemeum_oracle.py` | Regenerates the oracle by running Missale Meum's calendar code |
+
+Fixed-date entries carry `dayOrder` (their place among the day's entries as the
+calendar lists them) and, for St. Matthias and St. Gabriel, a `leapYear` date.
+The further Masses of Christmas and All Souls carry `formularyOf`, naming the
+principal entry. The shared data is frozen; every list the engine returns is a
+fresh copy.
 
 The catalogue's `kind` and `ofTheLord` attributes are a first pass. They are
 reviewed against the General Rubrics when the resolver is written.

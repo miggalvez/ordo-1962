@@ -5,13 +5,17 @@
 //
 // It reads day headings such as "JUEVES 4. San Pedro Crisólogo, obispo…" under
 // month headings ("DICIEMBRE" and "2014", or "CALENDARIO LITURGICO DICIEMBRE 1 2012"),
-// takes the heading up to the line with the class, and scores how many of the
-// engine's words for that day's celebration it contains.
+// takes the heading up to the line with the class, and compares it with the
+// engine's heading for that day in both directions: how many of the engine's
+// words the ordo has, and which words saying what the saint is (obispo, mártir,
+// doctor…) one has and the other lacks. A title can share every word it has with
+// the ordo and still have lost one: "San Antonio de Padua, confesor" against the
+// ordo's "confesor y doctor de la Iglesia".
 //
 // Usage: node scripts/compare-names-es.mjs <ordo.txt> [--below 0.6]
 import { readFileSync } from 'node:fs';
 
-import { nameOf, resolveDay } from '../dist/esm/index.js';
+import { resolveDay, titleOf } from '../dist/esm/index.js';
 
 const MONTHS = ['ENERO', 'FEBRERO', 'MARZO', 'ABRIL', 'MAYO', 'JUNIO', 'JULIO', 'AGOSTO', 'SEPTIEMBRE', 'OCTUBRE', 'NOVIEMBRE', 'DICIEMBRE'];
 const WEEKDAYS = { DOMINGO: 0, LUNES: 1, MARTES: 2, MIERCOLES: 3, JUEVES: 4, VIERNES: 5, SABADO: 6 };
@@ -46,25 +50,49 @@ export function readOrdo(text) {
   return new Map([...days].map(([date, day]) => [date, day.heading.join(' ').replace(/[!~&|]/g, ' ').replace(/\s+/g, ' ').trim()]));
 }
 
+// Words that say what a saint is. One of these in the ordo and not in ours, or the reverse, is reported.
+const CATEGORY = new Set(['apostol', 'apostoles', 'evangelista', 'papa', 'obispo', 'obispos', 'presbitero', 'diacono', 'martir', 'martires',
+  'protomartir', 'confesor', 'confesores', 'doctor', 'doctores', 'virgen', 'virgenes', 'viuda', 'abad', 'rey', 'reina', 'arcangel', 'penitente']);
+// "Virgen" in the name of Our Lady is not a category.
+const withoutOurLady = (s) => plain(s).replace(/(bienaventurada|santisima) virgen( maria)?|virgen (maria|santisima)|nuestra senora/g, ' ');
+const categories = (s) => [...new Set(words(withoutOurLady(s)).filter((w) => CATEGORY.has(w)))];
+
 export function compareNames(text, options = {}) {
   const rows = [];
   for (const [date, heading] of readOrdo(text)) {
     const day = resolveDay(date, options);
-    const ours = nameOf(day.celebration.key, 'es', options) ?? '';
+    const ours = titleOf(day, 'es', options) ?? '';
     const ourWords = words(ours);
     const theirs = new Set(words(heading));
     const found = ourWords.filter((w) => theirs.has(w)).length;
-    rows.push({ date, key: day.celebration.key, ours, ordo: heading, score: ourWords.length ? found / ourWords.length : 1 });
+    const score = ourWords.length ? found / ourWords.length : 1;
+    // Categories are compared only when the ordo's heading is of the same observance.
+    const same = score >= 0.5;
+    const oursHas = categories(ours);
+    const ordoHas = categories(heading);
+    rows.push({
+      date, key: day.celebration.key, ours, ordo: heading, score,
+      missingFromOurs: same ? ordoHas.filter((w) => !oursHas.includes(w)) : [],
+      missingFromOrdo: same ? oursHas.filter((w) => !ordoHas.includes(w)) : [],
+    });
   }
   return rows;
 }
+
+/** Whether a row needs a look: few shared words, or a category on one side only. */
+export const differs = (row, below = 0.6) => row.score < below || row.missingFromOurs.length > 0 || row.missingFromOrdo.length > 0;
 
 if (import.meta.url === `file://${process.argv[1]}`) {
   const file = process.argv[2];
   const belowAt = process.argv.indexOf('--below');
   const below = belowAt > 0 ? Number(process.argv[belowAt + 1]) : 0.6;
   const rows = compareNames(readFileSync(file, 'utf8'));
-  const low = rows.filter((row) => row.score < below);
-  for (const row of low) console.log(`${row.date} ${row.score.toFixed(2)} ${row.key}\n  ours: ${row.ours}\n  ordo: ${row.ordo}`);
-  console.log(`${rows.length} days read; ${low.length} share less than ${below} of our words`);
+  const flagged = rows.filter((row) => differs(row, below));
+  for (const row of flagged) {
+    const notes = [`shares ${row.score.toFixed(2)}`];
+    if (row.missingFromOurs.length) notes.push(`ours lacks ${row.missingFromOurs.join(', ')}`);
+    if (row.missingFromOrdo.length) notes.push(`the ordo lacks ${row.missingFromOrdo.join(', ')}`);
+    console.log(`${row.date} ${row.key}: ${notes.join('; ')}\n  ours: ${row.ours}\n  ordo: ${row.ordo}`);
+  }
+  console.log(`${rows.length} days read; ${flagged.length} to look at (fewer than ${below} of our words shared, or a category on one side only)`);
 }

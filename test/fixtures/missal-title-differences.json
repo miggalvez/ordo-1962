@@ -1,0 +1,51 @@
+{
+ "about": "Where the titles of fixed-date observances differ from the headings of the 1962 Missale Romanum, as scripts/compare-missal-titles.mjs reads them from saved pages of its Proper of Saints (www.clerus.org/bibliaclerusonline/en/gmu.htm to gmz.htm and gm0.htm, saved 2026-11-10). The pages are not in this repository; set MISSAL_DIR to a folder with them to re-check.",
+ "differing": {
+  "st-bridget-of-sweden": {
+   "differs": "la adds widow; es adds widow",
+   "why": "The saved page misreads the heading: it has 'S. Birgittae Vici.' for 'Vid.'. She is a widow."
+  }
+ },
+ "noHeading": {
+  "why": "No heading was matched for these. Most are feasts of the 1st and 2nd class, printed in capitals under a page title without the line 'Die N mensis'; some are commemorations Missale Meum keeps as observances of their own (the days in the octave of Christmas, St. Peter on 25 January), and a few have a heading the saved page misreads ('S. Tirnothei'). Their titles were read by eye.",
+  "keys": [
+   "all-saints",
+   "commemoration-of-the-baptism-of-the-lord",
+   "epiphany-of-the-lord",
+   "for-octave-of-the-nativity",
+   "for-octave-of-the-nativity-12-27c",
+   "for-octave-of-the-nativity-12-28c",
+   "for-the-rogations",
+   "holy-innocents",
+   "maternity-of-the-blessed-virgin-mary",
+   "octave-day-of-christmas",
+   "presentation-of-the-blessed-virgin-mary",
+   "st-cecilia",
+   "st-gabriel-of-our-lady-of-sorrows",
+   "st-gregory-barbarigo",
+   "st-hyginus-pope-and-martyr",
+   "st-john-the-evangelist",
+   "st-joseph-spouse-of-the-bl-virgin-mary",
+   "st-joseph-the-workman",
+   "st-martin-of-tours",
+   "st-matthias",
+   "st-paul-the-first-hermit",
+   "st-peter",
+   "st-pius-i",
+   "st-stephen",
+   "st-sylvester-i-pope",
+   "st-telesphorus-pope-and-martyr",
+   "st-thomas-becket",
+   "st-timothy",
+   "sts-gordian-and-epimachus",
+   "sts-protus-and-hyacinth",
+   "sts-tiburtius-and-susanna",
+   "sts-tryphon-respicius-and-nympha",
+   "the-nativity-of-our-lord",
+   "the-precious-blood-of-our-lord-jesus-christ",
+   "twelve-holy-brothers-martyrs",
+   "vigil-of-christmas",
+   "vigil-of-the-nativity-of-st-john-the-baptist"
+  ]
+ }
+}

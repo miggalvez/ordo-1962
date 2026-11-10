@@ -13,28 +13,49 @@ Nothing is published.
 ## Names
 
 ```js
-import { nameOf, resolveDay } from 'ordo-1962';
+import { nameOf, resolveDay, titleOf } from 'ordo-1962';
 
 const day = resolveDay('2026-03-27');
-nameOf(day.celebration.key, 'es');                  // 'Viernes en la semana de Pasión'
-day.commemorations.map((key) => nameOf(key, 'es')); // ['San Juan Damasceno, confesor y doctor de la Iglesia', 'Conmemoración de los Siete Dolores…']
-nameOf('st-blaise', 'la');                          // 'S. Blasii Episcopi et Martyris'
+titleOf(day, 'es');                                  // 'Viernes en la semana de Pasión'
+day.commemorations.map((key) => nameOf(key, 'es', { date: day.date }));
+                                                     // ['San Juan Damasceno, confesor y doctor de la Iglesia', 'Conmemoración de los Siete Dolores…']
+nameOf('st-blaise', 'la');                           // 'S. Blasii Episcopi et Martyris'
+
+titleOf(resolveDay('2026-12-25'), 'es');             // 'Natividad del Señor'
+titleOf(resolveDay('2026-11-08'), 'en');             // 'Resumed V Sunday after Epiphany'
 ```
+
+Two lookups:
+
+- **`titleOf(day, language)`** is the heading of a resolved day, as an ordo
+  prints it. Use it for the day.
+- **`nameOf(key, language, { date })`** is the title of one observance: a
+  commemoration, or one Mass of a day.
+
+They differ in three places. Christmas and All Souls are keyed by their first
+Mass, so `nameOf` of the day's key is that Mass ("Natividad del Señor, en la
+noche") and `titleOf` is the day ("Natividad del Señor"). A Saturday of Our Lady
+is keyed by the Mass of the season and headed "Santa María en sábado". And the
+Sundays after Epiphany kept in November have the same key as in January: with
+the date they are named as the Missal heads them, "Dominica V quæ superfuit post
+Epiphaniam", "Resumed V Sunday after Epiphany".
 
 Every observance, in the universal calendar and in every layer, has a title in
 Latin (`la`), English (`en`) and Spanish (`es`); the build fails if one is
 missing. Polish (`pl`) is Missale Meum's and covers its calendar; where it has
-none, `nameOf` gives the Latin. A church's new feast takes the `names` given
-with it (`{ key, date, colors, names: { es: '…' } }`, passed as
-`nameOf(key, language, { church })`); the dedication has its own.
+none, the Latin is given. A language is taken by its code (`en-US` is `en`); any
+other is refused. A church's new feast takes the `names` given with it
+(`{ key, date, colors, names: { es: '…' } }`, passed as `{ church }`), from
+whichever of its records has them, in the language asked for, else Latin, else
+another; given no names it has no title. The dedication has its own.
 
 Where the titles come from:
 
 | Language | Source |
 |---|---|
 | Latin, English, Polish | Missale Meum (`data/names/{la,en,pl}.json`, written by the conversion script) |
-| Spanish | Divinum Officium's Spanish missal (`data/names/es.json`, written by `scripts/import-divinum-officium-es.mjs`; 688 titles, 11 of them corrected by hand) |
-| Any | `data/reviewed/names.json`, by hand, each with its reason (57 Spanish titles, the English of the 25 Polish feasts) |
+| Spanish | Divinum Officium's Spanish missal (`data/names/es.json`, written by `scripts/import-divinum-officium-es.mjs`; 688 titles, 43 of them corrected by hand) |
+| Any | `data/reviewed/names.json`, by hand, each with its reason: 138 Latin titles, 89 Spanish, 39 English, and the 7 day headings |
 | Any | A layer's own observances (`data/layers/*.json`) |
 
 The importer follows each observance's Missale Meum id to the Divinum Officium
@@ -45,17 +66,32 @@ Mártir"). The hand-written titles cover what that cannot: Missale Meum's own
 commemorations, titles Divinum Officium gives in Latin or English, two ids that
 name a different Divinum Officium file (St. John Vianney, St. Telesphorus), and
 titles of the calendar before 1960 (1 January is the Octave of the Nativity, not
-the Circumcision).
+the Circumcision; Alexander on 3 May is not called pope). Missale Meum's Latin
+is often not a title at all ("S. Mauro Abbate", "S. Joanne", one in Polish):
+those are written from the headings of the 1962 Missal.
 
-The Spanish was checked at development time against two printed Spanish ordos of
-the 1962 rite (Toledo, 2012-2013 and 2014-2015), which are not in this
-repository: `scripts/compare-names-es.mjs <ordo as text>` lists the days whose
-printed heading shares few words with the engine's title. What remains there is
-style (the ordos print "Feria de Cuaresma" for "Lunes en la semana II de
-Cuaresma", "Nuestra Señora" for "la Bienaventurada Virgen María") and Spain's
-own feasts. The Spanish still needs a read-through by someone who knows the 1962
-calendar; `node scripts/names-sheet.mjs > names.tsv` writes every title with its
-source for that.
+Three checks at development time, none of whose sources is in this repository:
+
+- **The 1962 Missal's headings.** `scripts/compare-missal-titles.mjs <saved
+  pages>` reads the heading of each day of the Proper of Saints and compares
+  what it says the saint is (pope, bishop, martyr, confessor, doctor, virgin,
+  widow, abbot) with the Latin and the Spanish. Of 335 fixed-date observances
+  one differs, where the saved page misreads the heading, and 37 have no
+  heading the script can match (`test/fixtures/missal-title-differences.json`).
+  With `MISSAL_DIR` set, `npm test` re-checks.
+- **Printed Spanish ordos** (Toledo, 2012-2013 and 2014-2015).
+  `scripts/compare-names-es.mjs <ordo as text>` lists the days whose heading
+  shares few words with the engine's, and the days where the ordo or the engine
+  has a word the other lacks for what the saint is. It was run on the ordos
+  before that second comparison was added, and has not been re-run since.
+- **A fresh import.** With `DO_DIR` set to a Divinum Officium checkout,
+  `npm test` checks that `data/names/es.json` is what the importer produces.
+
+The Spanish still needs a read-through by someone who knows the 1962 calendar;
+`node scripts/names-sheet.mjs > names.tsv` writes every title with its source
+for that. Two wordings in particular were written here and not taken from a
+Spanish source: "que sobró después de Epifanía" for the resumed Sundays, and "en
+la semana después de la Ascensión".
 
 ## Propers
 

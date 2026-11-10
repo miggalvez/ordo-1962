@@ -53,6 +53,7 @@ const names = Object.fromEntries(LANGUAGES.map((language) => [language, { ...rea
 for (const [key, entry] of Object.entries(read('reviewed/names.json').names)) {
   if (!known.has(key)) throw new Error(`data/reviewed/names.json names unknown observance ${key}`);
   if (!entry.why) throw new Error(`data/reviewed/names.json: ${key} gives no reason`);
+  for (const field of Object.keys(entry)) if (field !== 'why' && !LANGUAGES.includes(field)) throw new Error(`data/reviewed/names.json: ${key} has a title in unknown language ${field}`);
   for (const language of LANGUAGES) if (entry[language]) names[language][key] = entry[language];
 }
 for (const [id, layer] of Object.entries(layers)) {
@@ -71,11 +72,26 @@ if (missing.length) throw new Error(`observances without a title: ${missing.join
 const sortedNames = Object.fromEntries(LANGUAGES.map((language) => [language,
   Object.fromEntries(Object.entries(names[language]).sort(([a], [b]) => a.localeCompare(b)))]));
 
+// The title of the day where the celebration's key is also the key of one of its
+// Masses (Christmas, All Souls) or of a Mass of the season (Our Lady on Saturday).
+const dayHeadings = {};
+for (const [key, entry] of Object.entries(read('reviewed/names.json').dayHeadings)) {
+  if (!known.has(key)) throw new Error(`data/reviewed/names.json: day heading for unknown observance ${key}`);
+  if (!entry.why) throw new Error(`data/reviewed/names.json: day heading ${key} gives no reason`);
+  for (const language of REQUIRED) if (!entry[language]) throw new Error(`data/reviewed/names.json: day heading ${key} has no ${language}`);
+  dayHeadings[key] = Object.fromEntries(LANGUAGES.filter((language) => entry[language]).map((language) => [language, entry[language]]));
+}
+// A celebration with several Masses is keyed by its first: it needs a heading of its own.
+for (const entry of catalogue) {
+  if (entry.formularyOf && !dayHeadings[entry.formularyOf]) throw new Error(`${entry.formularyOf} has several Masses and no day heading`);
+}
+
 const sources = {
   CATALOGUE: [catalogue, 'readonly CatalogueEntry[]'],
   TEMPORAL_BLOCKS: [read('temporal-blocks.json'), 'Readonly<Record<TemporalBlockName, readonly (readonly string[])[]>>'],
   LAYERS: [layers, 'Readonly<Record<string, Layer>>'],
   NAMES: [sortedNames, 'Readonly<Record<Language, Readonly<Record<string, string>>>>'],
+  DAY_HEADINGS: [dayHeadings, 'Readonly<Record<string, Readonly<Partial<Record<Language, string>>>>>'],
 };
 
 const lines = [

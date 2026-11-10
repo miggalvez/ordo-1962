@@ -7,6 +7,6 @@ export { tableItem } from './precedence.js';
 export { CATALOGUE, LAYERS, NAMES } from './generated/data.js';
 export { DEDICATION_KEY } from './church.js';
 export type { Church, ChurchFeast } from './church.js';
-export { nameOf } from './names.js';
+export { nameOf, titleOf } from './names.js';
 export type { NameOptions } from './names.js';
 export type { CatalogueEntry, Color, DateRule, Language, Layer, LayerObservance, LayerOperation, ObservanceKind, Ymd } from './types.js';

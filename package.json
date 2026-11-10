@@ -1,10 +1,27 @@
 {
   "name": "ordo-1962",
-  "version": "0.1.1",
-  "private": true,
+  "version": "0.1.2",
   "description": "The 1962 Roman calendar (1960 rubrics) for any year, nation, institute and church.",
+  "keywords": [
+    "liturgical-calendar",
+    "1962-missal",
+    "tridentine",
+    "traditional-latin-mass",
+    "roman-calendar",
+    "ordo",
+    "catholic",
+    "liturgy"
+  ],
   "license": "MIT",
   "author": "Miguel Galvez",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miggalvez/ordo-1962.git"
+  },
+  "homepage": "https://github.com/miggalvez/ordo-1962#readme",
+  "bugs": {
+    "url": "https://github.com/miggalvez/ordo-1962/issues"
+  },
   "type": "module",
   "engines": {
     "node": ">=22"
@@ -23,9 +40,13 @@
     "LICENSE",
     "NOTICE.md"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "node scripts/generate-data.mjs && tsc -p tsconfig.json && tsc -p tsconfig.cjs.json && node scripts/mark-cjs.mjs",
     "convert": "python3 -I scripts/convert_missalemeum.py",
+    "prepublishOnly": "npm test",
     "pretest": "npm run build",
     "snapshot": "npm run build && node scripts/snapshot.mjs",
     "test": "node --test \"test/**/*.test.mjs\" \"test/**/*.test.cjs\"",

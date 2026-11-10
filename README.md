@@ -9,7 +9,15 @@ a nation's proper (the United States, Poland), an institute's (the FSSP) and a
 church's own feasts, and gives every observance's title in Latin, English and
 Spanish, and lists the Masses an ordo offers beside the day's own: votive
 Masses, Masses for the dead, the Rogation Mass, external solemnities and the
-Mass of a commemorated saint. Nothing is published.
+Mass of a commemorated saint.
+
+## Install
+
+```sh
+npm install ordo-1962
+```
+
+Node 22 or later. There are no runtime dependencies.
 
 ## Names
 
@@ -446,4 +454,5 @@ no `.pyc` left in the checkout is used. On 2026-11-09 the local run (Python 3.11
 
 ## Licence
 
-MIT. The catalogue is derived from Missale Meum, also MIT; see `NOTICE.md`.
+MIT. The catalogue is derived from Missale Meum and the Spanish titles from
+Divinum Officium, both also MIT; see `NOTICE.md`.

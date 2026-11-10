@@ -12,7 +12,7 @@ const LETTER = { white: 'w', red: 'r', green: 'g', violet: 'v', black: 'b', rose
 const principal = (key) => byKey.get(key)?.formularyOf ?? key;
 const isFourthClassFeria = (key) => {
   const entry = byKey.get(key);
-  return entry && entry.class === 4 && ['feria', 'rogation'].includes(entry.kind);
+  return entry && entry.class === 4 && entry.kind === 'feria';
 };
 
 export function compare(year) {

@@ -7,7 +7,6 @@ export type ObservanceKind =
   | 'vigil'
   | 'within-octave'
   | 'ember-day'
-  | 'rogation'
   | 'commemoration'
   | 'our-lady-on-saturday';
 

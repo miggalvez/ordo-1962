@@ -57,7 +57,15 @@ principal entry. The shared data is frozen; every list the engine returns is a
 fresh copy.
 
 The catalogue's `kind` and `ofTheLord` attributes are a first pass. They are
-reviewed against the General Rubrics when the resolver is written.
+reviewed against the General Rubrics when the resolver is written. Where Missale
+Meum's own title or colour is wrong for the day, the correction is a named
+constant in the conversion script, with its rubric: the Monday and Tuesday of
+the Rogations are ordinary white ferias of Paschaltide (nos. 88, 130a).
+
+`transferredFrom` is the feast's own date whenever a 1st class feast is kept on
+another day. That includes the two rightful places of no. 96: the Annunciation
+on the Monday after Low Sunday and All Souls on Monday 3 November. An ordo may
+not call those transfers; the date is given all the same.
 
 ## Regenerating the catalogue
 

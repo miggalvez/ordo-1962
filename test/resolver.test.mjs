@@ -57,6 +57,12 @@ test('the rubrics decide these cases', () => {
   // no. 96a: the Annunciation, impeded in Holy Week, goes to the Monday after Low Sunday.
   assert.equal(celebrated('2024-03-25').key, 'quad6-1');
   assert.equal(celebrated('2024-04-08').key, 'annunciation-of-the-blessed-virgin-mary');
+  // transferredFrom gives the feast's own date even in its rightful place (no. 96a), and
+  // St. Joseph, impeded earlier the same year, follows on the next day (no. 98).
+  assert.deepEqual(
+    ['2008-03-31', '2008-04-01'].map((date) => [celebrated(date).key, celebrated(date).transferredFrom]),
+    [['annunciation-of-the-blessed-virgin-mary', '2008-03-25'], ['st-joseph-spouse-of-the-bl-virgin-mary', '2008-03-19']],
+  );
   // no. 16a: a 2nd class feast of the Lord takes a 2nd class Sunday.
   assert.equal(celebrated('2023-08-06').key, 'transfiguration-of-our-lord');
   // no. 91 items 15 and 16: a 2nd class Sunday precedes a 2nd class feast not of the Lord.
@@ -88,6 +94,7 @@ test('a 4th class feria takes the colour of its season', () => {
   // nos. 88 and 130a: the Rogation days are white ferias of Paschaltide; violet is for the procession and its Mass.
   assert.deepEqual(colours('2028-05-22'), ['pasc5-1', ['white']]);
   assert.deepEqual(colours('2028-05-23'), ['pasc5-2', ['white']]);
+  for (const key of ['pasc5-1', 'pasc5-2']) assert.equal(CATALOGUE.find((entry) => entry.key === key).kind, 'feria');
   // The weeks after Epiphany resumed in November keep their green.
   assert.deepEqual(colours('2027-11-05'), ['epi4-5', ['green']]);
 });

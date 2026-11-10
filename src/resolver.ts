@@ -39,18 +39,13 @@ function sameDivinePerson(a: CatalogueEntry, b: CatalogueEntry): boolean {
 }
 
 /**
- * The colour of the day. A 4th class feria takes the colour of its season,
- * which the catalogue entry alone cannot give.
+ * The colour of the day. A 4th class feria of the weeks after Epiphany takes
+ * the colour of its season, which depends on the date: white to 13 January
+ * (nos. 72, 119a), green from the 14th (no. 127a).
  */
 function colorsOf(entry: CatalogueEntry, day: number): Color[] {
-  if (entry.class === 4 && 'temporal' in entry.date) {
-    // The season after Epiphany is white to 13 January (nos. 72, 119a) and green from the 14th (no. 127a).
-    if (entry.kind === 'feria' && /^epi/.test(entry.date.temporal)) {
-      return [toYmd(day).slice(5) < '01-14' ? 'white' : 'green'];
-    }
-    // The lesser litanies have nothing in the office; violet is for their procession and
-    // its Mass (nos. 88, 130a). The day itself is a feria of Paschaltide, in white.
-    if (entry.kind === 'rogation') return ['white'];
+  if (entry.class === 4 && entry.kind === 'feria' && 'temporal' in entry.date && /^epi/.test(entry.date.temporal)) {
+    return [toYmd(day).slice(5) < '01-14' ? 'white' : 'green'];
   }
   return [...entry.colors];
 }
@@ -62,7 +57,12 @@ export interface Celebration {
   readonly colors: readonly Color[];
   /** The Mass formularies of the celebration, principal first (three at Christmas and All Souls). */
   readonly masses: readonly string[];
-  /** Set when a 1st class feast was transferred here (nos. 95-99): its own date that year. */
+  /**
+   * Set when a 1st class feast is kept here instead of on its own date (nos. 95-99):
+   * that date in this year. This includes the two rightful places of no. 96, the
+   * Annunciation on the Monday after Low Sunday and All Souls on Monday 3 November,
+   * which some ordos do not mark as transfers.
+   */
   readonly transferredFrom?: Ymd;
 }
 

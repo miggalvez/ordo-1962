@@ -2212,10 +2212,10 @@
   "date": {
    "temporal": "pasc5-1"
   },
-  "kind": "rogation",
+  "kind": "feria",
   "class": 4,
   "colors": [
-   "violet"
+   "white"
   ],
   "ofTheLord": false,
   "scope": "universal"
@@ -2226,7 +2226,7 @@
   "date": {
    "temporal": "pasc5-2"
   },
-  "kind": "rogation",
+  "kind": "feria",
   "class": 4,
   "colors": [
    "white"

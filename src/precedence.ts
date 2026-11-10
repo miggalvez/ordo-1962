@@ -61,7 +61,6 @@ export function tableItem({ entry, class: cls }: Ranked): number | null {
       break;
     case 'feria':
     case 'ember-day':
-    case 'rogation':
       if (cls === 1) return 7; // Ash Wednesday; Monday to Wednesday of Holy Week
       if (cls === 2) return 18; // Advent 17-23 December; ember days (no. 24)
       if (cls === 3 && /^quad/.test(temporal(entry))) return 22; // Lent and Passiontide (no. 25a)

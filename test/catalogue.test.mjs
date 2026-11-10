@@ -12,7 +12,7 @@ const source = read('missalemeum/source.json');
 const names = { la: read('names/la.json'), en: read('names/en.json') };
 
 const KINDS = new Set([
-  'sunday', 'feria', 'feast', 'vigil', 'within-octave', 'ember-day', 'rogation', 'commemoration', 'our-lady-on-saturday',
+  'sunday', 'feria', 'feast', 'vigil', 'within-octave', 'ember-day', 'commemoration', 'our-lady-on-saturday',
 ]);
 const COLORS = new Set(['white', 'red', 'green', 'violet', 'black', 'rose']);
 const byKey = new Map(catalogue.map((entry) => [entry.key, entry]));
@@ -92,6 +92,14 @@ test('movable days are keyed by their place in the cycle', () => {
 test('the Seven Sorrows in Passiontide is a commemoration, not a second feria', () => {
   assert.equal(byKey.get('quad5-5').kind, 'feria');
   assert.equal(byKey.get('seven-sorrows-in-passiontide').kind, 'commemoration');
+});
+
+test('the Rogation Monday and Tuesday are white ferias of Paschaltide, named as such (no. 88)', () => {
+  for (const key of ['pasc5-1', 'pasc5-2']) {
+    assert.deepEqual([byKey.get(key).kind, byKey.get(key).class, byKey.get(key).colors], ['feria', 4, ['white']], key);
+    assert.match(names.en[key], /^(Monday|Tuesday) after V Sunday after Easter$/, key);
+    assert.doesNotMatch(read('names/pl.json')[key], /litan/i, key);
+  }
 });
 
 test('feasts of the Lord are exactly the reviewed list', () => {

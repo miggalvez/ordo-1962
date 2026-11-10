@@ -75,6 +75,18 @@ TEMPORA_SPECIAL = {
     "Quad5-5Feriac": ("seven-sorrows-in-passiontide", "commemoration"),
 }
 
+# Corrections to what Missale Meum says of a movable day, keyed by cycle position.
+# The lesser litanies have nothing in the office (General Rubrics no. 88) and violet
+# belongs to their procession and its Mass (no. 130a), so the Monday and Tuesday
+# before the Ascension are ordinary ferias of Paschaltide. Missale Meum gives them
+# the title of the litanies and, on Monday, the colour of the Rogation Mass. The
+# Latin titles already name the feria and are kept.
+REVIEWED_COLORS = {"Pasc5-1": "w"}
+REVIEWED_TITLES = {
+    "Pasc5-1": {"en": "Monday after V Sunday after Easter", "pl": "Poniedziałek po 5 Niedzieli po Wielkanocy"},
+    "Pasc5-2": {"en": "Tuesday after V Sunday after Easter", "pl": "Wtorek po 5 Niedzieli po Wielkanocy"},
+}
+
 # A national feast that takes the place of a universal one on another date.
 # Missale Meum expresses this as a removal and an addition; these pairings were
 # checked by hand (same saint, different date or class).
@@ -337,6 +349,7 @@ def build(backend, saved_keys, lord_keys):
         elif flexibility == "tempora":
             position = temporal_name(name)
             date = {"temporal": position.lower()}
+            color = REVIEWED_COLORS.get(position, color)
             if name in TEMPORA_SPECIAL:
                 kind = TEMPORA_SPECIAL[name][1]
             elif position in TEMPORA_FEASTS:
@@ -347,8 +360,6 @@ def build(backend, saved_keys, lord_keys):
                 kind = "ember-day"
             elif position == "Pasc6-6" or re.search(r"\bvigil\b", title_en, re.I):
                 kind = "vigil"
-            elif re.search(r"rogation|litan", title_en, re.I):
-                kind = "rogation"
             elif re.match(r"^[A-Za-z]+\d*-0", position):
                 kind = "sunday"
             else:
@@ -411,6 +422,17 @@ def build(backend, saved_keys, lord_keys):
 
     names = {lang: {keys[i]: table[i] for i in sorted(reachable, key=lambda i: keys[i]) if i in table}
              for lang, table in titles_.items()}
+    key_at = {e["date"]["temporal"]: e["key"] for e in catalogue if "temporal" in e["date"]}
+    for position in REVIEWED_COLORS:
+        if position.lower() not in key_at:
+            problems.append(f"reviewed colour for {position} matches no movable day")
+    for position, reviewed in REVIEWED_TITLES.items():
+        key = key_at.get(position.lower())
+        for lang, title in reviewed.items():
+            if key is None or key not in names.get(lang, {}):
+                problems.append(f"reviewed title for {position} ({lang}) matches no named observance")
+            else:
+                names[lang][key] = title
 
     commit = subprocess.run(["git", "-C", str(backend), "rev-parse", "HEAD"],
                             capture_output=True, text=True, check=True).stdout.strip()

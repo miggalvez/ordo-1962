@@ -2,6 +2,8 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 
+import { resolveDay } from '../dist/esm/index.js';
+
 const read = (path) => JSON.parse(readFileSync(new URL(path, import.meta.url), 'utf8'));
 const catalogue = read('../data/catalogue.json');
 const byKey = new Map(catalogue.map((entry) => [entry.key, entry]));
@@ -34,6 +36,9 @@ test('the reviewed days name catalogue entries and agree with what Missale Meum 
 });
 
 for (const rule of [...new Set(fixture.days.map((day) => day.rule))]) {
-  const count = fixture.days.filter((day) => day.rule === rule).length;
-  test(`engine: ${rule} (${count} days)`, { todo: 'the resolver is not built yet (M3, M4)' });
+  const days = fixture.days.filter((day) => day.rule === rule);
+  test(`engine celebration: ${rule} (${days.length} days)`, () => {
+    for (const day of days) assert.equal(resolveDay(day.date).celebration.key, day.expected.celebration, day.date);
+  });
+  test(`engine commemorations: ${rule} (${days.length} days)`, { todo: 'commemorations are M4' });
 }

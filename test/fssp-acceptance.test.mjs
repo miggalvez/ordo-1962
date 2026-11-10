@@ -2,6 +2,8 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 
+import { resolveDay } from '../dist/esm/index.js';
+
 const read = (path) => JSON.parse(readFileSync(new URL(path, import.meta.url), 'utf8'));
 const fixture = read('./fixtures/fssp-2026.json');
 const catalogue = read('../data/catalogue.json');
@@ -30,7 +32,13 @@ test('Missale Meum misses commemorations the FSSP prints, so these days test mor
 });
 
 for (const day of fixture.days) {
-  test(`engine matches the FSSP on ${day.date}: ${day.tests}`, {
-    todo: 'the engine is not built yet (M3, M4, and M5 for the US layer)',
+  if (day.layer) {
+    test(`engine matches the FSSP on ${day.date}: ${day.tests}`, { todo: `the ${day.layer} layer is M5` });
+    continue;
+  }
+  test(`engine celebration matches the FSSP on ${day.date}`, () => {
+    const { celebration } = resolveDay(day.date);
+    assert.equal(celebration.key, day.celebration);
   });
+  test(`engine commemorations match the FSSP on ${day.date}: ${day.tests}`, { todo: 'commemorations are M4' });
 }

@@ -3,20 +3,31 @@
 The Roman calendar of 1962 (1960 Code of Rubrics) for any year, nation,
 institute and church, computed in process with no network calls.
 
-Status: early. The engine places the movable cycle and the fixed-date
-candidates for any year, but does not yet decide which observance is celebrated
-(the resolver). Nothing is published.
+Status: early. The engine decides each day's principal celebration, class and
+colour, including transfers, for the universal calendar. Commemorations, the
+United States and institute propers, and church feasts are not done yet.
+Nothing is published.
 
 ## Use
 
 ```js
-import { movableDates, temporalYear, fixedFeasts } from 'ordo-1962';
+import { resolveDay, resolveYear, movableDates, temporalYear, fixedFeasts } from 'ordo-1962';
+
+resolveDay('2026-11-01').celebration;  // { key: 'all-saints', class: 1, colors: ['white'], masses: ['all-saints'] }
+resolveDay('2025-11-03').celebration.transferredFrom;  // '2025-11-02' (All Souls after a Sunday)
 
 movableDates(2026).christTheKing;             // '2026-10-25'
 temporalYear(2026).tempora.get('2026-03-27'); // ['quad5-5', 'seven-sorrows-in-passiontide']
 fixedFeasts(2026).get('2026-11-19');          // ['st-elizabeth-of-hungary', 'st-pontian']
 fixedFeasts(2026, { nations: ['pl'] }).get('2026-05-08');
 ```
+
+The resolver follows the Table of Liturgical Days (General Rubrics 1960, no. 91)
+by kind and class, so a feast it has never seen still finds its place, plus the
+occurrence and transfer rules of nos. 33, 78 and 95-99. Against Missale Meum it
+agrees on all 50,769 days of 1962-2100 except 36, listed with their rubric in
+`test/fixtures/oracle-deviations.json`; on those the SSPX Ordo agrees with this
+engine. `node scripts/compare-oracle.mjs` prints the comparison.
 
 Both `import` and `require` work. Dates are `YYYY-MM-DD` calendar labels with no
 time zone. `npm run build` writes `dist/`; `npm test` builds first.

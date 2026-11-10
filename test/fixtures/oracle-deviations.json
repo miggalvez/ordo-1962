@@ -1,0 +1,410 @@
+{
+ "about": "Days on which the engine deliberately differs from Missale Meum on the principal celebration, class or colour, 1962-2100. Each cites the General Rubrics (1960). The SSPX Ordo (ordo.fsspx.org), consulted 2026-11-09 as a development-time cross-check, agrees with the engine on every one.",
+ "days": [
+  {
+   "date": "1962-06-28",
+   "problems": [
+    "celebration",
+    "class"
+   ],
+   "engine": "pent02-4 [4,g]",
+   "missaleMeum": "vigil-of-sts-peter-and-paul [2,v]",
+   "rubric": "no. 33",
+   "why": "The vigil is omitted because its feast is transferred that year (the Sacred Heart falls on the feast). Missale Meum keeps the vigil.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "1967-04-03",
+   "problems": [
+    "celebration"
+   ],
+   "engine": "annunciation-of-the-blessed-virgin-mary [1,w]",
+   "missaleMeum": "st-joseph-spouse-of-the-bl-virgin-mary [1,w]",
+   "rubric": "no. 96a",
+   "why": "When the Annunciation is transferred after Easter its rightful place is the Monday after Low Sunday; St. Joseph, also transferred, takes the next free day. Missale Meum gives the Monday to St. Joseph.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "1967-04-04",
+   "problems": [
+    "celebration"
+   ],
+   "engine": "st-joseph-spouse-of-the-bl-virgin-mary [1,w]",
+   "missaleMeum": "annunciation-of-the-blessed-virgin-mary [1,w]",
+   "rubric": "no. 96a",
+   "why": "When the Annunciation is transferred after Easter its rightful place is the Monday after Low Sunday; St. Joseph, also transferred, takes the next free day. Missale Meum gives the Monday to St. Joseph.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "1968-02-24",
+   "problems": [
+    "celebration"
+   ],
+   "engine": "our-lady-on-saturday-after-purification [4,w]",
+   "missaleMeum": "quadp2-6 [4,v]",
+   "rubric": "no. 78",
+   "why": "In a leap year this Saturday is a 4th class feria once St. Matthias or St. Gabriel moves to the next day, so it is Our Lady on Saturday. Missale Meum leaves the feria.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "1973-06-28",
+   "problems": [
+    "celebration",
+    "class"
+   ],
+   "engine": "pent02-4 [4,g]",
+   "missaleMeum": "vigil-of-sts-peter-and-paul [2,v]",
+   "rubric": "no. 33",
+   "why": "The vigil is omitted because its feast is transferred that year (the Sacred Heart falls on the feast). Missale Meum keeps the vigil.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "1978-04-03",
+   "problems": [
+    "celebration"
+   ],
+   "engine": "annunciation-of-the-blessed-virgin-mary [1,w]",
+   "missaleMeum": "st-joseph-spouse-of-the-bl-virgin-mary [1,w]",
+   "rubric": "no. 96a",
+   "why": "When the Annunciation is transferred after Easter its rightful place is the Monday after Low Sunday; St. Joseph, also transferred, takes the next free day. Missale Meum gives the Monday to St. Joseph.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "1978-04-04",
+   "problems": [
+    "celebration"
+   ],
+   "engine": "st-joseph-spouse-of-the-bl-virgin-mary [1,w]",
+   "missaleMeum": "annunciation-of-the-blessed-virgin-mary [1,w]",
+   "rubric": "no. 96a",
+   "why": "When the Annunciation is transferred after Easter its rightful place is the Monday after Low Sunday; St. Joseph, also transferred, takes the next free day. Missale Meum gives the Monday to St. Joseph.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "1983-05-11",
+   "problems": [
+    "celebration"
+   ],
+   "engine": "sts-philip-and-james [2,r]",
+   "missaleMeum": "pasc5-3 [2,w]",
+   "rubric": "no. 91 items 16 and 21",
+   "why": "A 2nd class feast of the universal Church precedes a 2nd class vigil, so Sts. Philip and James are celebrated and the Vigil of the Ascension is commemorated.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "1984-06-28",
+   "problems": [
+    "celebration",
+    "class"
+   ],
+   "engine": "pent02-4 [4,g]",
+   "missaleMeum": "vigil-of-sts-peter-and-paul [2,v]",
+   "rubric": "no. 33",
+   "why": "The vigil is omitted because its feast is transferred that year (the Sacred Heart falls on the feast). Missale Meum keeps the vigil.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "1988-05-11",
+   "problems": [
+    "celebration"
+   ],
+   "engine": "sts-philip-and-james [2,r]",
+   "missaleMeum": "pasc5-3 [2,w]",
+   "rubric": "no. 91 items 16 and 21",
+   "why": "A 2nd class feast of the universal Church precedes a 2nd class vigil, so Sts. Philip and James are celebrated and the Vigil of the Ascension is commemorated.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "1989-04-03",
+   "problems": [
+    "celebration"
+   ],
+   "engine": "annunciation-of-the-blessed-virgin-mary [1,w]",
+   "missaleMeum": "st-joseph-spouse-of-the-bl-virgin-mary [1,w]",
+   "rubric": "no. 96a",
+   "why": "When the Annunciation is transferred after Easter its rightful place is the Monday after Low Sunday; St. Joseph, also transferred, takes the next free day. Missale Meum gives the Monday to St. Joseph.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "1989-04-04",
+   "problems": [
+    "celebration"
+   ],
+   "engine": "st-joseph-spouse-of-the-bl-virgin-mary [1,w]",
+   "missaleMeum": "annunciation-of-the-blessed-virgin-mary [1,w]",
+   "rubric": "no. 96a",
+   "why": "When the Annunciation is transferred after Easter its rightful place is the Monday after Low Sunday; St. Joseph, also transferred, takes the next free day. Missale Meum gives the Monday to St. Joseph.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "1994-05-11",
+   "problems": [
+    "celebration"
+   ],
+   "engine": "sts-philip-and-james [2,r]",
+   "missaleMeum": "pasc5-3 [2,w]",
+   "rubric": "no. 91 items 16 and 21",
+   "why": "A 2nd class feast of the universal Church precedes a 2nd class vigil, so Sts. Philip and James are celebrated and the Vigil of the Ascension is commemorated.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2008-03-31",
+   "problems": [
+    "celebration"
+   ],
+   "engine": "annunciation-of-the-blessed-virgin-mary [1,w]",
+   "missaleMeum": "st-joseph-spouse-of-the-bl-virgin-mary [1,w]",
+   "rubric": "no. 96a",
+   "why": "When the Annunciation is transferred after Easter its rightful place is the Monday after Low Sunday; St. Joseph, also transferred, takes the next free day. Missale Meum gives the Monday to St. Joseph.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2008-04-01",
+   "problems": [
+    "celebration"
+   ],
+   "engine": "st-joseph-spouse-of-the-bl-virgin-mary [1,w]",
+   "missaleMeum": "annunciation-of-the-blessed-virgin-mary [1,w]",
+   "rubric": "no. 96a",
+   "why": "When the Annunciation is transferred after Easter its rightful place is the Monday after Low Sunday; St. Joseph, also transferred, takes the next free day. Missale Meum gives the Monday to St. Joseph.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2022-06-23",
+   "problems": [
+    "celebration",
+    "class"
+   ],
+   "engine": "pent02-4 [4,g]",
+   "missaleMeum": "vigil-of-the-nativity-of-st-john-the-baptist [2,v]",
+   "rubric": "no. 33",
+   "why": "The vigil is omitted because its feast is transferred that year (the Sacred Heart falls on the feast). Missale Meum keeps the vigil.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2033-06-23",
+   "problems": [
+    "celebration",
+    "class"
+   ],
+   "engine": "pent02-4 [4,g]",
+   "missaleMeum": "vigil-of-the-nativity-of-st-john-the-baptist [2,v]",
+   "rubric": "no. 33",
+   "why": "The vigil is omitted because its feast is transferred that year (the Sacred Heart falls on the feast). Missale Meum keeps the vigil.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2035-04-02",
+   "problems": [
+    "celebration"
+   ],
+   "engine": "annunciation-of-the-blessed-virgin-mary [1,w]",
+   "missaleMeum": "st-joseph-spouse-of-the-bl-virgin-mary [1,w]",
+   "rubric": "no. 96a",
+   "why": "When the Annunciation is transferred after Easter its rightful place is the Monday after Low Sunday; St. Joseph, also transferred, takes the next free day. Missale Meum gives the Monday to St. Joseph.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2035-04-03",
+   "problems": [
+    "celebration"
+   ],
+   "engine": "st-joseph-spouse-of-the-bl-virgin-mary [1,w]",
+   "missaleMeum": "annunciation-of-the-blessed-virgin-mary [1,w]",
+   "rubric": "no. 96a",
+   "why": "When the Annunciation is transferred after Easter its rightful place is the Monday after Low Sunday; St. Joseph, also transferred, takes the next free day. Missale Meum gives the Monday to St. Joseph.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2038-06-23",
+   "problems": [
+    "celebration",
+    "class"
+   ],
+   "engine": "pent01-3 [4,g]",
+   "missaleMeum": "vigil-of-the-nativity-of-st-john-the-baptist [2,v]",
+   "rubric": "no. 33",
+   "why": "The vigil is omitted because its feast is transferred that year (the Sacred Heart falls on the feast). Missale Meum keeps the vigil.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2044-02-27",
+   "problems": [
+    "celebration"
+   ],
+   "engine": "our-lady-on-saturday-after-purification [4,w]",
+   "missaleMeum": "quadp2-6 [4,v]",
+   "rubric": "no. 78",
+   "why": "In a leap year this Saturday is a 4th class feria once St. Matthias or St. Gabriel moves to the next day, so it is Our Lady on Saturday. Missale Meum leaves the feria.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2044-06-23",
+   "problems": [
+    "celebration",
+    "class"
+   ],
+   "engine": "pent02-4 [4,g]",
+   "missaleMeum": "vigil-of-the-nativity-of-st-john-the-baptist [2,v]",
+   "rubric": "no. 33",
+   "why": "The vigil is omitted because its feast is transferred that year (the Sacred Heart falls on the feast). Missale Meum keeps the vigil.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2046-04-02",
+   "problems": [
+    "celebration"
+   ],
+   "engine": "annunciation-of-the-blessed-virgin-mary [1,w]",
+   "missaleMeum": "st-joseph-spouse-of-the-bl-virgin-mary [1,w]",
+   "rubric": "no. 96a",
+   "why": "When the Annunciation is transferred after Easter its rightful place is the Monday after Low Sunday; St. Joseph, also transferred, takes the next free day. Missale Meum gives the Monday to St. Joseph.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2046-04-03",
+   "problems": [
+    "celebration"
+   ],
+   "engine": "st-joseph-spouse-of-the-bl-virgin-mary [1,w]",
+   "missaleMeum": "annunciation-of-the-blessed-virgin-mary [1,w]",
+   "rubric": "no. 96a",
+   "why": "When the Annunciation is transferred after Easter its rightful place is the Monday after Low Sunday; St. Joseph, also transferred, takes the next free day. Missale Meum gives the Monday to St. Joseph.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2052-02-24",
+   "problems": [
+    "celebration"
+   ],
+   "engine": "our-lady-on-saturday-after-purification [4,w]",
+   "missaleMeum": "quadp1-6 [4,v]",
+   "rubric": "no. 78",
+   "why": "In a leap year this Saturday is a 4th class feria once St. Matthias or St. Gabriel moves to the next day, so it is Our Lady on Saturday. Missale Meum leaves the feria.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2057-06-28",
+   "problems": [
+    "celebration",
+    "class"
+   ],
+   "engine": "pent02-4 [4,g]",
+   "missaleMeum": "vigil-of-sts-peter-and-paul [2,v]",
+   "rubric": "no. 33",
+   "why": "The vigil is omitted because its feast is transferred that year (the Sacred Heart falls on the feast). Missale Meum keeps the vigil.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2062-04-03",
+   "problems": [
+    "celebration"
+   ],
+   "engine": "annunciation-of-the-blessed-virgin-mary [1,w]",
+   "missaleMeum": "st-joseph-spouse-of-the-bl-virgin-mary [1,w]",
+   "rubric": "no. 96a",
+   "why": "When the Annunciation is transferred after Easter its rightful place is the Monday after Low Sunday; St. Joseph, also transferred, takes the next free day. Missale Meum gives the Monday to St. Joseph.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2062-04-04",
+   "problems": [
+    "celebration"
+   ],
+   "engine": "st-joseph-spouse-of-the-bl-virgin-mary [1,w]",
+   "missaleMeum": "annunciation-of-the-blessed-virgin-mary [1,w]",
+   "rubric": "no. 96a",
+   "why": "When the Annunciation is transferred after Easter its rightful place is the Monday after Low Sunday; St. Joseph, also transferred, takes the next free day. Missale Meum gives the Monday to St. Joseph.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2067-05-11",
+   "problems": [
+    "celebration"
+   ],
+   "engine": "sts-philip-and-james [2,r]",
+   "missaleMeum": "pasc5-3 [2,w]",
+   "rubric": "no. 91 items 16 and 21",
+   "why": "A 2nd class feast of the universal Church precedes a 2nd class vigil, so Sts. Philip and James are celebrated and the Vigil of the Ascension is commemorated.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2068-06-28",
+   "problems": [
+    "celebration",
+    "class"
+   ],
+   "engine": "pent02-4 [4,g]",
+   "missaleMeum": "vigil-of-sts-peter-and-paul [2,v]",
+   "rubric": "no. 33",
+   "why": "The vigil is omitted because its feast is transferred that year (the Sacred Heart falls on the feast). Missale Meum keeps the vigil.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2073-04-03",
+   "problems": [
+    "celebration"
+   ],
+   "engine": "annunciation-of-the-blessed-virgin-mary [1,w]",
+   "missaleMeum": "st-joseph-spouse-of-the-bl-virgin-mary [1,w]",
+   "rubric": "no. 96a",
+   "why": "When the Annunciation is transferred after Easter its rightful place is the Monday after Low Sunday; St. Joseph, also transferred, takes the next free day. Missale Meum gives the Monday to St. Joseph.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2073-04-04",
+   "problems": [
+    "celebration"
+   ],
+   "engine": "st-joseph-spouse-of-the-bl-virgin-mary [1,w]",
+   "missaleMeum": "annunciation-of-the-blessed-virgin-mary [1,w]",
+   "rubric": "no. 96a",
+   "why": "When the Annunciation is transferred after Easter its rightful place is the Monday after Low Sunday; St. Joseph, also transferred, takes the next free day. Missale Meum gives the Monday to St. Joseph.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2078-05-11",
+   "problems": [
+    "celebration"
+   ],
+   "engine": "sts-philip-and-james [2,r]",
+   "missaleMeum": "pasc5-3 [2,w]",
+   "rubric": "no. 91 items 16 and 21",
+   "why": "A 2nd class feast of the universal Church precedes a 2nd class vigil, so Sts. Philip and James are celebrated and the Vigil of the Ascension is commemorated.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2084-04-03",
+   "problems": [
+    "celebration"
+   ],
+   "engine": "annunciation-of-the-blessed-virgin-mary [1,w]",
+   "missaleMeum": "st-joseph-spouse-of-the-bl-virgin-mary [1,w]",
+   "rubric": "no. 96a",
+   "why": "When the Annunciation is transferred after Easter its rightful place is the Monday after Low Sunday; St. Joseph, also transferred, takes the next free day. Missale Meum gives the Monday to St. Joseph.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2084-04-04",
+   "problems": [
+    "celebration"
+   ],
+   "engine": "st-joseph-spouse-of-the-bl-virgin-mary [1,w]",
+   "missaleMeum": "annunciation-of-the-blessed-virgin-mary [1,w]",
+   "rubric": "no. 96a",
+   "why": "When the Annunciation is transferred after Easter its rightful place is the Monday after Low Sunday; St. Joseph, also transferred, takes the next free day. Missale Meum gives the Monday to St. Joseph.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2089-05-11",
+   "problems": [
+    "celebration"
+   ],
+   "engine": "sts-philip-and-james [2,r]",
+   "missaleMeum": "pasc5-3 [2,w]",
+   "rubric": "no. 91 items 16 and 21",
+   "why": "A 2nd class feast of the universal Church precedes a 2nd class vigil, so Sts. Philip and James are celebrated and the Vigil of the Ascension is commemorated.",
+   "ordo": "agrees with the engine"
+  }
+ ]
+}

@@ -6,6 +6,7 @@ export type { Celebration, ResolvedDay } from './resolver.js';
 export { tableItem } from './precedence.js';
 export { CATALOGUE, LAYERS, MASSES, NAMES, ORDOS } from './generated/data.js';
 export { DEDICATION_KEY } from './church.js';
+export { churchFeastChoices } from './proper.js';
 export type { Church, ChurchFeast } from './church.js';
 export { nameOf, titleOf } from './names.js';
 export { ordoDay, ordoYear } from './ordo.js';

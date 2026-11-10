@@ -2,8 +2,9 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 
-import { CATALOGUE, DEDICATION_KEY, LAYERS, fixedFeasts, resolveDay, resolveYear } from '../dist/esm/index.js';
+import { CATALOGUE, DEDICATION_KEY, LAYERS, churchFeastChoices, fixedFeasts, ordoYear, resolveDay, resolveYear } from '../dist/esm/index.js';
 import { isOfOurLady } from '../dist/esm/commemorations.js';
+import { properCalendar } from '../dist/esm/proper.js';
 import { batches, checkTitulars } from '../scripts/check-titulars.mjs';
 import { SNAPSHOTS, compareSnapshot } from '../scripts/snapshot.mjs';
 
@@ -176,6 +177,51 @@ test('a church feast is checked before it is used', () => {
   assert.throws(titular({ key: 'pent03-0' }), /not a feast/);
   assert.throws(titular({ key: DEDICATION_KEY, date: '05-05', colors: ['white'] }), /give its date as `dedication`/);
   assert.throws(() => resolveYear(2026, { church: { dedication: '04-31' } }), /the dedication needs a date/);
+});
+
+test('a church may take as its feast the observances churchFeastChoices lists, and no other key of the catalogue', () => {
+  const calendars = [{}, { nations: ['us'], institutes: ['fssp'] }, { nations: ['pl'] }];
+  for (const options of calendars) {
+    const choices = churchFeastChoices(options);
+    const keys = new Set(choices.map((entry) => entry.key));
+    assert.equal(keys.size, choices.length);
+    for (const entry of CATALOGUE) {
+      // A national feast of another nation is not in this calendar at all.
+      if (entry.scope === 'national' && !(options.nations ?? []).includes(entry.nation)) {
+        assert.ok(!keys.has(entry.key), entry.key);
+        continue;
+      }
+      const take = () => properCalendar({ ...options, church: { titular: { key: entry.key } } });
+      if (keys.has(entry.key)) assert.doesNotThrow(take, entry.key);
+      // A feast a nation keeps under its own entry is resolved to that entry, which is the one listed.
+      else if (LAYERS.pl.operations.some((op) => op.replaces === entry.key) && options.nations?.includes('pl')) assert.doesNotThrow(take, entry.key);
+      else assert.throws(take, RangeError, entry.key);
+    }
+  }
+  const universal = new Set(churchFeastChoices().map((entry) => entry.key));
+  // Feasts and commemorated saints, movable feasts among them.
+  for (const key of ['st-anne-mother-of-the-blessed-virgin', 'st-blaise', 'pent02-5', 'commemoration-of-st-paul-the-apostle', 'commemoration-of-all-souls']) assert.ok(universal.has(key), key);
+  // Not a prayer said in another Mass: the companion prayers of St. Peter and St. Paul (no. 110),
+  // the commemoration of the octave of Christmas, the greater litanies (no. 81).
+  for (const key of ['st-peter', 'st-paul', 'for-octave-of-the-nativity', 'for-octave-of-the-nativity-12-27c', 'for-the-rogations']) {
+    assert.ok(!universal.has(key), key);
+    assert.throws(() => resolveYear(2026, { church: { titular: { key } } }), /prayer said in another Mass/, key);
+  }
+  // Not a further Mass of a feast, a Sunday or a vigil.
+  for (const key of ['the-nativity-of-our-lord-day-mass', 'commemoration-of-all-souls-second-mass', 'pent03-0', 'vigil-of-the-assumption']) assert.ok(!universal.has(key), key);
+  // As the calendar keeps them: a nation's own, without what it removes; a feast its proper raises, raised.
+  const us = churchFeastChoices({ nations: ['us'] });
+  assert.ok(us.some((entry) => entry.key === 'us-st-john-neumann') && !universal.has('us-st-john-neumann'));
+  assert.ok(universal.has('st-george') && !churchFeastChoices({ nations: ['pl'] }).some((entry) => entry.key === 'st-george'));
+  assert.equal(churchFeastChoices({ institutes: ['fssp'] }).find((entry) => entry.key === 'chair-of-st-peter').class, 1);
+});
+
+test('a church of All Souls keeps the day and has no external solemnity', () => {
+  const church = { titular: { key: 'commemoration-of-all-souls' } };
+  assert.equal(resolveDay('2026-11-02', { church }).celebration.key, 'commemoration-of-all-souls');
+  for (const year of [2026, 2027, 2028]) {
+    assert.ok(!ordoYear(year, { church }).some((d) => d.masses.some((mass) => mass.kind === 'external-solemnity' && mass.key === 'commemoration-of-all-souls')), `${year}`);
+  }
 });
 
 test('a 1st class titular on any date is kept once a year and erases nothing, 2026-2055', () => {

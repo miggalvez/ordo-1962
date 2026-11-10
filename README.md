@@ -120,6 +120,12 @@ A church's feasts are of the 1st class (no. 45):
   day (`'epi1-0'` for a church of the Holy Family), on its leap-year date, and
   under the nation's entry where a nation keeps it on another date. A feast
   already of the 1st class is left alone.
+- `churchFeastChoices({ nations, institutes })` lists the observances a church
+  may take: the feasts and commemorated saints that calendar keeps. Any other
+  key of the catalogue is refused: a Sunday, a vigil, a further Mass of
+  Christmas or All Souls, a feast the nation's proper removes, and a prayer said
+  in another Mass (the companion prayer of St. Peter or St. Paul, the
+  commemoration of the octave of Christmas, the greater litanies).
 - A feast the calendar lacks needs a `date` and `colors`. A date that does not
   exist, 29 February and an unknown colour are refused.
 - On one date the patron of the place comes first, then the dedication, then
@@ -225,7 +231,8 @@ External solemnities. A feast has one, whoever gives it:
   for the FSSP, which no FSSP source read so far shows;
 - a church's principal patron (no. 358d), dedication and titular (no. 358g), on
   the Sunday after the day the feast is kept, or `church.externalSolemnity:
-  'preceding-sunday'` or `'none'`.
+  'preceding-sunday'` or `'none'`. A church of All Souls has none: a Mass
+  for the dead is not the solemnity of a feast.
 
 `externalSolemnities: { key: 'following-sunday' | 'preceding-sunday' | 'none' }`
 chooses for one feast (no. 359); one assigned to its day can only be left out.

@@ -137,6 +137,16 @@ const COMPANION_PRAYER: Readonly<Record<string, string>> = {
 };
 const COMPANION_PRAYERS: ReadonlySet<string> = new Set(Object.values(COMPANION_PRAYER));
 
+/**
+ * A prayer said in the Mass of another day, with no Mass or office of its own: the
+ * companion prayer of St. Peter or St. Paul (no. 110), the commemoration of the
+ * octave of Christmas, and the greater litanies (no. 81). The catalogue lists them
+ * among the commemorations, but none is an observance a church could be named for.
+ */
+export function isPrayerOnly(key: string): boolean {
+  return COMPANION_PRAYERS.has(key) || CHRISTMAS_OCTAVE.test(key) || key === GREATER_LITANIES;
+}
+
 export interface Commemorations {
   /** Commemorations in order (nos. 111-114). */
   readonly commemorations: string[];

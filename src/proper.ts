@@ -1,6 +1,7 @@
 import {
   checkColors, checkMonthDay, DEDICATION, DEDICATION_KEY, PATRON_OF_THE_PLACE, TITULAR, type Church, type ChurchFeast,
 } from './church.js';
+import { isPrayerOnly } from './commemorations.js';
 import { CATALOGUE, LAYERS } from './generated/data.js';
 import type { CatalogueEntry, Layer } from './types.js';
 
@@ -43,7 +44,8 @@ function resolveLayers(options: ProperOptions): Layer[] {
 
 const raisedKind = (entry: CatalogueEntry) => (entry.kind === 'commemoration' ? 'feast' : entry.kind);
 
-export function properCalendar(options: ProperOptions = {}): ProperCalendar {
+/** The universal calendar with the nation's and the institute's propers applied. */
+function withLayers(options: ProperOptions) {
   const entries = new Map(CATALOGUE.map((entry) => [entry.key, entry]));
   const removed = new Set<string>();
   const replacedBy = new Map<string, string>();
@@ -70,6 +72,33 @@ export function properCalendar(options: ProperOptions = {}): ProperCalendar {
   }
   const kept = (entry: CatalogueEntry) => (entry.scope === 'universal' ? !removed.has(entry.key) : added.has(entry.key) && !removed.has(entry.key));
   const keptKeys = new Set(CATALOGUE.filter(kept).map((entry) => entry.key));
+  return { entries, removed, replacedBy, order, keptKeys };
+}
+
+/** Why an observance of the catalogue cannot be a church's titular or patron; null if it can. */
+function refusal(original: CatalogueEntry, removed: ReadonlySet<string>): string | null {
+  const { key } = original;
+  if (original.formularyOf) return `${key} is a further Mass of ${original.formularyOf}; give that key`;
+  if (original.kind !== 'feast' && original.kind !== 'commemoration') return `${key} is not a feast; it cannot be a church's feast`;
+  if (isPrayerOnly(key)) return `${key} is a prayer said in another Mass, not a feast; it cannot be a church's feast`;
+  if (removed.has(key)) return `${key} is not kept in this calendar`;
+  return null;
+}
+
+/**
+ * The observances of the calendar a church may take as its titular or a patron,
+ * as a nation's and an institute's propers keep them: feasts and commemorated
+ * saints, each once. `properCalendar` refuses every other key of the catalogue.
+ */
+export function churchFeastChoices(options: Omit<ProperOptions, 'church'> = {}): CatalogueEntry[] {
+  const { entries, removed, keptKeys } = withLayers(options);
+  return CATALOGUE
+    .filter((entry) => keptKeys.has(entry.key) && refusal(entry, removed) === null)
+    .map((entry) => entries.get(entry.key) as CatalogueEntry);
+}
+
+export function properCalendar(options: ProperOptions = {}): ProperCalendar {
+  const { entries, removed, replacedBy, order, keptKeys } = withLayers(options);
 
   // The church's feasts, each with its place in item 12. One observance may hold two
   // places (the patron of the town who is also the titular): it is kept once, in the higher.
@@ -88,9 +117,8 @@ export function properCalendar(options: ProperOptions = {}): ProperCalendar {
     const original = CATALOGUE.find((entry) => entry.key === key);
     if (original) {
       if (feast.date !== undefined) throw new RangeError(`${key} is in the calendar; give it without a date`);
-      if (original.formularyOf) throw new RangeError(`${key} is a further Mass of ${original.formularyOf}; give that key`);
-      if (original.kind !== 'feast' && original.kind !== 'commemoration') throw new RangeError(`${key} is not a feast; it cannot be a church's feast`);
-      if (removed.has(key)) throw new RangeError(`${key} is not kept in this calendar`);
+      const why = refusal(original, removed);
+      if (why) throw new RangeError(why);
       const current = entries.get(key) as CatalogueEntry;
       // Already of the 1st class in the universal calendar: it keeps its higher place (item 11).
       if (current.class === 1 && current.scope === 'universal') { giveFeast(); return; }

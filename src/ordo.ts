@@ -371,6 +371,8 @@ function externalSolemnities(
   // The church's own: on the Sunday it names, or the one after the feast.
   const ofTheChurch = options.church?.externalSolemnity;
   for (const [key, place] of proper.churchFeasts) {
+    // All Souls is kept by its three Masses on its own day; a Mass for the dead is no solemnity of a feast (no. 356).
+    if (key === ALL_SOULS) continue;
     const existing = offered.get(key);
     if (existing) {
       // A feast that has one already (a church of the Sacred Heart): the church may still say which Sunday.

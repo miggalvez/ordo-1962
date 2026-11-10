@@ -1,6 +1,6 @@
 {
   "name": "ordo-1962",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "description": "The 1962 Roman calendar (1960 rubrics) for any year, nation, institute and church.",
   "license": "MIT",

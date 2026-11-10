@@ -12,35 +12,37 @@
   "about": "Masses the rubrics permit that the page never prints.",
   "masses": [
    { "kind": "requiem", "class": 4, "source": "The daily Mass for the dead outside the octave of All Souls (no. 423)." },
-   { "kind": "votive", "season": "lent", "source": "The first Thursday, Friday and Saturday votive Masses on the ferias of Lent and Passiontide: none in 2026 (5 to 7 March). No. 384 permits them on any day of the 3rd class." }
+   { "kind": "votive", "class": 3, "season": "lent", "source": "The first Thursday, Friday and Saturday votive Masses on the ferias of Lent and Passiontide: none in 2026 (5 to 7 March). No. 384 permits them on any day of the 3rd class." },
+   { "kind": "votive", "class": 2, "source": "The Mass for the Propagation of the Faith on the next to last Sunday of October (nos. 369, 453): not printed on 18 October 2026." }
   ]
  },
  "highPriest": "thursday",
  "massesForCertainPlaces": {
   "about": "Masses 'pro aliquibus locis' the page offers on a 4th class day. They are not in the universal calendar, the United States proper or the Fraternity's (data/layers/fssp.json): the French district's monthly ordo (fssp.fr/ordo-du-mois) prints a plain feria on 8 May (2020, 2023, 2025), 6 July (2020, 2023), 27 June (2023) and 4 July (2023, 2024), and the Institute of Christ the King lists the 8 May Masses as alternatives to the feria. They are offered as Masses of a saint in the Martyrology or of Our Lady, which a 4th class day admits (nos. 302c, 303b, 309b, 388). 'commemoratedOnThePage': the page also commemorates the Mass in the row of the day's own Mass; that is not followed (test/fixtures/fssp-2026-differences.json).",
+  "confirmed": "Against the 1962 Missal's Masses for certain places (clerus.org/bibliaclerusonline/en/gm3.htm and gm4.htm): the nine dates, 4 July for All Holy Popes among them, and the Latin titles, which are its headings written out. Colours: red for All Holy Popes (no. 124d), Holy Relics (no. 124f) and the two martyrs (no. 124e), white for the Masses of Our Lady and of St. Michael (no. 120b, c).",
   "toConfirm": [
-   "The titles in Latin and Spanish, and the colours, against the Missal's Masses for certain places.",
-   "The date of All Holy Popes, printed on 4 July 2026."
+   "The titles in Spanish.",
+   "The colour of St. Peter in Chains, entered white: it is not his day of death (no. 124b) and the rubrics do not name it."
   ],
   "masses": [
    { "key": "apparition-of-st-michael", "date": "05-08", "colors": ["white"], "commemoratedOnThePage": true,
      "names": { "la": "In Apparitione S. Michaëlis Archangeli", "en": "Apparition of St. Michael the Archangel", "es": "Aparición de San Miguel Arcángel" } },
    { "key": "our-lady-mediatrix-of-all-graces", "date": "05-08", "colors": ["white"], "ofOurLady": true, "commemoratedOnThePage": true,
-     "names": { "la": "Beatæ Mariæ Virginis Mediatricis omnium Gratiarum", "en": "Our Lady, Mediatrix of All Graces", "es": "Bienaventurada Virgen María, Medianera de todas las gracias" } },
+     "names": { "la": "Beatæ Mariæ Virginis omnium gratiarum Mediatricis", "en": "Our Lady, Mediatrix of All Graces", "es": "Bienaventurada Virgen María, Medianera de todas las gracias" } },
    { "key": "our-lady-of-perpetual-help", "date": "06-27", "colors": ["white"], "ofOurLady": true, "commemoratedOnThePage": true,
-     "names": { "la": "Beatæ Mariæ Virginis de Perpetuo Succursu", "en": "Our Lady of Perpetual Help", "es": "Nuestra Señora del Perpetuo Socorro" } },
-   { "key": "all-holy-popes", "date": "07-04", "colors": ["white"], "commemoratedOnThePage": true,
-     "names": { "la": "Commemoratio omnium Sanctorum Summorum Pontificum", "en": "Commemoration of All Holy Popes", "es": "Conmemoración de todos los santos Sumos Pontífices" } },
+     "names": { "la": "Beatæ Mariæ Virginis a Perpetuo Succursu", "en": "Our Lady of Perpetual Help", "es": "Nuestra Señora del Perpetuo Socorro" } },
+   { "key": "all-holy-popes", "date": "07-04", "colors": ["red"], "commemoratedOnThePage": true,
+     "names": { "la": "In Commemoratione omnium Sanctorum Summorum Pontificum", "en": "Commemoration of All Holy Popes", "es": "Conmemoración de todos los santos Sumos Pontífices" } },
    { "key": "st-maria-goretti", "date": "07-06", "colors": ["red"], "commemoratedOnThePage": true,
      "names": { "la": "S. Mariæ Goretti Virginis et Martyris", "en": "St. Maria Goretti, Virgin and Martyr", "es": "Santa María Goretti, virgen y mártir" } },
    { "key": "st-peter-in-chains", "date": "08-01", "colors": ["white"], "commemoratedOnThePage": false,
-     "names": { "la": "S. Petri ad Vincula", "en": "St. Peter in Chains", "es": "San Pedro ad Víncula" } },
+     "names": { "la": "S. Petri Apostoli ad Vincula", "en": "St. Peter in Chains", "es": "San Pedro ad Víncula" } },
    { "key": "finding-of-st-stephen", "date": "08-03", "colors": ["red"], "commemoratedOnThePage": false,
      "names": { "la": "In Inventione S. Stephani Protomartyris", "en": "Finding of the Body of St. Stephen, Protomartyr", "es": "Hallazgo del cuerpo de San Esteban, protomártir" } },
    { "key": "holy-relics", "date": "11-05", "colors": ["red"], "commemoratedOnThePage": true,
-     "names": { "la": "Sanctarum Reliquiarum", "en": "Holy Relics", "es": "Santas Reliquias" } },
+     "names": { "la": "Sacrarum Reliquiarum", "en": "Holy Relics", "es": "Santas Reliquias" } },
    { "key": "our-lady-of-the-miraculous-medal", "date": "11-27", "colors": ["white"], "ofOurLady": true, "commemoratedOnThePage": false,
-     "names": { "la": "Manifestatio Immaculatæ B. M. V. a Sacro Numismate", "en": "Our Lady of the Miraculous Medal", "es": "Nuestra Señora de la Medalla Milagrosa" } }
+     "names": { "la": "Beatæ Mariæ Virginis Immaculatæ a sacro Numismate", "en": "Our Lady of the Miraculous Medal", "es": "Nuestra Señora de la Medalla Milagrosa" } }
   ]
  }
 }

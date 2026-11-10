@@ -71,14 +71,30 @@ for (const language of LANGUAGES) {
 // Masses an ordo offers that are not observances (data/masses.json), and the
 // ordos' own Masses for certain places (data/ordos/). They are titled like
 // observances and must not share a key with one.
+const COLORS = ['white', 'red', 'green', 'violet', 'black', 'rose'];
+const MASS_KINDS = ['day', 'impeded-feast', 'commemoration', 'external-solemnity', 'rogation', 'votive', 'requiem', 'for-certain-places'];
+const OBSERVANCE_KINDS = [...new Set(catalogue.map((entry) => entry.kind))];
+const DAYS_IN_MONTH = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+const checkColors = (where, colors) => {
+  if (!Array.isArray(colors) || !colors.length || colors.some((color) => !COLORS.includes(color))) throw new Error(`${where}: colours ${JSON.stringify(colors)}`);
+};
+const checkFields = (where, object, allowed) => {
+  for (const field of Object.keys(object)) if (!allowed.includes(field)) throw new Error(`${where}: unknown field ${field}`);
+};
 const ON = /^(following-sunday|preceding-sunday|first-sunday:(0[1-9]|1[0-2])|[a-z]+\d*-0)$/;
 const checkSolemnities = (where, list) => {
   for (const s of list) {
+    checkFields(`${where}: external solemnity of ${s.key}`, s, ['key', 'on', 'fixed', 'rubric', 'source']);
     if (!known.has(s.key)) throw new Error(`${where}: external solemnity of unknown observance ${s.key}`);
     if (!ON.test(s.on)) throw new Error(`${where}: external solemnity of ${s.key} on ${JSON.stringify(s.on)}`);
+    if (s.fixed !== undefined && s.fixed !== true) throw new Error(`${where}: external solemnity of ${s.key}: fixed is true or absent`);
+    // One the Sunday before or after its feast may be moved to the other (no. 359); one on a named Sunday is fixed.
+    if (!/-sunday$/.test(s.on) && s.fixed !== true) throw new Error(`${where}: external solemnity of ${s.key} on ${s.on} must be fixed`);
+    if (!s.rubric) throw new Error(`${where}: external solemnity of ${s.key} cites no rubric`);
     if (!s.source) throw new Error(`${where}: external solemnity of ${s.key} cites no source`);
   }
 };
+const solemnityOf = ({ key, on, fixed, rubric }) => ({ key, on, ...(fixed ? { fixed: true } : {}), rubric });
 const massData = read('masses.json');
 checkSolemnities('data/masses.json', massData.externalSolemnities.solemnities);
 for (const [id, layer] of Object.entries(layers)) checkSolemnities(`layer ${id}`, layer.externalSolemnities ?? []);
@@ -95,20 +111,73 @@ const titled = (where, mass) => {
     names[language][mass.key] = title;
   }
 };
-for (const mass of massData.masses) titled('data/masses.json', mass);
+for (const mass of massData.masses) {
+  checkFields(`data/masses.json: ${mass.key}`, mass, ['key', 'kind', 'colors', 'ofTheLord', 'ofOurLady', 'names', 'source']);
+  if (!['votive', 'rogation', 'requiem'].includes(mass.kind)) throw new Error(`data/masses.json: ${mass.key} is of unknown kind ${mass.kind}`);
+  checkColors(`data/masses.json: ${mass.key}`, mass.colors);
+  if (!mass.source) throw new Error(`data/masses.json: ${mass.key} cites no source`);
+  titled('data/masses.json', mass);
+}
+
+// Where a Mass of the day differs from the day: no Mass, its own colour, its own commemoration.
+const ofTheDay = { noMass: [], colors: {}, commemorations: {} };
+for (const item of massData.ofTheDay.noMass) {
+  if (!known.has(item.key)) throw new Error(`data/masses.json: no Mass on unknown observance ${item.key}`);
+  if (!item.source) throw new Error(`data/masses.json: no Mass on ${item.key} cites no source`);
+  ofTheDay.noMass.push(item.key);
+}
+for (const item of massData.ofTheDay.colors) {
+  if (!known.has(item.key)) throw new Error(`data/masses.json: colours of unknown Mass ${item.key}`);
+  checkColors(`data/masses.json: the Mass of ${item.key}`, item.colors);
+  const whole = catalogue.find((entry) => entry.key === item.key).colors;
+  if (item.colors.some((color) => !whole.includes(color))) throw new Error(`data/masses.json: the Mass of ${item.key} has a colour the day has not`);
+  if (!item.source) throw new Error(`data/masses.json: colours of ${item.key} cite no source`);
+  ofTheDay.colors[item.key] = item.colors;
+}
+for (const item of massData.ofTheDay.commemorations) {
+  if (!known.has(item.mass)) throw new Error(`data/masses.json: a commemoration in unknown Mass ${item.mass}`);
+  if (!item.source) throw new Error(`data/masses.json: the commemoration of ${item.key} cites no source`);
+  titled('data/masses.json', item);
+  (ofTheDay.commemorations[item.mass] ??= []).push(item.key);
+}
+
+const checkRule = (where, rule, allowed) => {
+  checkFields(where, rule, [...allowed, 'source']);
+  if (!MASS_KINDS.includes(rule.kind)) throw new Error(`${where}: unknown kind of Mass ${JSON.stringify(rule.kind)}`);
+  if (!rule.source) throw new Error(`${where}: cites no source`);
+};
 for (const [id, ordo] of Object.entries(ordos)) {
   if (ordo.ordo !== id) throw new Error(`data/ordos/${id}.json is for ordo ${ordo.ordo}`);
+  checkFields(`ordo ${id}`, ordo, ['ordo', 'about', 'first', 'omit', 'highPriest', 'massesForCertainPlaces']);
+  (ordo.first?.rules ?? []).forEach((rule, i) => {
+    const where = `ordo ${id}: first, rule ${i + 1}`;
+    checkRule(where, rule, ['kind', 'within', 'onDaysOfClass', 'onCelebrations']);
+    if (rule.within !== undefined && rule.within !== 'all-souls-octave') throw new Error(`${where}: within ${JSON.stringify(rule.within)}`);
+    if (rule.onDaysOfClass?.some((cls) => ![1, 2, 3, 4].includes(cls))) throw new Error(`${where}: onDaysOfClass ${JSON.stringify(rule.onDaysOfClass)}`);
+    if (rule.onCelebrations?.some((kind) => !OBSERVANCE_KINDS.includes(kind))) throw new Error(`${where}: onCelebrations ${JSON.stringify(rule.onCelebrations)}`);
+  });
+  (ordo.omit?.masses ?? []).forEach((rule, i) => {
+    const where = `ordo ${id}: omit, rule ${i + 1}`;
+    checkRule(where, rule, ['kind', 'class', 'season']);
+    if (rule.class !== undefined && ![1, 2, 3, 4].includes(rule.class)) throw new Error(`${where}: class ${JSON.stringify(rule.class)}`);
+    if (rule.season !== undefined && rule.season !== 'lent') throw new Error(`${where}: season ${JSON.stringify(rule.season)}`);
+  });
+  if (ordo.highPriest !== undefined && !['thursday', 'saturday'].includes(ordo.highPriest)) throw new Error(`ordo ${id}: highPriest ${JSON.stringify(ordo.highPriest)}`);
   for (const mass of ordo.massesForCertainPlaces?.masses ?? []) {
-    if (!/^\d\d-\d\d$/.test(mass.date)) throw new Error(`ordo ${id}: ${mass.key} needs a date as MM-DD`);
+    const where = `ordo ${id}: ${mass.key}`;
+    checkFields(where, mass, ['key', 'date', 'colors', 'ofTheLord', 'ofOurLady', 'commemoratedOnThePage', 'names']);
+    const date = /^(\d\d)-(\d\d)$/.exec(mass.date ?? '');
+    if (!date || Number(date[1]) < 1 || Number(date[1]) > 12 || Number(date[2]) < 1 || Number(date[2]) > DAYS_IN_MONTH[Number(date[1]) - 1]) throw new Error(`${where} needs a date as MM-DD`);
+    checkColors(where, mass.colors);
     titled(`ordo ${id}`, mass);
   }
 }
 const masses = Object.fromEntries(massData.masses.map(({ names: _, ...mass }) => [mass.key, mass]));
 const ordoProfiles = Object.fromEntries(Object.entries(ordos).map(([id, ordo]) => [id, {
   ordo: id,
-  first: ordo.first?.rules ?? [],
-  omit: ordo.omit?.masses ?? [],
-  highPriest: ordo.highPriest ?? 'thursday',
+  first: (ordo.first?.rules ?? []).map(({ source: _, ...rule }) => rule),
+  omit: (ordo.omit?.masses ?? []).map(({ source: _, ...rule }) => rule),
+  ...(ordo.highPriest ? { highPriest: ordo.highPriest } : {}),
   massesForCertainPlaces: (ordo.massesForCertainPlaces?.masses ?? []).map(({ names: _, commemoratedOnThePage: __, ...mass }) => mass),
 }]));
 const missing = catalogue.flatMap((entry) => REQUIRED.filter((language) => !names[language][entry.key]).map((language) => `${entry.key} (${language})`));
@@ -137,14 +206,15 @@ const sources = {
   NAMES: [sortedNames, 'Readonly<Record<Language, Readonly<Record<string, string>>>>'],
   DAY_HEADINGS: [dayHeadings, 'Readonly<Record<string, Readonly<Partial<Record<Language, string>>>>>'],
   MASSES: [masses, 'Readonly<Record<string, MassFormulary>>'],
-  EXTERNAL_SOLEMNITIES: [massData.externalSolemnities.solemnities.map(({ key, on, rubric }) => ({ key, on, rubric })), 'readonly ExternalSolemnity[]'],
+  EXTERNAL_SOLEMNITIES: [massData.externalSolemnities.solemnities.map(solemnityOf), 'readonly ExternalSolemnity[]'],
+  OF_THE_DAY: [ofTheDay, 'MassesOfTheDay'],
   ORDOS: [ordoProfiles, 'Readonly<Record<string, OrdoProfile>>'],
 };
 
 const lines = [
   '// Generated by scripts/generate-data.mjs from data/. Do not edit.',
   "import { deepFreeze } from '../freeze.js';",
-  "import type { CatalogueEntry, ExternalSolemnity, Language, Layer, MassFormulary, OrdoProfile, TemporalBlockName } from '../types.js';",
+  "import type { CatalogueEntry, ExternalSolemnity, Language, Layer, MassesOfTheDay, MassFormulary, OrdoProfile, TemporalBlockName } from '../types.js';",
   '',
 ];
 for (const [name, [value, type]] of Object.entries(sources)) {

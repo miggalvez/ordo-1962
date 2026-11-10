@@ -4,9 +4,13 @@
  "toConfirm": [
   "Whether the Chair of St. Peter is kept as the Fraternity's titular (no. 91 item 12.6) or as its patron's feast (item 12.8). The Fraternity describes itself as under the patronage of the Prince of the Apostles, so it is entered as 12.8; the two differ only when both fall with another proper 1st class feast.",
   "Whether the Fraternity has further proper feasts (a founder's, a secondary patron's) in the printed ordo.",
+  "The external solemnity of the Chair of St. Peter (no. 358e): no FSSP source read shows one. In 2026 it cannot be seen, both Sundays beside 23 February being of the 1st class; 27 February 2028 (Quinquagesima) is the first Sunday it is offered on.",
   "The transfer in 2026: 22 February was the 1st Sunday of Lent, so no. 96 moves the feast to Monday 23 February. Neither the seminary's page nor the French district's page shows it; a parish bulletin from Omaha is reported to."
  ],
  "massesOffered": "data/ordos/fssp.json: the Masses the Fraternity's ordo offers beside the day's own, among them Masses for certain places that are not in this calendar.",
+ "externalSolemnities": [
+  { "key": "chair-of-st-peter", "on": "following-sunday", "rubric": "nos. 358e, 359, 360", "source": "No. 358e: the feast of the principal patron of an Order or Congregation has an external solemnity by right (no. 358h if it is kept as the titular). Entered on the rubric alone: see toConfirm." }
+ ],
  "operations": [
   {
    "op": "raise",

@@ -24,6 +24,12 @@ export interface ProperCalendar {
   readonly order: ReadonlyMap<string, readonly string[]>;
   /** The church's own feasts. */
   readonly churchKeys: ReadonlySet<string>;
+  /**
+   * Every feast the church gave, by the key it is kept under, with its place in no. 91
+   * item 12 (3 patron of the place, 4 dedication, 5 titular; the higher of two). Unlike
+   * `churchKeys` it has a feast the universal calendar already keeps as of the 1st class.
+   */
+  readonly churchFeasts: ReadonlyMap<string, number>;
 }
 
 function resolveLayers(options: ProperOptions): Layer[] {
@@ -68,6 +74,7 @@ export function properCalendar(options: ProperOptions = {}): ProperCalendar {
   // The church's feasts, each with its place in item 12. One observance may hold two
   // places (the patron of the town who is also the titular): it is kept once, in the higher.
   const churchKeys = new Set<string>();
+  const churchFeasts = new Map<string, number>();
   const given = new Map<string, string>();
   const place = (feast: ChurchFeast, role: number) => {
     if (feast.key === DEDICATION_KEY) throw new RangeError(`${DEDICATION_KEY} is the key of the dedication; give its date as \`dedication\``);
@@ -76,6 +83,7 @@ export function properCalendar(options: ProperOptions = {}): ProperCalendar {
     const signature = JSON.stringify([feast.date ?? null, feast.colors ?? null, feast.ofTheLord === true, feast.ofOurLady === true]);
     if (given.has(key) && given.get(key) !== signature) throw new RangeError(`${key} is given twice, differently`);
     given.set(key, signature);
+    const giveFeast = () => churchFeasts.set(key, Math.min(role, churchFeasts.get(key) ?? Infinity));
 
     const original = CATALOGUE.find((entry) => entry.key === key);
     if (original) {
@@ -85,7 +93,7 @@ export function properCalendar(options: ProperOptions = {}): ProperCalendar {
       if (removed.has(key)) throw new RangeError(`${key} is not kept in this calendar`);
       const current = entries.get(key) as CatalogueEntry;
       // Already of the 1st class in the universal calendar: it keeps its higher place (item 11).
-      if (current.class === 1 && current.scope === 'universal') return;
+      if (current.class === 1 && current.scope === 'universal') { giveFeast(); return; }
       const already = churchKeys.has(key) ? (current.properItem as number) : Infinity;
       entries.set(key, { ...current, kind: 'feast', class: 1, scope: 'church', properItem: Math.min(role, already) });
     } else {
@@ -104,6 +112,7 @@ export function properCalendar(options: ProperOptions = {}): ProperCalendar {
       });
     }
     churchKeys.add(key);
+    giveFeast();
   };
 
   const church = options.church;
@@ -122,9 +131,10 @@ export function properCalendar(options: ProperOptions = {}): ProperCalendar {
       properItem: DEDICATION,
     });
     churchKeys.add(DEDICATION_KEY);
+    churchFeasts.set(DEDICATION_KEY, DEDICATION);
   }
   if (church?.titular) place(church.titular, TITULAR);
 
   const fixed = [...entries.values()].filter((entry) => 'fixed' in entry.date && (keptKeys.has(entry.key) || churchKeys.has(entry.key)));
-  return { entries, fixed, order, churchKeys };
+  return { entries, fixed, order, churchKeys, churchFeasts };
 }

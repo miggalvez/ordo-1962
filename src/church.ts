@@ -31,8 +31,8 @@ export interface Church {
   readonly patrons?: readonly ChurchFeast[];
   /**
    * Where the external solemnity of these feasts is offered when one falls on a
-   * weekday (Rubricae generales Missalis nos. 358d-f, 359): the Sunday following
-   * the day the feast is kept (the default), the Sunday before it, or none.
+   * weekday (Rubricae generales Missalis nos. 358d, 358g, 359): the Sunday
+   * following the day the feast is kept (the default), the Sunday before it, or none.
    */
   readonly externalSolemnity?: 'following-sunday' | 'preceding-sunday' | 'none';
 }

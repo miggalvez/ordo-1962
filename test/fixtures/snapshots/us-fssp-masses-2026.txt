@@ -1,365 +1,365 @@
-2026-01-01 octave-day-of-christmas day 1
-2026-01-02 votive-sacred-heart-of-jesus votive 3 / feria day 4
-2026-01-03 votive-immaculate-heart-of-mary votive 3 / our-lady-on-saturday-christmastide day 4
-2026-01-04 nat2-0 day 2
-2026-01-05 us-st-john-neumann day 3 (st-telesphorus-pope-and-martyr)
-2026-01-06 epiphany-of-the-lord day 1
-2026-01-07 feria day 4
-2026-01-08 feria day 4
-2026-01-09 feria day 4
-2026-01-10 our-lady-on-saturday-christmastide day 4
-2026-01-11 epi1-0 day 2
-2026-01-12 epi1-1 day 4
-2026-01-13 commemoration-of-the-baptism-of-the-lord day 2
-2026-01-14 st-hilary day 3 (st-felix)
-2026-01-15 st-paul-the-first-hermit day 3 (st-maur-abbot)
-2026-01-16 st-marcellus-i day 3
-2026-01-17 st-anthony-the-abbot day 3
-2026-01-18 epi2-0 day 2
-2026-01-19 epi2-1 day 4 (sts-marius-martha-audifax-and-abachum, st-canute-martyr) / sts-marius-martha-audifax-and-abachum commemoration 4 (st-canute-martyr) / st-canute-martyr commemoration 4 (sts-marius-martha-audifax-and-abachum)
-2026-01-20 sts-fabian-and-sebastian day 3
-2026-01-21 st-agnes day 3
-2026-01-22 sts-vincent-and-anastasius day 3
-2026-01-23 st-raymond-of-penafort day 3 (st-emerentiana)
-2026-01-24 st-timothy day 3
-2026-01-25 epi3-0 day 2
-2026-01-26 st-polycarp day 3
-2026-01-27 st-john-chrysostom day 3
-2026-01-28 st-peter-nolasco day 3 (st-agnes-01-28t)
-2026-01-29 st-francis-de-sales day 3
-2026-01-30 st-martina day 3
-2026-01-31 st-john-bosco day 3
-2026-02-01 quadp1-0 day 2
-2026-02-02 purification-of-the-blessed-virgin-mary day 2
-2026-02-03 quadp1-2 day 4 (st-blaise) / st-blaise commemoration 4
-2026-02-04 st-andrew-corsini day 3
-2026-02-05 st-agatha day 3 / votive-jesus-christ-the-eternal-high-priest votive 3 (st-agatha)
-2026-02-06 st-titus day 3 (st-dorothy) / votive-sacred-heart-of-jesus votive 3 (st-titus, st-dorothy)
-2026-02-07 st-romuald day 3 / votive-immaculate-heart-of-mary votive 3 (st-romuald)
-2026-02-08 quadp2-0 day 2
-2026-02-09 st-cyril-of-alexandria day 3 (st-apollonia)
-2026-02-10 st-scholastica day 3
-2026-02-11 our-lady-of-lourdes day 3
-2026-02-12 seven-holy-servite-founders day 3
-2026-02-13 quadp2-5 day 4
-2026-02-14 our-lady-on-saturday-after-purification day 4 (st-valentine) / st-valentine commemoration 4
-2026-02-15 quadp3-0 day 2
-2026-02-16 quadp3-1 day 4
-2026-02-17 quadp3-2 day 4
-2026-02-18 quadp3-3 day 1
-2026-02-19 quadp3-4 day 3
-2026-02-20 quadp3-5 day 3
-2026-02-21 quadp3-6 day 3
-2026-02-22 quad1-0 day 1
-2026-02-23 chair-of-st-peter day 1 (quad1-1)
-2026-02-24 st-matthias day 2 (quad1-2)
-2026-02-25 quad1-3 day 2
-2026-02-26 quad1-4 day 3
-2026-02-27 quad1-5 day 2 (st-gabriel-of-our-lady-of-sorrows)
-2026-02-28 quad1-6 day 2
-2026-03-01 quad2-0 day 1
-2026-03-02 quad2-1 day 3
-2026-03-03 quad2-2 day 3
-2026-03-04 quad2-3 day 3 (st-casimir, st-lucius)
-2026-03-05 quad2-4 day 3
-2026-03-06 quad2-5 day 3 (sts-felicitas-and-perpetua)
-2026-03-07 quad2-6 day 3 (st-thomas-aquinas)
-2026-03-08 quad3-0 day 1
-2026-03-09 quad3-1 day 3 (st-frances-of-rome)
-2026-03-10 quad3-2 day 3 (forty-holy-martyrs-of-sebaste)
-2026-03-11 quad3-3 day 3
-2026-03-12 quad3-4 day 3 (st-gregory-the-great)
-2026-03-13 quad3-5 day 3
-2026-03-14 quad3-6 day 3
-2026-03-15 quad4-0 day 1
-2026-03-16 quad4-1 day 3
-2026-03-17 quad4-2 day 3 (st-patrick)
-2026-03-18 quad4-3 day 3 (st-cyril-of-jerusalem)
-2026-03-19 st-joseph-spouse-of-the-bl-virgin-mary day 1 (quad4-4)
-2026-03-20 quad4-5 day 3
-2026-03-21 quad4-6 day 3 (st-benedict)
-2026-03-22 quad5-0 day 1
-2026-03-23 quad5-1 day 3
-2026-03-24 quad5-2 day 3 (st-gabriel-the-archangel)
-2026-03-25 annunciation-of-the-blessed-virgin-mary day 1 (quad5-3)
-2026-03-26 quad5-4 day 3
-2026-03-27 quad5-5 day 3 (st-john-damascene, seven-sorrows-in-passiontide)
-2026-03-28 quad5-6 day 3 (st-john-of-capistrano)
-2026-03-29 quad6-0 day 1
-2026-03-30 quad6-1 day 1
-2026-03-31 quad6-2 day 1
-2026-04-01 quad6-3 day 1
-2026-04-02 quad6-4 day 1
-2026-04-03 quad6-5 day 1
-2026-04-04 quad6-6 day 1
-2026-04-05 pasc0-0 day 1
-2026-04-06 pasc0-1 day 1
-2026-04-07 pasc0-2 day 1
-2026-04-08 pasc0-3 day 1
-2026-04-09 pasc0-4 day 1
-2026-04-10 pasc0-5 day 1
-2026-04-11 pasc0-6 day 1
-2026-04-12 pasc1-0 day 1
-2026-04-13 st-hermenegild day 3
-2026-04-14 st-justin day 3 (sts-tiburtius-valerian-and-maximus-martyrs)
-2026-04-15 pasc1-3 day 4
-2026-04-16 pasc1-4 day 4
-2026-04-17 pasc1-5 day 4 (st-anicetus) / st-anicetus commemoration 4
-2026-04-18 our-lady-on-saturday-paschaltide day 4
-2026-04-19 pasc2-0 day 2
-2026-04-20 pasc2-1 day 4
-2026-04-21 st-anselm day 3
-2026-04-22 sts-soter-and-caius day 3
-2026-04-23 pasc2-4 day 4 (st-george) / st-george commemoration 4
-2026-04-24 st-fidelis-of-sigmaringen day 3
-2026-04-25 st-mark day 2 (for-the-rogations) / rogation-mass rogation 2 (st-mark)
-2026-04-26 pasc3-0 day 2
-2026-04-27 st-peter-canisius day 3
-2026-04-28 st-paul-of-the-cross day 3
-2026-04-29 st-peter-of-verona day 3
-2026-04-30 st-catherine-of-siena day 3
-2026-05-01 st-joseph-the-workman day 1
-2026-05-02 st-athanasius day 3 / votive-immaculate-heart-of-mary votive 3 (st-athanasius)
-2026-05-03 pasc4-0 day 2
-2026-05-04 st-monica day 3
-2026-05-05 st-pius-v day 3
-2026-05-06 pasc4-3 day 4
-2026-05-07 st-stanislaus day 3 / votive-jesus-christ-the-eternal-high-priest votive 3 (st-stanislaus)
-2026-05-08 pasc4-5 day 4 / apparition-of-st-michael for-certain-places 4 / our-lady-mediatrix-of-all-graces for-certain-places 4
-2026-05-09 st-gregory-nazianzen day 3
-2026-05-10 pasc5-0 day 2
-2026-05-11 sts-philip-and-james day 2 / rogation-mass rogation 2 (sts-philip-and-james)
-2026-05-12 sts-nereus-achilleus-domitilla-and-pancras day 3 / rogation-mass rogation 2 (sts-nereus-achilleus-domitilla-and-pancras)
-2026-05-13 pasc5-3 day 2 (st-robert-bellarmine) / rogation-mass rogation 2 (pasc5-3)
-2026-05-14 pasc5-4 day 1
-2026-05-15 st-john-baptist-de-la-salle day 3
-2026-05-16 st-ubaldus day 3
-2026-05-17 pasc6-0 day 2
-2026-05-18 st-venantius day 3
-2026-05-19 st-peter-celestine day 3 (st-pudentiana-virgin)
-2026-05-20 st-bernardine-of-siena day 3
-2026-05-21 pasc6-4 day 4
-2026-05-22 pasc6-5 day 4
-2026-05-23 pasc6-6 day 1
-2026-05-24 pasc7-0 day 1
-2026-05-25 pasc7-1 day 1
-2026-05-26 pasc7-2 day 1
-2026-05-27 pasc7-3 day 1
-2026-05-28 pasc7-4 day 1
-2026-05-29 pasc7-5 day 1
-2026-05-30 pasc7-6 day 1
-2026-05-31 pent01-0 day 1
-2026-06-01 st-angela-merici day 3
-2026-06-02 pent01-2 day 4 (sts-marcellinus-peter-and-erasmus) / sts-marcellinus-peter-and-erasmus commemoration 4
-2026-06-03 pent01-3 day 4
-2026-06-04 pent01-4 day 1
-2026-06-05 st-boniface-06-05 day 3 / votive-sacred-heart-of-jesus votive 3 (st-boniface-06-05)
-2026-06-06 st-norbert day 3 / votive-immaculate-heart-of-mary votive 3 (st-norbert)
-2026-06-07 pent02-0 day 2 / pent01-4 external-solemnity 2
-2026-06-08 pent02-1 day 4
-2026-06-09 pent02-2 day 4 (sts-primus-and-felicianus) / sts-primus-and-felicianus commemoration 4
-2026-06-10 st-margaret-of-scotland day 3
-2026-06-11 st-barnabas day 3
-2026-06-12 pent02-5 day 1
-2026-06-13 st-anthony-of-padua day 3
-2026-06-14 pent03-0 day 2 / pent02-5 external-solemnity 2
-2026-06-15 pent03-1 day 4 (st-vitus) / st-vitus commemoration 4
-2026-06-16 pent03-2 day 4
-2026-06-17 st-gregory-barbarigo day 3
-2026-06-18 st-ephrem-of-syria day 3 (sts-marcus-and-marcellianus)
-2026-06-19 st-juliana-falconieri day 3 (sts-gervasius-and-protasius)
-2026-06-20 our-lady-on-saturday-after-pentecost day 4 (st-silverius) / st-silverius commemoration 4
-2026-06-21 pent04-0 day 2
-2026-06-22 st-paulinus-of-nola day 3
-2026-06-23 vigil-of-the-nativity-of-st-john-the-baptist day 2
-2026-06-24 nativity-of-st-john-the-baptist day 1
-2026-06-25 st-william day 3
-2026-06-26 sts-john-and-paul day 3
-2026-06-27 our-lady-on-saturday-after-pentecost day 4 / our-lady-of-perpetual-help for-certain-places 4
-2026-06-28 pent05-0 day 2
-2026-06-29 sts-peter-and-paul day 1
-2026-06-30 commemoration-of-st-paul-the-apostle day 3
-2026-07-01 the-precious-blood-of-our-lord-jesus-christ day 1
-2026-07-02 visitation-of-the-blessed-virgin-mary day 2 (sts-processus-and-martinian)
-2026-07-03 st-irenaeus day 3 / votive-sacred-heart-of-jesus votive 3 (st-irenaeus)
-2026-07-04 votive-immaculate-heart-of-mary votive 3 / our-lady-on-saturday-after-pentecost day 4 / all-holy-popes for-certain-places 4
-2026-07-05 pent06-0 day 2 / sts-peter-and-paul external-solemnity 2 (pent06-0)
-2026-07-06 pent06-1 day 4 / st-maria-goretti for-certain-places 4
-2026-07-07 sts-cyril-and-methodius day 3
-2026-07-08 st-elizabeth-of-portugal day 3
-2026-07-09 pent06-4 day 4
-2026-07-10 seven-holy-brothers-and-sts-rufina-and-secunda day 3
-2026-07-11 our-lady-on-saturday-after-pentecost day 4 (st-pius-i) / st-pius-i commemoration 4
-2026-07-12 pent07-0 day 2
-2026-07-13 pent07-1 day 4
-2026-07-14 st-bonaventure day 3
-2026-07-15 st-henry-the-emperor day 3
-2026-07-16 pent07-4 day 4 (our-lady-of-mt-carmel) / our-lady-of-mt-carmel commemoration 4
-2026-07-17 pent07-5 day 4 (st-alexis) / st-alexis commemoration 4
-2026-07-18 camillus-de-lellis day 3 (sts-symphorosa-and-sons)
-2026-07-19 pent08-0 day 2
-2026-07-20 st-jerome-emiliani day 3 (st-margaret)
-2026-07-21 st-laurence-of-brindisi day 3 (st-praxedes-virgin)
-2026-07-22 st-mary-magdalene day 3
-2026-07-23 st-apollinaris day 3 (st-liborius)
-2026-07-24 pent08-5 day 4 (st-christina) / st-christina commemoration 4
-2026-07-25 st-james-the-greater day 2 (st-christopher)
-2026-07-26 pent09-0 day 2 (st-anne-mother-of-the-blessed-virgin)
-2026-07-27 pent09-1 day 4 (st-pantaleon) / st-pantaleon commemoration 4
-2026-07-28 sts-nazarius-and-celsus-st-victor-i-and-st-innocent-i day 3
-2026-07-29 st-martha day 3 (sts-felix-simplicius-faustinus-and-beatrice)
-2026-07-30 pent09-4 day 4 (sts-abdon-and-sennen) / sts-abdon-and-sennen commemoration 4
-2026-07-31 st-ignatius-loyola day 3
-2026-08-01 votive-immaculate-heart-of-mary votive 3 (holy-machabees) / our-lady-on-saturday-after-pentecost day 4 (holy-machabees) / holy-machabees commemoration 4 / st-peter-in-chains for-certain-places 4 (holy-machabees)
-2026-08-02 pent10-0 day 2
-2026-08-03 pent10-1 day 4 / finding-of-st-stephen for-certain-places 4
-2026-08-04 st-dominic day 3
-2026-08-05 dedication-of-the-basilica-of-st-mary-major day 3
-2026-08-06 transfiguration-of-our-lord day 2 (pope-sixtus-ii-felicissimus-and-agapitus-martyrs)
-2026-08-07 st-cajetan day 3 (st-donatus) / votive-sacred-heart-of-jesus votive 3 (st-cajetan, st-donatus)
-2026-08-08 st-john-mary-vianney day 3 (sts-cyriacus-largus-and-smaragdus-martyrs)
-2026-08-09 pent11-0 day 2
-2026-08-10 st-lawrence day 2
-2026-08-11 pent11-2 day 4 (sts-tiburtius-and-susanna) / sts-tiburtius-and-susanna commemoration 4
-2026-08-12 st-clare day 3
-2026-08-13 pent11-4 day 4 (sts-hippolytus-and-cassian) / sts-hippolytus-and-cassian commemoration 4
-2026-08-14 vigil-of-the-assumption day 2 (st-eusebius)
-2026-08-15 assumption-of-the-blessed-virgin-mary day 1
-2026-08-16 pent12-0 day 2 (st-joachim-father-of-the-blessed-virgin)
-2026-08-17 st-hyacinth day 3
-2026-08-18 pent12-2 day 4 (st-agapitus) / st-agapitus commemoration 4
-2026-08-19 st-john-eudes day 3
-2026-08-20 st-bernard-of-clairvaux day 3
-2026-08-21 st-jane-frances-de-chantal day 3
-2026-08-22 immaculate-heart-of-mary day 2 (sts-timothy-hippolytus-and-symphorianus-martyrs)
-2026-08-23 pent13-0 day 2
-2026-08-24 st-bartholomew day 2
-2026-08-25 st-louis-ix day 3
-2026-08-26 pent13-3 day 4 (st-zephyrinus) / st-zephyrinus commemoration 4
-2026-08-27 st-joseph-calasance day 3
-2026-08-28 st-augustine day 3 (st-hermes)
-2026-08-29 beheading-of-st-john-the-baptist day 3 (st-sabina)
-2026-08-30 pent14-0 day 2
-2026-08-31 st-raymond-nonnatus day 3
-2026-09-01 pent14-2 day 4 (st-giles, twelve-holy-brothers-martyrs) / st-giles commemoration 4 (twelve-holy-brothers-martyrs) / twelve-holy-brothers-martyrs commemoration 4 (st-giles)
-2026-09-02 st-stephen-of-hungary day 3
-2026-09-03 st-pius-x day 3 / votive-jesus-christ-the-eternal-high-priest votive 3 (st-pius-x)
-2026-09-04 votive-sacred-heart-of-jesus votive 3 / pent14-5 day 4
-2026-09-05 st-lawrence-justinian day 3 / votive-immaculate-heart-of-mary votive 3 (st-lawrence-justinian)
-2026-09-06 pent15-0 day 2
-2026-09-07 pent15-1 day 4
-2026-09-08 nativity-of-the-blessed-virgin-mary day 2 (st-hadrian)
-2026-09-09 us-st-peter-claver day 3 (st-gorgonius)
-2026-09-10 st-nicholas-of-tolentino day 3
-2026-09-11 pent15-5 day 4 (sts-protus-and-hyacinth) / sts-protus-and-hyacinth commemoration 4
-2026-09-12 most-holy-name-of-mary day 3
-2026-09-13 pent16-0 day 2
-2026-09-14 exaltation-of-the-holy-cross day 2
-2026-09-15 seven-sorrows-of-the-blessed-virgin-mary day 2 (st-nicomedes)
-2026-09-16 sts-cornelius-and-cyprian day 3 (sts-euphemia-lucy-and-geminianus)
-2026-09-17 pent16-4 day 4 (stigmata-of-st-francis) / stigmata-of-st-francis commemoration 4
-2026-09-18 st-joseph-of-cupertino day 3
-2026-09-19 st-januarius-and-companions day 3
-2026-09-20 pent17-0 day 2
-2026-09-21 st-matthew day 2
-2026-09-22 st-thomas-of-villanova day 3 (st-maurice-and-companions-martyrs)
-2026-09-23 sep-ember-3 day 2 (st-linus)
-2026-09-24 pent17-4 day 4 (our-lady-of-ransom) / our-lady-of-ransom commemoration 4
-2026-09-25 sep-ember-5 day 2
-2026-09-26 sep-ember-6 day 2 (us-north-american-martyrs)
-2026-09-27 pent18-0 day 2
-2026-09-28 st-wenceslaus day 3
-2026-09-29 dedication-of-st-michael-the-archangel day 1
-2026-09-30 st-jerome day 3
-2026-10-01 votive-jesus-christ-the-eternal-high-priest votive 3 (st-remigius) / pent18-4 day 4 (st-remigius) / st-remigius commemoration 4
-2026-10-02 holy-guardian-angels day 3 / votive-sacred-heart-of-jesus votive 3 (holy-guardian-angels)
-2026-10-03 st-theresa-of-the-infant-jesus day 3 / votive-immaculate-heart-of-mary votive 3 (st-theresa-of-the-infant-jesus)
-2026-10-04 pent19-0 day 2 / our-lady-of-the-rosary external-solemnity 2 (pent19-0)
-2026-10-05 pent19-1 day 4 (st-placid-and-companions) / st-placid-and-companions commemoration 4
-2026-10-06 st-bruno day 3
-2026-10-07 our-lady-of-the-rosary day 2 (st-mark-i)
-2026-10-08 st-bridget-of-sweden day 3 (sts-sergius-bacchus-marcellus-and-apuleius-martyrs)
-2026-10-09 st-john-leonardi day 3 (st-dionysius-and-companions)
-2026-10-10 st-francis-borgia day 3
-2026-10-11 pent20-0 day 2 (maternity-of-the-blessed-virgin-mary)
-2026-10-12 pent20-1 day 4
-2026-10-13 st-edward day 3
-2026-10-14 st-callistus-i day 3
-2026-10-15 st-teresa-of-avila day 3
-2026-10-16 st-hedwig day 3
-2026-10-17 st-margaret-mary-alacoque day 3
-2026-10-18 pent21-0 day 2 (st-luke-the-evangelist)
-2026-10-19 st-peter-of-alcantara day 3
-2026-10-20 st-john-cantius day 3
-2026-10-21 pent21-3 day 4 (st-hilarion, st-ursula-and-companions) / st-hilarion commemoration 4 (st-ursula-and-companions) / st-ursula-and-companions commemoration 4 (st-hilarion)
-2026-10-22 pent21-4 day 4
-2026-10-23 st-anthony-mary-claret day 3
-2026-10-24 st-raphael-the-archangel day 3
-2026-10-25 christ-the-king day 1
-2026-10-26 pent22-1 day 4 (st-evaristus) / st-evaristus commemoration 4
-2026-10-27 pent22-2 day 4
-2026-10-28 sts-simon-and-jude day 2
-2026-10-29 pent22-4 day 4
-2026-10-30 pent22-5 day 4
-2026-10-31 our-lady-on-saturday-after-pentecost day 4
-2026-11-01 all-saints day 1 (pent23-0)
-2026-11-02 commemoration-of-all-souls day 1 / commemoration-of-all-souls-second-mass day 1 / commemoration-of-all-souls-third-mass day 1
-2026-11-03 requiem-daily requiem 3 / pent23-2 day 4
-2026-11-04 st-charles-borromeo day 3 (sts-vitalis-and-agricola-martyrs) / requiem-daily requiem 3
-2026-11-05 requiem-daily requiem 3 / pent23-4 day 4 / votive-jesus-christ-the-eternal-high-priest votive 3 / holy-relics for-certain-places 4
-2026-11-06 requiem-daily requiem 3 / pent23-5 day 4 / votive-sacred-heart-of-jesus votive 3
-2026-11-07 requiem-daily requiem 3 / our-lady-on-saturday-after-pentecost day 4 / votive-immaculate-heart-of-mary votive 3
-2026-11-08 epi5-0 day 2
-2026-11-09 dedication-of-the-archbasilica-of-our-holy-savior day 2 (st-theodore)
-2026-11-10 st-andrew-avellino day 3 (sts-tryphon-respicius-and-nympha)
-2026-11-11 st-martin-of-tours day 3 (st-menas)
-2026-11-12 st-martin-i day 3
-2026-11-13 us-st-frances-xavier-cabrini day 3 (st-didacus) / st-didacus impeded-feast 3 (us-st-frances-xavier-cabrini)
-2026-11-14 st-josaphat day 3
-2026-11-15 epi6-0 day 2
-2026-11-16 st-gertrude-the-great day 3
-2026-11-17 st-gregory-the-wonderworker day 3
-2026-11-18 dedication-of-the-basilicas-of-sts-peter-and-paul day 3
-2026-11-19 st-elizabeth-of-hungary day 3 (st-pontian)
-2026-11-20 st-felix-of-valois day 3
-2026-11-21 presentation-of-the-blessed-virgin-mary day 3
-2026-11-22 pent24-0 day 2
-2026-11-23 st-clement-i day 3 (st-felicity)
-2026-11-24 st-john-of-the-cross day 3 (st-chrysogonus)
-2026-11-25 st-catherine-of-alexandria day 3
-2026-11-26 st-sylvester-gozzolini day 3 (st-peter-of-alexandria)
-2026-11-27 pent24-5 day 4 / our-lady-of-the-miraculous-medal for-certain-places 4
-2026-11-28 our-lady-on-saturday-after-pentecost day 4
-2026-11-29 adv1-0 day 1
-2026-11-30 st-andrew day 2 (adv1-1)
-2026-12-01 adv1-2 day 3
-2026-12-02 st-vivian day 3 (adv1-3)
-2026-12-03 st-francis-xavier day 3 (adv1-4) / votive-jesus-christ-the-eternal-high-priest votive 3 (adv1-4, st-francis-xavier)
-2026-12-04 st-peter-chrysologus day 3 (adv1-5, st-barbara) / votive-sacred-heart-of-jesus votive 3 (adv1-5, st-peter-chrysologus)
-2026-12-05 votive-immaculate-heart-of-mary votive 3 (adv1-6, st-sabbas) / adv1-6 day 3 (st-sabbas)
-2026-12-06 adv2-0 day 1
-2026-12-07 st-ambrose day 3 (adv2-1)
-2026-12-08 immaculate-conception-of-the-blessed-virgin-mary day 1 (adv2-2)
-2026-12-09 adv2-3 day 3
-2026-12-10 adv2-4 day 3 (st-melchiades)
-2026-12-11 st-damasus-i day 3 (adv2-5)
-2026-12-12 us-our-lady-of-guadalupe day 3 (adv2-6)
-2026-12-13 adv3-0 day 1
-2026-12-14 adv3-1 day 3
-2026-12-15 adv3-2 day 3
-2026-12-16 adv3-3 day 2 (st-eusebius-12-16)
-2026-12-17 adv3-4 day 2
-2026-12-18 adv3-5 day 2
-2026-12-19 adv3-6 day 2
-2026-12-20 adv4-0 day 1
-2026-12-21 st-thomas-the-apostle day 2 (adv4-1)
-2026-12-22 adv4-2 day 2
-2026-12-23 adv4-3 day 2
-2026-12-24 vigil-of-christmas day 1
-2026-12-25 the-nativity-of-our-lord day 1 / the-nativity-of-our-lord-morning-mass day 1 / the-nativity-of-our-lord-day-mass day 1
-2026-12-26 st-stephen day 2 (for-octave-of-the-nativity)
-2026-12-27 nat1-0 day 2 (st-john-the-evangelist)
-2026-12-28 holy-innocents day 2 (for-octave-of-the-nativity-12-28c)
-2026-12-29 nat1-1 day 2 (st-thomas-becket)
-2026-12-30 nat1-1 day 2
-2026-12-31 nat1-1 day 2 (st-sylvester-i-pope)
+2026-01-01 octave-day-of-christmas day 1 white
+2026-01-02 votive-sacred-heart-of-jesus votive 3 white ?devotions-to-the-sacred-heart / feria day 4 white
+2026-01-03 votive-immaculate-heart-of-mary votive 3 white ?devotions-to-the-immaculate-heart / our-lady-on-saturday-christmastide day 4 white
+2026-01-04 nat2-0 day 2 white
+2026-01-05 us-st-john-neumann day 3 white (st-telesphorus-pope-and-martyr)
+2026-01-06 epiphany-of-the-lord day 1 white
+2026-01-07 feria day 4 white
+2026-01-08 feria day 4 white
+2026-01-09 feria day 4 white
+2026-01-10 our-lady-on-saturday-christmastide day 4 white
+2026-01-11 epi1-0 day 2 white
+2026-01-12 epi1-1 day 4 white
+2026-01-13 commemoration-of-the-baptism-of-the-lord day 2 white
+2026-01-14 st-hilary day 3 white (st-felix)
+2026-01-15 st-paul-the-first-hermit day 3 white (st-maur-abbot)
+2026-01-16 st-marcellus-i day 3 red
+2026-01-17 st-anthony-the-abbot day 3 white
+2026-01-18 epi2-0 day 2 green
+2026-01-19 epi2-1 day 4 green (sts-marius-martha-audifax-and-abachum, st-canute-martyr) / sts-marius-martha-audifax-and-abachum commemoration 4 red (st-canute-martyr) / st-canute-martyr commemoration 4 red (sts-marius-martha-audifax-and-abachum)
+2026-01-20 sts-fabian-and-sebastian day 3 red
+2026-01-21 st-agnes day 3 red
+2026-01-22 sts-vincent-and-anastasius day 3 red
+2026-01-23 st-raymond-of-penafort day 3 white (st-emerentiana)
+2026-01-24 st-timothy day 3 red
+2026-01-25 epi3-0 day 2 green
+2026-01-26 st-polycarp day 3 red
+2026-01-27 st-john-chrysostom day 3 white
+2026-01-28 st-peter-nolasco day 3 white (st-agnes-01-28t)
+2026-01-29 st-francis-de-sales day 3 white
+2026-01-30 st-martina day 3 red
+2026-01-31 st-john-bosco day 3 white
+2026-02-01 quadp1-0 day 2 violet
+2026-02-02 purification-of-the-blessed-virgin-mary day 2 white
+2026-02-03 quadp1-2 day 4 violet (st-blaise) / st-blaise commemoration 4 red
+2026-02-04 st-andrew-corsini day 3 white
+2026-02-05 st-agatha day 3 red / votive-jesus-christ-the-eternal-high-priest votive 3 white ?devotions-for-the-clergy (st-agatha)
+2026-02-06 st-titus day 3 white (st-dorothy) / votive-sacred-heart-of-jesus votive 3 white ?devotions-to-the-sacred-heart (st-titus, st-dorothy)
+2026-02-07 st-romuald day 3 white / votive-immaculate-heart-of-mary votive 3 white ?devotions-to-the-immaculate-heart (st-romuald)
+2026-02-08 quadp2-0 day 2 violet
+2026-02-09 st-cyril-of-alexandria day 3 white (st-apollonia)
+2026-02-10 st-scholastica day 3 white
+2026-02-11 our-lady-of-lourdes day 3 white
+2026-02-12 seven-holy-servite-founders day 3 white
+2026-02-13 quadp2-5 day 4 violet
+2026-02-14 our-lady-on-saturday-after-purification day 4 white (st-valentine) / st-valentine commemoration 4 red
+2026-02-15 quadp3-0 day 2 violet
+2026-02-16 quadp3-1 day 4 violet
+2026-02-17 quadp3-2 day 4 violet
+2026-02-18 quadp3-3 day 1 violet
+2026-02-19 quadp3-4 day 3 violet
+2026-02-20 quadp3-5 day 3 violet
+2026-02-21 quadp3-6 day 3 violet
+2026-02-22 quad1-0 day 1 violet
+2026-02-23 chair-of-st-peter day 1 white (quad1-1)
+2026-02-24 st-matthias day 2 red (quad1-2)
+2026-02-25 quad1-3 day 2 violet
+2026-02-26 quad1-4 day 3 violet
+2026-02-27 quad1-5 day 2 violet (st-gabriel-of-our-lady-of-sorrows)
+2026-02-28 quad1-6 day 2 violet
+2026-03-01 quad2-0 day 1 violet
+2026-03-02 quad2-1 day 3 violet
+2026-03-03 quad2-2 day 3 violet
+2026-03-04 quad2-3 day 3 violet (st-casimir, st-lucius)
+2026-03-05 quad2-4 day 3 violet
+2026-03-06 quad2-5 day 3 violet (sts-felicitas-and-perpetua)
+2026-03-07 quad2-6 day 3 violet (st-thomas-aquinas)
+2026-03-08 quad3-0 day 1 violet
+2026-03-09 quad3-1 day 3 violet (st-frances-of-rome)
+2026-03-10 quad3-2 day 3 violet (forty-holy-martyrs-of-sebaste)
+2026-03-11 quad3-3 day 3 violet
+2026-03-12 quad3-4 day 3 violet (st-gregory-the-great)
+2026-03-13 quad3-5 day 3 violet
+2026-03-14 quad3-6 day 3 violet
+2026-03-15 quad4-0 day 1 rose/violet
+2026-03-16 quad4-1 day 3 violet
+2026-03-17 quad4-2 day 3 violet (st-patrick)
+2026-03-18 quad4-3 day 3 violet (st-cyril-of-jerusalem)
+2026-03-19 st-joseph-spouse-of-the-bl-virgin-mary day 1 white (quad4-4)
+2026-03-20 quad4-5 day 3 violet
+2026-03-21 quad4-6 day 3 violet (st-benedict)
+2026-03-22 quad5-0 day 1 violet
+2026-03-23 quad5-1 day 3 violet
+2026-03-24 quad5-2 day 3 violet (st-gabriel-the-archangel)
+2026-03-25 annunciation-of-the-blessed-virgin-mary day 1 white (quad5-3)
+2026-03-26 quad5-4 day 3 violet
+2026-03-27 quad5-5 day 3 violet (st-john-damascene, seven-sorrows-in-passiontide)
+2026-03-28 quad5-6 day 3 violet (st-john-of-capistrano)
+2026-03-29 quad6-0 day 1 violet
+2026-03-30 quad6-1 day 1 violet
+2026-03-31 quad6-2 day 1 violet
+2026-04-01 quad6-3 day 1 violet
+2026-04-02 quad6-4 day 1 white
+2026-04-03 no Mass
+2026-04-04 quad6-6 day 1 white
+2026-04-05 pasc0-0 day 1 white
+2026-04-06 pasc0-1 day 1 white
+2026-04-07 pasc0-2 day 1 white
+2026-04-08 pasc0-3 day 1 white
+2026-04-09 pasc0-4 day 1 white
+2026-04-10 pasc0-5 day 1 white
+2026-04-11 pasc0-6 day 1 white
+2026-04-12 pasc1-0 day 1 white
+2026-04-13 st-hermenegild day 3 red
+2026-04-14 st-justin day 3 red (sts-tiburtius-valerian-and-maximus-martyrs)
+2026-04-15 pasc1-3 day 4 white
+2026-04-16 pasc1-4 day 4 white
+2026-04-17 pasc1-5 day 4 white (st-anicetus) / st-anicetus commemoration 4 red
+2026-04-18 our-lady-on-saturday-paschaltide day 4 white
+2026-04-19 pasc2-0 day 2 white
+2026-04-20 pasc2-1 day 4 white
+2026-04-21 st-anselm day 3 white
+2026-04-22 sts-soter-and-caius day 3 red
+2026-04-23 pasc2-4 day 4 white (st-george) / st-george commemoration 4 red
+2026-04-24 st-fidelis-of-sigmaringen day 3 red
+2026-04-25 st-mark day 2 red (for-the-rogations) / rogation-mass rogation 2 violet ?rogation-procession (st-mark)
+2026-04-26 pasc3-0 day 2 white
+2026-04-27 st-peter-canisius day 3 white
+2026-04-28 st-paul-of-the-cross day 3 white
+2026-04-29 st-peter-of-verona day 3 red
+2026-04-30 st-catherine-of-siena day 3 white
+2026-05-01 st-joseph-the-workman day 1 white
+2026-05-02 st-athanasius day 3 white / votive-immaculate-heart-of-mary votive 3 white ?devotions-to-the-immaculate-heart (st-athanasius)
+2026-05-03 pasc4-0 day 2 white
+2026-05-04 st-monica day 3 white
+2026-05-05 st-pius-v day 3 white
+2026-05-06 pasc4-3 day 4 white
+2026-05-07 st-stanislaus day 3 red / votive-jesus-christ-the-eternal-high-priest votive 3 white ?devotions-for-the-clergy (st-stanislaus)
+2026-05-08 pasc4-5 day 4 white / apparition-of-st-michael for-certain-places 4 white / our-lady-mediatrix-of-all-graces for-certain-places 4 white
+2026-05-09 st-gregory-nazianzen day 3 white
+2026-05-10 pasc5-0 day 2 white
+2026-05-11 sts-philip-and-james day 2 red / rogation-mass rogation 2 violet ?rogation-procession (sts-philip-and-james)
+2026-05-12 sts-nereus-achilleus-domitilla-and-pancras day 3 red / rogation-mass rogation 2 violet ?rogation-procession (sts-nereus-achilleus-domitilla-and-pancras)
+2026-05-13 pasc5-3 day 2 white (st-robert-bellarmine) / rogation-mass rogation 2 violet ?rogation-procession (pasc5-3)
+2026-05-14 pasc5-4 day 1 white
+2026-05-15 st-john-baptist-de-la-salle day 3 white
+2026-05-16 st-ubaldus day 3 white
+2026-05-17 pasc6-0 day 2 white
+2026-05-18 st-venantius day 3 red
+2026-05-19 st-peter-celestine day 3 white (st-pudentiana-virgin)
+2026-05-20 st-bernardine-of-siena day 3 white
+2026-05-21 pasc6-4 day 4 white
+2026-05-22 pasc6-5 day 4 white
+2026-05-23 pasc6-6 day 1 red
+2026-05-24 pasc7-0 day 1 red
+2026-05-25 pasc7-1 day 1 red
+2026-05-26 pasc7-2 day 1 red
+2026-05-27 pasc7-3 day 1 red
+2026-05-28 pasc7-4 day 1 red
+2026-05-29 pasc7-5 day 1 red
+2026-05-30 pasc7-6 day 1 red
+2026-05-31 pent01-0 day 1 white
+2026-06-01 st-angela-merici day 3 white
+2026-06-02 pent01-2 day 4 green (sts-marcellinus-peter-and-erasmus) / sts-marcellinus-peter-and-erasmus commemoration 4 red
+2026-06-03 pent01-3 day 4 green
+2026-06-04 pent01-4 day 1 white
+2026-06-05 st-boniface-06-05 day 3 red / votive-sacred-heart-of-jesus votive 3 white ?devotions-to-the-sacred-heart (st-boniface-06-05)
+2026-06-06 st-norbert day 3 white / votive-immaculate-heart-of-mary votive 3 white ?devotions-to-the-immaculate-heart (st-norbert)
+2026-06-07 pent02-0 day 2 green / pent01-4 external-solemnity 2 white
+2026-06-08 pent02-1 day 4 green
+2026-06-09 pent02-2 day 4 green (sts-primus-and-felicianus) / sts-primus-and-felicianus commemoration 4 red
+2026-06-10 st-margaret-of-scotland day 3 white
+2026-06-11 st-barnabas day 3 red
+2026-06-12 pent02-5 day 1 white
+2026-06-13 st-anthony-of-padua day 3 white
+2026-06-14 pent03-0 day 2 green / pent02-5 external-solemnity 2 white
+2026-06-15 pent03-1 day 4 green (st-vitus) / st-vitus commemoration 4 white
+2026-06-16 pent03-2 day 4 green
+2026-06-17 st-gregory-barbarigo day 3 white
+2026-06-18 st-ephrem-of-syria day 3 white (sts-marcus-and-marcellianus)
+2026-06-19 st-juliana-falconieri day 3 white (sts-gervasius-and-protasius)
+2026-06-20 our-lady-on-saturday-after-pentecost day 4 white (st-silverius) / st-silverius commemoration 4 red
+2026-06-21 pent04-0 day 2 green
+2026-06-22 st-paulinus-of-nola day 3 white
+2026-06-23 vigil-of-the-nativity-of-st-john-the-baptist day 2 violet
+2026-06-24 nativity-of-st-john-the-baptist day 1 white
+2026-06-25 st-william day 3 white
+2026-06-26 sts-john-and-paul day 3 red
+2026-06-27 our-lady-on-saturday-after-pentecost day 4 white / our-lady-of-perpetual-help for-certain-places 4 white
+2026-06-28 pent05-0 day 2 green
+2026-06-29 sts-peter-and-paul day 1 red
+2026-06-30 commemoration-of-st-paul-the-apostle day 3 red
+2026-07-01 the-precious-blood-of-our-lord-jesus-christ day 1 red
+2026-07-02 visitation-of-the-blessed-virgin-mary day 2 white (sts-processus-and-martinian)
+2026-07-03 st-irenaeus day 3 red / votive-sacred-heart-of-jesus votive 3 white ?devotions-to-the-sacred-heart (st-irenaeus)
+2026-07-04 votive-immaculate-heart-of-mary votive 3 white ?devotions-to-the-immaculate-heart / our-lady-on-saturday-after-pentecost day 4 white / all-holy-popes for-certain-places 4 red
+2026-07-05 pent06-0 day 2 green / sts-peter-and-paul external-solemnity 2 red (pent06-0)
+2026-07-06 pent06-1 day 4 green / st-maria-goretti for-certain-places 4 red
+2026-07-07 sts-cyril-and-methodius day 3 white
+2026-07-08 st-elizabeth-of-portugal day 3 white
+2026-07-09 pent06-4 day 4 green
+2026-07-10 seven-holy-brothers-and-sts-rufina-and-secunda day 3 red
+2026-07-11 our-lady-on-saturday-after-pentecost day 4 white (st-pius-i) / st-pius-i commemoration 4 red
+2026-07-12 pent07-0 day 2 green
+2026-07-13 pent07-1 day 4 green
+2026-07-14 st-bonaventure day 3 white
+2026-07-15 st-henry-the-emperor day 3 white
+2026-07-16 pent07-4 day 4 green (our-lady-of-mt-carmel) / our-lady-of-mt-carmel commemoration 4 white
+2026-07-17 pent07-5 day 4 green (st-alexis) / st-alexis commemoration 4 white
+2026-07-18 camillus-de-lellis day 3 white (sts-symphorosa-and-sons)
+2026-07-19 pent08-0 day 2 green
+2026-07-20 st-jerome-emiliani day 3 white (st-margaret)
+2026-07-21 st-laurence-of-brindisi day 3 white (st-praxedes-virgin)
+2026-07-22 st-mary-magdalene day 3 white
+2026-07-23 st-apollinaris day 3 red (st-liborius)
+2026-07-24 pent08-5 day 4 green (st-christina) / st-christina commemoration 4 red
+2026-07-25 st-james-the-greater day 2 red (st-christopher)
+2026-07-26 pent09-0 day 2 green (st-anne-mother-of-the-blessed-virgin)
+2026-07-27 pent09-1 day 4 green (st-pantaleon) / st-pantaleon commemoration 4 red
+2026-07-28 sts-nazarius-and-celsus-st-victor-i-and-st-innocent-i day 3 red
+2026-07-29 st-martha day 3 white (sts-felix-simplicius-faustinus-and-beatrice)
+2026-07-30 pent09-4 day 4 green (sts-abdon-and-sennen) / sts-abdon-and-sennen commemoration 4 red
+2026-07-31 st-ignatius-loyola day 3 white
+2026-08-01 votive-immaculate-heart-of-mary votive 3 white ?devotions-to-the-immaculate-heart (holy-machabees) / our-lady-on-saturday-after-pentecost day 4 white (holy-machabees) / holy-machabees commemoration 4 red / st-peter-in-chains for-certain-places 4 white (holy-machabees)
+2026-08-02 pent10-0 day 2 green
+2026-08-03 pent10-1 day 4 green / finding-of-st-stephen for-certain-places 4 red
+2026-08-04 st-dominic day 3 white
+2026-08-05 dedication-of-the-basilica-of-st-mary-major day 3 white
+2026-08-06 transfiguration-of-our-lord day 2 white (pope-sixtus-ii-felicissimus-and-agapitus-martyrs)
+2026-08-07 st-cajetan day 3 white (st-donatus) / votive-sacred-heart-of-jesus votive 3 white ?devotions-to-the-sacred-heart (st-cajetan, st-donatus)
+2026-08-08 st-john-mary-vianney day 3 white (sts-cyriacus-largus-and-smaragdus-martyrs)
+2026-08-09 pent11-0 day 2 green
+2026-08-10 st-lawrence day 2 red
+2026-08-11 pent11-2 day 4 green (sts-tiburtius-and-susanna) / sts-tiburtius-and-susanna commemoration 4 red
+2026-08-12 st-clare day 3 white
+2026-08-13 pent11-4 day 4 green (sts-hippolytus-and-cassian) / sts-hippolytus-and-cassian commemoration 4 red
+2026-08-14 vigil-of-the-assumption day 2 violet (st-eusebius)
+2026-08-15 assumption-of-the-blessed-virgin-mary day 1 white
+2026-08-16 pent12-0 day 2 green (st-joachim-father-of-the-blessed-virgin)
+2026-08-17 st-hyacinth day 3 white
+2026-08-18 pent12-2 day 4 green (st-agapitus) / st-agapitus commemoration 4 white
+2026-08-19 st-john-eudes day 3 white
+2026-08-20 st-bernard-of-clairvaux day 3 white
+2026-08-21 st-jane-frances-de-chantal day 3 white
+2026-08-22 immaculate-heart-of-mary day 2 white (sts-timothy-hippolytus-and-symphorianus-martyrs)
+2026-08-23 pent13-0 day 2 green
+2026-08-24 st-bartholomew day 2 red
+2026-08-25 st-louis-ix day 3 white
+2026-08-26 pent13-3 day 4 green (st-zephyrinus) / st-zephyrinus commemoration 4 red
+2026-08-27 st-joseph-calasance day 3 white
+2026-08-28 st-augustine day 3 white (st-hermes)
+2026-08-29 beheading-of-st-john-the-baptist day 3 red (st-sabina)
+2026-08-30 pent14-0 day 2 green
+2026-08-31 st-raymond-nonnatus day 3 white
+2026-09-01 pent14-2 day 4 green (st-giles, twelve-holy-brothers-martyrs) / st-giles commemoration 4 white (twelve-holy-brothers-martyrs) / twelve-holy-brothers-martyrs commemoration 4 red (st-giles)
+2026-09-02 st-stephen-of-hungary day 3 white
+2026-09-03 st-pius-x day 3 white / votive-jesus-christ-the-eternal-high-priest votive 3 white ?devotions-for-the-clergy (st-pius-x)
+2026-09-04 votive-sacred-heart-of-jesus votive 3 white ?devotions-to-the-sacred-heart / pent14-5 day 4 green
+2026-09-05 st-lawrence-justinian day 3 white / votive-immaculate-heart-of-mary votive 3 white ?devotions-to-the-immaculate-heart (st-lawrence-justinian)
+2026-09-06 pent15-0 day 2 green
+2026-09-07 pent15-1 day 4 green
+2026-09-08 nativity-of-the-blessed-virgin-mary day 2 white (st-hadrian)
+2026-09-09 us-st-peter-claver day 3 white (st-gorgonius)
+2026-09-10 st-nicholas-of-tolentino day 3 white
+2026-09-11 pent15-5 day 4 green (sts-protus-and-hyacinth) / sts-protus-and-hyacinth commemoration 4 red
+2026-09-12 most-holy-name-of-mary day 3 white
+2026-09-13 pent16-0 day 2 green
+2026-09-14 exaltation-of-the-holy-cross day 2 red
+2026-09-15 seven-sorrows-of-the-blessed-virgin-mary day 2 white (st-nicomedes)
+2026-09-16 sts-cornelius-and-cyprian day 3 red (sts-euphemia-lucy-and-geminianus)
+2026-09-17 pent16-4 day 4 green (stigmata-of-st-francis) / stigmata-of-st-francis commemoration 4 white
+2026-09-18 st-joseph-of-cupertino day 3 white
+2026-09-19 st-januarius-and-companions day 3 red
+2026-09-20 pent17-0 day 2 green
+2026-09-21 st-matthew day 2 red
+2026-09-22 st-thomas-of-villanova day 3 white (st-maurice-and-companions-martyrs)
+2026-09-23 sep-ember-3 day 2 violet (st-linus)
+2026-09-24 pent17-4 day 4 green (our-lady-of-ransom) / our-lady-of-ransom commemoration 4 white
+2026-09-25 sep-ember-5 day 2 violet
+2026-09-26 sep-ember-6 day 2 violet (us-north-american-martyrs)
+2026-09-27 pent18-0 day 2 green
+2026-09-28 st-wenceslaus day 3 red
+2026-09-29 dedication-of-st-michael-the-archangel day 1 white
+2026-09-30 st-jerome day 3 white
+2026-10-01 votive-jesus-christ-the-eternal-high-priest votive 3 white ?devotions-for-the-clergy (st-remigius) / pent18-4 day 4 green (st-remigius) / st-remigius commemoration 4 white
+2026-10-02 holy-guardian-angels day 3 white / votive-sacred-heart-of-jesus votive 3 white ?devotions-to-the-sacred-heart (holy-guardian-angels)
+2026-10-03 st-theresa-of-the-infant-jesus day 3 white / votive-immaculate-heart-of-mary votive 3 white ?devotions-to-the-immaculate-heart (st-theresa-of-the-infant-jesus)
+2026-10-04 pent19-0 day 2 green / our-lady-of-the-rosary external-solemnity 2 white (pent19-0)
+2026-10-05 pent19-1 day 4 green (st-placid-and-companions) / st-placid-and-companions commemoration 4 red
+2026-10-06 st-bruno day 3 white
+2026-10-07 our-lady-of-the-rosary day 2 white (st-mark-i)
+2026-10-08 st-bridget-of-sweden day 3 white (sts-sergius-bacchus-marcellus-and-apuleius-martyrs)
+2026-10-09 st-john-leonardi day 3 white (st-dionysius-and-companions)
+2026-10-10 st-francis-borgia day 3 white
+2026-10-11 pent20-0 day 2 green (maternity-of-the-blessed-virgin-mary)
+2026-10-12 pent20-1 day 4 green
+2026-10-13 st-edward day 3 white
+2026-10-14 st-callistus-i day 3 red
+2026-10-15 st-teresa-of-avila day 3 white
+2026-10-16 st-hedwig day 3 white
+2026-10-17 st-margaret-mary-alacoque day 3 white
+2026-10-18 pent21-0 day 2 green (st-luke-the-evangelist)
+2026-10-19 st-peter-of-alcantara day 3 white
+2026-10-20 st-john-cantius day 3 white
+2026-10-21 pent21-3 day 4 green (st-hilarion, st-ursula-and-companions) / st-hilarion commemoration 4 white (st-ursula-and-companions) / st-ursula-and-companions commemoration 4 red (st-hilarion)
+2026-10-22 pent21-4 day 4 green
+2026-10-23 st-anthony-mary-claret day 3 white
+2026-10-24 st-raphael-the-archangel day 3 white
+2026-10-25 christ-the-king day 1 white
+2026-10-26 pent22-1 day 4 green (st-evaristus) / st-evaristus commemoration 4 red
+2026-10-27 pent22-2 day 4 green
+2026-10-28 sts-simon-and-jude day 2 red
+2026-10-29 pent22-4 day 4 green
+2026-10-30 pent22-5 day 4 green
+2026-10-31 our-lady-on-saturday-after-pentecost day 4 white
+2026-11-01 all-saints day 1 white (pent23-0)
+2026-11-02 commemoration-of-all-souls day 1 black / commemoration-of-all-souls-second-mass day 1 black / commemoration-of-all-souls-third-mass day 1 black
+2026-11-03 requiem-daily requiem 3 black ?applied-for-the-dead / pent23-2 day 4 green
+2026-11-04 st-charles-borromeo day 3 white (sts-vitalis-and-agricola-martyrs) / requiem-daily requiem 3 black ?applied-for-the-dead
+2026-11-05 requiem-daily requiem 3 black ?applied-for-the-dead / pent23-4 day 4 green / votive-jesus-christ-the-eternal-high-priest votive 3 white ?devotions-for-the-clergy / holy-relics for-certain-places 4 red
+2026-11-06 requiem-daily requiem 3 black ?applied-for-the-dead / pent23-5 day 4 green / votive-sacred-heart-of-jesus votive 3 white ?devotions-to-the-sacred-heart
+2026-11-07 requiem-daily requiem 3 black ?applied-for-the-dead / our-lady-on-saturday-after-pentecost day 4 white / votive-immaculate-heart-of-mary votive 3 white ?devotions-to-the-immaculate-heart
+2026-11-08 epi5-0 day 2 green
+2026-11-09 dedication-of-the-archbasilica-of-our-holy-savior day 2 white (st-theodore)
+2026-11-10 st-andrew-avellino day 3 white (sts-tryphon-respicius-and-nympha)
+2026-11-11 st-martin-of-tours day 3 white (st-menas)
+2026-11-12 st-martin-i day 3 red
+2026-11-13 us-st-frances-xavier-cabrini day 3 white (st-didacus) / st-didacus impeded-feast 3 white (us-st-frances-xavier-cabrini)
+2026-11-14 st-josaphat day 3 red
+2026-11-15 epi6-0 day 2 green
+2026-11-16 st-gertrude-the-great day 3 white
+2026-11-17 st-gregory-the-wonderworker day 3 white
+2026-11-18 dedication-of-the-basilicas-of-sts-peter-and-paul day 3 white
+2026-11-19 st-elizabeth-of-hungary day 3 white (st-pontian)
+2026-11-20 st-felix-of-valois day 3 white
+2026-11-21 presentation-of-the-blessed-virgin-mary day 3 white
+2026-11-22 pent24-0 day 2 green
+2026-11-23 st-clement-i day 3 red (st-felicity)
+2026-11-24 st-john-of-the-cross day 3 white (st-chrysogonus)
+2026-11-25 st-catherine-of-alexandria day 3 red
+2026-11-26 st-sylvester-gozzolini day 3 white (st-peter-of-alexandria)
+2026-11-27 pent24-5 day 4 green / our-lady-of-the-miraculous-medal for-certain-places 4 white
+2026-11-28 our-lady-on-saturday-after-pentecost day 4 white
+2026-11-29 adv1-0 day 1 violet
+2026-11-30 st-andrew day 2 red (adv1-1)
+2026-12-01 adv1-2 day 3 violet
+2026-12-02 st-vivian day 3 red (adv1-3)
+2026-12-03 st-francis-xavier day 3 white (adv1-4) / votive-jesus-christ-the-eternal-high-priest votive 3 white ?devotions-for-the-clergy (adv1-4, st-francis-xavier)
+2026-12-04 st-peter-chrysologus day 3 white (adv1-5, st-barbara) / votive-sacred-heart-of-jesus votive 3 white ?devotions-to-the-sacred-heart (adv1-5, st-peter-chrysologus)
+2026-12-05 votive-immaculate-heart-of-mary votive 3 white ?devotions-to-the-immaculate-heart (adv1-6, st-sabbas) / adv1-6 day 3 violet (st-sabbas)
+2026-12-06 adv2-0 day 1 violet
+2026-12-07 st-ambrose day 3 white (adv2-1)
+2026-12-08 immaculate-conception-of-the-blessed-virgin-mary day 1 white (adv2-2)
+2026-12-09 adv2-3 day 3 violet
+2026-12-10 adv2-4 day 3 violet (st-melchiades)
+2026-12-11 st-damasus-i day 3 white (adv2-5)
+2026-12-12 us-our-lady-of-guadalupe day 3 white (adv2-6)
+2026-12-13 adv3-0 day 1 rose/violet
+2026-12-14 adv3-1 day 3 violet
+2026-12-15 adv3-2 day 3 violet
+2026-12-16 adv3-3 day 2 violet (st-eusebius-12-16)
+2026-12-17 adv3-4 day 2 violet
+2026-12-18 adv3-5 day 2 violet
+2026-12-19 adv3-6 day 2 violet
+2026-12-20 adv4-0 day 1 violet
+2026-12-21 st-thomas-the-apostle day 2 red (adv4-1)
+2026-12-22 adv4-2 day 2 violet
+2026-12-23 adv4-3 day 2 violet
+2026-12-24 vigil-of-christmas day 1 violet
+2026-12-25 the-nativity-of-our-lord day 1 white / the-nativity-of-our-lord-morning-mass day 1 white (st-anastasia) / the-nativity-of-our-lord-day-mass day 1 white
+2026-12-26 st-stephen day 2 red (for-octave-of-the-nativity)
+2026-12-27 nat1-0 day 2 white (st-john-the-evangelist)
+2026-12-28 holy-innocents day 2 red (for-octave-of-the-nativity-12-28c)
+2026-12-29 nat1-1 day 2 white (st-thomas-becket)
+2026-12-30 nat1-1 day 2 white
+2026-12-31 nat1-1 day 2 white (st-sylvester-i-pope)

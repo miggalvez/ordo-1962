@@ -74,8 +74,8 @@
   }
  ],
  "externalSolemnities": [
-  { "key": "pent01-4", "on": "following-sunday", "rubric": "nos. 358c, 360", "source": "(USA)External Solemnity of Corpus Christi, 7 June 2026, beside the 2nd Sunday after Pentecost. The procession transferred to the Sunday by indult (no. 358c)." },
-  { "key": "sts-peter-and-paul", "on": "following-sunday", "rubric": "nos. 360, 361", "source": "(USA)External Solemnity of Ss. Peter and Paul, 5 July 2026, beside the 6th Sunday after Pentecost. By indult (no. 361); to confirm in the printed ordo." }
+  { "key": "pent01-4", "on": "following-sunday", "fixed": true, "rubric": "nos. 359, 360, 361", "source": "(USA)External Solemnity of Corpus Christi, 7 June 2026, beside the 2nd Sunday after Pentecost, on the FSSP seminary's page. It is not among the solemnities of no. 358, so it is kept by indult (no. 361), which assigns it to its day (no. 359). The indult itself is still to be read." },
+  { "key": "sts-peter-and-paul", "on": "following-sunday", "fixed": true, "rubric": "nos. 359, 360, 361", "source": "(USA)External Solemnity of Ss. Peter and Paul, 5 July 2026, beside the 6th Sunday after Pentecost, on the FSSP seminary's page. By indult (no. 361); the indult itself is still to be read." }
  ],
  "operations": [
   { "op": "add", "key": "us-st-john-neumann" },

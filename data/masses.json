@@ -1,5 +1,5 @@
 {
- "about": "Masses an ordo offers beside the Mass of the day that are not observances of the calendar: the votive Masses the rubrics provide for (Rubricae generales Missalis, 1960, nos. 306-389), the Rogation Mass (no. 346) and the daily Mass for the dead (nos. 397, 422-423). The rules for when each is permitted are in src/ordo.ts; this file gives their keys, colours and titles. Numbers are those of the Code of Rubrics.",
+ "about": "Masses an ordo offers beside the Mass of the day that are not observances of the calendar: the votive Masses the rubrics provide for (Rubricae generales Missalis, nos. 306-389), the Rogation Mass (no. 346) and the daily Mass for the dead (nos. 397, 422-423). The rules for when each is permitted are in src/ordo.ts; this file gives their keys, colours and titles. Numbers are those of the Code of Rubrics as printed in the 1962 Missal.",
  "masses": [
   {
    "key": "votive-jesus-christ-the-eternal-high-priest",
@@ -11,7 +11,7 @@
     "en": "Votive Mass of Our Lord Jesus Christ, the Eternal High Priest",
     "es": "Misa votiva de Nuestro Señor Jesucristo, sumo y eterno Sacerdote"
    },
-   "source": "No. 385a: one Mass on the first Thursday or the first Saturday of the month, where exercises of piety for the sanctification of the clergy are held that day."
+   "source": "No. 385a: one Mass on the first Thursday or the first Saturday of the month, where exercises of piety for the sanctification of the clergy are held that day. White: no. 121b."
   },
   {
    "key": "votive-sacred-heart-of-jesus",
@@ -38,6 +38,17 @@
    "source": "No. 385c: one Mass on the first Saturday of the month, where special exercises in honour of the Immaculate Heart of Mary are held that day."
   },
   {
+   "key": "mass-for-the-propagation-of-the-faith",
+   "kind": "votive",
+   "colors": ["violet"],
+   "names": {
+    "la": "Missa pro Fidei propagatione",
+    "en": "Mass for the Propagation of the Faith",
+    "es": "Misa por la propagación de la fe"
+   },
+   "source": "No. 369: one Mass, as a votive Mass of the 2nd class, on the day special celebrations for the Missions are held. No. 453 names the day: the next to last Sunday of October, or another the Ordinary sets. Violet: no. 129a."
+  },
+  {
    "key": "rogation-mass",
    "kind": "rogation",
    "colors": ["violet"],
@@ -53,18 +64,36 @@
    "kind": "requiem",
    "colors": ["black"],
    "names": {
-    "la": "Missa quotidiana defunctorum",
+    "la": "Missa cotidiana defunctorum",
     "en": "Daily Mass for the Dead",
     "es": "Misa cotidiana de difuntos"
    },
-   "source": "No. 397. Of the 3rd class within the octave of All Souls (nos. 415d, 422); of the 4th class on 4th class ferias outside Christmastide (no. 423)."
+   "source": "No. 397. Of the 3rd class within the octave of All Souls, for Masses applied for the dead (nos. 415d, 422); of the 4th class on 4th class ferias outside Christmastide (no. 423). The Missal heads it 'In Missis cotidianis defunctorum'."
   }
  ],
+ "ofTheDay": {
+  "about": "Where a Mass of the day differs from the day as the calendar has it: a day with no Mass, a Mass whose colour is not that of the rite before it, and a commemoration the Missal gives to one Mass only.",
+  "noMass": [
+   { "key": "quad6-5", "source": "Good Friday has no Mass: the rubrics call the rite the 'Actio liturgica feria VI in Passione et Morte Domini' (no. 128b)." }
+  ],
+  "colors": [
+   { "key": "quad6-0", "colors": ["violet"], "source": "Nos. 126, 128b: red is for the blessing and procession of palms; the Mass of the 2nd Sunday of Passiontide is violet." },
+   { "key": "quad6-6", "colors": ["white"], "source": "Nos. 119b, 128b: violet until the Easter Vigil's Mass, which is white." }
+  ],
+  "commemorations": [
+   {
+    "mass": "the-nativity-of-our-lord-morning-mass",
+    "key": "st-anastasia",
+    "names": { "la": "S. Anastasiæ Martyris", "en": "St. Anastasia, Martyr", "es": "Santa Anastasia, mártir" },
+    "source": "The calendar of the 1962 Missal, 25 December: 'In secunda Missa: Commemoratio S. Anastasiae Mart.' She has no office and is in no other Mass, so she is not an observance of the catalogue."
+   }
+  ]
+ },
  "externalSolemnities": {
-  "about": "External solemnities that belong to a feast by right in every church (no. 358a, b). A nation's, by indult, are in its layer; a church's own (no. 358d-f) follow from the church given.",
+  "about": "External solemnities that belong to a feast by right in every church (no. 358a, b). A nation's, by indult, are in its layer; an institute's (no. 358e, h) in its layer; a church's own (no. 358d, g) follow from the church given. 'fixed' marks one the rubrics or an indult assign to its day (no. 359); the others may be kept on the Sunday before or after the feast. No. 358c, the Purification where the Holy See has approved moving the blessing of candles to the Sunday, and no. 358i, feasts kept with a great gathering of the people as the Ordinary judges, are not entered: they depend on a grant or a judgment this data cannot know.",
   "solemnities": [
-   { "key": "pent02-5", "on": "pent03-0", "rubric": "nos. 358a, 360", "source": "No. 358a: the Sacred Heart, on the 3rd Sunday after Pentecost." },
-   { "key": "our-lady-of-the-rosary", "on": "first-sunday:10", "rubric": "nos. 358b, 360", "source": "No. 358b: Our Lady of the Rosary, on the 1st Sunday of October." }
+   { "key": "pent02-5", "on": "following-sunday", "rubric": "nos. 358a, 359, 360", "source": "No. 358a: the Sacred Heart. The rubric as printed in the 1962 Missal names no Sunday, so no. 359 applies: the Sunday before or after the feast. The Sunday after, the 3rd after Pentecost, is the one the FSSP seminary's 2026 page prints (14 June)." },
+   { "key": "our-lady-of-the-rosary", "on": "first-sunday:10", "fixed": true, "rubric": "nos. 358b, 360", "source": "No. 358b: Our Lady of the Rosary, on the 1st Sunday of October." }
   ]
  }
 }

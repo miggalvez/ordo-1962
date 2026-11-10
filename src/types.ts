@@ -88,6 +88,12 @@ export type LayerOperation =
 export interface ExternalSolemnity {
   readonly key: string;
   readonly on: string;
+  /**
+   * The rubrics or an indult assign it to this day (no. 359). Without it the
+   * solemnity belongs to the feast by right and may be kept on the Sunday before
+   * or after it.
+   */
+  readonly fixed?: boolean;
   /** The rubric it is offered by. */
   readonly rubric?: string;
   readonly source?: string;
@@ -100,7 +106,7 @@ export interface Layer {
   readonly source: string;
   readonly observances?: readonly LayerObservance[];
   readonly operations: readonly LayerOperation[];
-  /** External solemnities the nation keeps by indult. */
+  /** External solemnities a nation keeps by indult, or an institute has by right for its own feasts (no. 358e, h). */
   readonly externalSolemnities?: readonly ExternalSolemnity[];
 }
 
@@ -114,6 +120,19 @@ export interface MassFormulary {
   readonly source: string;
 }
 
+/**
+ * Where a Mass of the day differs from the day as the calendar has it
+ * (data/masses.json, `ofTheDay`).
+ */
+export interface MassesOfTheDay {
+  /** Celebrations with no Mass: Good Friday. */
+  readonly noMass: readonly string[];
+  /** The colours of a Mass whose day has a rite of another colour before it. */
+  readonly colors: Readonly<Record<string, readonly Color[]>>;
+  /** Commemorations the Missal gives to one Mass only, by the Mass's key. */
+  readonly commemorations: Readonly<Record<string, readonly string[]>>;
+}
+
 /** What an ordo offers beside the Mass of the day, and what it prints first (data/ordos/). */
 export interface OrdoProfile {
   readonly ordo: string;
@@ -124,11 +143,13 @@ export interface OrdoProfile {
     readonly onCelebrations?: readonly ObservanceKind[];
   }[];
   readonly omit: readonly { readonly kind: string; readonly class?: number; readonly season?: 'lent' }[];
-  readonly highPriest: 'thursday' | 'saturday';
+  /** The day the ordo gives the Mass of Christ the High Priest (no. 385a); absent, both days it may be said on. */
+  readonly highPriest?: 'thursday' | 'saturday';
   readonly massesForCertainPlaces: readonly {
     readonly key: string;
     readonly date: string;
     readonly colors: readonly Color[];
+    readonly ofTheLord?: boolean;
     readonly ofOurLady?: boolean;
   }[];
 }

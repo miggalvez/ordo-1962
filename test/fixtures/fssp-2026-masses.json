@@ -1,14 +1,24 @@
 {
- "about": "Every day of 2026 on which the FSSP ordo of the engine (src/ordo.ts with data/ordos/fssp.json, and the United States and FSSP layers) differs from the FSSP seminary's page (fsspolgs.org/liturgical-calendar, read 2026-11-09): the first printed row against the ordo's first Mass, its class and commemorations, and every other row against the Masses the ordo lists. The page is not in this repository; set FSSP_PAGE to a saved copy to re-check. On the other 342 days the first row is the ordo's first Mass and every row is one the ordo lists.",
+ "about": "Every day of 2026 on which the FSSP ordo of the engine (src/ordo.ts with data/ordos/fssp.json, and the United States and FSSP layers) differs from the FSSP seminary's page (fsspolgs.org/liturgical-calendar, read 2026-11-09). Every row the page prints is compared: the first against the ordo's first Mass, and each later row ('row N') against the Mass of the ordo's list it names, in class, commemorations and their order. The page is not in this repository; set FSSP_PAGE to a saved copy to re-check. 'agreement' counts what is the same.",
+ "agreement": {
+  "about": "Of 365 days, the page's first row names the ordo's first Mass on 358 and has its class and commemorations too on 345. Of the 445 rows the page prints, 440 are a Mass the ordo lists and 414 have the same class and commemorations. 335 days are the same in every row.",
+  "days": 365,
+  "firstMassNamed": 358,
+  "firstRowSame": 345,
+  "rows": 445,
+  "rowsListed": 440,
+  "rowsSame": 414,
+  "daysSame": 335
+ },
  "groups": [
   {
    "group": "the page prints first another Mass the ordo offers",
-   "why": "The page puts first a Mass the engine also lists for the day, but no rule of data/ordos/fssp.json does so: on other days of the same kind the page prints the Mass of the day first. The Mass of a commemorated saint first on 14 February, 17 April and 24 September, but second on every other 4th class day with a commemoration (19 January, 3 February, 20 June and others); the Rogation Mass first on Monday 11 May, second on 25 April, 12 and 13 May; a Mass for certain places first on 27 June and 27 November, second on 8 May, 6 July, 1 and 3 August, 5 November. On 17 April and 24 September the page prints no other row.",
+   "why": "The page puts first a Mass the engine also lists for the day, but no rule of data/ordos/fssp.json does so: on other days of the same kind the page prints the Mass of the day first. The Mass of a commemorated saint first on 14 February, 17 April and 24 September, but second on the 23 other 4th class days with a commemoration (19 January, 3 February, 20 June and others); the Rogation Mass first on Monday 11 May, second on 25 April, 12 and 13 May; a Mass for certain places first on 27 June and 27 November, second on 8 May, 6 July, 1 and 3 August, 5 November. On 17 April and 24 September the page prints no other row. On 27 June the Saturday of Our Lady, in the second row, commemorates the Mass for certain places; that is not followed (the next group but one).",
    "days": {
     "2026-02-14": "page first: st-valentine, ours 2 of 2; ours first: our-lady-on-saturday-after-purification",
     "2026-04-17": "page first: st-anicetus, ours 2 of 2; ours first: pasc1-5",
     "2026-05-11": "page first: rogation-mass, ours 2 of 2; ours first: sts-philip-and-james",
-    "2026-06-27": "page first: our-lady-of-perpetual-help, ours 2 of 2; ours first: our-lady-on-saturday-after-pentecost",
+    "2026-06-27": "page first: our-lady-of-perpetual-help, ours 2 of 2; ours first: our-lady-on-saturday-after-pentecost | row 2 our-lady-on-saturday-after-pentecost: page only: Our Lady of Perpetual Help",
     "2026-09-24": "page first: our-lady-of-ransom, ours 2 of 2; ours first: pent17-4",
     "2026-11-27": "page first: our-lady-of-the-miraculous-medal, ours 2 of 2; ours first: pent24-5"
    }
@@ -24,22 +34,35 @@
   },
   {
    "group": "the calendar differs from the page",
-   "why": "The first Mass is the day's own and the difference is in the calendar, reviewed in test/fixtures/fssp-2026-differences.json: the page differs from the rubrics (1 and 11 January, 28 June, 8 September, 16 and 17 December), the Fraternity's own feast is not on the page (23 February), commemorations in another order (27 March, 1 September, 21 October, 4 December), and a Mass for certain places commemorated in the row of the day (8 May, 4 July, 6 July). On 4 July the first row is the votive Mass of the Immaculate Heart, as the engine has it, with the Mass for certain places commemorated.",
+   "why": "The first Mass is the day's own and the difference is in the calendar, reviewed in test/fixtures/fssp-2026-differences.json: the page differs from the rubrics (1 and 11 January, 28 June, 8 September, 16 and 17 December), the Fraternity's own feast is not on the page (23 February), commemorations in another order (27 March, 1 September, 21 October, 4 December), and a Mass for certain places commemorated in the row of the day (8 May, 4 July, 6 July). On 4 July the first row is the votive Mass of the Immaculate Heart, as the engine has it, with the Mass for certain places commemorated. Later rows repeat it: on 8 May each of the two Masses for certain places commemorates the other, and on 4 July the Saturday of Our Lady commemorates All Holy Popes. On 4 December the votive Mass of the Sacred Heart has three commemorations on the page; a votive Mass of the 3rd class admits two (no. 386b), the Advent feria and the office of the day.",
    "days": {
     "2026-01-01": "class 1 / 2",
     "2026-01-11": "class 2 / 1 | page only: First Sunday after Epiphany",
     "2026-02-23": "page first: Feria of Lent, not ours; ours first: chair-of-st-peter",
     "2026-03-27": "order",
-    "2026-05-08": "page only: Apparition of St. Michael the Archangel; Our Lady, Mediatrix of all Graces",
+    "2026-05-08": "page only: Apparition of St. Michael the Archangel; Our Lady, Mediatrix of all Graces | row 2 apparition-of-st-michael: page only: Our Lady, Mediatrix of all Graces | row 3 our-lady-mediatrix-of-all-graces: page only: Apparition of St. Michael the Archangel",
     "2026-06-28": "page only: Vigil of Ss. Peter and Paul, Apostles",
-    "2026-07-04": "page only: Commemoration of All Holy Popes",
+    "2026-07-04": "page only: Commemoration of All Holy Popes | row 3 our-lady-on-saturday-after-pentecost: page only: Commemoration of All Holy Popes",
     "2026-07-06": "page only: St. Maria Goretti, Virgin & Martyr",
     "2026-09-01": "order",
     "2026-09-08": "ours only: st-hadrian",
     "2026-10-21": "order",
-    "2026-12-04": "order",
+    "2026-12-04": "order | row 2 votive-sacred-heart-of-jesus: page only: St. Barbara, Virgin & Martyr",
     "2026-12-16": "page only: Feria of Advent",
     "2026-12-17": "page only: Feria of Advent"
+   }
+  },
+  {
+   "group": "a Mass other than the first has other commemorations on the page",
+   "why": "The first row is the same; a later row is a Mass the engine lists, with other commemorations. Each follows the rubrics rather than the page. 6 February and 7 August: in the votive Mass of the Sacred Heart the page puts the day's commemoration before the office of the day; the order is that of the table of precedence (no. 113), the 3rd class feast first. 13 May: the Rogation Mass has two commemorations on the page; a votive Mass of the 2nd class admits one (no. 343b), the vigil of the Ascension. 7 and 14 June: the page commemorates the Sunday in the external solemnities of Corpus Christi and the Sacred Heart; a Mass of a feast of the Lord excludes the Sunday (no. 112b). 5 November: the page commemorates Holy Relics, a Mass for certain places, in the votive Mass of Christ the High Priest and in the feria's; these Masses are offered, not commemorated (data/ordos/fssp.json). 13 November: the Mass of St. Didacus, a 3rd class feast impeded by St. Frances Xavier Cabrini, has no commemoration on the page; a Mass said instead of the day's commemorates the office of the day.",
+   "days": {
+    "2026-02-06": "row 2 votive-sacred-heart-of-jesus: order",
+    "2026-05-13": "row 2 rogation-mass: page only: St. Robert Ballarmino, Bishop, Confessor & Doctor of the Church",
+    "2026-06-07": "row 2 pent01-4: page only: Second after Pentecost",
+    "2026-06-14": "row 2 pent02-5: page only: Third Sunday after Pentecost",
+    "2026-08-07": "row 2 votive-sacred-heart-of-jesus: order",
+    "2026-11-05": "row 2 votive-jesus-christ-the-eternal-high-priest: page only: Holy Relics | row 4 pent23-4: page only: Holy Relics",
+    "2026-11-13": "row 2 st-didacus: ours only: us-st-frances-xavier-cabrini"
    }
   }
  ]

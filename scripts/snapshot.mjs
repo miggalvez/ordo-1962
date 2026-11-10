@@ -9,7 +9,7 @@ import { ordoYear, resolveYear } from '../dist/esm/index.js';
 
 export const SNAPSHOTS = [
   { name: 'us-fssp', options: { nations: ['us'], institutes: ['fssp'] }, years: [2026, 2027, 2028, 2029, 2030] },
-  { name: 'us-fssp-masses', options: { nations: ['us'], institutes: ['fssp'], ordo: 'fssp' }, years: [2026, 2027] },
+  { name: 'us-fssp-masses', options: { nations: ['us'], institutes: ['fssp'], ordo: 'fssp' }, years: [2026, 2027, 2028] },
 ];
 const DIR = new URL('../test/fixtures/snapshots/', import.meta.url);
 
@@ -26,12 +26,16 @@ export function snapshotOf(year, options) {
   }).join('\n')}\n`;
 }
 
-/** With an ordo: one line a day with the Masses it offers, its first first, each as key, kind, class and commemorations. */
+/**
+ * With an ordo: one line a day with the Masses it offers, its first first, each as
+ * key, kind, class and colours, then the condition the rubric sets and the commemorations.
+ */
 function massesSnapshotOf(year, options) {
   return `${ordoYear(year, options).map((day) => `${day.date} ${day.masses.map((mass) => {
+    const condition = mass.condition ? ` ?${mass.condition}` : '';
     const comm = mass.commemorations.length ? ` (${mass.commemorations.join(', ')})` : '';
-    return `${mass.key} ${mass.kind} ${mass.class}${comm}`;
-  }).join(' / ')}`).join('\n')}\n`;
+    return `${mass.key} ${mass.kind} ${mass.class} ${mass.colors.join('/')}${condition}${comm}`;
+  }).join(' / ') || 'no Mass'}`).join('\n')}\n`;
 }
 
 export const snapshotFile = (name, year) => new URL(`${name}-${year}.txt`, DIR);

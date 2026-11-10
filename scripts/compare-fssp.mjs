@@ -192,35 +192,70 @@ export function isSameMass(mass, name) {
   return isSame(mass.key, plain);
 }
 
+/** How a row of the page differs from the Mass of ours it is: class, commemorations, their order. */
+function rowDiffers(mass, row) {
+  const parts = [];
+  if (row.class !== mass.class) parts.push(`class ${mass.class} / ${row.class}`);
+  const { oursOnly, theirsOnly, sameOrder } = matchFssp(mass.commemorations, row.commemorations);
+  if (oursOnly.length) parts.push(`ours only: ${oursOnly.join(', ')}`);
+  if (theirsOnly.length) parts.push(`page only: ${theirsOnly.join('; ')}`);
+  if (!sameOrder) parts.push('order');
+  return parts;
+}
+
 /**
  * The Masses of the FSSP ordo (data/ordos/fssp.json) against the page, on every
- * day: whether the page's first row is the ordo's first Mass, with its class and
- * commemorations; if not, where the page's first Mass is in the ordo's list; and
- * any row of the page that is none of the Masses the ordo lists.
+ * day and for every row the page prints.
+ *   - The first row against the ordo's first Mass: its name, then its class and
+ *     commemorations. If it is another Mass, where that Mass is in the ordo's list.
+ *   - Every later row against the Mass of the ordo's list it names, class and
+ *     commemorations too ("row N ..."); a row that names none is "not ours".
+ * On a day with no Mass (Good Friday) the page's row is the day itself.
+ * Returns the differing days and the counts of what agrees.
  */
 export function compareMassesWithFssp(html, year, options = {}) {
   const fssp = readFsspPage(html, year);
   const differences = [];
+  const agreement = { days: 0, firstMassNamed: 0, firstRowSame: 0, rows: 0, rowsListed: 0, rowsSame: 0, daysSame: 0 };
   for (const day of ordoYear(year, { ...options, ordo: 'fssp' })) {
+    agreement.days += 1;
     const rows = fssp.get(day.date);
     if (!rows) { differences.push({ date: day.date, line: 'not on the page' }); continue; }
     const parts = [];
-    const [first] = day.masses;
-    if (isSameMass(first, rows[0].name)) {
-      if (rows[0].class !== first.class) parts.push(`class ${first.class} / ${rows[0].class}`);
-      const { oursOnly, theirsOnly, sameOrder } = matchFssp(first.commemorations, rows[0].commemorations);
-      if (oursOnly.length) parts.push(`ours only: ${oursOnly.join(', ')}`);
-      if (theirsOnly.length) parts.push(`page only: ${theirsOnly.join('; ')}`);
-      if (!sameOrder) parts.push('order');
-    } else {
-      const at = day.masses.findIndex((mass) => isSameMass(mass, rows[0].name));
-      parts.push(at > 0 ? `page first: ${day.masses[at].key}, ours ${at + 1} of ${day.masses.length}; ours first: ${first.key}` : `page first: ${rows[0].name}, not ours; ours first: ${first.key}`);
-    }
-    const unlisted = rows.slice(1).filter((row) => !day.masses.some((mass) => isSameMass(mass, row.name)));
+    // The Mass of ours each row names. A day without a Mass is matched as the celebration it is.
+    const ours = day.masses.length ? day.masses : [{ key: day.celebration.key, kind: 'day', class: day.celebration.class, commemorations: day.commemorations }];
+    const [first] = ours;
+    rows.forEach((row, i) => {
+      agreement.rows += 1;
+      const mass = i === 0 && isSameMass(first, row.name) ? first : ours.find((candidate) => isSameMass(candidate, row.name));
+      if (mass) agreement.rowsListed += 1;
+      if (i === 0) {
+        if (mass === first) {
+          agreement.firstMassNamed += 1;
+          const differs = rowDiffers(first, row);
+          if (!differs.length) { agreement.firstRowSame += 1; agreement.rowsSame += 1; }
+          parts.push(...differs);
+        } else if (mass) {
+          parts.push(`page first: ${mass.key}, ours ${ours.indexOf(mass) + 1} of ${ours.length}; ours first: ${first.key}`);
+          const differs = rowDiffers(mass, row);
+          if (!differs.length) agreement.rowsSame += 1;
+          else parts.push(`row 1 ${mass.key}: ${differs.join(', ')}`);
+        } else {
+          parts.push(`page first: ${row.name}, not ours; ours first: ${first.key}`);
+        }
+        return;
+      }
+      if (!mass) return;
+      const differs = rowDiffers(mass, row);
+      if (!differs.length) agreement.rowsSame += 1;
+      else parts.push(`row ${i + 1} ${mass.key}: ${differs.join(', ')}`);
+    });
+    const unlisted = rows.slice(1).filter((row) => !ours.some((mass) => isSameMass(mass, row.name)));
     if (unlisted.length) parts.push(`not ours: ${unlisted.map((row) => row.name).join('; ')}`);
     if (parts.length) differences.push({ date: day.date, line: parts.join(' | ') });
+    else agreement.daysSame += 1;
   }
-  return differences;
+  return Object.assign(differences, { agreement });
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {
@@ -235,7 +270,12 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     const masses = compareMassesWithFssp(readFileSync(file, 'utf8'), Number(yearText), options);
     if (process.argv.includes('--json')) console.log(JSON.stringify(Object.fromEntries(masses.map((d) => [d.date, d.line])), null, 1));
     else for (const d of masses) console.log(`${d.date} ${d.line}`);
-    if (!process.argv.includes('--json')) console.log(`${masses.length} differing days`);
+    const g = masses.agreement;
+    if (!process.argv.includes('--json')) {
+      console.log(`${masses.length} differing days of ${g.days}`);
+      console.log(`first row: the ordo's first Mass on ${g.firstMassNamed} days, with the same class and commemorations on ${g.firstRowSame}`);
+      console.log(`all rows: ${g.rows} printed, ${g.rowsListed} a Mass the ordo lists, ${g.rowsSame} with the same class and commemorations`);
+    }
     process.exit(0);
   }
   const differences = compareWithFssp(readFileSync(file, 'utf8'), Number(yearText), options);

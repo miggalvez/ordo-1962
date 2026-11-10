@@ -1,0 +1,29 @@
+name: Release
+
+# Pushing a tag vX.Y.Z stages that version on npm through trusted publishing
+# (OIDC, no stored token). The staged version goes live only when a maintainer
+# approves it with 2FA: npmjs.com, Staged Packages, or `npm stage approve <id>`.
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: read
+  id-token: write # for npm trusted publishing
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org
+          package-manager-cache: false
+      - name: The tag is the version in package.json
+        run: test "v$(node -p 'require("./package.json").version')" = "$GITHUB_REF_NAME"
+      - run: npm ci
+      - run: npm test
+      - run: npm stage publish

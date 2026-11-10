@@ -452,6 +452,15 @@ from `data/missalemeum/source.json`. It compiles into a fresh bytecode cache, so
 no `.pyc` left in the checkout is used. On 2026-11-09 the local run (Python 3.11) was identical to the hosted
 `/en/api/v5/calendar/{year}` responses on all 1,096 days of 2026–2028.
 
+## Releasing
+
+Set the version in `package.json` and `package-lock.json`, commit, and push a tag
+`vX.Y.Z` of that commit. `.github/workflows/release.yml` runs the tests and
+stages the version on npm through trusted publishing, with no stored token; it
+refuses a tag that is not the version in `package.json`. The staged version goes
+live when a maintainer approves it with 2FA, on npmjs.com under Staged Packages
+or with `npm stage approve <stage-id>`.
+
 ## Licence
 
 MIT. The catalogue is derived from Missale Meum and the Spanish titles from

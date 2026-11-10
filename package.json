@@ -9,9 +9,28 @@
   "engines": {
     "node": ">=22"
   },
+  "exports": {
+    ".": {
+      "types": "./dist/esm/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    }
+  },
+  "main": "./dist/cjs/index.js",
+  "types": "./dist/esm/index.d.ts",
+  "files": [
+    "dist",
+    "LICENSE",
+    "NOTICE.md"
+  ],
   "scripts": {
+    "build": "node scripts/generate-data.mjs && tsc -p tsconfig.json && tsc -p tsconfig.cjs.json && node scripts/mark-cjs.mjs",
     "convert": "python3 -I scripts/convert_missalemeum.py",
-    "test": "node --test \"test/**/*.test.mjs\"",
+    "pretest": "npm run build",
+    "test": "node --test \"test/**/*.test.mjs\" \"test/**/*.test.cjs\"",
     "test:convert": "python3 -I scripts/test_convert_missalemeum.py"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3"
   }
 }

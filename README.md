@@ -3,8 +3,23 @@
 The Roman calendar of 1962 (1960 Code of Rubrics) for any year, nation,
 institute and church, computed in process with no network calls.
 
-Status: early. The observance catalogue and the reference calendar exist; the
-engine itself does not yet. Nothing is published.
+Status: early. The engine places the movable cycle and the fixed-date
+candidates for any year, but does not yet decide which observance is celebrated
+(the resolver). Nothing is published.
+
+## Use
+
+```js
+import { movableDates, temporalYear, fixedFeasts } from 'ordo-1962';
+
+movableDates(2026).christTheKing;             // '2026-10-25'
+temporalYear(2026).tempora.get('2026-03-27'); // ['quad5-5', 'seven-sorrows-in-passiontide']
+fixedFeasts(2026).get('2026-11-19');          // ['st-elizabeth-of-hungary', 'st-pontian']
+fixedFeasts(2026, { nations: ['pl'] }).get('2026-05-08');
+```
+
+Both `import` and `require` work. Dates are `YYYY-MM-DD` calendar labels with no
+time zone. `npm run build` writes `dist/`; `npm test` builds first.
 
 ## What is here
 

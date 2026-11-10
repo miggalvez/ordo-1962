@@ -1,0 +1,366 @@
+2028-01-01 octave-day-of-christmas 1 white
+2028-01-02 nat2-0 2 white
+2028-01-03 feria 4 white
+2028-01-04 feria 4 white
+2028-01-05 us-st-john-neumann 3 white | comm st-telesphorus-pope-and-martyr
+2028-01-06 epiphany-of-the-lord 1 white
+2028-01-07 feria 4 white
+2028-01-08 our-lady-on-saturday-christmastide 4 white
+2028-01-09 epi1-0 2 white
+2028-01-10 epi1-1 4 white
+2028-01-11 epi1-2 4 white | comm st-hyginus-pope-and-martyr
+2028-01-12 epi1-3 4 white
+2028-01-13 commemoration-of-the-baptism-of-the-lord 2 white
+2028-01-14 st-hilary 3 white | comm st-felix
+2028-01-15 st-paul-the-first-hermit 3 white | comm st-maur-abbot
+2028-01-16 epi2-0 2 green
+2028-01-17 st-anthony-the-abbot 3 white
+2028-01-18 epi2-2 4 green | comm st-prisca
+2028-01-19 epi2-3 4 green | comm sts-marius-martha-audifax-and-abachum, st-canute-martyr
+2028-01-20 sts-fabian-and-sebastian 3 red
+2028-01-21 st-agnes 3 red
+2028-01-22 sts-vincent-and-anastasius 3 red
+2028-01-23 epi3-0 2 green
+2028-01-24 st-timothy 3 red
+2028-01-25 conversion-of-st-paul 3 white | with st-peter
+2028-01-26 st-polycarp 3 red
+2028-01-27 st-john-chrysostom 3 white
+2028-01-28 st-peter-nolasco 3 white | comm st-agnes-01-28t
+2028-01-29 st-francis-de-sales 3 white
+2028-01-30 epi4-0 2 green
+2028-01-31 st-john-bosco 3 white
+2028-02-01 st-ignatius-of-antioch 3 red
+2028-02-02 purification-of-the-blessed-virgin-mary 2 white
+2028-02-03 epi4-4 4 green | comm st-blaise
+2028-02-04 st-andrew-corsini 3 white
+2028-02-05 st-agatha 3 red
+2028-02-06 epi5-0 2 green
+2028-02-07 st-romuald 3 white
+2028-02-08 st-john-of-matha 3 white
+2028-02-09 st-cyril-of-alexandria 3 white | comm st-apollonia
+2028-02-10 st-scholastica 3 white
+2028-02-11 our-lady-of-lourdes 3 white
+2028-02-12 seven-holy-servite-founders 3 white
+2028-02-13 quadp1-0 2 violet
+2028-02-14 quadp1-1 4 violet | comm st-valentine
+2028-02-15 quadp1-2 4 violet | comm sts-faustinus-and-jovita
+2028-02-16 quadp1-3 4 violet
+2028-02-17 quadp1-4 4 violet
+2028-02-18 quadp1-5 4 violet | comm st-simeon
+2028-02-19 our-lady-on-saturday-after-purification 4 white
+2028-02-20 quadp2-0 2 violet
+2028-02-21 quadp2-1 4 violet
+2028-02-22 chair-of-st-peter 1 white | with st-paul
+2028-02-23 st-peter-damian 3 white
+2028-02-24 quadp2-4 4 violet
+2028-02-25 st-matthias 2 red
+2028-02-26 our-lady-on-saturday-after-purification 4 white
+2028-02-27 quadp3-0 2 violet
+2028-02-28 st-gabriel-of-our-lady-of-sorrows 3 white
+2028-02-29 quadp3-2 4 violet
+2028-03-01 quadp3-3 1 violet
+2028-03-02 quadp3-4 3 violet
+2028-03-03 quadp3-5 3 violet
+2028-03-04 quadp3-6 3 violet | comm st-casimir, st-lucius
+2028-03-05 quad1-0 1 violet
+2028-03-06 quad1-1 3 violet | comm sts-felicitas-and-perpetua
+2028-03-07 quad1-2 3 violet | comm st-thomas-aquinas
+2028-03-08 quad1-3 2 violet | comm st-john-of-god
+2028-03-09 quad1-4 3 violet | comm st-frances-of-rome
+2028-03-10 quad1-5 2 violet | comm forty-holy-martyrs-of-sebaste
+2028-03-11 quad1-6 2 violet
+2028-03-12 quad2-0 1 violet
+2028-03-13 quad2-1 3 violet
+2028-03-14 quad2-2 3 violet
+2028-03-15 quad2-3 3 violet
+2028-03-16 quad2-4 3 violet
+2028-03-17 quad2-5 3 violet | comm st-patrick
+2028-03-18 quad2-6 3 violet | comm st-cyril-of-jerusalem
+2028-03-19 quad3-0 1 violet
+2028-03-20 st-joseph-spouse-of-the-bl-virgin-mary 1 white | comm quad3-1 | from 2028-03-19
+2028-03-21 quad3-2 3 violet | comm st-benedict
+2028-03-22 quad3-3 3 violet
+2028-03-23 quad3-4 3 violet
+2028-03-24 quad3-5 3 violet | comm st-gabriel-the-archangel
+2028-03-25 annunciation-of-the-blessed-virgin-mary 1 white | comm quad3-6
+2028-03-26 quad4-0 1 rose/violet
+2028-03-27 quad4-1 3 violet | comm st-john-damascene
+2028-03-28 quad4-2 3 violet | comm st-john-of-capistrano
+2028-03-29 quad4-3 3 violet
+2028-03-30 quad4-4 3 violet
+2028-03-31 quad4-5 3 violet
+2028-04-01 quad4-6 3 violet
+2028-04-02 quad5-0 1 violet
+2028-04-03 quad5-1 3 violet
+2028-04-04 quad5-2 3 violet | comm st-isidore-of-seville
+2028-04-05 quad5-3 3 violet | comm st-vincent-ferrer
+2028-04-06 quad5-4 3 violet
+2028-04-07 quad5-5 3 violet | comm seven-sorrows-in-passiontide
+2028-04-08 quad5-6 3 violet
+2028-04-09 quad6-0 1 red/violet
+2028-04-10 quad6-1 1 violet
+2028-04-11 quad6-2 1 violet
+2028-04-12 quad6-3 1 violet
+2028-04-13 quad6-4 1 white
+2028-04-14 quad6-5 1 black/violet
+2028-04-15 quad6-6 1 violet/white
+2028-04-16 pasc0-0 1 white
+2028-04-17 pasc0-1 1 white
+2028-04-18 pasc0-2 1 white
+2028-04-19 pasc0-3 1 white
+2028-04-20 pasc0-4 1 white
+2028-04-21 pasc0-5 1 white
+2028-04-22 pasc0-6 1 white
+2028-04-23 pasc1-0 1 white
+2028-04-24 st-fidelis-of-sigmaringen 3 red
+2028-04-25 st-mark 2 red | comm for-the-rogations
+2028-04-26 sts-cletus-and-marcellinus 3 red
+2028-04-27 st-peter-canisius 3 white
+2028-04-28 st-paul-of-the-cross 3 white
+2028-04-29 st-peter-of-verona 3 red
+2028-04-30 pasc2-0 2 white
+2028-05-01 st-joseph-the-workman 1 white
+2028-05-02 st-athanasius 3 white
+2028-05-03 pasc2-3 4 white | comm sts-alexander-and-companions
+2028-05-04 st-monica 3 white
+2028-05-05 st-pius-v 3 white
+2028-05-06 our-lady-on-saturday-paschaltide 4 white
+2028-05-07 pasc3-0 2 white
+2028-05-08 pasc3-1 4 white
+2028-05-09 st-gregory-nazianzen 3 white
+2028-05-10 st-antoninus 3 white | comm sts-gordian-and-epimachus
+2028-05-11 sts-philip-and-james 2 red
+2028-05-12 sts-nereus-achilleus-domitilla-and-pancras 3 red
+2028-05-13 st-robert-bellarmine 3 white
+2028-05-14 pasc4-0 2 white
+2028-05-15 st-john-baptist-de-la-salle 3 white
+2028-05-16 st-ubaldus 3 white
+2028-05-17 st-paschal-baylon 3 white
+2028-05-18 st-venantius 3 red
+2028-05-19 st-peter-celestine 3 white | comm st-pudentiana-virgin
+2028-05-20 st-bernardine-of-siena 3 white
+2028-05-21 pasc5-0 2 white
+2028-05-22 pasc5-1 4 white
+2028-05-23 pasc5-2 4 white
+2028-05-24 pasc5-3 2 white
+2028-05-25 pasc5-4 1 white
+2028-05-26 st-philip-neri 3 white | comm st-eleutherius
+2028-05-27 st-bede-the-venerable 3 white | comm st-john-i
+2028-05-28 pasc6-0 2 white
+2028-05-29 st-mary-magdalene-de-pazzi 3 white
+2028-05-30 pasc6-2 4 white | comm st-felix-i
+2028-05-31 queenship-of-the-blessed-virgin-mary 2 white | comm st-petronilla
+2028-06-01 st-angela-merici 3 white
+2028-06-02 pasc6-5 4 white | comm sts-marcellinus-peter-and-erasmus
+2028-06-03 pasc6-6 1 red
+2028-06-04 pasc7-0 1 red
+2028-06-05 pasc7-1 1 red
+2028-06-06 pasc7-2 1 red
+2028-06-07 pasc7-3 1 red
+2028-06-08 pasc7-4 1 red
+2028-06-09 pasc7-5 1 red
+2028-06-10 pasc7-6 1 red
+2028-06-11 pent01-0 1 white
+2028-06-12 st-john-of-san-facundo 3 white | comm st-basilides
+2028-06-13 st-anthony-of-padua 3 white
+2028-06-14 st-basil-the-great 3 white
+2028-06-15 pent01-4 1 white
+2028-06-16 pent01-5 4 green
+2028-06-17 st-gregory-barbarigo 3 white
+2028-06-18 pent02-0 2 green
+2028-06-19 st-juliana-falconieri 3 white | comm sts-gervasius-and-protasius
+2028-06-20 pent02-2 4 green | comm st-silverius
+2028-06-21 st-aloysius-gonzaga 3 white
+2028-06-22 st-paulinus-of-nola 3 white
+2028-06-23 pent02-5 1 white
+2028-06-24 nativity-of-st-john-the-baptist 1 white
+2028-06-25 pent03-0 2 green
+2028-06-26 sts-john-and-paul 3 red
+2028-06-27 pent03-2 4 green
+2028-06-28 vigil-of-sts-peter-and-paul 2 violet
+2028-06-29 sts-peter-and-paul 1 red
+2028-06-30 commemoration-of-st-paul-the-apostle 3 red | with st-peter
+2028-07-01 the-precious-blood-of-our-lord-jesus-christ 1 red
+2028-07-02 pent04-0 2 green | comm visitation-of-the-blessed-virgin-mary
+2028-07-03 st-irenaeus 3 red
+2028-07-04 pent04-2 4 green
+2028-07-05 st-anthony-mary-zaccaria 3 white
+2028-07-06 pent04-4 4 green
+2028-07-07 sts-cyril-and-methodius 3 white
+2028-07-08 st-elizabeth-of-portugal 3 white
+2028-07-09 pent05-0 2 green
+2028-07-10 seven-holy-brothers-and-sts-rufina-and-secunda 3 red
+2028-07-11 pent05-2 4 green | comm st-pius-i
+2028-07-12 st-john-gualbert 3 white | comm sts-nabor-and-felix
+2028-07-13 pent05-4 4 green
+2028-07-14 st-bonaventure 3 white
+2028-07-15 st-henry-the-emperor 3 white
+2028-07-16 pent06-0 2 green
+2028-07-17 pent06-1 4 green | comm st-alexis
+2028-07-18 camillus-de-lellis 3 white | comm sts-symphorosa-and-sons
+2028-07-19 st-vincent-de-paul 3 white
+2028-07-20 st-jerome-emiliani 3 white | comm st-margaret
+2028-07-21 st-laurence-of-brindisi 3 white | comm st-praxedes-virgin
+2028-07-22 st-mary-magdalene 3 white
+2028-07-23 pent07-0 2 green
+2028-07-24 pent07-1 4 green | comm st-christina
+2028-07-25 st-james-the-greater 2 red | comm st-christopher
+2028-07-26 st-anne-mother-of-the-blessed-virgin 2 white
+2028-07-27 pent07-4 4 green | comm st-pantaleon
+2028-07-28 sts-nazarius-and-celsus-st-victor-i-and-st-innocent-i 3 red
+2028-07-29 st-martha 3 white | comm sts-felix-simplicius-faustinus-and-beatrice
+2028-07-30 pent08-0 2 green
+2028-07-31 st-ignatius-loyola 3 white
+2028-08-01 pent08-2 4 green | comm holy-machabees
+2028-08-02 st-alphonsus-liguori 3 white | comm st-stephen-i-pope-and-martyr
+2028-08-03 pent08-4 4 green
+2028-08-04 st-dominic 3 white
+2028-08-05 dedication-of-the-basilica-of-st-mary-major 3 white
+2028-08-06 transfiguration-of-our-lord 2 white
+2028-08-07 st-cajetan 3 white | comm st-donatus
+2028-08-08 st-john-mary-vianney 3 white | comm sts-cyriacus-largus-and-smaragdus-martyrs
+2028-08-09 vigil-of-st-lawrence 3 violet | comm st-romanus
+2028-08-10 st-lawrence 2 red
+2028-08-11 pent09-5 4 green | comm sts-tiburtius-and-susanna
+2028-08-12 st-clare 3 white
+2028-08-13 pent10-0 2 green
+2028-08-14 vigil-of-the-assumption 2 violet | comm st-eusebius
+2028-08-15 assumption-of-the-blessed-virgin-mary 1 white
+2028-08-16 st-joachim-father-of-the-blessed-virgin 2 white
+2028-08-17 st-hyacinth 3 white
+2028-08-18 pent10-5 4 green | comm st-agapitus
+2028-08-19 st-john-eudes 3 white
+2028-08-20 pent11-0 2 green
+2028-08-21 st-jane-frances-de-chantal 3 white
+2028-08-22 immaculate-heart-of-mary 2 white | comm sts-timothy-hippolytus-and-symphorianus-martyrs
+2028-08-23 st-philip-benizi 3 white
+2028-08-24 st-bartholomew 2 red
+2028-08-25 st-louis-ix 3 white
+2028-08-26 our-lady-on-saturday-after-pentecost 4 white | comm st-zephyrinus
+2028-08-27 pent12-0 2 green
+2028-08-28 st-augustine 3 white | comm st-hermes
+2028-08-29 beheading-of-st-john-the-baptist 3 red | comm st-sabina
+2028-08-30 st-rose-of-lima 3 white | comm sts-felix-and-adauctus
+2028-08-31 st-raymond-nonnatus 3 white
+2028-09-01 pent12-5 4 green | comm st-giles, twelve-holy-brothers-martyrs
+2028-09-02 st-stephen-of-hungary 3 white
+2028-09-03 pent13-0 2 green
+2028-09-04 pent13-1 4 green
+2028-09-05 st-lawrence-justinian 3 white
+2028-09-06 pent13-3 4 green
+2028-09-07 pent13-4 4 green
+2028-09-08 nativity-of-the-blessed-virgin-mary 2 white | comm st-hadrian
+2028-09-09 us-st-peter-claver 3 white | comm st-gorgonius
+2028-09-10 pent14-0 2 green
+2028-09-11 pent14-1 4 green | comm sts-protus-and-hyacinth
+2028-09-12 most-holy-name-of-mary 3 white
+2028-09-13 pent14-3 4 green
+2028-09-14 exaltation-of-the-holy-cross 2 red
+2028-09-15 seven-sorrows-of-the-blessed-virgin-mary 2 white | comm st-nicomedes
+2028-09-16 sts-cornelius-and-cyprian 3 red | comm sts-euphemia-lucy-and-geminianus
+2028-09-17 pent15-0 2 green
+2028-09-18 st-joseph-of-cupertino 3 white
+2028-09-19 st-januarius-and-companions 3 red
+2028-09-20 sep-ember-3 2 violet | comm sts-eustace-and-companions
+2028-09-21 st-matthew 2 red
+2028-09-22 sep-ember-5 2 violet | comm st-thomas-of-villanova
+2028-09-23 sep-ember-6 2 violet | comm st-linus
+2028-09-24 pent16-0 2 green
+2028-09-25 pent16-1 4 green
+2028-09-26 us-north-american-martyrs 3 red | comm sts-cyprian-and-justina
+2028-09-27 sts-cosmas-and-damian 3 red
+2028-09-28 st-wenceslaus 3 red
+2028-09-29 dedication-of-st-michael-the-archangel 1 white
+2028-09-30 st-jerome 3 white
+2028-10-01 pent17-0 2 green
+2028-10-02 holy-guardian-angels 3 white
+2028-10-03 st-theresa-of-the-infant-jesus 3 white
+2028-10-04 st-francis-of-assisi 3 white
+2028-10-05 pent17-4 4 green | comm st-placid-and-companions
+2028-10-06 st-bruno 3 white
+2028-10-07 our-lady-of-the-rosary 2 white | comm st-mark-i
+2028-10-08 pent18-0 2 green
+2028-10-09 st-john-leonardi 3 white | comm st-dionysius-and-companions
+2028-10-10 st-francis-borgia 3 white
+2028-10-11 maternity-of-the-blessed-virgin-mary 2 white
+2028-10-12 pent18-4 4 green
+2028-10-13 st-edward 3 white
+2028-10-14 st-callistus-i 3 red
+2028-10-15 pent19-0 2 green
+2028-10-16 st-hedwig 3 white
+2028-10-17 st-margaret-mary-alacoque 3 white
+2028-10-18 st-luke-the-evangelist 2 red
+2028-10-19 st-peter-of-alcantara 3 white
+2028-10-20 st-john-cantius 3 white
+2028-10-21 our-lady-on-saturday-after-pentecost 4 white | comm st-hilarion, st-ursula-and-companions
+2028-10-22 pent20-0 2 green
+2028-10-23 st-anthony-mary-claret 3 white
+2028-10-24 st-raphael-the-archangel 3 white
+2028-10-25 pent20-3 4 green | comm sts-chrysanthus-and-daria
+2028-10-26 pent20-4 4 green | comm st-evaristus
+2028-10-27 pent20-5 4 green
+2028-10-28 sts-simon-and-jude 2 red
+2028-10-29 christ-the-king 1 white
+2028-10-30 pent21-1 4 green
+2028-10-31 pent21-2 4 green
+2028-11-01 all-saints 1 white
+2028-11-02 commemoration-of-all-souls 1 black
+2028-11-03 pent21-5 4 green
+2028-11-04 st-charles-borromeo 3 white | comm sts-vitalis-and-agricola-martyrs
+2028-11-05 pent22-0 2 green
+2028-11-06 pent22-1 4 green
+2028-11-07 pent22-2 4 green
+2028-11-08 pent22-3 4 green | comm four-holy-crowned-martyrs
+2028-11-09 dedication-of-the-archbasilica-of-our-holy-savior 2 white | comm st-theodore
+2028-11-10 st-andrew-avellino 3 white | comm sts-tryphon-respicius-and-nympha
+2028-11-11 st-martin-of-tours 3 white | comm st-menas
+2028-11-12 pent23-0 2 green
+2028-11-13 us-st-frances-xavier-cabrini 3 white | comm st-didacus
+2028-11-14 st-josaphat 3 red
+2028-11-15 st-albert-the-great 3 white
+2028-11-16 st-gertrude-the-great 3 white
+2028-11-17 st-gregory-the-wonderworker 3 white
+2028-11-18 dedication-of-the-basilicas-of-sts-peter-and-paul 3 white
+2028-11-19 epi6-0 2 green
+2028-11-20 st-felix-of-valois 3 white
+2028-11-21 presentation-of-the-blessed-virgin-mary 3 white
+2028-11-22 st-cecilia 3 red
+2028-11-23 st-clement-i 3 red | comm st-felicity
+2028-11-24 st-john-of-the-cross 3 white | comm st-chrysogonus
+2028-11-25 st-catherine-of-alexandria 3 red
+2028-11-26 pent24-0 2 green
+2028-11-27 pent24-1 4 green
+2028-11-28 pent24-2 4 green
+2028-11-29 pent24-3 4 green | comm st-saturninus
+2028-11-30 st-andrew 2 red
+2028-12-01 pent24-5 4 green
+2028-12-02 st-vivian 3 red
+2028-12-03 adv1-0 1 violet
+2028-12-04 st-peter-chrysologus 3 white | comm adv1-1, st-barbara
+2028-12-05 adv1-2 3 violet | comm st-sabbas
+2028-12-06 st-nicholas 3 white | comm adv1-3
+2028-12-07 st-ambrose 3 white | comm adv1-4
+2028-12-08 immaculate-conception-of-the-blessed-virgin-mary 1 white | comm adv1-5
+2028-12-09 adv1-6 3 violet
+2028-12-10 adv2-0 1 violet
+2028-12-11 st-damasus-i 3 white | comm adv2-1
+2028-12-12 us-our-lady-of-guadalupe 3 white | comm adv2-2
+2028-12-13 st-lucy 3 red | comm adv2-3
+2028-12-14 adv2-4 3 violet
+2028-12-15 adv2-5 3 violet
+2028-12-16 st-eusebius-12-16 3 red | comm adv2-6
+2028-12-17 adv3-0 1 rose/violet
+2028-12-18 adv3-1 2 violet
+2028-12-19 adv3-2 2 violet
+2028-12-20 adv3-3 2 violet
+2028-12-21 st-thomas-the-apostle 2 red | comm adv3-4
+2028-12-22 adv3-5 2 violet
+2028-12-23 adv3-6 2 violet
+2028-12-24 vigil-of-christmas 1 violet
+2028-12-25 the-nativity-of-our-lord 1 white
+2028-12-26 st-stephen 2 red | comm for-octave-of-the-nativity
+2028-12-27 st-john-the-evangelist 2 white | comm for-octave-of-the-nativity-12-27c
+2028-12-28 holy-innocents 2 red | comm for-octave-of-the-nativity-12-28c
+2028-12-29 nat1-1 2 white | comm st-thomas-becket
+2028-12-30 nat1-1 2 white
+2028-12-31 nat1-0 2 white

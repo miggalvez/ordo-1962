@@ -1,8 +1,9 @@
 import { dayNumber, easterSunday, fromYmd, toYmd, weekday } from './dates.js';
 import { CATALOGUE } from './generated/data.js';
 import { commemorationsOf, sameDivinePerson } from './commemorations.js';
-import { compareRanked, tableItem, type Ranked } from './precedence.js';
-import { entriesFor, fixedFeasts, temporalYear, type PlacementOptions } from './temporal.js';
+import { compareByTable, compareRanked, tableItem, type Ranked } from './precedence.js';
+import { properCalendar, type ProperCalendar } from './proper.js';
+import { placeFixed, temporalYear, type PlacementOptions } from './temporal.js';
 import type { CatalogueEntry, Color, Ymd } from './types.js';
 
 const BY_KEY = new Map(CATALOGUE.map((entry) => [entry.key, entry]));
@@ -84,16 +85,12 @@ interface Candidate extends Ranked {
 
 /**
  * Observances outside the catalogue, by the month-day they are kept on. Not part
- * of the public API: it is the seam a church's own feasts will use, and it lets a
- * test place a feast on any date.
+ * of the public API: it lets a test place a feast on any date without the rules
+ * a church's own feasts follow (proper.ts).
  */
 export type Extras = ReadonlyMap<string, readonly CatalogueEntry[]>;
 
 const NO_EXTRAS: Extras = new Map();
-
-function rank(key: string, day: number, movable: boolean, transferredFrom?: number): Candidate {
-  return rankEntry(entryOf(key), day, movable, transferredFrom);
-}
 
 function rankEntry(entry: CatalogueEntry, day: number, movable: boolean, transferredFrom?: number): Candidate {
   let cls = entry.class;
@@ -145,15 +142,18 @@ interface Pass {
 
 function resolvePass(
   year: number,
-  options: PlacementOptions,
+  proper: ProperCalendar,
   omittedVigils: ReadonlySet<string>,
   extras: Extras,
   carriedIn: readonly Candidate[],
   firstDay?: number,
 ): Pass {
   const { tempora, computedFeasts } = temporalYear(year);
-  const fixed = fixedFeasts(year, options);
-  const lookup = entriesFor(options);
+  const fixed = placeFixed(year, proper).byDate;
+  // Observances as this calendar keeps them: a proper may raise the rank of one the catalogue has.
+  const rank = (key: string, day: number, movable: boolean, transferredFrom?: number): Candidate => rankEntry(
+    proper.entries.get(key) ?? entryOf(key), day, movable, transferredFrom,
+  );
   const easter = easterSunday(year);
   const palmSunday = easter - 7;
   const lowSunday = easter + 7;
@@ -181,8 +181,7 @@ function resolvePass(
     const candidates: Candidate[] = [
       ...dayTempora.map((key) => rank(key, day, true)),
       ...(computedFeasts.get(date) ?? []).map((key) => rank(key, day, true)),
-      ...fixedHere.map((key) => lookup.get(key) ?? entryOf(key)).filter((entry) => !entry.formularyOf)
-        .map((entry) => rankEntry(entry, day, false)),
+      ...fixedHere.map((key) => rank(key, day, false)).filter((candidate) => !candidate.entry.formularyOf),
       ...(extras.get(date.slice(5)) ?? []).map((entry) => rankEntry(entry, day, false)),
       ...(rightfulPlace.get(day) ?? []),
     ];
@@ -210,7 +209,7 @@ function resolvePass(
       if (loser.transferredFrom === undefined) lostTheirDate.add(loser.entry.key);
       if (loser.entry.kind !== 'feast' || loser.class !== 1) continue;
       // Of two feasts of the same divine Person the lower is omitted, not transferred (no. 95):
-      // the Precious Blood when the Sacred Heart falls on 1 July.
+      // the Precious Blood when the Sacred Heart falls on 1 July. Not the dedication of a church.
       if (contenders.slice(0, place).some((higher) => sameDivinePerson(higher.entry, loser.entry))) continue;
       const from = loser.transferredFrom ?? day;
       if (loser.entry.key === ALL_SOULS) {
@@ -228,7 +227,7 @@ function resolvePass(
     // A transferred feast takes the next day that is not of the 1st or 2nd class (no. 96),
     // in the order of the table, and among equals the one impeded first (no. 98).
     if (pending.length > 0 && (!winner || winner.class >= 3)) {
-      pending.sort((a, b) => (tableItem(a) ?? 0) - (tableItem(b) ?? 0) || (a.transferredFrom ?? 0) - (b.transferredFrom ?? 0));
+      pending.sort((a, b) => compareByTable(a, b) || (a.transferredFrom ?? 0) - (b.transferredFrom ?? 0));
       const transferred = pending.shift() as Candidate;
       winner = rankEntry(transferred.entry, day, false, transferred.transferredFrom);
     }
@@ -271,11 +270,15 @@ function resolvePass(
  * enough to know what it carries over. No vigil of no. 33 falls in those months.
  */
 export function resolveYearWith(year: number, options: PlacementOptions = {}, extras: Extras = NO_EXTRAS): ResolvedDay[] {
-  const carried = resolvePass(year - 1, options, new Set(), extras, [], dayNumber(year - 1, 11, 1)).carriedOut;
-  let omitted = new Set<string>();
+  const proper = properCalendar(options);
+  const carried = resolvePass(year - 1, proper, new Set(), extras, [], dayNumber(year - 1, 11, 1)).carriedOut;
+  // A feast kept for good on another date in this church (nos. 100-102) no longer follows its vigil.
+  const reassigned = [...placeFixed(year, proper).reassigned.keys()];
+  const withVigil = (keys: Iterable<string>) => new Set([...keys].filter((key) => Object.values(VIGIL_OF).includes(key)));
+  let omitted = withVigil(reassigned);
   for (let attempt = 0; attempt < 5; attempt += 1) {
-    const pass = resolvePass(year, options, omitted, extras, carried);
-    const next = new Set([...pass.lostTheirDate].filter((key) => Object.values(VIGIL_OF).includes(key)));
+    const pass = resolvePass(year, proper, omitted, extras, carried);
+    const next = withVigil([...pass.lostTheirDate, ...reassigned]);
     if ([...next].every((key) => omitted.has(key)) && next.size === omitted.size) return pass.days;
     omitted = next;
   }

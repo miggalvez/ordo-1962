@@ -27,6 +27,7 @@
     "build": "node scripts/generate-data.mjs && tsc -p tsconfig.json && tsc -p tsconfig.cjs.json && node scripts/mark-cjs.mjs",
     "convert": "python3 -I scripts/convert_missalemeum.py",
     "pretest": "npm run build",
+    "snapshot": "npm run build && node scripts/snapshot.mjs",
     "test": "node --test \"test/**/*.test.mjs\" \"test/**/*.test.cjs\"",
     "test:convert": "python3 -I scripts/test_convert_missalemeum.py"
   },

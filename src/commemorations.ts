@@ -1,3 +1,4 @@
+import { DEDICATION_KEY } from './church.js';
 import { tableItem, type Ranked } from './precedence.js';
 import type { CatalogueEntry } from './types.js';
 
@@ -23,9 +24,28 @@ export function isOfTheSeason(entry: CatalogueEntry): boolean {
   return 'temporal' in entry.date && entry.kind !== 'feast' && entry.kind !== 'commemoration';
 }
 
-/** Two feasts or mysteries of one divine Person (nos. 95, 112a). The Trinity is not of one Person. */
+// The dedication of a church is a feast of the Lord: the 1962 Missal says so at the head
+// of the Common of the Dedication ("Festum Dedicationis ecclesiae est festum Domini"). So
+// it takes a 2nd class Sunday without commemorating it (nos. 16a, 112b). It is not a feast
+// or mystery of a divine Person, which is what nos. 95 and 112a ask about, so it is
+// transferred like any 1st class feast when a feast of the Lord impedes it. The FSSP's
+// shrine at Warrington kept the dedication of its cathedral on Friday 15 May 2026, the
+// Ascension having fallen on its date, the 14th.
+const DEDICATIONS: ReadonlySet<string> = new Set([DEDICATION_KEY, 'dedication-of-the-archbasilica-of-our-holy-savior']);
+
+/** The divine Person a feast or mystery is of, where that is known. The Trinity is not of one Person. */
+function divinePerson(entry: CatalogueEntry): 'son' | null {
+  if (!entry.ofTheLord || entry.key === TRINITY || DEDICATIONS.has(entry.key)) return null;
+  return 'son';
+}
+
+/**
+ * Two feasts or mysteries of one divine Person (nos. 95, 112a). Both must be known to be
+ * of that Person: being feasts of the Lord is not enough.
+ */
 export function sameDivinePerson(a: CatalogueEntry, b: CatalogueEntry): boolean {
-  return a.ofTheLord && b.ofTheLord && a.key !== TRINITY && b.key !== TRINITY;
+  const person = divinePerson(a);
+  return person !== null && person === divinePerson(b);
 }
 
 // Observances in which the intercession of the Blessed Virgin is implored (no. 112d).

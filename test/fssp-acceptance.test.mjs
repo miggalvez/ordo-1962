@@ -44,10 +44,28 @@ for (const day of fixture.days) {
   });
 }
 
-test('against the whole FSSP 2026 page, first row, only the reviewed days differ', { skip: !process.env.FSSP_PAGE && 'set FSSP_PAGE to run' }, async () => {
-  const { compareWithFssp } = await import('../scripts/compare-fssp.mjs');
-  const reviewed = read('./fixtures/fssp-2026-differences.json').groups.flatMap((g) => g.dates).sort();
-  const found = compareWithFssp(readFileSync(process.env.FSSP_PAGE, 'utf8'), 2026, { nations: ['us'], institutes: ['fssp'] })
-    .map((d) => d.date).sort();
+const FSSP_PAGE = process.env.FSSP_PAGE;
+const withPage = { skip: !FSSP_PAGE && 'set FSSP_PAGE to run' };
+const LAYERS = { nations: ['us'], institutes: ['fssp'] };
+
+test('against the whole FSSP 2026 page, only the reviewed days differ, each in the reviewed way', withPage, async () => {
+  const { compareWithFssp, whatDiffers } = await import('../scripts/compare-fssp.mjs');
+  const reviewed = Object.assign({}, ...read('./fixtures/fssp-2026-differences.json').groups.map((g) => g.days));
+  const found = Object.fromEntries(compareWithFssp(readFileSync(FSSP_PAGE, 'utf8'), 2026, LAYERS).map((d) => [d.date, whatDiffers(d)]));
   assert.deepEqual(found, reviewed);
+});
+
+test('the FSSP comparison sees another saint of the same name and a feria of another season', withPage, async () => {
+  const { compareWithFssp, isSame } = await import('../scripts/compare-fssp.mjs');
+  const html = readFileSync(FSSP_PAGE, 'utf8');
+  const dates = (page) => compareWithFssp(page, 2026, LAYERS).map((d) => d.date);
+  const before = dates(html);
+  const claver = html.replace(/St\. Peter Claver(&comma;|,) Confessor/g, 'St. Peter');
+  assert.notEqual(claver, html);
+  assert.deepEqual(dates(claver).filter((date) => !before.includes(date)), ['2026-09-09']);
+  const lent = html.replaceAll('Feria of Lent', 'Feria of Advent');
+  assert.ok(dates(lent).length > before.length + 20, 'Lenten ferias printed as Advent ones are not noticed');
+  assert.ok(isSame('us-st-peter-claver', '(USA) St. Peter Claver, Confessor'));
+  assert.ok(!isSame('us-st-peter-claver', 'St. Peter'));
+  assert.ok(!isSame('quad1-2', 'Feria of Advent') && isSame('quad1-2', 'Feria of Lent'));
 });

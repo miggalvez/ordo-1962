@@ -2,9 +2,8 @@
  "nation": "us",
  "source": "The FSSP seminary's 2026 calendar (fsspolgs.org/liturgical-calendar), rows marked (USA), read 2026-11-09. To be confirmed against the printed Liturgical Ordo & FSSP Directory.",
  "toConfirm": [
-  "St. Elizabeth Ann Seton (4 January): the 2026 page cannot show her, since 4 January 2026 is the Holy Name on a Sunday, which admits no 3rd class commemoration (no. 111b).",
-  "St. Damien of Molokai (10 May) and St. Junipero Serra (1 July): both days are taken in 2026 (a Sunday; the Precious Blood).",
-  "Whether the printed ordo lists any further United States feast."
+  "Whether the printed ordo lists United States feasts the 2026 page does not show. A feast falling on a Sunday or a 1st class day in 2026 would not appear there.",
+  "The class and colour of the North American Martyrs: in 2026 they are only commemorated, on Ember Saturday."
  ],
  "observances": [
   {
@@ -55,7 +54,7 @@
    "names": {
     "la": "S. Franciscae Xaveriae Cabrini Virginis",
     "en": "St. Frances Xavier Cabrini, Virgin",
-    "es": "Santa Francisca Javier Cabrini, Virgen"
+    "es": "Santa Francisca Javiera Cabrini, Virgen"
    },
    "source": "(USA) St. Frances Xavier Cabrini, Virgin, III class, white, 13 November 2026"
   },

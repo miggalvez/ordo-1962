@@ -1,0 +1,365 @@
+2026-01-01 octave-day-of-christmas 1 white
+2026-01-02 feria 4 white
+2026-01-03 our-lady-on-saturday-christmastide 4 white
+2026-01-04 nat2-0 2 white
+2026-01-05 us-st-john-neumann 3 white | comm st-telesphorus-pope-and-martyr
+2026-01-06 epiphany-of-the-lord 1 white
+2026-01-07 feria 4 white
+2026-01-08 feria 4 white
+2026-01-09 feria 4 white
+2026-01-10 our-lady-on-saturday-christmastide 4 white
+2026-01-11 epi1-0 2 white
+2026-01-12 epi1-1 4 white
+2026-01-13 commemoration-of-the-baptism-of-the-lord 2 white
+2026-01-14 st-hilary 3 white | comm st-felix
+2026-01-15 st-paul-the-first-hermit 3 white | comm st-maur-abbot
+2026-01-16 st-marcellus-i 3 red
+2026-01-17 st-anthony-the-abbot 3 white
+2026-01-18 epi2-0 2 green
+2026-01-19 epi2-1 4 green | comm sts-marius-martha-audifax-and-abachum, st-canute-martyr
+2026-01-20 sts-fabian-and-sebastian 3 red
+2026-01-21 st-agnes 3 red
+2026-01-22 sts-vincent-and-anastasius 3 red
+2026-01-23 st-raymond-of-penafort 3 white | comm st-emerentiana
+2026-01-24 st-timothy 3 red
+2026-01-25 epi3-0 2 green
+2026-01-26 st-polycarp 3 red
+2026-01-27 st-john-chrysostom 3 white
+2026-01-28 st-peter-nolasco 3 white | comm st-agnes-01-28t
+2026-01-29 st-francis-de-sales 3 white
+2026-01-30 st-martina 3 red
+2026-01-31 st-john-bosco 3 white
+2026-02-01 quadp1-0 2 violet
+2026-02-02 purification-of-the-blessed-virgin-mary 2 white
+2026-02-03 quadp1-2 4 violet | comm st-blaise
+2026-02-04 st-andrew-corsini 3 white
+2026-02-05 st-agatha 3 red
+2026-02-06 st-titus 3 white | comm st-dorothy
+2026-02-07 st-romuald 3 white
+2026-02-08 quadp2-0 2 violet
+2026-02-09 st-cyril-of-alexandria 3 white | comm st-apollonia
+2026-02-10 st-scholastica 3 white
+2026-02-11 our-lady-of-lourdes 3 white
+2026-02-12 seven-holy-servite-founders 3 white
+2026-02-13 quadp2-5 4 violet
+2026-02-14 our-lady-on-saturday-after-purification 4 white | comm st-valentine
+2026-02-15 quadp3-0 2 violet
+2026-02-16 quadp3-1 4 violet
+2026-02-17 quadp3-2 4 violet
+2026-02-18 quadp3-3 1 violet
+2026-02-19 quadp3-4 3 violet
+2026-02-20 quadp3-5 3 violet
+2026-02-21 quadp3-6 3 violet
+2026-02-22 quad1-0 1 violet
+2026-02-23 chair-of-st-peter 1 white | comm quad1-1 | with st-paul | from 2026-02-22
+2026-02-24 st-matthias 2 red | comm quad1-2
+2026-02-25 quad1-3 2 violet
+2026-02-26 quad1-4 3 violet
+2026-02-27 quad1-5 2 violet | comm st-gabriel-of-our-lady-of-sorrows
+2026-02-28 quad1-6 2 violet
+2026-03-01 quad2-0 1 violet
+2026-03-02 quad2-1 3 violet
+2026-03-03 quad2-2 3 violet
+2026-03-04 quad2-3 3 violet | comm st-casimir, st-lucius
+2026-03-05 quad2-4 3 violet
+2026-03-06 quad2-5 3 violet | comm sts-felicitas-and-perpetua
+2026-03-07 quad2-6 3 violet | comm st-thomas-aquinas
+2026-03-08 quad3-0 1 violet
+2026-03-09 quad3-1 3 violet | comm st-frances-of-rome
+2026-03-10 quad3-2 3 violet | comm forty-holy-martyrs-of-sebaste
+2026-03-11 quad3-3 3 violet
+2026-03-12 quad3-4 3 violet | comm st-gregory-the-great
+2026-03-13 quad3-5 3 violet
+2026-03-14 quad3-6 3 violet
+2026-03-15 quad4-0 1 rose/violet
+2026-03-16 quad4-1 3 violet
+2026-03-17 quad4-2 3 violet | comm st-patrick
+2026-03-18 quad4-3 3 violet | comm st-cyril-of-jerusalem
+2026-03-19 st-joseph-spouse-of-the-bl-virgin-mary 1 white | comm quad4-4
+2026-03-20 quad4-5 3 violet
+2026-03-21 quad4-6 3 violet | comm st-benedict
+2026-03-22 quad5-0 1 violet
+2026-03-23 quad5-1 3 violet
+2026-03-24 quad5-2 3 violet | comm st-gabriel-the-archangel
+2026-03-25 annunciation-of-the-blessed-virgin-mary 1 white | comm quad5-3
+2026-03-26 quad5-4 3 violet
+2026-03-27 quad5-5 3 violet | comm st-john-damascene, seven-sorrows-in-passiontide
+2026-03-28 quad5-6 3 violet | comm st-john-of-capistrano
+2026-03-29 quad6-0 1 red/violet
+2026-03-30 quad6-1 1 violet
+2026-03-31 quad6-2 1 violet
+2026-04-01 quad6-3 1 violet
+2026-04-02 quad6-4 1 white
+2026-04-03 quad6-5 1 black/violet
+2026-04-04 quad6-6 1 violet/white
+2026-04-05 pasc0-0 1 white
+2026-04-06 pasc0-1 1 white
+2026-04-07 pasc0-2 1 white
+2026-04-08 pasc0-3 1 white
+2026-04-09 pasc0-4 1 white
+2026-04-10 pasc0-5 1 white
+2026-04-11 pasc0-6 1 white
+2026-04-12 pasc1-0 1 white
+2026-04-13 st-hermenegild 3 red
+2026-04-14 st-justin 3 red | comm sts-tiburtius-valerian-and-maximus-martyrs
+2026-04-15 pasc1-3 4 white
+2026-04-16 pasc1-4 4 white
+2026-04-17 pasc1-5 4 white | comm st-anicetus
+2026-04-18 our-lady-on-saturday-paschaltide 4 white
+2026-04-19 pasc2-0 2 white
+2026-04-20 pasc2-1 4 white
+2026-04-21 st-anselm 3 white
+2026-04-22 sts-soter-and-caius 3 red
+2026-04-23 pasc2-4 4 white | comm st-george
+2026-04-24 st-fidelis-of-sigmaringen 3 red
+2026-04-25 st-mark 2 red | comm for-the-rogations
+2026-04-26 pasc3-0 2 white
+2026-04-27 st-peter-canisius 3 white
+2026-04-28 st-paul-of-the-cross 3 white
+2026-04-29 st-peter-of-verona 3 red
+2026-04-30 st-catherine-of-siena 3 white
+2026-05-01 st-joseph-the-workman 1 white
+2026-05-02 st-athanasius 3 white
+2026-05-03 pasc4-0 2 white
+2026-05-04 st-monica 3 white
+2026-05-05 st-pius-v 3 white
+2026-05-06 pasc4-3 4 white
+2026-05-07 st-stanislaus 3 red
+2026-05-08 pasc4-5 4 white
+2026-05-09 st-gregory-nazianzen 3 white
+2026-05-10 pasc5-0 2 white
+2026-05-11 sts-philip-and-james 2 red
+2026-05-12 sts-nereus-achilleus-domitilla-and-pancras 3 red
+2026-05-13 pasc5-3 2 white | comm st-robert-bellarmine
+2026-05-14 pasc5-4 1 white
+2026-05-15 st-john-baptist-de-la-salle 3 white
+2026-05-16 st-ubaldus 3 white
+2026-05-17 pasc6-0 2 white
+2026-05-18 st-venantius 3 red
+2026-05-19 st-peter-celestine 3 white | comm st-pudentiana-virgin
+2026-05-20 st-bernardine-of-siena 3 white
+2026-05-21 pasc6-4 4 white
+2026-05-22 pasc6-5 4 white
+2026-05-23 pasc6-6 1 red
+2026-05-24 pasc7-0 1 red
+2026-05-25 pasc7-1 1 red
+2026-05-26 pasc7-2 1 red
+2026-05-27 pasc7-3 1 red
+2026-05-28 pasc7-4 1 red
+2026-05-29 pasc7-5 1 red
+2026-05-30 pasc7-6 1 red
+2026-05-31 pent01-0 1 white
+2026-06-01 st-angela-merici 3 white
+2026-06-02 pent01-2 4 green | comm sts-marcellinus-peter-and-erasmus
+2026-06-03 pent01-3 4 green
+2026-06-04 pent01-4 1 white
+2026-06-05 st-boniface-06-05 3 red
+2026-06-06 st-norbert 3 white
+2026-06-07 pent02-0 2 green
+2026-06-08 pent02-1 4 green
+2026-06-09 pent02-2 4 green | comm sts-primus-and-felicianus
+2026-06-10 st-margaret-of-scotland 3 white
+2026-06-11 st-barnabas 3 red
+2026-06-12 pent02-5 1 white
+2026-06-13 st-anthony-of-padua 3 white
+2026-06-14 pent03-0 2 green
+2026-06-15 pent03-1 4 green | comm st-vitus
+2026-06-16 pent03-2 4 green
+2026-06-17 st-gregory-barbarigo 3 white
+2026-06-18 st-ephrem-of-syria 3 white | comm sts-marcus-and-marcellianus
+2026-06-19 st-juliana-falconieri 3 white | comm sts-gervasius-and-protasius
+2026-06-20 our-lady-on-saturday-after-pentecost 4 white | comm st-silverius
+2026-06-21 pent04-0 2 green
+2026-06-22 st-paulinus-of-nola 3 white
+2026-06-23 vigil-of-the-nativity-of-st-john-the-baptist 2 violet
+2026-06-24 nativity-of-st-john-the-baptist 1 white
+2026-06-25 st-william 3 white
+2026-06-26 sts-john-and-paul 3 red
+2026-06-27 our-lady-on-saturday-after-pentecost 4 white
+2026-06-28 pent05-0 2 green
+2026-06-29 sts-peter-and-paul 1 red
+2026-06-30 commemoration-of-st-paul-the-apostle 3 red | with st-peter
+2026-07-01 the-precious-blood-of-our-lord-jesus-christ 1 red
+2026-07-02 visitation-of-the-blessed-virgin-mary 2 white | comm sts-processus-and-martinian
+2026-07-03 st-irenaeus 3 red
+2026-07-04 our-lady-on-saturday-after-pentecost 4 white
+2026-07-05 pent06-0 2 green
+2026-07-06 pent06-1 4 green
+2026-07-07 sts-cyril-and-methodius 3 white
+2026-07-08 st-elizabeth-of-portugal 3 white
+2026-07-09 pent06-4 4 green
+2026-07-10 seven-holy-brothers-and-sts-rufina-and-secunda 3 red
+2026-07-11 our-lady-on-saturday-after-pentecost 4 white | comm st-pius-i
+2026-07-12 pent07-0 2 green
+2026-07-13 pent07-1 4 green
+2026-07-14 st-bonaventure 3 white
+2026-07-15 st-henry-the-emperor 3 white
+2026-07-16 pent07-4 4 green | comm our-lady-of-mt-carmel
+2026-07-17 pent07-5 4 green | comm st-alexis
+2026-07-18 camillus-de-lellis 3 white | comm sts-symphorosa-and-sons
+2026-07-19 pent08-0 2 green
+2026-07-20 st-jerome-emiliani 3 white | comm st-margaret
+2026-07-21 st-laurence-of-brindisi 3 white | comm st-praxedes-virgin
+2026-07-22 st-mary-magdalene 3 white
+2026-07-23 st-apollinaris 3 red | comm st-liborius
+2026-07-24 pent08-5 4 green | comm st-christina
+2026-07-25 st-james-the-greater 2 red | comm st-christopher
+2026-07-26 pent09-0 2 green | comm st-anne-mother-of-the-blessed-virgin
+2026-07-27 pent09-1 4 green | comm st-pantaleon
+2026-07-28 sts-nazarius-and-celsus-st-victor-i-and-st-innocent-i 3 red
+2026-07-29 st-martha 3 white | comm sts-felix-simplicius-faustinus-and-beatrice
+2026-07-30 pent09-4 4 green | comm sts-abdon-and-sennen
+2026-07-31 st-ignatius-loyola 3 white
+2026-08-01 our-lady-on-saturday-after-pentecost 4 white | comm holy-machabees
+2026-08-02 pent10-0 2 green
+2026-08-03 pent10-1 4 green
+2026-08-04 st-dominic 3 white
+2026-08-05 dedication-of-the-basilica-of-st-mary-major 3 white
+2026-08-06 transfiguration-of-our-lord 2 white | comm pope-sixtus-ii-felicissimus-and-agapitus-martyrs
+2026-08-07 st-cajetan 3 white | comm st-donatus
+2026-08-08 st-john-mary-vianney 3 white | comm sts-cyriacus-largus-and-smaragdus-martyrs
+2026-08-09 pent11-0 2 green
+2026-08-10 st-lawrence 2 red
+2026-08-11 pent11-2 4 green | comm sts-tiburtius-and-susanna
+2026-08-12 st-clare 3 white
+2026-08-13 pent11-4 4 green | comm sts-hippolytus-and-cassian
+2026-08-14 vigil-of-the-assumption 2 violet | comm st-eusebius
+2026-08-15 assumption-of-the-blessed-virgin-mary 1 white
+2026-08-16 pent12-0 2 green | comm st-joachim-father-of-the-blessed-virgin
+2026-08-17 st-hyacinth 3 white
+2026-08-18 pent12-2 4 green | comm st-agapitus
+2026-08-19 st-john-eudes 3 white
+2026-08-20 st-bernard-of-clairvaux 3 white
+2026-08-21 st-jane-frances-de-chantal 3 white
+2026-08-22 immaculate-heart-of-mary 2 white | comm sts-timothy-hippolytus-and-symphorianus-martyrs
+2026-08-23 pent13-0 2 green
+2026-08-24 st-bartholomew 2 red
+2026-08-25 st-louis-ix 3 white
+2026-08-26 pent13-3 4 green | comm st-zephyrinus
+2026-08-27 st-joseph-calasance 3 white
+2026-08-28 st-augustine 3 white | comm st-hermes
+2026-08-29 beheading-of-st-john-the-baptist 3 red | comm st-sabina
+2026-08-30 pent14-0 2 green
+2026-08-31 st-raymond-nonnatus 3 white
+2026-09-01 pent14-2 4 green | comm st-giles, twelve-holy-brothers-martyrs
+2026-09-02 st-stephen-of-hungary 3 white
+2026-09-03 st-pius-x 3 white
+2026-09-04 pent14-5 4 green
+2026-09-05 st-lawrence-justinian 3 white
+2026-09-06 pent15-0 2 green
+2026-09-07 pent15-1 4 green
+2026-09-08 nativity-of-the-blessed-virgin-mary 2 white | comm st-hadrian
+2026-09-09 us-st-peter-claver 3 white | comm st-gorgonius
+2026-09-10 st-nicholas-of-tolentino 3 white
+2026-09-11 pent15-5 4 green | comm sts-protus-and-hyacinth
+2026-09-12 most-holy-name-of-mary 3 white
+2026-09-13 pent16-0 2 green
+2026-09-14 exaltation-of-the-holy-cross 2 red
+2026-09-15 seven-sorrows-of-the-blessed-virgin-mary 2 white | comm st-nicomedes
+2026-09-16 sts-cornelius-and-cyprian 3 red | comm sts-euphemia-lucy-and-geminianus
+2026-09-17 pent16-4 4 green | comm stigmata-of-st-francis
+2026-09-18 st-joseph-of-cupertino 3 white
+2026-09-19 st-januarius-and-companions 3 red
+2026-09-20 pent17-0 2 green
+2026-09-21 st-matthew 2 red
+2026-09-22 st-thomas-of-villanova 3 white | comm st-maurice-and-companions-martyrs
+2026-09-23 sep-ember-3 2 violet | comm st-linus
+2026-09-24 pent17-4 4 green | comm our-lady-of-ransom
+2026-09-25 sep-ember-5 2 violet
+2026-09-26 sep-ember-6 2 violet | comm us-north-american-martyrs
+2026-09-27 pent18-0 2 green
+2026-09-28 st-wenceslaus 3 red
+2026-09-29 dedication-of-st-michael-the-archangel 1 white
+2026-09-30 st-jerome 3 white
+2026-10-01 pent18-4 4 green | comm st-remigius
+2026-10-02 holy-guardian-angels 3 white
+2026-10-03 st-theresa-of-the-infant-jesus 3 white
+2026-10-04 pent19-0 2 green
+2026-10-05 pent19-1 4 green | comm st-placid-and-companions
+2026-10-06 st-bruno 3 white
+2026-10-07 our-lady-of-the-rosary 2 white | comm st-mark-i
+2026-10-08 st-bridget-of-sweden 3 white | comm sts-sergius-bacchus-marcellus-and-apuleius-martyrs
+2026-10-09 st-john-leonardi 3 white | comm st-dionysius-and-companions
+2026-10-10 st-francis-borgia 3 white
+2026-10-11 pent20-0 2 green | comm maternity-of-the-blessed-virgin-mary
+2026-10-12 pent20-1 4 green
+2026-10-13 st-edward 3 white
+2026-10-14 st-callistus-i 3 red
+2026-10-15 st-teresa-of-avila 3 white
+2026-10-16 st-hedwig 3 white
+2026-10-17 st-margaret-mary-alacoque 3 white
+2026-10-18 pent21-0 2 green | comm st-luke-the-evangelist
+2026-10-19 st-peter-of-alcantara 3 white
+2026-10-20 st-john-cantius 3 white
+2026-10-21 pent21-3 4 green | comm st-hilarion, st-ursula-and-companions
+2026-10-22 pent21-4 4 green
+2026-10-23 st-anthony-mary-claret 3 white
+2026-10-24 st-raphael-the-archangel 3 white
+2026-10-25 christ-the-king 1 white
+2026-10-26 pent22-1 4 green | comm st-evaristus
+2026-10-27 pent22-2 4 green
+2026-10-28 sts-simon-and-jude 2 red
+2026-10-29 pent22-4 4 green
+2026-10-30 pent22-5 4 green
+2026-10-31 our-lady-on-saturday-after-pentecost 4 white
+2026-11-01 all-saints 1 white | comm pent23-0
+2026-11-02 commemoration-of-all-souls 1 black
+2026-11-03 pent23-2 4 green
+2026-11-04 st-charles-borromeo 3 white | comm sts-vitalis-and-agricola-martyrs
+2026-11-05 pent23-4 4 green
+2026-11-06 pent23-5 4 green
+2026-11-07 our-lady-on-saturday-after-pentecost 4 white
+2026-11-08 epi5-0 2 green
+2026-11-09 dedication-of-the-archbasilica-of-our-holy-savior 2 white | comm st-theodore
+2026-11-10 st-andrew-avellino 3 white | comm sts-tryphon-respicius-and-nympha
+2026-11-11 st-martin-of-tours 3 white | comm st-menas
+2026-11-12 st-martin-i 3 red
+2026-11-13 us-st-frances-xavier-cabrini 3 white | comm st-didacus
+2026-11-14 st-josaphat 3 red
+2026-11-15 epi6-0 2 green
+2026-11-16 st-gertrude-the-great 3 white
+2026-11-17 st-gregory-the-wonderworker 3 white
+2026-11-18 dedication-of-the-basilicas-of-sts-peter-and-paul 3 white
+2026-11-19 st-elizabeth-of-hungary 3 white | comm st-pontian
+2026-11-20 st-felix-of-valois 3 white
+2026-11-21 presentation-of-the-blessed-virgin-mary 3 white
+2026-11-22 pent24-0 2 green
+2026-11-23 st-clement-i 3 red | comm st-felicity
+2026-11-24 st-john-of-the-cross 3 white | comm st-chrysogonus
+2026-11-25 st-catherine-of-alexandria 3 red
+2026-11-26 st-sylvester-gozzolini 3 white | comm st-peter-of-alexandria
+2026-11-27 pent24-5 4 green
+2026-11-28 our-lady-on-saturday-after-pentecost 4 white
+2026-11-29 adv1-0 1 violet
+2026-11-30 st-andrew 2 red | comm adv1-1
+2026-12-01 adv1-2 3 violet
+2026-12-02 st-vivian 3 red | comm adv1-3
+2026-12-03 st-francis-xavier 3 white | comm adv1-4
+2026-12-04 st-peter-chrysologus 3 white | comm adv1-5, st-barbara
+2026-12-05 adv1-6 3 violet | comm st-sabbas
+2026-12-06 adv2-0 1 violet
+2026-12-07 st-ambrose 3 white | comm adv2-1
+2026-12-08 immaculate-conception-of-the-blessed-virgin-mary 1 white | comm adv2-2
+2026-12-09 adv2-3 3 violet
+2026-12-10 adv2-4 3 violet | comm st-melchiades
+2026-12-11 st-damasus-i 3 white | comm adv2-5
+2026-12-12 us-our-lady-of-guadalupe 3 white | comm adv2-6
+2026-12-13 adv3-0 1 rose/violet
+2026-12-14 adv3-1 3 violet
+2026-12-15 adv3-2 3 violet
+2026-12-16 adv3-3 2 violet | comm st-eusebius-12-16
+2026-12-17 adv3-4 2 violet
+2026-12-18 adv3-5 2 violet
+2026-12-19 adv3-6 2 violet
+2026-12-20 adv4-0 1 violet
+2026-12-21 st-thomas-the-apostle 2 red | comm adv4-1
+2026-12-22 adv4-2 2 violet
+2026-12-23 adv4-3 2 violet
+2026-12-24 vigil-of-christmas 1 violet
+2026-12-25 the-nativity-of-our-lord 1 white
+2026-12-26 st-stephen 2 red | comm for-octave-of-the-nativity
+2026-12-27 nat1-0 2 white | comm st-john-the-evangelist
+2026-12-28 holy-innocents 2 red | comm for-octave-of-the-nativity-12-28c
+2026-12-29 nat1-1 2 white | comm st-thomas-becket
+2026-12-30 nat1-1 2 white
+2026-12-31 nat1-1 2 white | comm st-sylvester-i-pope

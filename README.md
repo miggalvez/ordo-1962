@@ -27,13 +27,54 @@ resolveDay('2026-07-26', parish).celebration.key;  // the titular, with the Sund
 
 Layers apply in order: nations, then institutes, then the church. Every proper
 feast takes the place the table of precedence gives proper feasts (no. 91 items
-12, 19, 23). A church's feasts are of the 1st class; when impeded they are
-transferred (no. 96), into January if need be. `scripts/check-titulars.mjs`
-places a titular on every date of 2026-2055 and checks it is kept once each year.
+12, 19, 23).
 
-The United States and FSSP layers come from the FSSP seminary's 2026 calendar and
-list what that one year cannot show (`toConfirm`), to be checked against the
-printed *Liturgical Ordo & FSSP Directory*.
+A church's feasts are of the 1st class (no. 45):
+
+- A feast the calendar has is raised where the calendar keeps it: on its movable
+  day (`'epi1-0'` for a church of the Holy Family), on its leap-year date, and
+  under the nation's entry where a nation keeps it on another date. A feast
+  already of the 1st class is left alone.
+- A feast the calendar lacks needs a `date` and `colors`. A date that does not
+  exist, 29 February and an unknown colour are refused.
+- On one date the patron of the place comes first, then the dedication, then
+  the titular (item 12, 3 to 5). One saint who is both patron and titular is
+  kept once.
+- A feast of the 1st or 2nd class that another always impedes in that church is
+  kept for good on the nearest following day that is not of the 1st or 2nd
+  class (nos. 100-102). With the dedication on 10 August, St. Lawrence is on
+  the 11th every year; a titular on the Assumption is on 17 August. That day is
+  then its own, so `transferredFrom` is not set, and its vigil is dropped. This
+  is applied only where one of the two is the church's own feast.
+- Impeded by accident, a church's feast is transferred (no. 96), into January
+  if need be.
+- The dedication is a feast of the Lord (the Missal says so at the head of the
+  Common of the Dedication), so it takes a 2nd class Sunday without
+  commemorating it. It is not a feast of a divine Person in the sense of no.
+  95, so it is transferred, not omitted, when the Ascension, Corpus Christi,
+  the Sacred Heart or Christ the King falls on it: with the dedication on 12
+  June, 2026 has the Sacred Heart on Friday the 12th and the dedication on
+  Saturday the 13th. The FSSP's shrine at Warrington kept its cathedral's
+  dedication this way on 15 May 2026, after the Ascension on the 14th.
+
+`scripts/check-titulars.mjs` places a titular on every date of 2026-2055 and
+checks that it is kept once each year and that no fixed feast of the 1st or 2nd
+class is dropped on its day; with `--dedication` it does the same for the
+dedication.
+
+Not done:
+
+- Church feasts below the 1st class (a saint whose body the church keeps, no.
+  45c; secondary patrons).
+- The right no. 100 gives proper 3rd class feasts.
+
+The United States layer comes from the FSSP seminary's 2026 calendar. The FSSP
+layer raises the Chair of St. Peter to the 1st class, on the Fraternity's own
+statements; in 2026 it is kept on Monday 23 February, the 22nd being the 1st
+Sunday of Lent. Both list what is still to be checked against the printed
+*Liturgical Ordo & FSSP Directory* (`toConfirm`). The Masses for certain places
+that the seminary's page prints on some ferias are not in the calendar; they are
+listed in `data/layers/fssp.json` for the Masses an ordo offers.
 
 ## Use
 
@@ -102,8 +143,10 @@ time zone. `npm run build` writes `dist/`; `npm test` builds first.
 | `data/names/{la,en,pl}.json` | Titles by key |
 | `data/keys.json` | Missale Meum id → key. Keys never change once assigned |
 | `data/missalemeum/` | Provenance: source commit, file hashes, all source ids, and Missale Meum's reference lists |
-| `data/layers/us.json`, `data/layers/fssp.json` | The United States and FSSP propers, written by hand: each observance with its date, class, colours, Latin, English and Spanish names and where it was found |
-| `test/fixtures/fssp-2026-differences.json` | Every 2026 day on which the engine, with both layers, differs from the first row the FSSP seminary prints, in three reviewed groups. Set `FSSP_PAGE` to a saved copy of the page to re-check in `npm test` |
+| `data/layers/us.json` | The United States proper, written by hand: each observance with its date, class, colours, Latin, English and Spanish names and where it was found |
+| `data/layers/fssp.json` | The FSSP's proper: the Chair of St. Peter raised to the 1st class, with its sources, and the Masses for certain places that are left out of the calendar |
+| `test/fixtures/fssp-2026-differences.json` | Every 2026 day on which the engine, with both layers, differs from the FSSP seminary's page, and how: 30 days in five reviewed groups. Set `FSSP_PAGE` to a saved copy of the page to re-check in `npm test` |
+| `test/fixtures/snapshots/` | Whole years with the United States and FSSP propers, 2026-2030, one line a day. `npm run snapshot` rewrites them; the diff shows which days a change moves |
 | `data/layers/pl.json` | Missale Meum's Polish proper as operations on the universal calendar: feasts added, removed, or added in place of another (St. Stanislaus moves from 7 to 8 May), and the order of a day's entries where Poland lists them differently |
 | `data/reviewed/feasts-of-the-lord.json` | Hand-reviewed list behind `ofTheLord`, with the rubric or source for each entry. The rubrics give no complete list |
 | `data/reviewed/additions.json` | Observances of the universal calendar that Missale Meum lacks (St. Barbara on 4 December), with where each was confirmed |

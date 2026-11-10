@@ -88,14 +88,33 @@ export function tableItem({ entry, class: cls }: Ranked): number | null {
 }
 
 /**
- * Order two observances that both have a place in the table: the higher item
- * first; within an item, movable before fixed (no. 91 items 13, 14, 20, 23, 24),
- * then the order the calendar lists them in.
+ * The place of a proper 1st class feast within item 12 (1 to 8). A nation's feast
+ * is taken as its patron's (1), an institute's as its titular (6) and a church's
+ * as its titular (5) unless the entry says otherwise.
  */
-export function compareRanked(a: Ranked, b: Ranked): number {
+export function properPlace(entry: CatalogueEntry): number {
+  if (entry.properItem !== undefined) return entry.properItem;
+  if (entry.scope === 'national') return 1;
+  if (entry.scope === 'institute') return 6;
+  return 5;
+}
+
+/** Order by the table: the item, and within item 12 its own numbered list (nos. 97-98). */
+export function compareByTable(a: Ranked, b: Ranked): number {
   const ia = tableItem(a) ?? Infinity;
   const ib = tableItem(b) ?? Infinity;
   if (ia !== ib) return ia - ib;
+  return ia === 12 ? properPlace(a.entry) - properPlace(b.entry) : 0;
+}
+
+/**
+ * Order two observances that both have a place in the table: the higher item
+ * first; within item 12 its own list; within an item, movable before fixed
+ * (no. 91 items 13, 14, 20, 23, 24), then the order the calendar lists them in.
+ */
+export function compareRanked(a: Ranked, b: Ranked): number {
+  const byTable = compareByTable(a, b);
+  if (byTable !== 0) return byTable;
   if (a.movable !== b.movable) return a.movable ? -1 : 1;
   return (a.entry.dayOrder ?? 0) - (b.entry.dayOrder ?? 0);
 }

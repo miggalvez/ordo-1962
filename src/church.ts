@@ -1,15 +1,16 @@
-import { CATALOGUE } from './generated/data.js';
-import type { CatalogueEntry, Color } from './types.js';
+import type { Color } from './types.js';
 
-// A church's own 1st class feasts (General Rubrics no. 91 item 12): its titular,
-// the anniversary of its dedication, and the principal patron of the place.
+// A church's own 1st class feasts (General Rubrics nos. 44-45; no. 91 item 12):
+// the principal patron of the place, the anniversary of its dedication, and its
+// titular. How they join the calendar is in proper.ts.
 
 /** A feast a church keeps as of the 1st class. */
 export interface ChurchFeast {
   /**
-   * A catalogue key, to raise that observance to the 1st class on its own date
-   * (for example `'st-anne'` for a church of St. Anne), or a new key for a feast
-   * the calendar does not have, which then needs `date` and `colors`.
+   * A catalogue key, to raise that observance to the 1st class where the calendar
+   * has it (for example `'st-anne-mother-of-the-blessed-virgin'`, or `'epi1-0'`
+   * for a church of the Holy Family), or a new key for a feast the calendar does
+   * not have, which then needs `date` and `colors`.
    */
   readonly key: string;
   /** Month and day, `MM-DD`, for a new feast. */
@@ -30,71 +31,28 @@ export interface Church {
 
 export const DEDICATION_KEY = 'anniversary-of-the-dedication-of-the-church';
 
-const BY_KEY = new Map(CATALOGUE.map((entry) => [entry.key, entry]));
-const MONTH_DAY = /^(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$/;
+/** Places within no. 91 item 12. */
+export const PATRON_OF_THE_PLACE = 3;
+export const DEDICATION = 4;
+export const TITULAR = 5;
 
-export interface ChurchProper {
-  /** The church's feasts, as catalogue entries with `scope: 'church'`. */
-  readonly entries: readonly CatalogueEntry[];
-  /** Observances of the calendar that the church's own entries replace. */
-  readonly replaces: ReadonlySet<string>;
+const DAYS_IN_MONTH = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+const COLORS: ReadonlySet<string> = new Set(['white', 'red', 'green', 'violet', 'black', 'rose']);
+
+/** A month and day that exist every year, as `MM-DD`. */
+export function checkMonthDay(value: unknown, what: string): string {
+  const match = typeof value === 'string' ? /^(\d\d)-(\d\d)$/.exec(value) : null;
+  const month = match ? Number(match[1]) : 0;
+  const day = match ? Number(match[2]) : 0;
+  if (!match || month < 1 || month > 12 || day < 1 || day > (DAYS_IN_MONTH[month - 1] as number)) {
+    throw new RangeError(`${what} needs a date as MM-DD; ${JSON.stringify(value)} is not one`);
+  }
+  if (value === '02-29') throw new RangeError(`${what} cannot be kept on 29 February, which comes once in four years; give the date it has every year`);
+  return value as string;
 }
 
-function feastEntry(feast: ChurchFeast): { entry?: CatalogueEntry; replaces?: string } {
-  const existing = BY_KEY.get(feast.key);
-  if (existing) {
-    if (feast.date !== undefined) throw new RangeError(`${feast.key} is in the calendar; give it without a date`);
-    if (!('fixed' in existing.date)) throw new RangeError(`${feast.key} has no fixed date; a movable titular is not supported yet`);
-    // Already of the 1st class in the universal calendar: it keeps its higher place (item 11).
-    if (existing.class === 1 && existing.scope === 'universal') return {};
-    const { dayOrder: _order, formularyOf: _formulary, sourceId: _source, sourceAliases: _aliases, ...rest } = existing;
-    return {
-      entry: { ...rest, date: { fixed: existing.date.fixed }, kind: 'feast', class: 1, scope: 'church' },
-      replaces: feast.key,
-    };
-  }
-  if (!feast.date || !MONTH_DAY.test(feast.date)) throw new RangeError(`${feast.key} is not in the calendar; it needs a date as MM-DD`);
-  if (!feast.colors?.length) throw new RangeError(`${feast.key} is not in the calendar; it needs colors`);
-  return {
-    entry: {
-      key: feast.key,
-      date: { fixed: feast.date },
-      kind: 'feast',
-      class: 1,
-      colors: [...feast.colors],
-      ofTheLord: feast.ofTheLord === true,
-      ...(feast.ofOurLady ? { ofOurLady: true } : {}),
-      scope: 'church',
-    },
-  };
-}
-
-export function churchProper(church: Church | undefined): ChurchProper {
-  const entries: CatalogueEntry[] = [];
-  const replaces = new Set<string>();
-  if (!church) return { entries, replaces };
-  for (const feast of [church.titular, ...(church.patrons ?? [])]) {
-    if (!feast) continue;
-    const { entry, replaces: replaced } = feastEntry(feast);
-    if (entry) {
-      if (entries.some((e) => e.key === entry.key)) throw new RangeError(`${entry.key} is given twice`);
-      entries.push(entry);
-    }
-    if (replaced) replaces.add(replaced);
-  }
-  if (church.dedication !== undefined) {
-    if (!MONTH_DAY.test(church.dedication)) throw new RangeError('dedication must be a date as MM-DD');
-    // The dedication of a church is kept as a feast of the Lord, as the Lateran's is
-    // (data/reviewed/feasts-of-the-lord.json).
-    entries.push({
-      key: DEDICATION_KEY,
-      date: { fixed: church.dedication },
-      kind: 'feast',
-      class: 1,
-      colors: ['white'],
-      ofTheLord: true,
-      scope: 'church',
-    });
-  }
-  return { entries, replaces };
+export function checkColors(value: readonly Color[] | undefined, what: string): Color[] {
+  if (!value?.length) throw new RangeError(`${what} needs colors`);
+  for (const color of value) if (!COLORS.has(color)) throw new RangeError(`${what}: ${JSON.stringify(color)} is not a liturgical colour`);
+  return [...value];
 }

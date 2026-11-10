@@ -43,6 +43,12 @@ export interface CatalogueEntry {
   readonly scope: 'universal' | 'national' | 'institute' | 'church';
   readonly nation?: string;
   readonly institute?: string;
+  /**
+   * For a proper 1st class feast, its place within no. 91 item 12 (1 to 8): 3 the
+   * principal patron of the place, 4 the dedication of the church, 5 its titular,
+   * 6 to 8 an institute's titular, founder and patron. Absent, the scope decides.
+   */
+  readonly properItem?: number;
 }
 
 /** An observance a hand-written layer defines. Its names stay in the layer file. */
@@ -61,6 +67,12 @@ export interface LayerObservance {
 export type LayerOperation =
   | { readonly op: 'add'; readonly key: string; readonly replaces?: string }
   | { readonly op: 'remove'; readonly key: string }
+  /**
+   * The layer keeps an observance of the calendar at a higher rank (nos. 42-46): a
+   * patron or a titular. The key stays, so everything known about the observance
+   * by its key still holds.
+   */
+  | { readonly op: 'raise'; readonly key: string; readonly class: 1 | 2; readonly properItem?: number; readonly source?: string }
   /** The layer lists this fixed date's entries in this order. */
   | { readonly op: 'order'; readonly date: string; readonly keys: readonly string[] };
 

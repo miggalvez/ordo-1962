@@ -41,6 +41,20 @@ function sim(a, b) {
   return x.filter((t) => y.some((u) => tm(t, u))).length / Math.min(x.length, y.length);
 }
 
+/**
+ * How much of each name is found in the other: [share of the shorter, share of the longer].
+ * A stricter caller asks for both, so that "St. Peter" is not "St. Peter Claver".
+ */
+export function overlap(a, b) {
+  const x = tokens(a);
+  const y = tokens(b);
+  if (!x.length || !y.length) return x.length === y.length ? [1, 1] : [0, 0];
+  const [fewer, more] = numbers(x).length <= numbers(y).length ? [numbers(x), numbers(y)] : [numbers(y), numbers(x)];
+  if (fewer.length && !fewer.every((t) => more.includes(t))) return [0, 0];
+  const matched = x.filter((t) => y.some((u) => tm(t, u))).length;
+  return [matched / Math.min(x.length, y.length), matched / Math.max(x.length, y.length)];
+}
+
 // Two names are the same observance when more than half the words of the shorter one are
 // found in the other. Exactly half is not enough: St. John Damascene is not St. John Chrysostom.
 const MATCH = 0.51;
@@ -70,7 +84,7 @@ const ALIASES = {
   'pasc6-4': 'Thursday after the Sunday after the Ascension',
   'pasc6-5': 'Friday after the Sunday after the Ascension',
 };
-const nameOf = (key) => NAMES[key] ?? key;
+export const nameOf = (key) => NAMES[key] ?? key;
 const isFeriaKey = (key) => /^(adv|quad|quadp|epi|pent|pasc|sep-ember)\d*-[1-6]$|^sep-ember-\d$|^feria$/.test(key);
 export function score(key, name) {
   // The Ordo calls a feria or its commemoration "Of the feria", "Feria" or by its date.

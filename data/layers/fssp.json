@@ -1,57 +1,68 @@
 {
  "institute": "fssp",
- "source": "The FSSP seminary's 2026 calendar (fsspolgs.org/liturgical-calendar), commemorations it prints that the universal calendar does not have, read 2026-11-09. To be confirmed against the printed Liturgical Ordo & FSSP Directory, including whether they are kept throughout the Fraternity or only in North America.",
+ "source": "The Fraternity's own statements of its proper feast (below). The printed Liturgical Ordo & FSSP Directory is still to be read for anything further.",
  "toConfirm": [
-  "Whether the Fraternity has proper feasts of its own that the 2026 page does not show.",
-  "The Commemoration of All Holy Popes, printed on Saturday 4 July 2026 as a Mass and a commemoration; its proper date is not clear from one year.",
-  "Our Lady of Perpetual Help (27 June) and Our Lady of the Miraculous Medal (27 November) are printed as Masses but not as commemorations; they belong to the Masses an ordo offers, not to this layer."
+  "Whether the Chair of St. Peter is kept as the Fraternity's titular (no. 91 item 12.6) or as its patron's feast (item 12.8). The Fraternity describes itself as under the patronage of the Prince of the Apostles, so it is entered as 12.8; the two differ only when both fall with another proper 1st class feast.",
+  "Whether the Fraternity has further proper feasts (a founder's, a secondary patron's) in the printed ordo.",
+  "The transfer in 2026: 22 February was the 1st Sunday of Lent, so no. 96 moves the feast to Monday 23 February. Neither the seminary's page nor the French district's page shows it; a parish bulletin from Omaha is reported to."
  ],
- "observances": [
-  {
-   "key": "fssp-apparition-of-st-michael",
-   "date": { "fixed": "05-08" },
-   "kind": "commemoration",
-   "class": 4,
-   "colors": ["white"],
-   "names": {
-    "la": "In Apparitione S. Michaelis Archangeli",
-    "en": "Apparition of St. Michael the Archangel",
-    "es": "Aparición de San Miguel Arcángel"
+ "notInTheCalendar": {
+  "about": "Masses the FSSP seminary's 2026 page (fsspolgs.org/liturgical-calendar) prints beside the day's own, most of them also as a commemoration in the feria's row. They are Masses for certain places, offered as alternatives on a 4th class day, and are not entered here. The French district's monthly ordo (fssp.fr/ordo-du-mois) prints a plain feria on 8 May (2020, 2023, 2025), 6 July (2020, 2023), 27 June (2023) and 4 July (2023, 2024), and the Institute of Christ the King lists the 8 May Masses as alternatives to the feria. They belong to the Masses an ordo offers (M7).",
+  "masses": [
+   {
+    "date": "05-08",
+    "name": "Apparition of St. Michael the Archangel",
+    "commemoratedOnThePage": true
    },
-   "source": "Commemorated on 8 May 2026, and printed as a 4th class Mass"
-  },
-  {
-   "key": "fssp-our-lady-mediatrix-of-all-graces",
-   "date": { "fixed": "05-08" },
-   "kind": "commemoration",
-   "class": 4,
-   "colors": ["white"],
-   "ofOurLady": true,
-   "names": {
-    "la": "Beatae Mariae Virginis Mediatricis omnium gratiarum",
-    "en": "Our Lady, Mediatrix of All Graces",
-    "es": "Nuestra Señora, Medianera de todas las gracias"
+   {
+    "date": "05-08",
+    "name": "Our Lady, Mediatrix of All Graces",
+    "commemoratedOnThePage": true
    },
-   "source": "Commemorated on 8 May 2026, after the Apparition of St. Michael, and printed as a 4th class Mass"
-  },
-  {
-   "key": "fssp-st-maria-goretti",
-   "date": { "fixed": "07-06" },
-   "kind": "commemoration",
-   "class": 4,
-   "colors": ["red"],
-   "names": {
-    "la": "S. Mariae Goretti Virginis et Martyris",
-    "en": "St. Maria Goretti, Virgin and Martyr",
-    "es": "Santa María Goretti, Virgen y Mártir"
+   {
+    "date": "06-27",
+    "name": "Our Lady of Perpetual Help",
+    "commemoratedOnThePage": true
    },
-   "source": "Commemorated on 6 July 2026, and printed as a 4th class Mass in red"
-  }
- ],
+   {
+    "date": "07-04",
+    "name": "Commemoration of All Holy Popes",
+    "commemoratedOnThePage": true
+   },
+   {
+    "date": "07-06",
+    "name": "St. Maria Goretti, Virgin and Martyr",
+    "commemoratedOnThePage": true
+   },
+   {
+    "date": "08-01",
+    "name": "St. Peter in Chains",
+    "commemoratedOnThePage": false
+   },
+   {
+    "date": "08-03",
+    "name": "Finding of the Body of St. Stephen, Protomartyr",
+    "commemoratedOnThePage": false
+   },
+   {
+    "date": "11-05",
+    "name": "Holy Relics",
+    "commemoratedOnThePage": true
+   },
+   {
+    "date": "11-27",
+    "name": "Our Lady of the Miraculous Medal",
+    "commemoratedOnThePage": false
+   }
+  ]
+ },
  "operations": [
-  { "op": "add", "key": "fssp-apparition-of-st-michael" },
-  { "op": "add", "key": "fssp-our-lady-mediatrix-of-all-graces" },
-  { "op": "add", "key": "fssp-st-maria-goretti" },
-  { "op": "order", "date": "05-08", "keys": ["fssp-apparition-of-st-michael", "fssp-our-lady-mediatrix-of-all-graces"] }
+  {
+   "op": "raise",
+   "key": "chair-of-st-peter",
+   "class": 1,
+   "properItem": 8,
+   "source": "fssp.com/happy-feast-of-the-chair-of-st-peter (22 February 2019): 'we celebrate it as a first class feast'. fssp.fr/ordo-du-mois, 22 February 2025: 'Chaire de Saint Pierre (fête spéciale pour la FSSP) (1ère classe, Blanc)'. General Rubrics no. 46."
+  }
  ]
 }

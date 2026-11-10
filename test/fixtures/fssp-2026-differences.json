@@ -1,21 +1,66 @@
 {
- "about": "Every day of 2026 on which the engine, with the United States and FSSP layers, differs from the first row the FSSP seminary prints (fsspolgs.org/liturgical-calendar, read 2026-11-09), on celebration, class or commemorations. The page is not in this repository; set FSSP_PAGE to a saved copy to re-check.",
+ "about": "Every day of 2026 on which the engine, with the United States and FSSP layers, differs from the FSSP seminary's page (fsspolgs.org/liturgical-calendar, read 2026-11-09) on celebration, class or commemorations, and how it differs. The first printed row is scored; where that row is another Mass, the row for the day's own celebration is scored as well. The page is not in this repository; set FSSP_PAGE to a saved copy to re-check.",
  "groups": [
   {
    "group": "another Mass printed first",
-   "why": "The page prints first a Mass the ordo permits beside the day's own: First Friday and First Saturday votives, the Requiem of November, the Rogation Mass, a Mass granted for some places, or a commemorated saint taken as the Mass of a 4th class day. The day's own celebration is printed below it. These belong to the Masses an ordo offers (M7), not to the calendar.",
-   "dates": ["2026-01-02", "2026-01-03", "2026-02-14", "2026-04-17", "2026-05-11", "2026-06-27", "2026-07-04", "2026-08-01", "2026-09-04", "2026-09-24", "2026-10-01", "2026-11-03", "2026-11-05", "2026-11-06", "2026-11-07", "2026-11-27", "2026-12-05"],
-   "note": "On 4 July the page also commemorates All Holy Popes, which data/layers/fssp.json lists to confirm."
+   "why": "The page prints first a Mass the ordo permits beside the day's own: First Friday and First Saturday votives, the Requiem of November, the Rogation Mass, a Mass for certain places, or a commemorated saint taken as the Mass of a 4th class day. Where the page also prints the day's own celebration lower down, that row is compared too ('own row'). These belong to the Masses an ordo offers (M7), not to the calendar.",
+   "note": "On 27 June, 4 July and 5 November the day's own row commemorates a Mass for certain places (Our Lady of Perpetual Help, All Holy Popes, Holy Relics); see the next group. On 5 December the first row commemorates the Advent feria because the Mass is a votive one.",
+   "days": {
+    "2026-01-02": "feria / Sacred Heart of Jesus | class 4 / 3 | no own row",
+    "2026-01-03": "our-lady-on-saturday-christmastide / Immaculate Heart of Mary | class 4 / 3 | own row agrees",
+    "2026-02-14": "our-lady-on-saturday-after-purification / St. Valentine, Priest & Martyr | ours only: st-valentine | own row agrees",
+    "2026-04-17": "pasc1-5 / St. Ancetus, Pope & Martyr | ours only: st-anicetus | no own row",
+    "2026-05-11": "sts-philip-and-james / Rogation Mass | page only: Ss. Philip and James, Apostles | own row agrees",
+    "2026-06-27": "our-lady-on-saturday-after-pentecost / Our Lady of Perpetual Help | own row: page only: Our Lady of Perpetual Help",
+    "2026-07-04": "our-lady-on-saturday-after-pentecost / Immaculate Heart of Mary | class 4 / 3 | page only: Commemoration of All Holy Popes | own row: page only: Commemoration of All Holy Popes",
+    "2026-08-01": "our-lady-on-saturday-after-pentecost / Immaculate Heart of Mary | class 4 / 3 | own row agrees",
+    "2026-09-04": "pent14-5 / Sacred Heart of Jesus | class 4 / 3 | own row agrees",
+    "2026-09-24": "pent17-4 / Our Lady of Ransom | ours only: our-lady-of-ransom | no own row",
+    "2026-10-01": "pent18-4 / Jesus Christ the High Priest | class 4 / 3 | own row agrees",
+    "2026-11-03": "pent23-2 / Daily Mass for the Dead | class 4 / 3 | own row agrees",
+    "2026-11-05": "pent23-4 / Daily Mass for the Dead | class 4 / 3 | own row: page only: Holy Relics",
+    "2026-11-06": "pent23-5 / Daily Mass for the Dead | class 4 / 3 | own row agrees",
+    "2026-11-07": "our-lady-on-saturday-after-pentecost / Daily Mass for the Dead | class 4 / 3 | own row agrees",
+    "2026-11-27": "pent24-5 / Our Lady of the Miraculous Medal | own row agrees",
+    "2026-12-05": "adv1-6 / Immaculate Heart of Mary | page only: Feria of Advent | own row agrees"
+   }
+  },
+  {
+   "group": "a Mass for certain places commemorated on the feria",
+   "why": "The page adds to the feria's row a commemoration of a Mass for certain places that it also offers as the Mass of the day. These are not in the universal calendar, the United States proper or the Fraternity's (data/layers/fssp.json, notInTheCalendar): the French district's ordo prints a plain feria on both dates, and the SSPX Ordo has no commemoration. They belong to the Masses an ordo offers (M7).",
+   "days": {
+    "2026-05-08": "page only: Apparition of St. Michael the Archangel; Our Lady, Mediatrix of all Graces",
+    "2026-07-06": "page only: St. Maria Goretti, Virgin & Martyr"
+   }
   },
   {
    "group": "order of commemorations",
-   "why": "The same commemorations in another order. The engine follows no. 113: the season first, then the table of precedence, then the calendar's own order. The SSPX Ordo agrees with the engine on 27 March.",
-   "dates": ["2026-03-27", "2026-09-01", "2026-10-21", "2026-12-04"]
+   "why": "The same commemorations in another order. The engine follows no. 113: the season first, then the table of precedence, then the calendar's own order. On 1 September and 21 October that is the order the calendar lists the two saints in; on 4 December the page's own second row has the engine's order. 27 March stays unresolved (README): the page puts the Seven Sorrows first, the SSPX Ordo and the engine put St. John Damascene first.",
+   "days": {
+    "2026-03-27": "order",
+    "2026-09-01": "order",
+    "2026-10-21": "order",
+    "2026-12-04": "order"
+   }
   },
   {
    "group": "the page differs from the rubrics",
    "why": "1 January: the Octave of Christmas is printed as 2nd class; it is 1st (no. 91 item 5). 11 January: the Holy Family is printed as 1st class with the Sunday commemorated; it is 2nd class and the Sunday is not commemorated (no. 17b). 28 June: the Vigil of Sts. Peter and Paul is commemorated on a Sunday; a vigil of the 2nd class is omitted on a Sunday (no. 33). 8 September: St. Hadrian is not commemorated; a 2nd class feast admits one commemoration (no. 111c), and the SSPX Ordo prints him. 16 and 17 December: the 'Feria of Advent' is commemorated on Advent days that are themselves of the season (no. 112c).",
-   "dates": ["2026-01-01", "2026-01-11", "2026-06-28", "2026-09-08", "2026-12-16", "2026-12-17"]
+   "days": {
+    "2026-01-01": "class 1 / 2",
+    "2026-01-11": "class 2 / 1 | page only: First Sunday after Epiphany",
+    "2026-06-28": "page only: Vigil of Ss. Peter and Paul, Apostles",
+    "2026-09-08": "ours only: st-hadrian",
+    "2026-12-16": "page only: Feria of Advent",
+    "2026-12-17": "page only: Feria of Advent"
+   }
+  },
+  {
+   "group": "the Fraternity's own feast is not on the page",
+   "why": "The Chair of St. Peter is of the 1st class in the Fraternity (data/layers/fssp.json). On 22 February 2026 it met the 1st Sunday of Lent, so it is kept on Monday 23 February (no. 96) with the Lenten feria commemorated (nos. 109e, 111a); St. Peter Damian, a 3rd class feast, is not commemorated on a 1st class day. The page prints the feria and St. Peter Damian, as the universal calendar has them.",
+   "days": {
+    "2026-02-23": "chair-of-st-peter / Feria of Lent | class 1 / 3 | ours only: quad1-1 | page only: St. Peter Damian, Bishop, Confessor & Doctor of the Church | no own row"
+   }
   }
  ]
 }

@@ -5,8 +5,8 @@ import { mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 const read = (path) => JSON.parse(readFileSync(new URL(`../data/${path}`, import.meta.url), 'utf8'));
 
 // Every file in data/layers/ is a layer, named by its file. A hand-written layer
-// (us, fssp) defines its own observances; they join the catalogue with the layer's
-// scope. Their names stay in the layer file.
+// (us) defines its own observances; they join the catalogue with the layer's scope.
+// Their names stay in the layer file.
 const layers = Object.fromEntries(readdirSync(new URL('../data/layers/', import.meta.url))
   .filter((file) => file.endsWith('.json'))
   .map((file) => [file.replace(/\.json$/, ''), read(`layers/${file}`)]));
@@ -34,6 +34,11 @@ for (const [id, layer] of Object.entries(layers)) {
   for (const op of layer.operations) {
     for (const key of op.op === 'order' ? op.keys : [op.key, ...(op.replaces ? [op.replaces] : [])]) {
       if (!known.has(key)) throw new Error(`layer ${id}: ${op.op} names unknown observance ${key}`);
+    }
+    if (op.op === 'raise') {
+      const entry = catalogue.find((candidate) => candidate.key === op.key);
+      if (![1, 2].includes(op.class) || op.class >= entry.class) throw new Error(`layer ${id}: ${op.key} is raised to class ${op.class} from ${entry.class}`);
+      if (!op.source) throw new Error(`layer ${id}: raising ${op.key} cites no source`);
     }
   }
 }

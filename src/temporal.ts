@@ -1,7 +1,8 @@
 import { dayNumber, easterSunday, isLeapYear, monthDay, toYmd, weekday } from './dates.js';
-import { churchProper, type Church } from './church.js';
-import { CATALOGUE, LAYERS, TEMPORAL_BLOCKS } from './generated/data.js';
-import type { CatalogueEntry, Layer, TemporalBlockName, Ymd } from './types.js';
+import { TEMPORAL_BLOCKS } from './generated/data.js';
+import { compareRanked, tableItem, type Ranked } from './precedence.js';
+import { properCalendar, type ProperCalendar, type ProperOptions } from './proper.js';
+import type { CatalogueEntry, TemporalBlockName, Ymd } from './types.js';
 
 export interface MovableDates {
   readonly easter: Ymd;
@@ -137,59 +138,65 @@ export function temporalYear(year: number): TemporalYear {
   return { tempora: byDate(tempora), computedFeasts: byDate(computed) };
 }
 
-export interface PlacementOptions {
-  /** National propers to apply, by code (for example `['us']`). */
-  readonly nations?: readonly string[];
-  /** Propers of institutes or orders to apply, by code (for example `['fssp']`). Applied after the nations. */
-  readonly institutes?: readonly string[];
-  /** The church's own 1st class feasts. Applied last. */
-  readonly church?: Church;
-}
+/**
+ * Which propers to apply: national ones by code (for example `['us']`), then those
+ * of institutes or orders (for example `['fssp']`), then the church's own feasts.
+ */
+export type PlacementOptions = ProperOptions;
 
-function resolveLayers(options: PlacementOptions): Layer[] {
-  const pick = (codes: readonly string[] = [], field: 'nation' | 'institute') => codes.map((code) => {
-    const layer = Object.values(LAYERS).find((candidate) => candidate[field] === code);
-    if (!layer) throw new RangeError(`no layer for ${field} ${code}`);
-    return layer;
-  });
-  return [...pick(options.nations, 'nation'), ...pick(options.institutes, 'institute')];
-}
-
-/** The calendar's entries plus the church's own, for looking an observance up by key. */
-export function entriesFor(options: PlacementOptions): ReadonlyMap<string, CatalogueEntry> {
-  const map = new Map(CATALOGUE.map((entry) => [entry.key, entry]));
-  for (const entry of churchProper(options.church).entries) map.set(entry.key, entry);
-  return map;
+export interface FixedPlacement {
+  /** Candidates on each day of the year, in the order the calendar lists them. */
+  readonly byDate: ReadonlyMap<Ymd, readonly string[]>;
+  /** Feasts kept on another fixed date in this church (nos. 100-102), with both month-days. */
+  readonly reassigned: ReadonlyMap<string, { readonly from: string; readonly to: string }>;
 }
 
 /**
- * The observances with a fixed date that are candidates on each day of the
- * year, in the order the calendar lists them, before any rule decides between
- * them. Leap-year dates are applied here; transfers are the resolver's job.
+ * A feast of the 1st or 2nd class that another always impedes in a church is
+ * assigned for good to the nearest following day that is not of the 1st or 2nd
+ * class, and that day is then its own (nos. 100-102). This is worked out on the
+ * fixed calendar: the days from 17 December to 1 January are always of those
+ * classes; movable days impede only by accident, which is the resolver's business.
+ *
+ * It is applied where a church's own feast is one of the two. A nation's or an
+ * institute's proper is taken as published, with its feasts already on the dates
+ * that calendar gives them. The right no. 100 also gives proper 3rd class feasts
+ * outside Advent and Lent is not applied.
  */
-export function fixedFeasts(year: number, options: PlacementOptions = {}): ReadonlyMap<Ymd, readonly string[]> {
-  const layers = resolveLayers(options);
-  const church = churchProper(options.church);
-  const removed = new Set<string>(church.replaces);
-  const added = new Set<string>();
-  const order = new Map<string, readonly string[]>();
-  for (const layer of layers) {
-    for (const op of layer.operations) {
-      if (op.op === 'remove') removed.add(op.key);
-      else if (op.op === 'order') order.set(op.date, op.keys);
-      else {
-        added.add(op.key);
-        if (op.replaces) removed.add(op.replaces);
+function reassign(byMonthDay: Map<string, string[]>, proper: ProperCalendar, monthDays: readonly string[]): Map<string, { from: string; to: string }> {
+  const reassigned = new Map<string, { from: string; to: string }>();
+  const contenders = (md: string): Ranked[] => (byMonthDay.get(md) ?? [])
+    .map((key) => proper.entries.get(key) as CatalogueEntry)
+    .filter((entry) => !entry.formularyOf)
+    .map((entry) => ({ entry, class: entry.class, movable: false }))
+    .filter((ranked) => tableItem(ranked) !== null);
+  const firstOrSecondClass = (md: string) => (md >= '12-17' && md <= '12-23') || (md >= '12-29' && md <= '12-31')
+    || contenders(md).some((ranked) => ranked.class <= 2);
+
+  for (const [index, md] of monthDays.entries()) {
+    const here = contenders(md).sort(compareRanked);
+    if (here.length < 2 || !here.some((ranked) => proper.churchKeys.has(ranked.entry.key))) continue;
+    for (const { entry, class: cls } of here.slice(1)) {
+      if (entry.kind !== 'feast' || cls > 2) continue;
+      let to: string | undefined;
+      for (let step = 1; step < monthDays.length && to === undefined; step += 1) {
+        const next = monthDays[(index + step) % monthDays.length] as string;
+        if (!firstOrSecondClass(next)) to = next;
       }
+      if (to === undefined) throw new Error(`no free day for ${entry.key}`);
+      byMonthDay.set(md, (byMonthDay.get(md) ?? []).filter((key) => key !== entry.key));
+      byMonthDay.set(to, [...(byMonthDay.get(to) ?? []), entry.key]);
+      reassigned.set(entry.key, { from: md, to });
     }
   }
+  return reassigned;
+}
 
+/** Where this calendar keeps its fixed observances in a year, before the rules of occurrence decide between them. */
+export function placeFixed(year: number, proper: ProperCalendar): FixedPlacement {
   const byNominalDate = new Map<string, CatalogueEntry[]>();
-  for (const entry of [...CATALOGUE, ...church.entries]) {
+  for (const entry of proper.fixed) {
     if (!('fixed' in entry.date)) continue;
-    const included = entry.scope === 'church'
-      || (entry.scope === 'universal' ? !removed.has(entry.key) : added.has(entry.key) && !removed.has(entry.key));
-    if (!included) continue;
     const list = byNominalDate.get(entry.date.fixed) ?? [];
     list.push(entry);
     byNominalDate.set(entry.date.fixed, list);
@@ -199,10 +206,10 @@ export function fixedFeasts(year: number, options: PlacementOptions = {}): Reado
   const byPlacedDate = new Map<string, string[]>();
   for (const nominal of [...byNominalDate.keys()].sort()) {
     const entries = byNominalDate.get(nominal) ?? [];
-    // Universal entries in the calendar's own order, then national additions.
+    // Universal entries in the calendar's own order, then proper additions.
     entries.sort((a, b) => (a.dayOrder ?? Infinity) - (b.dayOrder ?? Infinity) || a.key.localeCompare(b.key));
     let keys = entries.map((entry) => entry.key);
-    const layerOrder = order.get(nominal);
+    const layerOrder = proper.order.get(nominal);
     if (layerOrder) keys = [...layerOrder.filter((key) => keys.includes(key)), ...keys.filter((key) => !layerOrder.includes(key))];
     for (const key of keys) {
       const entry = entries.find((candidate) => candidate.key === key);
@@ -213,10 +220,26 @@ export function fixedFeasts(year: number, options: PlacementOptions = {}): Reado
     }
   }
 
-  const result = new Map<Ymd, readonly string[]>();
-  for (let day = dayNumber(year, 1, 1); day <= dayNumber(year, 12, 31); day += 1) {
+  const first = dayNumber(year, 1, 1);
+  const last = dayNumber(year, 12, 31);
+  const monthDays: string[] = [];
+  for (let day = first; day <= last; day += 1) monthDays.push(monthDay(day));
+  const reassigned = proper.churchKeys.size > 0 ? reassign(byPlacedDate, proper, monthDays) : new Map<string, { from: string; to: string }>();
+
+  const byDate = new Map<Ymd, readonly string[]>();
+  for (let day = first; day <= last; day += 1) {
     const keys = byPlacedDate.get(monthDay(day));
-    if (keys) result.set(toYmd(day), [...keys]);
+    if (keys?.length) byDate.set(toYmd(day), [...keys]);
   }
-  return result;
+  return { byDate, reassigned };
+}
+
+/**
+ * The observances with a fixed date that are candidates on each day of the
+ * year, in the order the calendar lists them, before any rule decides between
+ * them. Leap-year dates and a church's permanent reassignments (nos. 100-102)
+ * are applied here; transfers are the resolver's job.
+ */
+export function fixedFeasts(year: number, options: PlacementOptions = {}): ReadonlyMap<Ymd, readonly string[]> {
+  return placeFixed(year, properCalendar(options)).byDate;
 }

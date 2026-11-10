@@ -1,0 +1,365 @@
+2030-01-01 octave-day-of-christmas 1 white
+2030-01-02 nat2-0 2 white
+2030-01-03 feria 4 white
+2030-01-04 feria 4 white
+2030-01-05 us-st-john-neumann 3 white | comm st-telesphorus-pope-and-martyr
+2030-01-06 epiphany-of-the-lord 1 white
+2030-01-07 feria 4 white
+2030-01-08 feria 4 white
+2030-01-09 feria 4 white
+2030-01-10 feria 4 white
+2030-01-11 feria 4 white | comm st-hyginus-pope-and-martyr
+2030-01-12 our-lady-on-saturday-christmastide 4 white
+2030-01-13 epi1-0 2 white
+2030-01-14 st-hilary 3 white | comm st-felix
+2030-01-15 st-paul-the-first-hermit 3 white | comm st-maur-abbot
+2030-01-16 st-marcellus-i 3 red
+2030-01-17 st-anthony-the-abbot 3 white
+2030-01-18 epi1-5 4 green | comm st-prisca
+2030-01-19 our-lady-on-saturday-christmastide 4 white | comm sts-marius-martha-audifax-and-abachum, st-canute-martyr
+2030-01-20 epi2-0 2 green
+2030-01-21 st-agnes 3 red
+2030-01-22 sts-vincent-and-anastasius 3 red
+2030-01-23 st-raymond-of-penafort 3 white | comm st-emerentiana
+2030-01-24 st-timothy 3 red
+2030-01-25 conversion-of-st-paul 3 white | with st-peter
+2030-01-26 st-polycarp 3 red
+2030-01-27 epi3-0 2 green
+2030-01-28 st-peter-nolasco 3 white | comm st-agnes-01-28t
+2030-01-29 st-francis-de-sales 3 white
+2030-01-30 st-martina 3 red
+2030-01-31 st-john-bosco 3 white
+2030-02-01 st-ignatius-of-antioch 3 red
+2030-02-02 purification-of-the-blessed-virgin-mary 2 white
+2030-02-03 epi4-0 2 green
+2030-02-04 st-andrew-corsini 3 white
+2030-02-05 st-agatha 3 red
+2030-02-06 st-titus 3 white | comm st-dorothy
+2030-02-07 st-romuald 3 white
+2030-02-08 st-john-of-matha 3 white
+2030-02-09 st-cyril-of-alexandria 3 white | comm st-apollonia
+2030-02-10 epi5-0 2 green
+2030-02-11 our-lady-of-lourdes 3 white
+2030-02-12 seven-holy-servite-founders 3 white
+2030-02-13 epi5-3 4 green
+2030-02-14 epi5-4 4 green | comm st-valentine
+2030-02-15 epi5-5 4 green | comm sts-faustinus-and-jovita
+2030-02-16 our-lady-on-saturday-after-purification 4 white
+2030-02-17 quadp1-0 2 violet
+2030-02-18 quadp1-1 4 violet | comm st-simeon
+2030-02-19 quadp1-2 4 violet
+2030-02-20 quadp1-3 4 violet
+2030-02-21 quadp1-4 4 violet
+2030-02-22 chair-of-st-peter 1 white | with st-paul
+2030-02-23 st-peter-damian 3 white
+2030-02-24 quadp2-0 2 violet | comm st-matthias
+2030-02-25 quadp2-1 4 violet
+2030-02-26 quadp2-2 4 violet
+2030-02-27 st-gabriel-of-our-lady-of-sorrows 3 white
+2030-02-28 quadp2-4 4 violet
+2030-03-01 quadp2-5 4 violet
+2030-03-02 our-lady-on-saturday-after-purification 4 white
+2030-03-03 quadp3-0 2 violet
+2030-03-04 st-casimir 3 white | comm st-lucius
+2030-03-05 quadp3-2 4 violet
+2030-03-06 quadp3-3 1 violet
+2030-03-07 quadp3-4 3 violet | comm st-thomas-aquinas
+2030-03-08 quadp3-5 3 violet | comm st-john-of-god
+2030-03-09 quadp3-6 3 violet | comm st-frances-of-rome
+2030-03-10 quad1-0 1 violet
+2030-03-11 quad1-1 3 violet
+2030-03-12 quad1-2 3 violet | comm st-gregory-the-great
+2030-03-13 quad1-3 2 violet
+2030-03-14 quad1-4 3 violet
+2030-03-15 quad1-5 2 violet
+2030-03-16 quad1-6 2 violet
+2030-03-17 quad2-0 1 violet
+2030-03-18 quad2-1 3 violet | comm st-cyril-of-jerusalem
+2030-03-19 st-joseph-spouse-of-the-bl-virgin-mary 1 white | comm quad2-2
+2030-03-20 quad2-3 3 violet
+2030-03-21 quad2-4 3 violet | comm st-benedict
+2030-03-22 quad2-5 3 violet
+2030-03-23 quad2-6 3 violet
+2030-03-24 quad3-0 1 violet
+2030-03-25 annunciation-of-the-blessed-virgin-mary 1 white | comm quad3-1
+2030-03-26 quad3-2 3 violet
+2030-03-27 quad3-3 3 violet | comm st-john-damascene
+2030-03-28 quad3-4 3 violet | comm st-john-of-capistrano
+2030-03-29 quad3-5 3 violet
+2030-03-30 quad3-6 3 violet
+2030-03-31 quad4-0 1 rose/violet
+2030-04-01 quad4-1 3 violet
+2030-04-02 quad4-2 3 violet | comm st-francis-of-paola
+2030-04-03 quad4-3 3 violet
+2030-04-04 quad4-4 3 violet | comm st-isidore-of-seville
+2030-04-05 quad4-5 3 violet | comm st-vincent-ferrer
+2030-04-06 quad4-6 3 violet
+2030-04-07 quad5-0 1 violet
+2030-04-08 quad5-1 3 violet
+2030-04-09 quad5-2 3 violet
+2030-04-10 quad5-3 3 violet
+2030-04-11 quad5-4 3 violet | comm st-leo-the-great
+2030-04-12 quad5-5 3 violet | comm seven-sorrows-in-passiontide
+2030-04-13 quad5-6 3 violet | comm st-hermenegild
+2030-04-14 quad6-0 1 red/violet
+2030-04-15 quad6-1 1 violet
+2030-04-16 quad6-2 1 violet
+2030-04-17 quad6-3 1 violet
+2030-04-18 quad6-4 1 white
+2030-04-19 quad6-5 1 black/violet
+2030-04-20 quad6-6 1 violet/white
+2030-04-21 pasc0-0 1 white
+2030-04-22 pasc0-1 1 white
+2030-04-23 pasc0-2 1 white
+2030-04-24 pasc0-3 1 white
+2030-04-25 pasc0-4 1 white | comm for-the-rogations
+2030-04-26 pasc0-5 1 white
+2030-04-27 pasc0-6 1 white
+2030-04-28 pasc1-0 1 white
+2030-04-29 st-peter-of-verona 3 red
+2030-04-30 st-catherine-of-siena 3 white
+2030-05-01 st-joseph-the-workman 1 white
+2030-05-02 st-athanasius 3 white
+2030-05-03 pasc1-5 4 white | comm sts-alexander-and-companions
+2030-05-04 st-monica 3 white
+2030-05-05 pasc2-0 2 white
+2030-05-06 pasc2-1 4 white
+2030-05-07 st-stanislaus 3 red
+2030-05-08 pasc2-3 4 white
+2030-05-09 st-gregory-nazianzen 3 white
+2030-05-10 st-antoninus 3 white | comm sts-gordian-and-epimachus
+2030-05-11 sts-philip-and-james 2 red
+2030-05-12 pasc3-0 2 white
+2030-05-13 st-robert-bellarmine 3 white
+2030-05-14 pasc3-2 4 white | comm st-boniface
+2030-05-15 st-john-baptist-de-la-salle 3 white
+2030-05-16 st-ubaldus 3 white
+2030-05-17 st-paschal-baylon 3 white
+2030-05-18 st-venantius 3 red
+2030-05-19 pasc4-0 2 white
+2030-05-20 st-bernardine-of-siena 3 white
+2030-05-21 pasc4-2 4 white
+2030-05-22 pasc4-3 4 white
+2030-05-23 pasc4-4 4 white
+2030-05-24 pasc4-5 4 white
+2030-05-25 st-gregory-vii 3 white | comm st-urban-pope-and-martyr
+2030-05-26 pasc5-0 2 white
+2030-05-27 st-bede-the-venerable 3 white | comm st-john-i
+2030-05-28 st-augustine-of-canterbury 3 white
+2030-05-29 pasc5-3 2 white | comm st-mary-magdalene-de-pazzi
+2030-05-30 pasc5-4 1 white
+2030-05-31 queenship-of-the-blessed-virgin-mary 2 white | comm st-petronilla
+2030-06-01 st-angela-merici 3 white
+2030-06-02 pasc6-0 2 white
+2030-06-03 pasc6-1 4 white
+2030-06-04 st-francis-caracciolo 3 white
+2030-06-05 st-boniface-06-05 3 red
+2030-06-06 st-norbert 3 white
+2030-06-07 pasc6-5 4 white
+2030-06-08 pasc6-6 1 red
+2030-06-09 pasc7-0 1 red
+2030-06-10 pasc7-1 1 red
+2030-06-11 pasc7-2 1 red
+2030-06-12 pasc7-3 1 red
+2030-06-13 pasc7-4 1 red
+2030-06-14 pasc7-5 1 red
+2030-06-15 pasc7-6 1 red
+2030-06-16 pent01-0 1 white
+2030-06-17 st-gregory-barbarigo 3 white
+2030-06-18 st-ephrem-of-syria 3 white | comm sts-marcus-and-marcellianus
+2030-06-19 st-juliana-falconieri 3 white | comm sts-gervasius-and-protasius
+2030-06-20 pent01-4 1 white
+2030-06-21 st-aloysius-gonzaga 3 white
+2030-06-22 st-paulinus-of-nola 3 white
+2030-06-23 pent02-0 2 green
+2030-06-24 nativity-of-st-john-the-baptist 1 white
+2030-06-25 st-william 3 white
+2030-06-26 sts-john-and-paul 3 red
+2030-06-27 pent02-4 4 green
+2030-06-28 pent02-5 1 white
+2030-06-29 sts-peter-and-paul 1 red
+2030-06-30 pent03-0 2 green
+2030-07-01 the-precious-blood-of-our-lord-jesus-christ 1 red
+2030-07-02 visitation-of-the-blessed-virgin-mary 2 white | comm sts-processus-and-martinian
+2030-07-03 st-irenaeus 3 red
+2030-07-04 pent03-4 4 green
+2030-07-05 st-anthony-mary-zaccaria 3 white
+2030-07-06 our-lady-on-saturday-after-pentecost 4 white
+2030-07-07 pent04-0 2 green
+2030-07-08 st-elizabeth-of-portugal 3 white
+2030-07-09 pent04-2 4 green
+2030-07-10 seven-holy-brothers-and-sts-rufina-and-secunda 3 red
+2030-07-11 pent04-4 4 green | comm st-pius-i
+2030-07-12 st-john-gualbert 3 white | comm sts-nabor-and-felix
+2030-07-13 our-lady-on-saturday-after-pentecost 4 white
+2030-07-14 pent05-0 2 green
+2030-07-15 st-henry-the-emperor 3 white
+2030-07-16 pent05-2 4 green | comm our-lady-of-mt-carmel
+2030-07-17 pent05-3 4 green | comm st-alexis
+2030-07-18 camillus-de-lellis 3 white | comm sts-symphorosa-and-sons
+2030-07-19 st-vincent-de-paul 3 white
+2030-07-20 st-jerome-emiliani 3 white | comm st-margaret
+2030-07-21 pent06-0 2 green
+2030-07-22 st-mary-magdalene 3 white
+2030-07-23 st-apollinaris 3 red | comm st-liborius
+2030-07-24 pent06-3 4 green | comm st-christina
+2030-07-25 st-james-the-greater 2 red | comm st-christopher
+2030-07-26 st-anne-mother-of-the-blessed-virgin 2 white
+2030-07-27 our-lady-on-saturday-after-pentecost 4 white | comm st-pantaleon
+2030-07-28 pent07-0 2 green
+2030-07-29 st-martha 3 white | comm sts-felix-simplicius-faustinus-and-beatrice
+2030-07-30 pent07-2 4 green | comm sts-abdon-and-sennen
+2030-07-31 st-ignatius-loyola 3 white
+2030-08-01 pent07-4 4 green | comm holy-machabees
+2030-08-02 st-alphonsus-liguori 3 white | comm st-stephen-i-pope-and-martyr
+2030-08-03 our-lady-on-saturday-after-pentecost 4 white
+2030-08-04 pent08-0 2 green
+2030-08-05 dedication-of-the-basilica-of-st-mary-major 3 white
+2030-08-06 transfiguration-of-our-lord 2 white | comm pope-sixtus-ii-felicissimus-and-agapitus-martyrs
+2030-08-07 st-cajetan 3 white | comm st-donatus
+2030-08-08 st-john-mary-vianney 3 white | comm sts-cyriacus-largus-and-smaragdus-martyrs
+2030-08-09 vigil-of-st-lawrence 3 violet | comm st-romanus
+2030-08-10 st-lawrence 2 red
+2030-08-11 pent09-0 2 green
+2030-08-12 st-clare 3 white
+2030-08-13 pent09-2 4 green | comm sts-hippolytus-and-cassian
+2030-08-14 vigil-of-the-assumption 2 violet | comm st-eusebius
+2030-08-15 assumption-of-the-blessed-virgin-mary 1 white
+2030-08-16 st-joachim-father-of-the-blessed-virgin 2 white
+2030-08-17 st-hyacinth 3 white
+2030-08-18 pent10-0 2 green
+2030-08-19 st-john-eudes 3 white
+2030-08-20 st-bernard-of-clairvaux 3 white
+2030-08-21 st-jane-frances-de-chantal 3 white
+2030-08-22 immaculate-heart-of-mary 2 white | comm sts-timothy-hippolytus-and-symphorianus-martyrs
+2030-08-23 st-philip-benizi 3 white
+2030-08-24 st-bartholomew 2 red
+2030-08-25 pent11-0 2 green
+2030-08-26 pent11-1 4 green | comm st-zephyrinus
+2030-08-27 st-joseph-calasance 3 white
+2030-08-28 st-augustine 3 white | comm st-hermes
+2030-08-29 beheading-of-st-john-the-baptist 3 red | comm st-sabina
+2030-08-30 st-rose-of-lima 3 white | comm sts-felix-and-adauctus
+2030-08-31 st-raymond-nonnatus 3 white
+2030-09-01 pent12-0 2 green
+2030-09-02 st-stephen-of-hungary 3 white
+2030-09-03 st-pius-x 3 white
+2030-09-04 pent12-3 4 green
+2030-09-05 st-lawrence-justinian 3 white
+2030-09-06 pent12-5 4 green
+2030-09-07 our-lady-on-saturday-after-pentecost 4 white
+2030-09-08 pent13-0 2 green | comm nativity-of-the-blessed-virgin-mary
+2030-09-09 us-st-peter-claver 3 white | comm st-gorgonius
+2030-09-10 st-nicholas-of-tolentino 3 white
+2030-09-11 pent13-3 4 green | comm sts-protus-and-hyacinth
+2030-09-12 most-holy-name-of-mary 3 white
+2030-09-13 pent13-5 4 green
+2030-09-14 exaltation-of-the-holy-cross 2 red
+2030-09-15 pent14-0 2 green | comm seven-sorrows-of-the-blessed-virgin-mary
+2030-09-16 sts-cornelius-and-cyprian 3 red | comm sts-euphemia-lucy-and-geminianus
+2030-09-17 pent14-2 4 green | comm stigmata-of-st-francis
+2030-09-18 sep-ember-3 2 violet | comm st-joseph-of-cupertino
+2030-09-19 st-januarius-and-companions 3 red
+2030-09-20 sep-ember-5 2 violet | comm sts-eustace-and-companions
+2030-09-21 st-matthew 2 red | comm sep-ember-6
+2030-09-22 pent15-0 2 green
+2030-09-23 st-linus 3 red | comm st-thecla
+2030-09-24 pent15-2 4 green | comm our-lady-of-ransom
+2030-09-25 pent15-3 4 green
+2030-09-26 us-north-american-martyrs 3 red | comm sts-cyprian-and-justina
+2030-09-27 sts-cosmas-and-damian 3 red
+2030-09-28 st-wenceslaus 3 red
+2030-09-29 dedication-of-st-michael-the-archangel 1 white | comm pent16-0
+2030-09-30 st-jerome 3 white
+2030-10-01 pent16-2 4 green | comm st-remigius
+2030-10-02 holy-guardian-angels 3 white
+2030-10-03 st-theresa-of-the-infant-jesus 3 white
+2030-10-04 st-francis-of-assisi 3 white
+2030-10-05 our-lady-on-saturday-after-pentecost 4 white | comm st-placid-and-companions
+2030-10-06 pent17-0 2 green
+2030-10-07 our-lady-of-the-rosary 2 white | comm st-mark-i
+2030-10-08 st-bridget-of-sweden 3 white | comm sts-sergius-bacchus-marcellus-and-apuleius-martyrs
+2030-10-09 st-john-leonardi 3 white | comm st-dionysius-and-companions
+2030-10-10 st-francis-borgia 3 white
+2030-10-11 maternity-of-the-blessed-virgin-mary 2 white
+2030-10-12 our-lady-on-saturday-after-pentecost 4 white
+2030-10-13 pent18-0 2 green
+2030-10-14 st-callistus-i 3 red
+2030-10-15 st-teresa-of-avila 3 white
+2030-10-16 st-hedwig 3 white
+2030-10-17 st-margaret-mary-alacoque 3 white
+2030-10-18 st-luke-the-evangelist 2 red
+2030-10-19 st-peter-of-alcantara 3 white
+2030-10-20 pent19-0 2 green
+2030-10-21 pent19-1 4 green | comm st-hilarion, st-ursula-and-companions
+2030-10-22 pent19-2 4 green
+2030-10-23 st-anthony-mary-claret 3 white
+2030-10-24 st-raphael-the-archangel 3 white
+2030-10-25 pent19-5 4 green | comm sts-chrysanthus-and-daria
+2030-10-26 our-lady-on-saturday-after-pentecost 4 white | comm st-evaristus
+2030-10-27 christ-the-king 1 white
+2030-10-28 sts-simon-and-jude 2 red
+2030-10-29 pent20-2 4 green
+2030-10-30 pent20-3 4 green
+2030-10-31 pent20-4 4 green
+2030-11-01 all-saints 1 white
+2030-11-02 commemoration-of-all-souls 1 black
+2030-11-03 pent21-0 2 green
+2030-11-04 st-charles-borromeo 3 white | comm sts-vitalis-and-agricola-martyrs
+2030-11-05 pent21-2 4 green
+2030-11-06 pent21-3 4 green
+2030-11-07 pent21-4 4 green
+2030-11-08 pent21-5 4 green | comm four-holy-crowned-martyrs
+2030-11-09 dedication-of-the-archbasilica-of-our-holy-savior 2 white | comm st-theodore
+2030-11-10 pent22-0 2 green
+2030-11-11 st-martin-of-tours 3 white | comm st-menas
+2030-11-12 st-martin-i 3 red
+2030-11-13 us-st-frances-xavier-cabrini 3 white | comm st-didacus
+2030-11-14 st-josaphat 3 red
+2030-11-15 st-albert-the-great 3 white
+2030-11-16 st-gertrude-the-great 3 white
+2030-11-17 pent23-0 2 green
+2030-11-18 dedication-of-the-basilicas-of-sts-peter-and-paul 3 white
+2030-11-19 st-elizabeth-of-hungary 3 white | comm st-pontian
+2030-11-20 st-felix-of-valois 3 white
+2030-11-21 presentation-of-the-blessed-virgin-mary 3 white
+2030-11-22 st-cecilia 3 red
+2030-11-23 st-clement-i 3 red | comm st-felicity
+2030-11-24 pent24-0 2 green
+2030-11-25 st-catherine-of-alexandria 3 red
+2030-11-26 st-sylvester-gozzolini 3 white | comm st-peter-of-alexandria
+2030-11-27 pent24-3 4 green
+2030-11-28 pent24-4 4 green
+2030-11-29 pent24-5 4 green | comm st-saturninus
+2030-11-30 st-andrew 2 red
+2030-12-01 adv1-0 1 violet
+2030-12-02 st-vivian 3 red | comm adv1-1
+2030-12-03 st-francis-xavier 3 white | comm adv1-2
+2030-12-04 st-peter-chrysologus 3 white | comm adv1-3, st-barbara
+2030-12-05 adv1-4 3 violet | comm st-sabbas
+2030-12-06 st-nicholas 3 white | comm adv1-5
+2030-12-07 st-ambrose 3 white | comm adv1-6
+2030-12-08 immaculate-conception-of-the-blessed-virgin-mary 1 white | comm adv2-0
+2030-12-09 adv2-1 3 violet
+2030-12-10 adv2-2 3 violet | comm st-melchiades
+2030-12-11 st-damasus-i 3 white | comm adv2-3
+2030-12-12 us-our-lady-of-guadalupe 3 white | comm adv2-4
+2030-12-13 st-lucy 3 red | comm adv2-5
+2030-12-14 adv2-6 3 violet
+2030-12-15 adv3-0 1 rose/violet
+2030-12-16 st-eusebius-12-16 3 red | comm adv3-1
+2030-12-17 adv3-2 2 violet
+2030-12-18 adv3-3 2 violet
+2030-12-19 adv3-4 2 violet
+2030-12-20 adv3-5 2 violet
+2030-12-21 st-thomas-the-apostle 2 red | comm adv3-6
+2030-12-22 adv4-0 1 violet
+2030-12-23 adv4-1 2 violet
+2030-12-24 vigil-of-christmas 1 violet
+2030-12-25 the-nativity-of-our-lord 1 white
+2030-12-26 st-stephen 2 red | comm for-octave-of-the-nativity
+2030-12-27 st-john-the-evangelist 2 white | comm for-octave-of-the-nativity-12-27c
+2030-12-28 holy-innocents 2 red | comm for-octave-of-the-nativity-12-28c
+2030-12-29 nat1-0 2 white
+2030-12-30 nat1-1 2 white
+2030-12-31 nat1-1 2 white | comm st-sylvester-i-pope

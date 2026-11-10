@@ -1,0 +1,18 @@
+{
+ "repository": "https://github.com/mmolenda/missalemeum",
+ "commit": "eb723e5dd0bef3951b7706da97af4b673c579e40",
+ "license": "MIT, Copyright (c) 2022 Marcin Molenda",
+ "files": {
+  "api/constants/common.py": "35bcc70ac0b52da3e860d71bda24afd70b8dd991989e16c0c7ed5a4a4603d42a",
+  "api/constants/la/blocks.py": "899ec0e36de75612221b82f4d3e81c7c383d6306610bf865d1a535fa85ea32f4",
+  "api/constants/pl/blocks.py": "842721e59a48af87168783976dd3cf7596d1ef741a5bd4ab552d0ef333446bcc",
+  "api/constants/la/translation.py": "e848e378025fee88c7261eb29cf201f2b6cb1e4104240f2274445e7aaa09ad80",
+  "api/constants/en/translation.py": "e0194fe3c4b130e4d98b9a9f3bfd9a0f4de619d9087bfd2124a911832164b8dc",
+  "api/constants/pl/translation.py": "ff9765367a7248a9d95d84cfdcbe73c162f408635f12e6d439849b58fcd589d4"
+ },
+ "skippedTitles": {
+  "la": [],
+  "en": [],
+  "pl": []
+ }
+}

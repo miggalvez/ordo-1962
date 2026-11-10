@@ -14,6 +14,28 @@
    "ordo": "agrees with the engine"
   },
   {
+   "date": "1963-01-18",
+   "problems": [
+    "colour"
+   ],
+   "engine": "epi1-5 [4,g]",
+   "missaleMeum": "feria [4,w]",
+   "rubric": "no. 127a",
+   "why": "Green is used from 14 January. This Friday still belongs to the week of the First Sunday after Epiphany, whose ferias Missale Meum lists in white.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "1965-05-24",
+   "problems": [
+    "colour"
+   ],
+   "engine": "pasc5-1 [4,w]",
+   "missaleMeum": "feria [4,v]",
+   "rubric": "no. 88",
+   "why": "The lesser litanies have nothing in the office, and violet belongs to their procession and its Mass (no. 130a), so the day is a 4th class feria of Paschaltide in white. Missale Meum gives the day the violet of the Rogation Mass.",
+   "ordo": "agrees with the engine"
+  },
+  {
    "date": "1967-04-03",
    "problems": [
     "celebration"
@@ -47,6 +69,17 @@
    "ordo": "agrees with the engine"
   },
   {
+   "date": "1972-05-08",
+   "problems": [
+    "colour"
+   ],
+   "engine": "pasc5-1 [4,w]",
+   "missaleMeum": "feria [4,v]",
+   "rubric": "no. 88",
+   "why": "The lesser litanies have nothing in the office, and violet belongs to their procession and its Mass (no. 130a), so the day is a 4th class feria of Paschaltide in white. Missale Meum gives the day the violet of the Rogation Mass.",
+   "ordo": "agrees with the engine"
+  },
+  {
    "date": "1973-06-28",
    "problems": [
     "celebration",
@@ -56,6 +89,28 @@
    "missaleMeum": "vigil-of-sts-peter-and-paul [2,v]",
    "rubric": "no. 33",
    "why": "The vigil is omitted because its feast is transferred that year (the Sacred Heart falls on the feast). Missale Meum keeps the vigil.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "1974-01-18",
+   "problems": [
+    "colour"
+   ],
+   "engine": "epi1-5 [4,g]",
+   "missaleMeum": "feria [4,w]",
+   "rubric": "no. 127a",
+   "why": "Green is used from 14 January. This Friday still belongs to the week of the First Sunday after Epiphany, whose ferias Missale Meum lists in white.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "1976-05-24",
+   "problems": [
+    "colour"
+   ],
+   "engine": "pasc5-1 [4,w]",
+   "missaleMeum": "feria [4,v]",
+   "rubric": "no. 88",
+   "why": "The lesser litanies have nothing in the office, and violet belongs to their procession and its Mass (no. 130a), so the day is a 4th class feria of Paschaltide in white. Missale Meum gives the day the violet of the Rogation Mass.",
    "ordo": "agrees with the engine"
   },
   {
@@ -81,6 +136,28 @@
    "ordo": "agrees with the engine"
   },
   {
+   "date": "1979-05-21",
+   "problems": [
+    "colour"
+   ],
+   "engine": "pasc5-1 [4,w]",
+   "missaleMeum": "feria [4,v]",
+   "rubric": "no. 88",
+   "why": "The lesser litanies have nothing in the office, and violet belongs to their procession and its Mass (no. 130a), so the day is a 4th class feria of Paschaltide in white. Missale Meum gives the day the violet of the Rogation Mass.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "1980-01-18",
+   "problems": [
+    "colour"
+   ],
+   "engine": "epi1-5 [4,g]",
+   "missaleMeum": "feria [4,w]",
+   "rubric": "no. 127a",
+   "why": "Green is used from 14 January. This Friday still belongs to the week of the First Sunday after Epiphany, whose ferias Missale Meum lists in white.",
+   "ordo": "agrees with the engine"
+  },
+  {
    "date": "1983-05-11",
    "problems": [
     "celebration"
@@ -101,6 +178,17 @@
    "missaleMeum": "vigil-of-sts-peter-and-paul [2,v]",
    "rubric": "no. 33",
    "why": "The vigil is omitted because its feast is transferred that year (the Sacred Heart falls on the feast). Missale Meum keeps the vigil.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "1985-01-18",
+   "problems": [
+    "colour"
+   ],
+   "engine": "epi1-5 [4,g]",
+   "missaleMeum": "feria [4,w]",
+   "rubric": "no. 127a",
+   "why": "Green is used from 14 January. This Friday still belongs to the week of the First Sunday after Epiphany, whose ferias Missale Meum lists in white.",
    "ordo": "agrees with the engine"
   },
   {
@@ -137,6 +225,39 @@
    "ordo": "agrees with the engine"
   },
   {
+   "date": "1990-05-21",
+   "problems": [
+    "colour"
+   ],
+   "engine": "pasc5-1 [4,w]",
+   "missaleMeum": "feria [4,v]",
+   "rubric": "no. 88",
+   "why": "The lesser litanies have nothing in the office, and violet belongs to their procession and its Mass (no. 130a), so the day is a 4th class feria of Paschaltide in white. Missale Meum gives the day the violet of the Rogation Mass.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "1991-01-18",
+   "problems": [
+    "colour"
+   ],
+   "engine": "epi1-5 [4,g]",
+   "missaleMeum": "feria [4,w]",
+   "rubric": "no. 127a",
+   "why": "Green is used from 14 January. This Friday still belongs to the week of the First Sunday after Epiphany, whose ferias Missale Meum lists in white.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "1991-05-06",
+   "problems": [
+    "colour"
+   ],
+   "engine": "pasc5-1 [4,w]",
+   "missaleMeum": "feria [4,v]",
+   "rubric": "no. 88",
+   "why": "The lesser litanies have nothing in the office, and violet belongs to their procession and its Mass (no. 130a), so the day is a 4th class feria of Paschaltide in white. Missale Meum gives the day the violet of the Rogation Mass.",
+   "ordo": "agrees with the engine"
+  },
+  {
    "date": "1994-05-11",
    "problems": [
     "celebration"
@@ -145,6 +266,94 @@
    "missaleMeum": "pasc5-3 [2,w]",
    "rubric": "no. 91 items 16 and 21",
    "why": "A 2nd class feast of the universal Church precedes a 2nd class vigil, so Sts. Philip and James are celebrated and the Vigil of the Ascension is commemorated.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "1995-05-22",
+   "problems": [
+    "colour"
+   ],
+   "engine": "pasc5-1 [4,w]",
+   "missaleMeum": "feria [4,v]",
+   "rubric": "no. 88",
+   "why": "The lesser litanies have nothing in the office, and violet belongs to their procession and its Mass (no. 130a), so the day is a 4th class feria of Paschaltide in white. Missale Meum gives the day the violet of the Rogation Mass.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2000-05-31",
+   "problems": [
+    "celebration"
+   ],
+   "engine": "queenship-of-the-blessed-virgin-mary [2,w]",
+   "missaleMeum": "pasc5-3 [2,w]",
+   "rubric": "no. 91 items 16 and 21",
+   "why": "A 2nd class feast of the universal Church precedes a 2nd class vigil, so the Queenship of Mary is celebrated and the Vigil of the Ascension is commemorated. Missale Meum lists both as celebrations, the vigil first.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2001-05-21",
+   "problems": [
+    "colour"
+   ],
+   "engine": "pasc5-1 [4,w]",
+   "missaleMeum": "feria [4,v]",
+   "rubric": "no. 88",
+   "why": "The lesser litanies have nothing in the office, and violet belongs to their procession and its Mass (no. 130a), so the day is a 4th class feria of Paschaltide in white. Missale Meum gives the day the violet of the Rogation Mass.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2002-01-18",
+   "problems": [
+    "colour"
+   ],
+   "engine": "epi1-5 [4,g]",
+   "missaleMeum": "feria [4,w]",
+   "rubric": "no. 127a",
+   "why": "Green is used from 14 January. This Friday still belongs to the week of the First Sunday after Epiphany, whose ferias Missale Meum lists in white.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2002-05-06",
+   "problems": [
+    "colour"
+   ],
+   "engine": "pasc5-1 [4,w]",
+   "missaleMeum": "feria [4,v]",
+   "rubric": "no. 88",
+   "why": "The lesser litanies have nothing in the office, and violet belongs to their procession and its Mass (no. 130a), so the day is a 4th class feria of Paschaltide in white. Missale Meum gives the day the violet of the Rogation Mass.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2006-05-22",
+   "problems": [
+    "colour"
+   ],
+   "engine": "pasc5-1 [4,w]",
+   "missaleMeum": "feria [4,v]",
+   "rubric": "no. 88",
+   "why": "The lesser litanies have nothing in the office, and violet belongs to their procession and its Mass (no. 130a), so the day is a 4th class feria of Paschaltide in white. Missale Meum gives the day the violet of the Rogation Mass.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2007-05-14",
+   "problems": [
+    "colour"
+   ],
+   "engine": "pasc5-1 [4,w]",
+   "missaleMeum": "feria [4,v]",
+   "rubric": "no. 88",
+   "why": "The lesser litanies have nothing in the office, and violet belongs to their procession and its Mass (no. 130a), so the day is a 4th class feria of Paschaltide in white. Missale Meum gives the day the violet of the Rogation Mass.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2008-01-18",
+   "problems": [
+    "colour"
+   ],
+   "engine": "epi1-5 [4,g]",
+   "missaleMeum": "feria [4,w]",
+   "rubric": "no. 127a",
+   "why": "Green is used from 14 January. This Friday still belongs to the week of the First Sunday after Epiphany, whose ferias Missale Meum lists in white.",
    "ordo": "agrees with the engine"
   },
   {
@@ -170,6 +379,95 @@
    "ordo": "agrees with the engine"
   },
   {
+   "date": "2011-05-30",
+   "problems": [
+    "colour"
+   ],
+   "engine": "pasc5-1 [4,w]",
+   "missaleMeum": "feria [4,v]",
+   "rubric": "no. 88",
+   "why": "The lesser litanies have nothing in the office, and violet belongs to their procession and its Mass (no. 130a), so the day is a 4th class feria of Paschaltide in white. Missale Meum gives the day the violet of the Rogation Mass.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2011-07-04",
+   "problems": [
+    "celebration",
+    "class"
+   ],
+   "engine": "pent03-1 [4,g]",
+   "missaleMeum": "the-precious-blood-of-our-lord-jesus-christ [1,r]",
+   "rubric": "no. 95",
+   "why": "The Sacred Heart falls on 1 July that year. Of two feasts of the same divine Person the lower is omitted, so the Precious Blood is not transferred to this day. Missale Meum transfers it.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2012-05-14",
+   "problems": [
+    "colour"
+   ],
+   "engine": "pasc5-1 [4,w]",
+   "missaleMeum": "feria [4,v]",
+   "rubric": "no. 88",
+   "why": "The lesser litanies have nothing in the office, and violet belongs to their procession and its Mass (no. 130a), so the day is a 4th class feria of Paschaltide in white. Missale Meum gives the day the violet of the Rogation Mass.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2013-01-18",
+   "problems": [
+    "colour"
+   ],
+   "engine": "epi1-5 [4,g]",
+   "missaleMeum": "feria [4,w]",
+   "rubric": "no. 127a",
+   "why": "Green is used from 14 January. This Friday still belongs to the week of the First Sunday after Epiphany, whose ferias Missale Meum lists in white.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2013-05-06",
+   "problems": [
+    "colour"
+   ],
+   "engine": "pasc5-1 [4,w]",
+   "missaleMeum": "feria [4,v]",
+   "rubric": "no. 88",
+   "why": "The lesser litanies have nothing in the office, and violet belongs to their procession and its Mass (no. 130a), so the day is a 4th class feria of Paschaltide in white. Missale Meum gives the day the violet of the Rogation Mass.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2017-05-22",
+   "problems": [
+    "colour"
+   ],
+   "engine": "pasc5-1 [4,w]",
+   "missaleMeum": "feria [4,v]",
+   "rubric": "no. 88",
+   "why": "The lesser litanies have nothing in the office, and violet belongs to their procession and its Mass (no. 130a), so the day is a 4th class feria of Paschaltide in white. Missale Meum gives the day the violet of the Rogation Mass.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2019-01-18",
+   "problems": [
+    "colour"
+   ],
+   "engine": "epi1-5 [4,g]",
+   "missaleMeum": "feria [4,w]",
+   "rubric": "no. 127a",
+   "why": "Green is used from 14 January. This Friday still belongs to the week of the First Sunday after Epiphany, whose ferias Missale Meum lists in white.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2022-05-23",
+   "problems": [
+    "colour"
+   ],
+   "engine": "pasc5-1 [4,w]",
+   "missaleMeum": "feria [4,v]",
+   "rubric": "no. 88",
+   "why": "The lesser litanies have nothing in the office, and violet belongs to their procession and its Mass (no. 130a), so the day is a 4th class feria of Paschaltide in white. Missale Meum gives the day the violet of the Rogation Mass.",
+   "ordo": "agrees with the engine"
+  },
+  {
    "date": "2022-06-23",
    "problems": [
     "celebration",
@@ -179,6 +477,72 @@
    "missaleMeum": "vigil-of-the-nativity-of-st-john-the-baptist [2,v]",
    "rubric": "no. 33",
    "why": "The vigil is omitted because its feast is transferred that year (the Sacred Heart falls on the feast). Missale Meum keeps the vigil.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2024-05-06",
+   "problems": [
+    "colour"
+   ],
+   "engine": "pasc5-1 [4,w]",
+   "missaleMeum": "feria [4,v]",
+   "rubric": "no. 88",
+   "why": "The lesser litanies have nothing in the office, and violet belongs to their procession and its Mass (no. 130a), so the day is a 4th class feria of Paschaltide in white. Missale Meum gives the day the violet of the Rogation Mass.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2027-05-03",
+   "problems": [
+    "colour"
+   ],
+   "engine": "pasc5-1 [4,w]",
+   "missaleMeum": "feria [4,v]",
+   "rubric": "no. 88",
+   "why": "The lesser litanies have nothing in the office, and violet belongs to their procession and its Mass (no. 130a), so the day is a 4th class feria of Paschaltide in white. Missale Meum gives the day the violet of the Rogation Mass.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2028-05-22",
+   "problems": [
+    "colour"
+   ],
+   "engine": "pasc5-1 [4,w]",
+   "missaleMeum": "feria [4,v]",
+   "rubric": "no. 88",
+   "why": "The lesser litanies have nothing in the office, and violet belongs to their procession and its Mass (no. 130a), so the day is a 4th class feria of Paschaltide in white. Missale Meum gives the day the violet of the Rogation Mass.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2030-01-18",
+   "problems": [
+    "colour"
+   ],
+   "engine": "epi1-5 [4,g]",
+   "missaleMeum": "feria [4,w]",
+   "rubric": "no. 127a",
+   "why": "Green is used from 14 January. This Friday still belongs to the week of the First Sunday after Epiphany, whose ferias Missale Meum lists in white.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2032-05-03",
+   "problems": [
+    "colour"
+   ],
+   "engine": "pasc5-1 [4,w]",
+   "missaleMeum": "feria [4,v]",
+   "rubric": "no. 88",
+   "why": "The lesser litanies have nothing in the office, and violet belongs to their procession and its Mass (no. 130a), so the day is a 4th class feria of Paschaltide in white. Missale Meum gives the day the violet of the Rogation Mass.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2033-05-23",
+   "problems": [
+    "colour"
+   ],
+   "engine": "pasc5-1 [4,w]",
+   "missaleMeum": "feria [4,v]",
+   "rubric": "no. 88",
+   "why": "The lesser litanies have nothing in the office, and violet belongs to their procession and its Mass (no. 130a), so the day is a 4th class feria of Paschaltide in white. Missale Meum gives the day the violet of the Rogation Mass.",
    "ordo": "agrees with the engine"
   },
   {
@@ -216,6 +580,17 @@
    "ordo": "agrees with the engine"
   },
   {
+   "date": "2036-01-18",
+   "problems": [
+    "colour"
+   ],
+   "engine": "epi1-5 [4,g]",
+   "missaleMeum": "feria [4,w]",
+   "rubric": "no. 127a",
+   "why": "Green is used from 14 January. This Friday still belongs to the week of the First Sunday after Epiphany, whose ferias Missale Meum lists in white.",
+   "ordo": "agrees with the engine"
+  },
+  {
    "date": "2038-06-23",
    "problems": [
     "celebration",
@@ -224,7 +599,18 @@
    "engine": "pent01-3 [4,g]",
    "missaleMeum": "vigil-of-the-nativity-of-st-john-the-baptist [2,v]",
    "rubric": "no. 33",
-   "why": "The vigil is omitted because its feast is transferred that year (the Sacred Heart falls on the feast). Missale Meum keeps the vigil.",
+   "why": "The vigil is omitted because its feast is transferred that year (Corpus Christi falls on the feast). Missale Meum keeps the vigil.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2041-01-18",
+   "problems": [
+    "colour"
+   ],
+   "engine": "epi1-5 [4,g]",
+   "missaleMeum": "feria [4,w]",
+   "rubric": "no. 127a",
+   "why": "Green is used from 14 January. This Friday still belongs to the week of the First Sunday after Epiphany, whose ferias Missale Meum lists in white.",
    "ordo": "agrees with the engine"
   },
   {
@@ -236,6 +622,17 @@
    "missaleMeum": "quadp2-6 [4,v]",
    "rubric": "no. 78",
    "why": "In a leap year this Saturday is a 4th class feria once St. Matthias or St. Gabriel moves to the next day, so it is Our Lady on Saturday. Missale Meum leaves the feria.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2044-05-23",
+   "problems": [
+    "colour"
+   ],
+   "engine": "pasc5-1 [4,w]",
+   "missaleMeum": "feria [4,v]",
+   "rubric": "no. 88",
+   "why": "The lesser litanies have nothing in the office, and violet belongs to their procession and its Mass (no. 130a), so the day is a 4th class feria of Paschaltide in white. Missale Meum gives the day the violet of the Rogation Mass.",
    "ordo": "agrees with the engine"
   },
   {
@@ -273,6 +670,39 @@
    "ordo": "agrees with the engine"
   },
   {
+   "date": "2047-01-18",
+   "problems": [
+    "colour"
+   ],
+   "engine": "epi1-5 [4,g]",
+   "missaleMeum": "feria [4,w]",
+   "rubric": "no. 127a",
+   "why": "Green is used from 14 January. This Friday still belongs to the week of the First Sunday after Epiphany, whose ferias Missale Meum lists in white.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2049-05-24",
+   "problems": [
+    "colour"
+   ],
+   "engine": "pasc5-1 [4,w]",
+   "missaleMeum": "feria [4,v]",
+   "rubric": "no. 88",
+   "why": "The lesser litanies have nothing in the office, and violet belongs to their procession and its Mass (no. 130a), so the day is a 4th class feria of Paschaltide in white. Missale Meum gives the day the violet of the Rogation Mass.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2051-05-08",
+   "problems": [
+    "colour"
+   ],
+   "engine": "pasc5-1 [4,w]",
+   "missaleMeum": "feria [4,v]",
+   "rubric": "no. 88",
+   "why": "The lesser litanies have nothing in the office, and violet belongs to their procession and its Mass (no. 130a), so the day is a 4th class feria of Paschaltide in white. Missale Meum gives the day the violet of the Rogation Mass.",
+   "ordo": "agrees with the engine"
+  },
+  {
    "date": "2052-02-24",
    "problems": [
     "celebration"
@@ -281,6 +711,28 @@
    "missaleMeum": "quadp1-6 [4,v]",
    "rubric": "no. 78",
    "why": "In a leap year this Saturday is a 4th class feria once St. Matthias or St. Gabriel moves to the next day, so it is Our Lady on Saturday. Missale Meum leaves the feria.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2055-05-24",
+   "problems": [
+    "colour"
+   ],
+   "engine": "pasc5-1 [4,w]",
+   "missaleMeum": "feria [4,v]",
+   "rubric": "no. 88",
+   "why": "The lesser litanies have nothing in the office, and violet belongs to their procession and its Mass (no. 130a), so the day is a 4th class feria of Paschaltide in white. Missale Meum gives the day the violet of the Rogation Mass.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2056-05-08",
+   "problems": [
+    "colour"
+   ],
+   "engine": "pasc5-1 [4,w]",
+   "missaleMeum": "feria [4,v]",
+   "rubric": "no. 88",
+   "why": "The lesser litanies have nothing in the office, and violet belongs to their procession and its Mass (no. 130a), so the day is a 4th class feria of Paschaltide in white. Missale Meum gives the day the violet of the Rogation Mass.",
    "ordo": "agrees with the engine"
   },
   {
@@ -293,6 +745,28 @@
    "missaleMeum": "vigil-of-sts-peter-and-paul [2,v]",
    "rubric": "no. 33",
    "why": "The vigil is omitted because its feast is transferred that year (the Sacred Heart falls on the feast). Missale Meum keeps the vigil.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2058-01-18",
+   "problems": [
+    "colour"
+   ],
+   "engine": "epi1-5 [4,g]",
+   "missaleMeum": "feria [4,w]",
+   "rubric": "no. 127a",
+   "why": "Green is used from 14 January. This Friday still belongs to the week of the First Sunday after Epiphany, whose ferias Missale Meum lists in white.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2060-05-24",
+   "problems": [
+    "colour"
+   ],
+   "engine": "pasc5-1 [4,w]",
+   "missaleMeum": "feria [4,v]",
+   "rubric": "no. 88",
+   "why": "The lesser litanies have nothing in the office, and violet belongs to their procession and its Mass (no. 130a), so the day is a 4th class feria of Paschaltide in white. Missale Meum gives the day the violet of the Rogation Mass.",
    "ordo": "agrees with the engine"
   },
   {
@@ -315,6 +789,28 @@
    "missaleMeum": "annunciation-of-the-blessed-virgin-mary [1,w]",
    "rubric": "no. 96a",
    "why": "When the Annunciation is transferred after Easter its rightful place is the Monday after Low Sunday; St. Joseph, also transferred, takes the next free day. Missale Meum gives the Monday to St. Joseph.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2063-05-21",
+   "problems": [
+    "colour"
+   ],
+   "engine": "pasc5-1 [4,w]",
+   "missaleMeum": "feria [4,v]",
+   "rubric": "no. 88",
+   "why": "The lesser litanies have nothing in the office, and violet belongs to their procession and its Mass (no. 130a), so the day is a 4th class feria of Paschaltide in white. Missale Meum gives the day the violet of the Rogation Mass.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2064-01-18",
+   "problems": [
+    "colour"
+   ],
+   "engine": "epi1-5 [4,g]",
+   "missaleMeum": "feria [4,w]",
+   "rubric": "no. 127a",
+   "why": "Green is used from 14 January. This Friday still belongs to the week of the First Sunday after Epiphany, whose ferias Missale Meum lists in white.",
    "ordo": "agrees with the engine"
   },
   {
@@ -341,6 +837,17 @@
    "ordo": "agrees with the engine"
   },
   {
+   "date": "2069-01-18",
+   "problems": [
+    "colour"
+   ],
+   "engine": "epi1-5 [4,g]",
+   "missaleMeum": "feria [4,w]",
+   "rubric": "no. 127a",
+   "why": "Green is used from 14 January. This Friday still belongs to the week of the First Sunday after Epiphany, whose ferias Missale Meum lists in white.",
+   "ordo": "agrees with the engine"
+  },
+  {
    "date": "2073-04-03",
    "problems": [
     "celebration"
@@ -363,6 +870,28 @@
    "ordo": "agrees with the engine"
   },
   {
+   "date": "2074-05-21",
+   "problems": [
+    "colour"
+   ],
+   "engine": "pasc5-1 [4,w]",
+   "missaleMeum": "feria [4,v]",
+   "rubric": "no. 88",
+   "why": "The lesser litanies have nothing in the office, and violet belongs to their procession and its Mass (no. 130a), so the day is a 4th class feria of Paschaltide in white. Missale Meum gives the day the violet of the Rogation Mass.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2075-01-18",
+   "problems": [
+    "colour"
+   ],
+   "engine": "epi1-5 [4,g]",
+   "missaleMeum": "feria [4,w]",
+   "rubric": "no. 127a",
+   "why": "Green is used from 14 January. This Friday still belongs to the week of the First Sunday after Epiphany, whose ferias Missale Meum lists in white.",
+   "ordo": "agrees with the engine"
+  },
+  {
    "date": "2078-05-11",
    "problems": [
     "celebration"
@@ -371,6 +900,17 @@
    "missaleMeum": "pasc5-3 [2,w]",
    "rubric": "no. 91 items 16 and 21",
    "why": "A 2nd class feast of the universal Church precedes a 2nd class vigil, so Sts. Philip and James are celebrated and the Vigil of the Ascension is commemorated.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2079-05-31",
+   "problems": [
+    "celebration"
+   ],
+   "engine": "queenship-of-the-blessed-virgin-mary [2,w]",
+   "missaleMeum": "pasc5-3 [2,w]",
+   "rubric": "no. 91 items 16 and 21",
+   "why": "A 2nd class feast of the universal Church precedes a 2nd class vigil, so the Queenship of Mary is celebrated and the Vigil of the Ascension is commemorated. Missale Meum lists both as celebrations, the vigil first.",
    "ordo": "agrees with the engine"
   },
   {
@@ -396,6 +936,39 @@
    "ordo": "agrees with the engine"
   },
   {
+   "date": "2085-05-21",
+   "problems": [
+    "colour"
+   ],
+   "engine": "pasc5-1 [4,w]",
+   "missaleMeum": "feria [4,v]",
+   "rubric": "no. 88",
+   "why": "The lesser litanies have nothing in the office, and violet belongs to their procession and its Mass (no. 130a), so the day is a 4th class feria of Paschaltide in white. Missale Meum gives the day the violet of the Rogation Mass.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2086-01-18",
+   "problems": [
+    "colour"
+   ],
+   "engine": "epi1-5 [4,g]",
+   "missaleMeum": "feria [4,w]",
+   "rubric": "no. 127a",
+   "why": "Green is used from 14 January. This Friday still belongs to the week of the First Sunday after Epiphany, whose ferias Missale Meum lists in white.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2086-05-06",
+   "problems": [
+    "colour"
+   ],
+   "engine": "pasc5-1 [4,w]",
+   "missaleMeum": "feria [4,v]",
+   "rubric": "no. 88",
+   "why": "The lesser litanies have nothing in the office, and violet belongs to their procession and its Mass (no. 130a), so the day is a 4th class feria of Paschaltide in white. Missale Meum gives the day the violet of the Rogation Mass.",
+   "ordo": "agrees with the engine"
+  },
+  {
    "date": "2089-05-11",
    "problems": [
     "celebration"
@@ -404,6 +977,106 @@
    "missaleMeum": "pasc5-3 [2,w]",
    "rubric": "no. 91 items 16 and 21",
    "why": "A 2nd class feast of the universal Church precedes a 2nd class vigil, so Sts. Philip and James are celebrated and the Vigil of the Ascension is commemorated.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2090-05-22",
+   "problems": [
+    "colour"
+   ],
+   "engine": "pasc5-1 [4,w]",
+   "missaleMeum": "feria [4,v]",
+   "rubric": "no. 88",
+   "why": "The lesser litanies have nothing in the office, and violet belongs to their procession and its Mass (no. 130a), so the day is a 4th class feria of Paschaltide in white. Missale Meum gives the day the violet of the Rogation Mass.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2091-05-14",
+   "problems": [
+    "colour"
+   ],
+   "engine": "pasc5-1 [4,w]",
+   "missaleMeum": "feria [4,v]",
+   "rubric": "no. 88",
+   "why": "The lesser litanies have nothing in the office, and violet belongs to their procession and its Mass (no. 130a), so the day is a 4th class feria of Paschaltide in white. Missale Meum gives the day the violet of the Rogation Mass.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2092-01-18",
+   "problems": [
+    "colour"
+   ],
+   "engine": "epi1-5 [4,g]",
+   "missaleMeum": "feria [4,w]",
+   "rubric": "no. 127a",
+   "why": "Green is used from 14 January. This Friday still belongs to the week of the First Sunday after Epiphany, whose ferias Missale Meum lists in white.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2095-05-30",
+   "problems": [
+    "colour"
+   ],
+   "engine": "pasc5-1 [4,w]",
+   "missaleMeum": "feria [4,v]",
+   "rubric": "no. 88",
+   "why": "The lesser litanies have nothing in the office, and violet belongs to their procession and its Mass (no. 130a), so the day is a 4th class feria of Paschaltide in white. Missale Meum gives the day the violet of the Rogation Mass.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2095-07-04",
+   "problems": [
+    "celebration",
+    "class"
+   ],
+   "engine": "pent03-1 [4,g]",
+   "missaleMeum": "the-precious-blood-of-our-lord-jesus-christ [1,r]",
+   "rubric": "no. 95",
+   "why": "The Sacred Heart falls on 1 July that year. Of two feasts of the same divine Person the lower is omitted, so the Precious Blood is not transferred to this day. Missale Meum transfers it.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2096-05-21",
+   "problems": [
+    "colour"
+   ],
+   "engine": "pasc5-1 [4,w]",
+   "missaleMeum": "feria [4,v]",
+   "rubric": "no. 88",
+   "why": "The lesser litanies have nothing in the office, and violet belongs to their procession and its Mass (no. 130a), so the day is a 4th class feria of Paschaltide in white. Missale Meum gives the day the violet of the Rogation Mass.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2097-01-18",
+   "problems": [
+    "colour"
+   ],
+   "engine": "epi1-5 [4,g]",
+   "missaleMeum": "feria [4,w]",
+   "rubric": "no. 127a",
+   "why": "Green is used from 14 January. This Friday still belongs to the week of the First Sunday after Epiphany, whose ferias Missale Meum lists in white.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2097-05-06",
+   "problems": [
+    "colour"
+   ],
+   "engine": "pasc5-1 [4,w]",
+   "missaleMeum": "feria [4,v]",
+   "rubric": "no. 88",
+   "why": "The lesser litanies have nothing in the office, and violet belongs to their procession and its Mass (no. 130a), so the day is a 4th class feria of Paschaltide in white. Missale Meum gives the day the violet of the Rogation Mass.",
+   "ordo": "agrees with the engine"
+  },
+  {
+   "date": "2100-05-03",
+   "problems": [
+    "colour"
+   ],
+   "engine": "pasc5-1 [4,w]",
+   "missaleMeum": "feria [4,v]",
+   "rubric": "no. 88",
+   "why": "The lesser litanies have nothing in the office, and violet belongs to their procession and its Mass (no. 130a), so the day is a 4th class feria of Paschaltide in white. Missale Meum gives the day the violet of the Rogation Mass.",
    "ordo": "agrees with the engine"
   }
  ]

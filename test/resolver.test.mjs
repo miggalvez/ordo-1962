@@ -24,14 +24,23 @@ test('every observance has a place in the table of precedence or is only ever co
   }
 });
 
-test('every universal 1st class feast is celebrated exactly once a year, on its date or transferred', () => {
+test('every universal 1st class feast is celebrated exactly once a year, on its date or transferred, unless no. 95 omits it', () => {
   const firstClass = CATALOGUE.filter((e) => e.scope === 'universal' && e.class === 1 && e.kind === 'feast' && !e.formularyOf)
     .map((e) => e.key);
+  const omittedYears = [];
   for (const year of YEARS) {
+    const days = resolveYear(year);
     const counts = new Map();
-    for (const day of resolveYear(year)) counts.set(day.celebration.key, (counts.get(day.celebration.key) ?? 0) + 1);
-    for (const key of firstClass) assert.equal(counts.get(key), 1, `${key} in ${year}`);
+    for (const day of days) counts.set(day.celebration.key, (counts.get(day.celebration.key) ?? 0) + 1);
+    // no. 95: the Precious Blood is omitted when the Sacred Heart falls on its date.
+    const sacredHeartOnFirstOfJuly = days.find((day) => day.date === `${year}-07-01`).celebration.key === 'pent02-5';
+    if (sacredHeartOnFirstOfJuly) omittedYears.push(year);
+    for (const key of firstClass) {
+      const expected = key === 'the-precious-blood-of-our-lord-jesus-christ' && sacredHeartOnFirstOfJuly ? 0 : 1;
+      assert.equal(counts.get(key) ?? 0, expected, `${key} in ${year}`);
+    }
   }
+  assert.deepEqual(omittedYears, [2011, 2095]);
 });
 
 test('the rubrics decide these cases', () => {
@@ -64,6 +73,23 @@ test('the rubrics decide these cases', () => {
   assert.deepEqual([celebrated('2026-12-17').key, celebrated('2026-12-17').class], ['adv3-4', 2]);
   assert.deepEqual([celebrated('2026-12-16').key, celebrated('2026-12-16').class], ['adv3-3', 2]);
   assert.deepEqual([celebrated('2026-12-15').key, celebrated('2026-12-15').class], ['adv3-2', 3]);
+  // no. 95: of two feasts of the same divine Person the lower is omitted, not transferred.
+  assert.equal(celebrated('2011-07-01').key, 'pent02-5');
+  assert.deepEqual([celebrated('2011-07-04').key, celebrated('2011-07-04').class], ['pent03-1', 4]);
+  // no. 96: a 1st class feast impeded by a feast of another Person is still transferred.
+  assert.equal(celebrated('2038-06-25').key, 'nativity-of-st-john-the-baptist');
+});
+
+test('a 4th class feria takes the colour of its season', () => {
+  const colours = (date) => [celebrated(date).key, celebrated(date).colors];
+  // nos. 72, 119a and 127a: the same Friday of the week after Epiphany is white to 13 January, green from the 14th.
+  assert.deepEqual(colours('2029-01-12'), ['epi1-5', ['white']]);
+  assert.deepEqual(colours('2030-01-18'), ['epi1-5', ['green']]);
+  // nos. 88 and 130a: the Rogation days are white ferias of Paschaltide; violet is for the procession and its Mass.
+  assert.deepEqual(colours('2028-05-22'), ['pasc5-1', ['white']]);
+  assert.deepEqual(colours('2028-05-23'), ['pasc5-2', ['white']]);
+  // The weeks after Epiphany resumed in November keep their green.
+  assert.deepEqual(colours('2027-11-05'), ['epi4-5', ['green']]);
 });
 
 test('Christmas has its three Masses', () => {

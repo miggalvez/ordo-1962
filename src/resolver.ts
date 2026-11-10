@@ -25,6 +25,35 @@ const VIGIL_OF: Readonly<Record<string, string>> = {
 
 const ALL_SOULS = 'commemoration-of-all-souls';
 const ANNUNCIATION = 'annunciation-of-the-blessed-virgin-mary';
+const TRINITY = 'pent01-0';
+
+/**
+ * Whether two feasts honour the same divine Person (no. 95): both are feasts of
+ * the Lord. The Trinity is counted among them for precedence but is not a feast
+ * of one Person. Two feasts of the same saint need an attribute the catalogue
+ * does not carry yet.
+ */
+function sameDivinePerson(a: CatalogueEntry, b: CatalogueEntry): boolean {
+  return a.kind === 'feast' && b.kind === 'feast' && a.ofTheLord && b.ofTheLord
+    && a.key !== TRINITY && b.key !== TRINITY;
+}
+
+/**
+ * The colour of the day. A 4th class feria takes the colour of its season,
+ * which the catalogue entry alone cannot give.
+ */
+function colorsOf(entry: CatalogueEntry, day: number): Color[] {
+  if (entry.class === 4 && 'temporal' in entry.date) {
+    // The season after Epiphany is white to 13 January (nos. 72, 119a) and green from the 14th (no. 127a).
+    if (entry.kind === 'feria' && /^epi/.test(entry.date.temporal)) {
+      return [toYmd(day).slice(5) < '01-14' ? 'white' : 'green'];
+    }
+    // The lesser litanies have nothing in the office; violet is for their procession and
+    // its Mass (nos. 88, 130a). The day itself is a feria of Paschaltide, in white.
+    if (entry.kind === 'rogation') return ['white'];
+  }
+  return [...entry.colors];
+}
 
 export interface Celebration {
   /** The observance celebrated. Further Masses of the same celebration are in `masses`. */
@@ -80,12 +109,12 @@ function formulariesOf(key: string): string[] {
     .map((entry) => entry.key);
 }
 
-function celebrationFrom(candidate: Candidate): Celebration {
+function celebrationFrom(candidate: Candidate, day: number): Celebration {
   const { entry } = candidate;
   return {
     key: entry.key,
     class: candidate.class,
-    colors: [...entry.colors],
+    colors: colorsOf(entry, day),
     masses: [entry.key, ...formulariesOf(entry.key)],
     ...(candidate.transferredFrom === undefined ? {} : { transferredFrom: toYmd(candidate.transferredFrom) }),
   };
@@ -142,9 +171,13 @@ function resolvePass(year: number, options: PlacementOptions, omittedVigils: Rea
     let winner: Candidate | undefined = contenders[0];
 
     // Impeded 1st class feasts are transferred (nos. 95-98); others lose their date.
-    for (const loser of contenders.slice(1)) {
+    for (const [place, loser] of contenders.entries()) {
+      if (place === 0) continue;
       if (loser.transferredFrom === undefined) lostTheirDate.add(loser.entry.key);
       if (loser.entry.kind !== 'feast' || loser.class !== 1) continue;
+      // Of two feasts of the same divine Person the lower is omitted, not transferred (no. 95):
+      // the Precious Blood when the Sacred Heart falls on 1 July.
+      if (contenders.slice(0, place).some((higher) => sameDivinePerson(higher.entry, loser.entry))) continue;
       const from = loser.transferredFrom ?? day;
       if (loser.entry.key === ALL_SOULS) {
         // To the following Monday as its rightful place (no. 96b).
@@ -172,10 +205,10 @@ function resolvePass(year: number, options: PlacementOptions, omittedVigils: Rea
     } else if (tableItem(winner) === 28) {
       // A 4th class feria; on Saturday, the Saturday office of Our Lady (no. 78).
       celebration = weekday(day) === 6
-        ? celebrationFrom(rank(ourLadyOnSaturday(day, dayTempora, year), day, false))
-        : celebrationFrom(winner);
+        ? celebrationFrom(rank(ourLadyOnSaturday(day, dayTempora, year), day, false), day)
+        : celebrationFrom(winner, day);
     } else {
-      celebration = celebrationFrom(winner);
+      celebration = celebrationFrom(winner, day);
     }
 
     days.push({
@@ -190,8 +223,8 @@ function resolvePass(year: number, options: PlacementOptions, omittedVigils: Rea
 
 /** A day with no movable day and no feast: a 4th class feria, or Our Lady on Saturday. */
 function feria(day: number, tempora: readonly string[], year: number): Celebration {
-  if (weekday(day) === 6) return celebrationFrom(rank(ourLadyOnSaturday(day, tempora, year), day, false));
-  return celebrationFrom(rank('feria', day, false));
+  if (weekday(day) === 6) return celebrationFrom(rank(ourLadyOnSaturday(day, tempora, year), day, false), day);
+  return celebrationFrom(rank('feria', day, false), day);
 }
 
 /**

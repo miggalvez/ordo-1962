@@ -8,8 +8,6 @@ const [from = 1962, to = 2100] = process.argv.slice(2).filter((a) => /^\d{4}$/.t
 const asJson = process.argv.includes('--json');
 const byKey = new Map(CATALOGUE.map((entry) => [entry.key, entry]));
 const LETTER = { white: 'w', red: 'r', green: 'g', violet: 'v', black: 'b', rose: 'p' };
-const multiple = new Map(JSON.parse(readFileSync(new URL('../test/fixtures/multiple-celebrations.json', import.meta.url), 'utf8'))
-  .days.map((day) => [day.date, day.expected.celebration]));
 
 const principal = (key) => byKey.get(key)?.formularyOf ?? key;
 const isFourthClassFeria = (key) => {
@@ -21,12 +19,15 @@ export function compare(year) {
   const ours = new Map(resolveYear(year).map((day) => [day.date, day]));
   const rows = JSON.parse(readFileSync(new URL(`../data/oracle/missalemeum/${year}.json`, import.meta.url), 'utf8'));
   const differences = [];
-  for (const [date, celebration, cls, colors] of rows) {
+  for (const [date, celebration, cls, colors, , , tempora] of rows) {
     const day = ours.get(date);
-    const expected = multiple.get(date) ?? principal(celebration[0]);
+    // Where Missale Meum lists two celebrations, the first is the one it gives the day to.
+    const expected = principal(celebration[0]);
     const actual = day.celebration.key;
-    // Missale Meum names a bare 4th class feria "feria"; the engine names the day of the cycle.
-    const sameCelebration = actual === expected || (expected === 'feria' && isFourthClassFeria(actual));
+    // Missale Meum names a bare 4th class feria "feria"; the engine names the day of the
+    // cycle, which must be the one Missale Meum places on that date.
+    const sameCelebration = actual === expected
+      || (expected === 'feria' && isFourthClassFeria(actual) && tempora.includes(actual));
     const ourColors = day.celebration.colors.map((c) => LETTER[c]).join('');
     const problems = [];
     if (!sameCelebration) problems.push('celebration');

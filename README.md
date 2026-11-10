@@ -25,7 +25,7 @@ fixedFeasts(2026, { nations: ['pl'] }).get('2026-05-08');
 The resolver follows the Table of Liturgical Days (General Rubrics 1960, no. 91)
 by kind and class, so a feast it has never seen still finds its place, plus the
 occurrence and transfer rules of nos. 33, 78 and 95-99. Against Missale Meum it
-agrees on all 50,769 days of 1962-2100 except 36, listed with their rubric in
+agrees on all 50,769 days of 1962-2100 except 97, listed with their rubric in
 `test/fixtures/oracle-deviations.json`; on those the SSPX Ordo agrees with this
 engine. `node scripts/compare-oracle.mjs` prints the comparison.
 
